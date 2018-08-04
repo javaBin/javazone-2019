@@ -1,0 +1,43 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    margin: 3rem;
+    color: white;
+    align-items: center;
+    z-index: 100;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:before {
+        opacity: 0;
+    }
+    &--sticky {
+        position: fixed;
+        top: 0;
+    }
+    &--end {
+        justify-content: end;
+        right: 0;
+    }
+    &__nav-item {
+        border: 2px solid white;
+        margin: 0 0.5rem;
+        border-radius: 6px;
+        padding: 0.4rem 1.2rem;
+        font-size: 1rem;
+        opacity: 0.65;
+        font-weight: bold;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__brand {
+        display: flex;
+        flex-direction: row;
+        h1 {
+            margin: 0;
+            padding: 0 1rem;
+        }
+        img {
+            width: 3.5rem;
+        }
+    }
+}
