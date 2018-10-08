@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i|IBM+Plex+Serif:400,400i');
 
+@font-face {
+  font-family: 'BigJohn';
+  src: local('BigJohn'), 
+  url(./fonts/BigJohn.woff) format('woff'), 
+  url(./fonts/BigJohn.woff2) format('woff2'),
+  url(./fonts/BigJohn.eot) format('eot')
+}
+
+@font-face {
+  font-family: 'SlimJoe';
+  src: local('SlimJoe'), 
+  url(./fonts/SlimJoe.woff) format('woff'), 
+  url(./fonts/SlimJoe.woff2) format('woff2'),
+  url(./fonts/SlimJoe.eot) format('eot')
+}
+
 body {
   margin: 0;
   padding: 0;

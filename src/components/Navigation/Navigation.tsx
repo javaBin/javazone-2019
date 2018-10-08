@@ -1,5 +1,4 @@
 import classnames from 'classnames';
-import { List } from 'immutable';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
@@ -12,7 +11,7 @@ export interface NavRoute {
 }
 
 interface NavigationProps {
-    routes: List<NavRoute>;
+    routes: NavRoute[];
     displayBrand?: boolean;
     position?: NavigationPosition;
     sticky?: boolean;
@@ -77,10 +76,12 @@ interface BrandProps {
 
 const Brand: React.StatelessComponent<BrandProps> = (props) => {
     return (
-        <div className="navigation__brand">
-            <img src="logo.svg" alt="JavaZone Logo" />
-            <h1>{props.title}</h1>
-        </div>
+        <Link to="/">
+            <div className="navigation__brand">
+                <img src="logo.svg" alt="JavaZone Logo" />
+                <h1>{props.title}</h1>
+            </div>
+        </Link>
     )
 }
 

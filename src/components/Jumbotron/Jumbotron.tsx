@@ -27,5 +27,4 @@ export class Jumbotron extends React.Component<JumbotronProps> {
             </div>
         )
     }
-
 }

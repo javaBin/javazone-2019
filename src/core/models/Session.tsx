@@ -1,4 +1,3 @@
-import { List } from 'immutable';
 import { Speaker } from './Speaker';
 
 export interface Session {
@@ -12,7 +11,7 @@ export interface Session {
     length: number;
     format: string;
     abstract: string;
-    speakers: List<Speaker>;
+    speakers: Speaker[];
     startTime: Date;
     endTime: Date;
 }
