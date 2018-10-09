@@ -5,7 +5,7 @@ export class Frontpage extends React.Component<{}, {}> {
     public render() {
         return (
             <div>
-                <Jumbotron title="JavaZone 2019" subTitle="See you next year!" />
+                <Jumbotron title="JavaZone 2019" subTitle="See you next year" />
             </div>
         )
     }

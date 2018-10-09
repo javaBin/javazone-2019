@@ -1,7 +1,7 @@
 .navigation {
     display: flex;
     flex-direction: row;
-    margin: 3rem;
+    margin: 2.5rem;
     height: auto;
     color: white;
     align-items: center;
@@ -33,15 +33,14 @@
     &__brand {
         display: flex;
         flex-direction: row;
-        height: inherit;
+        align-items: center;
         h1 {
-            height: inherit;
             margin: 0;
             padding: 0 1rem;
         }
         img {
-            height: auto;
             width: 3.5rem;
+            height: 3.5rem;
         }
     }
 }

@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <Navigation sticky position="end" routes={routes} />
+          <Navigation sticky routes={routes} />
           <Route exact path="/" component={Frontpage} />
         </div>
       </Router>
