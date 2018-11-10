@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './Jumbotron.css';
+import './Jumbotron.scss';
 
 interface JumbotronProps {
     title?: string;

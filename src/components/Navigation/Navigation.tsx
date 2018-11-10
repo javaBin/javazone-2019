@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import './Navigation.css';
+import './Navigation.scss';
 
 export type NavigationPosition = 'start' | 'end';
 
