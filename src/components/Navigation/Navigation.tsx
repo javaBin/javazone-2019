@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import './Navigation.scss';
+import styles from './Navigation.module.scss';
 
 export type NavigationPosition = 'start' | 'end';
 
@@ -32,10 +32,10 @@ export class Navigation extends React.Component<NavigationProps> {
     public render() {
 
         const componentClass = classnames(
-            'navigation',
-            {'navigation--sticky': this.props.sticky},
-            {'navigation--end': this.props.position === 'end'}
-        )
+            styles.navigation,
+            {[styles.navigationSticky]: this.props.sticky},
+            {[styles.navigationEnd]: this.props.position === 'end'}
+        );
 
         return (
             <div className={componentClass}>
@@ -58,7 +58,7 @@ interface NavItemProps {
 const NavItem: React.StatelessComponent<NavItemProps> = (props) => {
     return (
         <Link to={props.route.url}>
-            <div className="navigation__nav-item">
+            <div className={styles.navigationNavItem}>
                 {props.route.title}
             </div>
         </Link>
@@ -77,7 +77,7 @@ interface BrandProps {
 const Brand: React.StatelessComponent<BrandProps> = (props) => {
     return (
         <Link to="/">
-            <div className="navigation__brand">
+            <div className={styles.navigationBrand}>
                 <img src="logo.svg" alt="JavaZone Logo" />
 				<h1>{props.title}</h1>
             </div>

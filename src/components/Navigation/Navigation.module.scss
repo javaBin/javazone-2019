@@ -10,15 +10,15 @@
     &:before {
         opacity: 0;
     }
-    &--sticky {
+    &Sticky {
         position: fixed;
         top: 0;
     }
-    &--end {
+    &End {
         justify-content: end;
         right: 0;
     }
-    &__nav-item {
+    &NavItem {
         border: 2px solid white;
         margin: 0 0.5rem;
         border-radius: 6px;
@@ -30,7 +30,7 @@
             opacity: 1;
         }
     }
-    &__brand {
+    &Brand {
         display: flex;
         flex-direction: row;
         align-items: center;
