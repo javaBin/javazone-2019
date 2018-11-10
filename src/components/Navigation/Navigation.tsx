@@ -79,7 +79,7 @@ const Brand: React.StatelessComponent<BrandProps> = (props) => {
         <Link to="/">
             <div className="navigation__brand">
                 <img src="logo.svg" alt="JavaZone Logo" />
-                <h1>{props.title}</h1>
+				<h1>{props.title}</h1>
             </div>
         </Link>
     )
