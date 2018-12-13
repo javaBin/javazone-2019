@@ -1,30 +1,34 @@
-import * as React from 'react';
+import React from 'react';
 import styles from './Jumbotron.module.scss';
+import { useCanPlayVideoType } from '../../core/hooks/UseCanPlayVideoType';
 
 interface JumbotronProps {
     title?: string;
     subTitle?: string;
-    children?: React.ReactNode;
 }
 
-export class Jumbotron extends React.Component<JumbotronProps> {
+export function Jumbotron(props: JumbotronProps) {
 
-    constructor(props: JumbotronProps) {
-        super(props);
-    }
+    const canPlayWebm = useCanPlayVideoType('webm');
 
-    public render() {
+    function renderSupportedVideoSource() {
         return (
-            <div className={styles.jumbotron}>
-                <video muted autoPlay loop>
-                    <source src="stockholm_at_night.mp4" type="video/mp4" />
-                    Your browser sucks ass
-                </video>
-                <div className={styles.jumbotronContent}>
-                    <h1>{this.props.title}</h1>
-                    <h2>{this.props.subTitle}</h2>
-                </div>
-            </div>
+            canPlayWebm 
+                ? <source src="timelapse.webm" type="video/webm" />
+                : <source src="timelapse.mp4" type="video/mp4" />
         )
     }
+
+    return (
+        <div className={styles.jumbotron}>
+            <video autoPlay muted loop id="backgroundLapse">
+                {renderSupportedVideoSource()}
+                Your browser does not support HTML5 video.
+            </video>
+            <div className={styles.jumbotronContent}>
+                <h1>{props.title}</h1>
+                <h2>{props.subTitle}</h2>
+            </div>
+        </div>
+    )
 }

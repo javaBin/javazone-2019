@@ -13,12 +13,10 @@
         text-align: end;
         z-index: 5;
         h1 {
-            font-family: $primary-font;
             font-size: 7rem;
             margin: 0;
         }
         h2 {
-            font-family: $secondary-font;
             margin: 0;
             font-size: 3rem;
         }
@@ -37,6 +35,6 @@
         -webkit-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%);
         background-size: cover; 
-        filter: brightness(40%);
+        filter: brightness(30%);
     }
 }
