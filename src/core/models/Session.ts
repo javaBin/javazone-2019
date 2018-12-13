@@ -1,17 +1,17 @@
 import { Speaker } from './Speaker';
+import { UUID } from '../Types';
 
 export interface Session {
-    sessionId: string;
+    sessionId: UUID;
+    conferenceId: UUID;
     title: string;
-    room: string;
-    conferenceId: string;
-    intendedAudience: string;
-    endTimeZulu: Date;
-    level: string;
-    length: number;
-    format: string;
     abstract: string;
+    length: number;
     speakers: Speaker[];
+    level: string;
+    room: string;
+    intendedAudience: string;
+    format: string;
     startTime: Date;
     endTime: Date;
 }
