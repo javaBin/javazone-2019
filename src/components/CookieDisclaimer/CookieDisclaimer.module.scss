@@ -1,0 +1,16 @@
+.container {
+    position: relative;
+    height: 100%; 
+    width: 100%;
+}
+
+.disclaimer {
+    position: absolute;
+    bottom: 0;
+    right: calc(50% - 300px);
+    margin: 20px;
+    width: 600px;
+    height: 100px;
+    background: rgb(25, 25, 25);
+}
+

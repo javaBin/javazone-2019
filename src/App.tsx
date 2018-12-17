@@ -8,6 +8,7 @@ import { Tickets } from './pages/Tickets/Tickets';
 import { Partners } from './pages/Partners/Partners';
 import { Academy } from './pages/Academy/Academy';
 import { Kids } from './pages/Kids/Kids';
+import { CookieDisclaimer } from './components/CookieDisclaimer/CookieDisclaimer';
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info'},
@@ -30,6 +31,9 @@ class App extends React.Component {
           <Route exact path="/academy" component={Academy} />
           <Route exact path="/kids" component={Kids} />
           <Footer />
+          <CookieDisclaimer>
+            We use cookies because they taste brilliant and will enhance your javazoning experience.
+          </CookieDisclaimer>
         </>
       </Router>
     );

@@ -1,5 +1,11 @@
 @import '../../variables.scss';
 
+.box {
+    width: 800px;
+    height: 600px;
+    background: yellow;
+}
+
 .jumbotron {
     width: 100vw;
     height: 100vh;
@@ -21,7 +27,7 @@
             font-size: 3rem;
         }
     }
-    video {
+    video, img {
         position: fixed;
         top: 50%;
         left: 50%;
