@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Navigation, NavRoute } from './components/Navigation/Navigation';
+import Navigation, { NavRoute } from './components/Navigation/Navigation';
 import { Frontpage } from './pages/Frontpage/Frontpage';
 import { Footer } from './components/Footer/Footer';
 import { Info } from './pages/Info/Info';

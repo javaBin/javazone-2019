@@ -1,12 +1,24 @@
+@import '../../variables.scss';
+
 .navigation {
     display: flex;
     flex-direction: row;
-    margin: 2rem;
+    padding: 1rem;
     height: auto;
     color: white;
+    background: black;
     align-items: center;
-    z-index: 100;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    width: 100%;
+    //transition: padding 250ms ease, margin 250ms ease, width 250ms ease-in-out;
+    &.frontpage {
+        width: 0;
+        margin: 2rem;
+        padding: 0;
+        background: none;
+        @media only screen and (max-width: $screen-sm) {
+            margin: 1rem;
+        }
+    }
     a {
         color: white;
         text-decoration: none;
@@ -29,6 +41,9 @@
         opacity: 0.70;
         border-bottom: 2px solid transparent; 
         transition: opacity 300ms, border-bottom 300ms;
+        @media only screen and (max-width: $screen-sm) {
+            opacity: 1;
+        }
         &:hover {
             border-bottom: 2px solid white;
             opacity: 1;
@@ -41,6 +56,9 @@
         opacity: 0.70;
         margin-right: 1rem;
         transition: opacity 300ms;
+        @media only screen and (max-width: $screen-sm) {
+            opacity: 1;
+        }
         &:hover {
             opacity: 1;
         }

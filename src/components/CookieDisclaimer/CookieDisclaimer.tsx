@@ -12,7 +12,9 @@ export function CookieDisclaimer(props: CookieDisclaimerProps) {
     const [hasAcceptedCookieDisclaimer, setHasAcceptedCookieDisclaimer] = useState(!!cookies.get('javazone-cookie-disclaimer'));
     
     function handleAcceptCookieDisclaimer() {
-        cookies.set('javazone-cookie-disclaimer', true);
+        const expiration = new Date(new Date().setFullYear(new Date().getFullYear() + 1));
+        console.log('exp', expiration);
+        cookies.set('javazone-cookie-disclaimer', true, {expires: expiration});
         setHasAcceptedCookieDisclaimer(true);
     }
 

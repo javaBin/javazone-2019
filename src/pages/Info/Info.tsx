@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { PageBanner } from '../../components/PageBanner/PageBanner';
 
 export function Info() {
     return (
         <>
-            <h1>Info</h1>
+            <PageBanner header="Another year, another JavaZone!" subHeader="September 11th - 12th, 2019" />
         </>
     )
 }

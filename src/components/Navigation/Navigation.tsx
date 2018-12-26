@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import { ChevronDown } from 'react-feather';
 import styles from './Navigation.module.scss';
 import { useRef, useEffect, useState } from 'react';
@@ -13,7 +13,7 @@ export interface NavRoute {
     url: string;
 }
 
-interface NavigationProps {
+interface NavigationProps extends RouteComponentProps {
     routes: NavRoute[];
     displayBrand?: boolean;
     position?: NavigationPosition;
@@ -24,11 +24,16 @@ interface NavigationState {
     subMenuItems: NavRoute[];
 }
 
-export const Navigation: React.StatelessComponent<NavigationProps> = (props) => {
+function Navigation(props: NavigationProps) {
 
     const windowWidth = useWindowWidth();
+    const [isFrontpage, setIsFrontpage] = useState(true);
+    useEffect(() => {
+        setIsFrontpage(props.location.pathname === '/');
+    }, [props.location.pathname]);
     const componentClass = classnames(
         styles.navigation,
+        {[styles.frontpage]: isFrontpage},
         {[styles.navigationSticky]: props.sticky},
         {[styles.navigationEnd]: props.position === 'end'}
     );
@@ -47,7 +52,6 @@ export const Navigation: React.StatelessComponent<NavigationProps> = (props) => 
 
 Navigation.defaultProps = {
     displayBrand: true,
-    position: 'start',
     sticky: false
 }
 
@@ -115,3 +119,5 @@ Brand.defaultProps = {
     displayLogo: true,
     title: 'JAVAZONE'
 }
+
+export default withRouter(Navigation);
