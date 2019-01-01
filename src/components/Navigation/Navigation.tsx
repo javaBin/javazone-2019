@@ -5,6 +5,7 @@ import { ChevronDown } from 'react-feather';
 import styles from './Navigation.module.scss';
 import { useRef, useEffect, useState } from 'react';
 import { useWindowWidth } from '../../core/hooks/UseWindowWidth';
+import { useIsFrontpage } from '../../core/hooks/UseIsFrontpage';
 
 export type NavigationPosition = 'start' | 'end';
 
@@ -27,10 +28,8 @@ interface NavigationState {
 function Navigation(props: NavigationProps) {
 
     const windowWidth = useWindowWidth();
-    const [isFrontpage, setIsFrontpage] = useState(true);
-    useEffect(() => {
-        setIsFrontpage(props.location.pathname === '/');
-    }, [props.location.pathname]);
+    const isFrontpage = useIsFrontpage(props.location.pathname);
+
     const componentClass = classnames(
         styles.navigation,
         {[styles.frontpage]: isFrontpage},
@@ -43,7 +42,7 @@ function Navigation(props: NavigationProps) {
             {props.displayBrand ? <Brand /> : null}
             {props.routes.map((navRoute: NavRoute) => {
                 return (
-                    <NavItem key={navRoute.title} windowWidth={windowWidth} route={navRoute} />
+                    <NavItem pathname={props.location.pathname} key={navRoute.title} windowWidth={windowWidth} route={navRoute} />
                 )
             })}
         </div>
@@ -68,12 +67,15 @@ interface NavItemProps {
     windowWidth?: number;
     route: NavRoute;
     activeRoute?: boolean;
+    pathname: string;
 }
 
 const NavItem: React.StatelessComponent<NavItemProps> = (props) => {
     const navItemRef: React.MutableRefObject<HTMLDivElement | null> = useRef(null);
+    const [isActiveRoute, setIsActiveRoute] = useState(false);
     const [elementPosition, setElementPosition] = useState(0);
     const [outOfBounds, setOutOfBounds] = useState(false);
+
     useEffect(() => {
         if(navItemRef.current && elementPosition === 0) {
             setElementPosition(navItemRef.current.offsetWidth + navItemRef.current.offsetLeft);
@@ -84,10 +86,19 @@ const NavItem: React.StatelessComponent<NavItemProps> = (props) => {
             props.windowWidth <= elementPosition ? setOutOfBounds(true) : setOutOfBounds(false);
         }
     }, [props.windowWidth]);
+    useEffect(() => {
+        setIsActiveRoute(props.pathname === props.route.url);
+    }, [props.pathname]);
+
+    const componentClass = classnames(
+        styles.navigationNavItem,
+        {[styles.active]: isActiveRoute}
+    );
+
     return (
         !outOfBounds ?
         <Link to={props.route.url}>
-            <div ref={navItemRef} className={styles.navigationNavItem}>
+            <div ref={navItemRef} className={componentClass}>
                 {props.route.title}
             </div>
         </Link> : null

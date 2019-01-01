@@ -1,11 +1,5 @@
 @import '../../variables.scss';
 
-.box {
-    width: 800px;
-    height: 600px;
-    background: yellow;
-}
-
 .jumbotron {
     width: 100vw;
     height: 100vh;
@@ -18,21 +12,21 @@
         right: 0;
         text-align: end;
         z-index: 5;
-        @media only screen and (max-width: $screen-sm) {
+        @media only screen and (max-width: $screen-xs) {
             top: 45%;
             padding: 0 1rem;
         }
         h1 {
             font-size: 7rem;
             margin: 0;
-            @media only screen and (max-width: $screen-sm) {
+            @media only screen and (max-width: $screen-xs) {
                 font-size: 4rem;
             }
         }
         h2 {
             margin: 0;
             font-size: 3rem;
-            @media only screen and (max-width: $screen-sm) {
+            @media only screen and (max-width: $screen-xs) {
                 font-size: 2.5rem;
             }
         }
