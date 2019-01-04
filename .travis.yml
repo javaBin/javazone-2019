@@ -5,13 +5,19 @@ cache:
 - yarn
 notifications:
   email: false
+before_install:
+  openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv -in javazone-gcp-test-eb868fba642b.json.enc -out javazone-gcp-test-eb868fba642b.json -
 script:
 - yarn clean
 - yarn install
 - yarn build
-after_success:
-#
-after_failure:
+deploy:
+  provider: gae
+  keyfile: javazone-gcp-test-eb868fba642b.json
+  project: javazone-gcp-test
+# after_success:
+# - gcloud app deploy app.yaml
+# after_failure:
 #- bash ./tasks/failed.sh
 # env:
 #   global:
