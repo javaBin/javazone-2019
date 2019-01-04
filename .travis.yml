@@ -14,6 +14,8 @@ deploy:
   provider: gae
   keyfile: javazone-gcp-test-eb868fba642b.json
   project: javazone-gcp-test
+  on:
+    all_branches: true
 # after_success:
 # - gcloud app deploy app.yaml
 # after_failure:
