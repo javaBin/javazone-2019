@@ -6,9 +6,9 @@ cache:
 notifications:
   email: false
 script:
- yarn clean
- yarn install
- yarn build
+- yarn clean
+- yarn install
+- yarn build
 after_success:
 #
 after_failure:
