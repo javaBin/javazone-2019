@@ -32,19 +32,28 @@ function Navigation(props: NavigationProps) {
 
     const componentClass = classnames(
         styles.navigation,
+        {[styles.space]: windowWidth <= 720},
         {[styles.frontpage]: isFrontpage},
         {[styles.navigationSticky]: props.sticky},
         {[styles.navigationEnd]: props.position === 'end'}
     );
 
+    function renderMenuButton() {
+        return (
+            <MenuButton pathname={props.location.pathname} routes={props.routes} />
+        )
+    }
+
     return (
         <div className={componentClass}>
             {props.displayBrand ? <Brand /> : null}
-            {props.routes.map((navRoute: NavRoute) => {
-                return (
-                    <NavItem pathname={props.location.pathname} key={navRoute.title} windowWidth={windowWidth} route={navRoute} />
-                )
-            })}
+            {windowWidth <= 720
+                ? renderMenuButton()
+                : props.routes.map((navRoute: NavRoute) => {
+                    return (
+                        <NavItem pathname={props.location.pathname} key={navRoute.title} route={navRoute} />
+                    )
+                })}
         </div>
     )
 }
@@ -53,6 +62,32 @@ Navigation.defaultProps = {
     displayBrand: true,
     sticky: false
 }
+
+interface MenuButtonProps {
+    routes: NavRoute[];
+    pathname: string;
+}
+
+function MenuButton(props: MenuButtonProps) {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    function handleOpenMenu() {
+        setIsMenuOpen(!isMenuOpen);
+    }
+    return (
+        <>
+            <button className={styles.menu} onClick={handleOpenMenu}>
+                <img src={isMenuOpen ? 'x.svg' : 'menu.svg'} />
+            </button>
+            {isMenuOpen ? <div className={styles.menuContainer}>
+                {props.routes.map(route => {
+                    return <NavItem pathname={props.pathname} key={route.title} route={route} />
+                })}
+            </div> : null}
+        </>
+    )
+}
+
+
 
 const MoreButton: React.StatelessComponent = (props) => {
     return (
@@ -64,7 +99,6 @@ const MoreButton: React.StatelessComponent = (props) => {
 }
 
 interface NavItemProps {
-    windowWidth?: number;
     route: NavRoute;
     activeRoute?: boolean;
     pathname: string;
@@ -81,11 +115,11 @@ const NavItem: React.StatelessComponent<NavItemProps> = (props) => {
             setElementPosition(navItemRef.current.offsetWidth + navItemRef.current.offsetLeft);
         }
     }, []);
-    useEffect(() => {
+/*     useEffect(() => {
         if(props.windowWidth) {
             props.windowWidth <= elementPosition ? setOutOfBounds(true) : setOutOfBounds(false);
         }
-    }, [props.windowWidth]);
+    }, [props.windowWidth]); */
     useEffect(() => {
         setIsActiveRoute(props.pathname === props.route.url);
     }, [props.pathname]);
@@ -106,7 +140,6 @@ const NavItem: React.StatelessComponent<NavItemProps> = (props) => {
 }
 
 NavItem.defaultProps = {
-    windowWidth: 0,
     activeRoute: false
 }
 
