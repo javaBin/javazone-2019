@@ -12,22 +12,29 @@
         right: 0;
         text-align: end;
         z-index: 5;
-        @media only screen and (max-width: $screen-xs) {
-            top: 45%;
+        @media only screen and (max-width: $screen-sm) {
+            text-align: center;
             padding: 0 1rem;
+            position: relative;
         }
         h1 {
             font-size: 7rem;
             margin: 0;
-            @media only screen and (max-width: $screen-xs) {
+            @media only screen and (max-width: $screen-md) {
+                font-size: 6rem;
+            }
+            @media only screen and (max-width: $screen-xxxs) {
                 font-size: 4rem;
             }
         }
         h2 {
             margin: 0;
             font-size: 3rem;
-            @media only screen and (max-width: $screen-xs) {
+            @media only screen and (max-width: $screen-xxxs) {
                 font-size: 2.5rem;
+            }
+            @media only screen and (max-width: $screen-xxxs) {
+                font-size: 2rem;
             }
         }
     }
