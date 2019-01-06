@@ -11,11 +11,10 @@ before_install:
 script:
 - yarn install
 - yarn build
-- cp gcp-key.json build
-- cd build
 deploy:
   provider: gae
   keyfile: gcp-key.json
+  skip_cleanup: true
   project: javazone-gcp-test
   verbosity: debug
   on: develop
