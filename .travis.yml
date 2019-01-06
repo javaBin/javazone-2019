@@ -11,6 +11,7 @@ before_install:
 script:
 - yarn install
 - yarn build
+- cd build
 deploy:
   provider: gae
   keyfile: gcp-key.json
