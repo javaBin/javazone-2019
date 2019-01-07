@@ -10,7 +10,14 @@ before_install:
 script:
 - yarn install
 - yarn build
-after_success:
-- bash ./tasks/deploy.sh
-after_failure:
-- bash ./tasks/failed.sh
+deploy:
+  - provider: gae
+    skip_cleanup: true
+    keyfile: gcp-key.json
+    project: javazone-web-test
+    on: develop
+  - provider: gae
+    skip_cleanup: true
+    keyfile: gcp-key.json
+    project: javazone-web-prod
+    on: master
