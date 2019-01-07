@@ -10,6 +10,8 @@ import { Academy } from './pages/Academy/Academy';
 import { Kids } from './pages/Kids/Kids';
 import { CookieDisclaimer } from './components/CookieDisclaimer/CookieDisclaimer';
 
+// Test
+
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info'},
   {title: 'Tickets', url: '/tickets'},
