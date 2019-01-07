@@ -11,4 +11,6 @@ script:
 - yarn install
 - yarn build
 after_success:
-- sh deploy.sh
+- bash ./tasks/deploy.sh
+after_failure:
+- bash ./tasks/failed.sh
