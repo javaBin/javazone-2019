@@ -20,9 +20,10 @@ git config --global user.email "travic@travis-ci.org"
 git config --global user.name "Travis"
 
 if [[ $TRAVIS_BRANCH == "master" ]]; then
-    gcloud app deploy ./app-test.yaml --project=javazone-gcp
+    echo "MASTER"
 else
     echo "EVERYTHING ELSE"
+    gcloud app deploy ./app-test.yaml --project=javazone-gcp
 fi;
 
 # cp -R dist $HOME/dist
