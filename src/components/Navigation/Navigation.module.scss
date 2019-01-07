@@ -7,8 +7,14 @@
     color: white;
     background: black;
     width: 100%;
+    box-sizing: border-box;
     z-index: 100;
-    //transition: padding 250ms ease, margin 250ms ease, width 250ms ease-in-out;
+    padding: 1rem;
+    @media only screen and (max-width: $screen-xs) {
+        padding: 1rem;
+        box-sizing: border-box;
+        background: none;
+    }
     &.frontpage {
         padding: 2rem;
         box-sizing: border-box;
@@ -91,6 +97,11 @@
 
 .menuContainer {
     position: fixed;
+    display: flex;
+    text-align: end;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0.5rem 0;
     bottom: 0;
     right: 0;
     width: 100%;
