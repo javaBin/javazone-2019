@@ -24,7 +24,7 @@ if [[ $TRAVIS_BRANCH == "master" ]]; then
 else
     echo "EVERYTHING ELSE"
     gcloud auth activate-service-account --key-file=gcp-key.json
-    gcloud app deploy ./app-test.yaml --project=javazone-gcp
+    gcloud app deploy ./app-test.yaml --project=javazone-web-test
 fi;
 
 # cp -R dist $HOME/dist
