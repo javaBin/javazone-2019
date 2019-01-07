@@ -5,21 +5,22 @@ cache:
 - yarn
 notifications:
   email: false
-before_install:
-- openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv -in gcp-key.json.enc -out gcp-key.json -d
 script:
 - yarn install
 - yarn build
 deploy:
-  - provider: gae
-    skip_cleanup: true
-    config: app-test.yaml
-    keyfile: gcp-key.json
-    project: javazone-web-test
-    on: develop
-  - provider: gae
-    skip_cleanup: true
-    config: app-prod.yaml
-    keyfile: gcp-key.json
-    project: javazone-web-prod
-    on: master
+- provider: gae
+  skip_cleanup: true
+  config: app-test.yaml
+  keyfile: jz-sa-test.json
+  project: javazone-web-test
+  on: develop
+- provider: gae
+  skip_cleanup: true
+  config: app-prod.yaml
+  keyfile: jz-sa-prod.json
+  project: javazone-web-prod
+  on: master
+before_install:
+- openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv -in jz-sa-prod.json.enc -out jz-sa-prod.json -d
+- openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv -in jz-sa-test.json.enc -out jz-sa-test.json -d

@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # gcp
-gcp-key.json
+jz-sa-test.json
+jz-sa-prod.json
