@@ -1,4 +1,4 @@
-service: javazone-gcp-test
+service: javazone-web-test
 runtime: nodejs8
 
 instance_class: F2

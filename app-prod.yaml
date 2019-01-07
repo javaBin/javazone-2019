@@ -1,4 +1,4 @@
-service: javazone-gcp-prod
+service: javazone-web-prod
 runtime: nodejs8
 
 instance_class: F2
