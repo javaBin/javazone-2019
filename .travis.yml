@@ -6,15 +6,9 @@ cache:
 notifications:
   email: false
 before_install:
-- openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv
-  -in gcp-key.json.enc -out gcp-key.json -d
+- openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv -in gcp-key.json.enc -out gcp-key.json -d
 script:
 - yarn install
 - yarn build
-deploy:
-  provider: gae
-  keyfile: gcp-key.json
-  skip_cleanup: true
-  project: javazone-gcp-test
-  verbosity: debug
-  on: develop
+after_success:
+- sh deploy.sh

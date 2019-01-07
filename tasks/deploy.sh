@@ -16,33 +16,43 @@ fi;
 
 echo "Starting deploy"
 
-cp -R dist $HOME/dist
-
-cd $HOME
 git config --global user.email "travic@travis-ci.org"
 git config --global user.name "Travis"
 
 if [[ $TRAVIS_BRANCH == "master" ]]; then
-    git clone --quiet https://${GH_TOKEN}@github.com/${GH_USER}/${GH_REPO_PROD}.git javazone > /dev/null
+    #gcloud app deploy ./app.yaml --project=javazone-gcp-test
+    echo "MASTER"
 else
-    git clone --quiet https://${GH_TOKEN}@github.com/${GH_USER}/${GH_REPO_TEST}.git javazone > /dev/null
+    echo "EVERYTHING ELSE"
 fi;
 
-cd javazone
-cp -R $HOME/dist/* .
+# cp -R dist $HOME/dist
 
-echo "Allow files with underscore https://help.github.com/articles/files-that-start-with-an-underscore-are-missing/" > .nojekyll
+# cd $HOME
+# git config --global user.email "travic@travis-ci.org"
+# git config --global user.name "Travis"
 
-git add -f .
-git commit -m "Travis build $TRAVIS_BUILD_NUMBER"
-git push -fq origin master > /dev/null
+# if [[ $TRAVIS_BRANCH == "master" ]]; then
+#     git clone --quiet https://${GH_TOKEN}@github.com/${GH_USER}/${GH_REPO_PROD}.git javazone > /dev/null
+# else
+#     git clone --quiet https://${GH_TOKEN}@github.com/${GH_USER}/${GH_REPO_TEST}.git javazone > /dev/null
+# fi;
 
-echo "Done deploying"
+# cd javazone
+# cp -R $HOME/dist/* .
 
-if [[ $TRAVIS_BRANCH == "master" ]]; then
-    curl -X POST --data-urlencode 'payload={"channel": "#javazone-web", "username": "[PROD] Deploy-bot", "text": "http://2018.javazone.no ble deployet :)", "icon_emoji": ":heart:"}' ${slackuri} > /dev/null
-else
-    curl -X POST --data-urlencode 'payload={"channel": "#javazone-web", "username": "[TEST] Deploy-bot", "text": "http://test-2018.javazone.no ble deployet :)", "icon_emoji": ":yellow_heart:"}' ${slackuri} > /dev/null
-fi;
+# echo "Allow files with underscore https://help.github.com/articles/files-that-start-with-an-underscore-are-missing/" > .nojekyll
 
-echo "Done slack-notifying"
+# git add -f .
+# git commit -m "Travis build $TRAVIS_BUILD_NUMBER"
+# git push -fq origin master > /dev/null
+
+# echo "Done deploying"
+
+# if [[ $TRAVIS_BRANCH == "master" ]]; then
+#     curl -X POST --data-urlencode 'payload={"channel": "#javazone-web", "username": "[PROD] Deploy-bot", "text": "http://2018.javazone.no ble deployet :)", "icon_emoji": ":heart:"}' ${slackuri} > /dev/null
+# else
+#     curl -X POST --data-urlencode 'payload={"channel": "#javazone-web", "username": "[TEST] Deploy-bot", "text": "http://test-2018.javazone.no ble deployet :)", "icon_emoji": ":yellow_heart:"}' ${slackuri} > /dev/null
+# fi;
+
+# echo "Done slack-notifying"

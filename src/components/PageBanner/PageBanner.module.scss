@@ -1,6 +1,20 @@
+@import '../../variables.scss';
+
 .pageBanner {
+    position: relative;
     width: 100%;
+    overflow: hidden;
     margin-top: 80px;
     height: 20rem;
-    background: orange;
+}
+
+.pageBannerHeader {
+    position: absolute;
+    left: -10%;
+    box-sizing: border-box;
+    padding-left: 15%;
+    width: 60%;
+    height: 100%;
+    transform: skew(25deg);
+    background: $color-logo-red-dark;
 }

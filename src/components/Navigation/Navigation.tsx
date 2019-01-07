@@ -87,17 +87,6 @@ function MenuButton(props: MenuButtonProps) {
     )
 }
 
-
-
-const MoreButton: React.StatelessComponent = (props) => {
-    return (
-        <div className={styles.navigationNavItem}>
-            More
-            <ChevronDown />
-        </div>
-    )
-}
-
 interface NavItemProps {
     route: NavRoute;
     activeRoute?: boolean;
