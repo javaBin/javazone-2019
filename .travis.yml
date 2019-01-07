@@ -13,11 +13,13 @@ script:
 deploy:
   - provider: gae
     skip_cleanup: true
+    config: app-test.yaml
     keyfile: gcp-key.json
     project: javazone-web-test
     on: develop
   - provider: gae
     skip_cleanup: true
+    config: app-prod.yaml
     keyfile: gcp-key.json
     project: javazone-web-prod
     on: master
