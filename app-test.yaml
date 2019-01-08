@@ -1,4 +1,3 @@
-service: javazone-web-test
 runtime: nodejs8
 
 instance_class: F2
