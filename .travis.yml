@@ -15,12 +15,12 @@ deploy:
   keyfile: jz-sa-test.json
   project: javazone-web-test
   on: develop
-- provider: gae
-  skip_cleanup: true
-  config: app-prod.yaml
-  keyfile: jz-sa-prod.json
-  project: javazone-web-prod
-  on: master
+# - provider: gae
+#   skip_cleanup: true
+#   config: app-prod.yaml
+#   keyfile: jz-sa-prod.json
+#   project: javazone-web-prod
+#   on: master
 before_install:
 - openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv -in gcp.tar.enc -out gcp.tar -d
 - tar xvf gcp.tar
