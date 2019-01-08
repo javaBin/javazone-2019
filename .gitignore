@@ -23,5 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # gcp
+gcp.tar
 jz-sa-test.json
 jz-sa-prod.json

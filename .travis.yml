@@ -22,5 +22,4 @@ deploy:
   project: javazone-web-prod
   on: master
 before_install:
-- openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv -in jz-sa-prod.json.enc -out jz-sa-prod.json -d
-- openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv -in jz-sa-test.json.enc -out jz-sa-test.json -d
+- openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv -in gcp.tar.enc -out gcp.tar -d
