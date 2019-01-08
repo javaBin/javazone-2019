@@ -9,7 +9,7 @@ script:
 - yarn install
 - yarn build
 deploy:
-- provider: gae
+  provider: gae
   skip_cleanup: true
   config: app-test.yaml
   keyfile: jz-sa-test.json
