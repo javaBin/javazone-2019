@@ -5,7 +5,6 @@ export type SectionLayout = 'left' | 'center' | 'right';
 
 export interface SectionProps {
     layout?: SectionLayout;
-    fullWidth?: boolean;
     header?: React.ReactNode;
     children?: React.ReactNode;
 }

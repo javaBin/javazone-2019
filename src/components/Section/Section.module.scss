@@ -1,12 +1,11 @@
 @import '../../variables.scss';
 
 .section {
-    background: green;
     display: flex;
     justify-content: space-around;
     width: 100%;
     box-sizing: border-box;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .container {
@@ -29,11 +28,13 @@
 }
 
 .header {
+    color: $color-logo-red;
     grid-area: header;
     text-transform: uppercase;
 }
 
 .content {
+    color: white;
     grid-area: content;
     font-size: 1.4rem;
 }
