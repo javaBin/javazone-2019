@@ -1,0 +1,12 @@
+@import '../../variables.scss';
+
+.inlineLink {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    background: $color-logo-red-dark;
+    &:hover {
+        background: $color-logo-red;
+    }
+}
