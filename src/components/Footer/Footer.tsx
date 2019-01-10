@@ -21,7 +21,7 @@ function Footer(props: RouteComponentProps) {
                 </a>
             </div>
             <div className={styles.social}>
-                <a target="_blank" href="mailto:javazone@java.no">
+                <a href="mailto:javazone@java.no">
                     Mail
                 </a>
                 <a target="_blank" href="https://twitter.com/javazone">

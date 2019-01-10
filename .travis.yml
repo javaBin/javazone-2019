@@ -12,9 +12,9 @@ deploy:
   provider: gae
   skip_cleanup: true
   config: app-test.yaml
-  keyfile: javazone-test-sa.json
-  project: javazone-test
+  keyfile: web-jz-test-sa.json
+  project: web-test-2019-javazone-no
   on: develop
 before_install:
 - openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv
-  -in javazone-test-sa.json.enc -out javazone-test-sa.json -d
+  -in web-jz-test-sa.json.enc -out web-jz-test-sa.json -d

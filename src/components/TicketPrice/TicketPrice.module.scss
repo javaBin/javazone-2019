@@ -1,0 +1,7 @@
+.price {
+    font-size: 4rem;
+    font-weight: bold;
+    &.soldOut {
+        text-decoration: line-through;
+    }
+}

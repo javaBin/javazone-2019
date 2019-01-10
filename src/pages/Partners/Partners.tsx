@@ -1,9 +1,12 @@
 import * as React from 'react';
+import { PageBanner } from '../../components/PageBanner/PageBanner';
+import { Seperator } from '../../components/Seperator/Seperator';
 
 export function Partners() {
     return (
         <>
-            <h1>Partners</h1>
+            <PageBanner header="Another year, another JavaZone!" subHeader="September 11th - 12th, 2019" imageName="partners_2" />
+            <Seperator />
         </>
     )
 }

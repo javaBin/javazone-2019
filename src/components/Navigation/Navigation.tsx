@@ -1,7 +1,6 @@
 import classnames from 'classnames';
 import * as React from 'react';
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
-import { ChevronDown } from 'react-feather';
 import styles from './Navigation.module.scss';
 import { useRef, useEffect, useState } from 'react';
 import { useWindowWidth } from '../../core/hooks/UseWindowWidth';

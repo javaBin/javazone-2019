@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './CookieDisclaimer.module.scss';
 import Cookies from 'universal-cookie';
 
@@ -13,7 +13,6 @@ export function CookieDisclaimer(props: CookieDisclaimerProps) {
     
     function handleAcceptCookieDisclaimer() {
         const expiration = new Date(new Date().setFullYear(new Date().getFullYear() + 1));
-        console.log('exp', expiration);
         cookies.set('javazone-cookie-disclaimer', true, {expires: expiration});
         setHasAcceptedCookieDisclaimer(true);
     }

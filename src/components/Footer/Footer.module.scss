@@ -2,15 +2,17 @@
 
 .footer {
     width: 100%;
-    min-height: 3rem;
+    min-height: 5rem;
     display: grid;
     grid-template-areas:
         'javabin social';
     grid-template-columns: 1fr 1fr;
+    align-items: center;
     background: black;
     &.frontpage {
         position: fixed;
         bottom: 0;
+        min-height: 3rem;
         background: none;
     }
     .javabin, .social {
@@ -40,7 +42,7 @@
 
 @media only screen and (max-width: $screen-xs) {
     .footer {
-        height: 6rem;
+        height: 5rem;
         grid-template-columns: 100%;
         grid-template-areas:
             'javabin'
