@@ -9,7 +9,7 @@ import { ImageSection } from '../../components/ImageSection/ImageSection';
 export function Info() {
     return (
         <>
-            <PageBanner header="Another year, another JavaZone!" subHeader="September 11th - 12th, 2019" imageName="partners_2" />
+            <PageBanner header="Another year, another JavaZone!" subHeader="September 11th - 12th, 2019" imageName="2018/180913_JavaZone_0010" />
             <Seperator />
             <Section header={<h1>JavaZone 101 the who, what and where</h1>}>
                 <p>

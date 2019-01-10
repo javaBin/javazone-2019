@@ -10,7 +10,7 @@ import { InlineLink } from '../../components/InlineLink/InlineLink';
 export function Tickets() {
     return (
         <>
-            <PageBanner header="The Ticket Booth" subHeader="Come join us in Oslo, September 11th - 12th, 2019" imageName="tickets_1" />
+            <PageBanner header="The Ticket Booth" subHeader="Come join us in Oslo, September 11th - 12th, 2019" imageName="2018/180912_JavaZone_0019" />
             <Seperator />
             <CenterSection header={<h1>Get your tickets for JavaZone 2019</h1>}>
                 <TicketPrice>NOK 6999</TicketPrice>
