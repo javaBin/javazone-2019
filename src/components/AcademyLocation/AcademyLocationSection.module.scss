@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .section {
     margin: 2rem 0;
     display: flex;
@@ -11,4 +13,67 @@
 .locations {
     width: 75%;
     display: grid;
+    padding: 2rem 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+}
+
+.card {
+    position: relative;
+    width: auto;
+    height: 40rem;
+    border: 0.3rem solid $color-logo-red;
+    border-radius: 0.6rem;
+    top: 0;
+    overflow: hidden;
+    transition: all 250ms;
+    &:hover {
+        top: -1rem;
+        .imageBox {
+            h1 {
+                text-shadow: 0.1rem 0.1rem 1rem black;
+            }
+            img {
+                filter: none;
+            }
+        }
+    }
+    .imageBox {
+        position: relative;
+        overflow: hidden;
+        height: 60%;
+        border-bottom: 0.3rem solid $color-logo-red;
+        text-align: center;
+        color: white;
+        h1 {
+            font-size: 3.5rem;
+            top: 35%;
+            width: 100%;
+            position: absolute;
+            z-index: 10;
+        }
+        img {
+            height: 100%;
+            filter: brightness(60%);
+        }
+    }
+    .contentBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 40%;
+        color: white;
+    }
+}
+
+.oslo {
+    margin-left: -110%;
+}
+
+.bergen {
+    margin-left: -25%;
+}
+
+.tromso {
+    margin-left: -50%;
 }

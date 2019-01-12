@@ -5,7 +5,7 @@ import { Seperator } from '../../components/Seperator/Seperator';
 export function Partners() {
     return (
         <>
-            <PageBanner header="Another year, another JavaZone!" subHeader="September 11th - 12th, 2019" imageName="partners_2" />
+            <PageBanner header="Partner love <3" subHeader="September 11th - 12th, 2019" imageName="partners_2" />
             <Seperator />
         </>
     )

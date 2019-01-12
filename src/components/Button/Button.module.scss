@@ -12,6 +12,43 @@
     &:hover {
         color: white;
         background: $color-logo-red-dark;
-        border: 2px solid $color-logo-red;
     }
+}
+
+.buttonGroup > button {
+    padding: 0.5rem 2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 2px solid $color-logo-red;
+    background: none;
+    color: $color-logo-red;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    &.active {
+        color: white;
+        background: $color-logo-red-dark;
+    }
+}
+
+.buttonGroup button:not(:last-child) {
+    border-right: none;
+}
+
+.buttonGroup button:last-child {
+    border-radius: 0 3px 3px 0;
+}
+
+.buttonGroup button:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+.buttonGroup button:first-child {
+    border-radius: 3px 0 0 3px;
+}
+
+.buttonGroup > button:hover {
+    color: white;
+    background: $color-logo-red-dark;
 }

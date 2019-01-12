@@ -4,25 +4,33 @@ import { Seperator } from '../../components/Seperator/Seperator';
 import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { AcademyModel } from '../../core/models/Academy';
 import { AcademyLocationSection } from '../../components/AcademyLocation/AcademyLocationSection';
+import { Section } from '../../components/Section/Section';
+import { AcademyProgram } from '../../components/AcademyProgram/AcademyProgram';
 
 const academies: AcademyModel[] = [
     {
-        location: 'Oslo',
+        name: 'Oslo',
+        location: 'Teknologihuset',
         date: new Date(),
         slots: 80,
-        registrationUrl: ''
+        registrationUrl: '',
+        imageUrl: 'http://www.teknologihuset.no/uploads/th_ekst-img_3679-1440x575.jpg'
     },
     {
-        location: 'Bergen',
+        name: 'Bergen',
+        location: 'Det Akademiske Kvarter',
         date: new Date(),
         slots: 80,
-        registrationUrl: ''
+        registrationUrl: '',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Det_Akademiske_Kvarter.JPG'
     },
     {
-        location: 'Tromsø',
+        name: 'Tromsø',
+        location: 'Universistet i Tromsø',
         date: new Date(),
         slots: 80,
-        registrationUrl: ''
+        registrationUrl: '',
+        imageUrl: 'http://res.cloudinary.com/simpleview/image/upload/v1451482793/clients/norway/northern-lights-tromso-norway_2-1_a8b03e36-f1cd-46be-939e-ebf6d70c41e2.jpg'
     }
 ];
 
@@ -42,7 +50,18 @@ export function Academy() {
                     A detailed program and more information will be soon posted here. Watch this space!
                 </p>
             </CenterSection>
+            <Section header={<h1>How do I register?</h1>}>
+                <p>
+                   Fill in the form by clicking the "Registration" link below for your prefered town. We’ll contact you as soon as possible with information about whether you got a spot. The events are usually quite popular, so make sure to registrer as soon as possible.
+                </p> 
+            </Section>
             <AcademyLocationSection academies={academies} />
+            <Seperator />
+            <CenterSection header={<h1>Program & speakers</h1>}>
+                <AcademyProgram />
+            </CenterSection>
+            <CenterSection header={<h1>Partners & sponsors</h1>}>
+            </CenterSection>
         </>
     )
 }
