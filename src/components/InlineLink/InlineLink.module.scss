@@ -2,11 +2,13 @@
 
 .inlineLink {
     text-decoration: none;
-    color: inherit;
+    color: $color-logo-red;
     padding: 0.1rem 0.3rem;
     border-radius: 3px;
-    background: $color-logo-red-dark;
+    border: 1px solid transparent;
     &:hover {
-        background: $color-logo-red;
+        color: white;
+        border: 1px solid $color-logo-red;
+        background: $color-logo-red-dark;
     }
 }
