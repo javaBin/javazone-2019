@@ -77,7 +77,7 @@ export function Info() {
                     Full blown learning sessions. This is where you get down and dirty with code. This year we’ll be offering a wide variety of 2-hour and 4-hour workshops.
                 </p>
             </Section>
-            <ImageSection imageName="partners_3" />
+            <ImageSection imageName="info_1" />
             <Seperator />
             <Section header={<h1>Awezone: celebrating the community</h1>}>
                 <p>

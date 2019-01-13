@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from './CookieDisclaimer.module.scss';
 import Cookies from 'universal-cookie';
+import { Button } from '../Button/Button';
+import classnames from 'classnames';
 
 export interface CookieDisclaimerProps {
     children: React.ReactNode;
@@ -23,7 +25,9 @@ export function CookieDisclaimer(props: CookieDisclaimerProps) {
             <div className={styles.container}>
                 <div className={styles.disclaimer}>
                     <p>{props.children}</p>
-                    <button onClick={handleAcceptCookieDisclaimer}>Accept</button>
+                    <div>
+                        <Button size="small" onClick={() => handleAcceptCookieDisclaimer()}>Close</Button>
+                    </div>
                 </div>
             </div> : null}
         </>

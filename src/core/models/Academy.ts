@@ -2,7 +2,8 @@
 export interface AcademyModel {
     name: string;
     location: string;
-    date: Date;
+    locationUrl: string;
+    date: string;
     slots: number;
     registrationUrl: string;
     imageUrl: string;

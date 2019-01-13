@@ -33,7 +33,7 @@ class App extends React.Component {
           {/* <Route exact path="/kids" component={Kids} /> */}
           <Footer />
           <CookieDisclaimer>
-            We use cookies because they taste brilliant and will enhance your javazoning experience.
+            We have given you a dedicated cookie from our cookie jar in order to store your favorite program schedule. By using this site you agree to this.
           </CookieDisclaimer>
         </>
       </Router>

@@ -6,12 +6,14 @@ import { AcademyModel } from '../../core/models/Academy';
 import { AcademyLocationSection } from '../../components/AcademyLocation/AcademyLocationSection';
 import { Section } from '../../components/Section/Section';
 import { AcademyProgram } from '../../components/AcademyProgram/AcademyProgram';
+import { ImageSection } from '../../components/ImageSection/ImageSection';
 
 const academies: AcademyModel[] = [
     {
         name: 'Oslo',
         location: 'Teknologihuset',
-        date: new Date(),
+        locationUrl: 'http://www.teknologihuset.no/',
+        date: '12th February',
         slots: 80,
         registrationUrl: '',
         imageUrl: 'http://www.teknologihuset.no/uploads/th_ekst-img_3679-1440x575.jpg'
@@ -19,7 +21,8 @@ const academies: AcademyModel[] = [
     {
         name: 'Bergen',
         location: 'Det Akademiske Kvarter',
-        date: new Date(),
+        locationUrl: 'https://kvarteret.no/',
+        date: '13th February',
         slots: 80,
         registrationUrl: '',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Det_Akademiske_Kvarter.JPG'
@@ -27,7 +30,8 @@ const academies: AcademyModel[] = [
     {
         name: 'Tromsø',
         location: 'Universistet i Tromsø',
-        date: new Date(),
+        locationUrl: 'https://www.uit.no/startsida',
+        date: '14th February',
         slots: 80,
         registrationUrl: '',
         imageUrl: 'http://res.cloudinary.com/simpleview/image/upload/v1451482793/clients/norway/northern-lights-tromso-norway_2-1_a8b03e36-f1cd-46be-939e-ebf6d70c41e2.jpg'
@@ -37,7 +41,7 @@ const academies: AcademyModel[] = [
 export function Academy() {
     return (
         <>
-            <PageBanner header="Javazone academy" subHeader="A free taste of JavaZone for IT-students!" imageName="academy" />
+            <PageBanner header="JavaZone Academy" subHeader="A free taste of JavaZone for IT-students!" imageName="academy" />
             <Seperator />
             <CenterSection header={<h1>Come join is in february</h1>}>
                 <p>
@@ -58,9 +62,11 @@ export function Academy() {
             <AcademyLocationSection academies={academies} />
             <Seperator />
             <CenterSection header={<h1>Program & speakers</h1>}>
-                <AcademyProgram />
+                <p>A detailed overview of the program and speakers will be available soon.</p>
+{/*                 <AcademyProgram /> */}
             </CenterSection>
-            <CenterSection header={<h1>Partners & sponsors</h1>}>
+            <CenterSection header={<h1>Partners</h1>}>
+                <p>The partners for the JavaZone Academy will be posted here in the upcoming weeks.</p>
             </CenterSection>
         </>
     )

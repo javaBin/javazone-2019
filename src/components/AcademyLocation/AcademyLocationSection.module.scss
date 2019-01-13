@@ -63,6 +63,18 @@
         align-items: center;
         height: 40%;
         color: white;
+        h1 {
+            margin: 1rem;
+        }
+    }
+    .location {
+        font-size: 1.5rem;
+        color: white;
+        margin: 0.5rem;
+    }
+    .slots {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
     }
 }
 
@@ -76,4 +88,10 @@
 
 .tromso {
     margin-left: -50%;
+}
+
+@media only screen and (max-width: $screen-xs) {
+    .locations {
+        grid-template-columns: 1fr;
+    }
 }

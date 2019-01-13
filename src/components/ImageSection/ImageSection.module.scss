@@ -7,9 +7,20 @@
     position: relative;
     img {
         position: absolute;
-        top: -100%;
-        bottom: -100%;
         margin: auto;
         width: 100%;
     }
+}
+
+.center {
+    top: 0;
+    bottom: 0;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.top {
+    top: 0;
 }

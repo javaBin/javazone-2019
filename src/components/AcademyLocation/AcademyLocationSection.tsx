@@ -33,9 +33,9 @@ function AcademyLocation(academy: AcademyModel) {
                 <img className={classes} src={academy.imageUrl} />
             </div>
             <div className={styles.contentBox}>
-                <h1>{academy.date.toDateString()}</h1>
-                <span>{academy.location}</span>
-                <span>{academy.slots}</span>
+                <h1>{academy.date}</h1>
+                <a target="_blank" className={styles.location} href={academy.locationUrl}>{academy.location}</a>
+                <span className={styles.slots}>{academy.slots} students</span>
                 <Button>Registration</Button>
             </div>
         </div>

@@ -13,6 +13,10 @@
         color: white;
         background: $color-logo-red-dark;
     }
+    &.small {
+        font-weight: normal;
+        font-size: 1rem;
+    }
 }
 
 .buttonGroup > button {
