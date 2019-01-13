@@ -79,7 +79,7 @@ function MenuButton(props: MenuButtonProps) {
             </button>
             {isMenuOpen ? <div className={styles.menuContainer}>
                 {props.routes.map(route => {
-                    return <NavItem pathname={props.pathname} key={route.title} route={route} />
+                    return <NavItem itemClicked={handleOpenMenu} pathname={props.pathname} key={route.title} route={route} />
                 })}
             </div> : null}
         </>
@@ -90,9 +90,10 @@ interface NavItemProps {
     route: NavRoute;
     activeRoute?: boolean;
     pathname: string;
+    itemClicked?: () => void;
 }
 
-const NavItem: React.StatelessComponent<NavItemProps> = (props) => {
+const NavItem: React.StatelessComponent<NavItemProps> = (props: NavItemProps) => {
     const navItemRef: React.MutableRefObject<HTMLDivElement | null> = useRef(null);
     const [isActiveRoute, setIsActiveRoute] = useState(false);
     const [elementPosition, setElementPosition] = useState(0);
@@ -119,7 +120,7 @@ const NavItem: React.StatelessComponent<NavItemProps> = (props) => {
 
     return (
         !outOfBounds ?
-        <Link to={props.route.url}>
+        <Link onClick={props.itemClicked} to={props.route.url}>
             <div ref={navItemRef} className={componentClass}>
                 {props.route.title}
             </div>
