@@ -29,15 +29,12 @@ export function Info() {
                 <p>
                     To attend JavaZone you will need a ticket. The ticket grants you access to the full JavaZone experience, including workshops. The ticket sales ticket sales will open in February. The start for ticket sales will be announced on social media and on this page. The number of tickets is limited and distributed on a first-come-first-served basis, so it pays to be quick.
                 </p>
-                <!--<Button>
-                    Buy Your JavaZone 2019 Ticket Now
-                </Button>-->
             </Section>
             <ImageSection imageName="partners_1" />
             <Seperator />
             <Section header={<h1>Two conference days</h1>}>
                 <p>
-                    Two days full of talks from renowned Norwegian and international speakers, in varying formats and categories. You don´t want to miss our amazing lineup<!--<InlineLink url="/program">amazing lineup</InlineLink>-->.
+                    Two days full of talks from renowned Norwegian and international speakers, in varying formats and categories. You don´t want to miss our amazing lineup.
                 </p>
             </Section>
             <Section header={<h1>An after party to remember</h1>}>
@@ -60,7 +57,6 @@ export function Info() {
             <Section header={<h1>The JavaZone Program</h1>}>
                 <p>
                     The program will be made available before summer holidays. Stay tuned!
-                    <!--The full program is now <InlineLink url="/program">available online</InlineLink>.-->
                 </p>
             </Section>
             <Section header={<h1>Lightning talks</h1>}>
