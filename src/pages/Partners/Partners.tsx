@@ -65,29 +65,23 @@ export function Partners() {
                     <li>Branding on <InlineLink external url="https://www.javazone.no">javazone.no</InlineLink>, at the venue, the program and in other promotional material that JavaZone produces.</li>
                 </List>
                 <h2>Possible expansions</h2>
-                <p>
-                    <h4>Double Stand Space</h4>
-                    <List>
-                        <li>Double the stand area to 12 square meters.</li>
-                        <li>One long back wall. It is also possible to divide the area in two if you would prefer.</li>
-                    </List>
-                </p>
-                <p>
-                    <h4>Restaurant Stand</h4>
-                    <List>
-                        <li>A dedicated food stand serving food throughout the conference. The menu will be decided in collaboration between yourselves and our event partners.</li>
-                        <li>Approx. 108 square meters (12 x 9).</li>
-                        <li>4 meter high back wall.</li>
-                    </List>
-                </p>
-                <p>
-                    <h4>Concept Stand</h4>
-                    <List>
-                        <li>A large space for presenting your own 'concept'. This could be, for example, a gaming area, a coffee bar, or a chillout area.</li>
-                        <li>Approx. 70 square meters (10 x 7).</li>
-                        <li>4 meter high back wall.</li>
-                    </List>
-                </p>
+                <h4>Double Stand Space</h4>
+                <List>
+                    <li>Double the stand area to 12 square meters.</li>
+                    <li>One long back wall. It is also possible to divide the area in two if you would prefer.</li>
+                </List>
+                <h4>Restaurant Stand</h4>
+                <List>
+                    <li>A dedicated food stand serving food throughout the conference. The menu will be decided in collaboration between yourselves and our event partners.</li>
+                    <li>Approx. 108 square meters (12 x 9).</li>
+                    <li>4 meter high back wall.</li>
+                </List>
+                <h4>Concept Stand</h4>
+                <List>
+                    <li>A large space for presenting your own 'concept'. This could be, for example, a gaming area, a coffee bar, or a chillout area.</li>
+                    <li>Approx. 70 square meters (10 x 7).</li>
+                    <li>4 meter high back wall.</li>
+                </List>
             </Section>
             <Seperator />
             <CenterSection header={<h1>Partnership prices</h1>}>
@@ -107,9 +101,9 @@ export function Partners() {
             <Section header={<h1>Partnership stand</h1>}>
                 <PartnerPriceList>
                     <PartnerPrice item="Extra Stand Space">38.000</PartnerPrice>
-                    <PartnerPrice item="Restaurant Stand">63.000</PartnerPrice>
+                    <PartnerPrice item="Restaurant Stand">65.000</PartnerPrice>
                     <PartnerPrice item="Restaurant Stand (Evening)">20.000</PartnerPrice>
-                    <PartnerPrice item="Concept Stand">55.000</PartnerPrice>
+                    <PartnerPrice item="Concept Stand">60.000</PartnerPrice>
                 </PartnerPriceList>
             </Section>
             <Section header={<h1>Partnership ticket</h1>}>

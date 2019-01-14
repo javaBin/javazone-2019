@@ -31,6 +31,11 @@
     color: $color-logo-red;
     grid-area: header;
     text-transform: uppercase;
+    @media only screen and (max-width: $screen-md) {
+        h1 {
+            margin-block-end: 0;
+        }
+    }
 }
 
 .content {
@@ -38,4 +43,9 @@
     grid-area: content;
     font-size: 1.4rem;
     line-height: 140%;
+    @media only screen and (max-width: $screen-md) {
+        p {
+            margin-block-start: 0;
+        }
+    }
 }

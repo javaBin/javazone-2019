@@ -15,7 +15,7 @@ export function Jumbotron(props: JumbotronProps) {
     useEffect(() => {
         const vid = document.getElementById('backgroundLapse') as HTMLVideoElement;
         vid.playbackRate = 0.5;
-    }, []);
+    });
 
     return (
         <div className={styles.jumbotron}>

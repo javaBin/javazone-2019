@@ -6,14 +6,18 @@ interface ImageSectionProps {
     imageName: string;
     bottom?: boolean;
     top?: boolean;
+    right?: boolean;
+    left?: boolean;
 }
 
 export function ImageSection(props: ImageSectionProps) {
     const imagePath = `https://storage.googleapis.com/javazone-assets/images/${props.imageName}.jpg`;
     const classes = classnames(
-        {[styles.center]: !props.bottom && !props.top},
+        {[styles.center]: !props.bottom && !props.top && !props.left && !props.right},
         {[styles.bottom]: props.bottom},
-        {[styles.top]: props.top}
+        {[styles.top]: props.top},
+        {[styles.right]: props.right},
+        {[styles.left]: props.left}
     )
     return (
         <div className={styles.section}>
