@@ -13,7 +13,7 @@ export function AcademyLocationSection(props: AcademyLocationSectionProps) {
         <div className={styles.section}>
             <div className={styles.locations}>
                 {props.academies.map(academy => {
-                    return <AcademyLocation {...academy} />
+                    return <AcademyLocation key={academy.name} {...academy} />
                 })}
             </div>
         </div>
