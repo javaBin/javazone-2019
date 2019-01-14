@@ -13,7 +13,7 @@ export function TicketPrice(props: TicketPriceProps) {
         {[styles.soldOut]: props.soldOut}
     )
     return (
-        <span className={classes}>{props.children},-</span>
+        <span className={classes}>NOK {props.children},-</span>
     )
 }
 

@@ -1,12 +1,17 @@
-import * as React from 'react';
+import React, { Suspense } from 'react';
 import { PageBanner } from '../../components/PageBanner/PageBanner';
 import { Seperator } from '../../components/Seperator/Seperator';
 import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { Section } from '../../components/Section/Section';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
+import { List } from '../../components/List/List';
+import { TicketPrice } from '../../components/TicketPrice/TicketPrice';
+import VideoSource from '../../components/Jumbotron/VideoSource';
+import { useCanPlayVideoType } from '../../core/hooks/UseCanPlayVideoType';
 
 export function Partners() {
+    const canPlayWebm = useCanPlayVideoType('webm');
     return (
         <>
             <PageBanner header="Partner love <3" subHeader="September 11th - 12th, 2019" imageName="partners_2" />
@@ -35,30 +40,64 @@ export function Partners() {
                 <p>
                     Don‘t you believe us? Have a look for yourself! Our new Partners are always surprised by the huge attention their stands receive in the Expo Area. We have put together a short 15-second timelapse from 2 hours of Expo time, showing both the flow of people during talks and in the breaks between talks. Yes, you get exposure to that many people, for a total of 20 hours!
                 </p>
+                <p>
+                    <i>The video below shows a time lapse of the JavaZone 2018 event.</i>
+                </p>
             </CenterSection>
-            <h1>VIDEO HERE</h1>
+            <CenterSection>
+                <Suspense fallback={<img src="splash.jpg" />}>
+                    <video style={{width: '100%'}} muted controls id="backgroundLapse">
+                        <VideoSource canPlayWebm={canPlayWebm} />
+                        Your browser does not support HTML5 video.
+                    </video>
+                </Suspense>
+            </CenterSection>
             <Section header={<h1>Partner Options</h1>}>
                 <p>
                     Even though all Partners are considered equal, there are a few options to choose from. There is a base package that everyone gets, and then there are a few available expansions. Notice that these expansions have a limited availability.
                 </p>
                 <h2>Included in all partnerships</h2>
+                <List>
+                    <li>A 6 square meter stand space in the central arena at Oslo Spektrum with two side walls.</li>
+                    <li>4 tickets to the conference for manning the stand.</li>
+                    <li>Discounted participant tickets for your employees.</li>
+                    <li>Branding on <InlineLink external url="https://www.javazone.no">javazone.no</InlineLink>, at the venue, the program and in other promotional material that JavaZone produces.</li>
+                </List>
                 <h2>Possible expansions</h2>
                 <p>
                     <h4>Double Stand Space</h4>
-                    Double your stand space and get 12 square meters instead of 6. This gives you a bigger wall for your message and more floor space for your activities.
+                    <List>
+                        <li>Double the stand area to 12 square meters.</li>
+                        <li>One long back wall. It is also possible to divide the area in two if you would prefer.</li>
+                    </List>
                 </p>
                 <p>
                     <h4>Restaurant Stand</h4>
-                    We have the capacity for a total of 8 restaurant stands in the Expo Area. The theme and menu are decided by you in collaboration with our food provider. If you have a restaurant stand, you can also opt in for extra food servings and exposure during the evening party.
+                    <List>
+                        <li>A dedicated food stand serving food throughout the conference. The menu will be decided in collaboration between yourselves and our event partners.</li>
+                        <li>Approx. 108 square meters (12 x 9).</li>
+                        <li>4 meter high back wall.</li>
+                    </List>
                 </p>
                 <p>
                     <h4>Concept Stand</h4>
-                    We also have room for 3 extra large ‘Concept‘ stands. These stands have about 70 square meters floor space and have room for a 4-meter tall wall behind it. This is your choice if you want to be really creative.
+                    <List>
+                        <li>A large space for presenting your own 'concept'. This could be, for example, a gaming area, a coffee bar, or a chillout area.</li>
+                        <li>Approx. 70 square meters (10 x 7).</li>
+                        <li>4 meter high back wall.</li>
+                    </List>
                 </p>
             </Section>
             <Seperator />
             <CenterSection header={<h1>Partnership prices</h1>}>
-
+                <TicketPrice>71.000</TicketPrice>
+                <p>
+                    <i>Note that all 50 partnerships for JavaZone 2018 were sold out long before the conference.</i>
+                </p>
+                <p>
+                    All partnerships have a base price for entry which gives you everything described above.
+                    We also have some add ons, as well as tickets for your employees, priced below.
+                </p>
             </CenterSection>
             <Section header={<h1>Partnership stand</h1>}>
             </Section>
