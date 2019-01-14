@@ -1,0 +1,15 @@
+.priceList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.price {
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p {
+        margin-block-end: 0;
+    }
+}

@@ -9,6 +9,7 @@ import { List } from '../../components/List/List';
 import { TicketPrice } from '../../components/TicketPrice/TicketPrice';
 import VideoSource from '../../components/Jumbotron/VideoSource';
 import { useCanPlayVideoType } from '../../core/hooks/UseCanPlayVideoType';
+import { PartnerPriceList, PartnerPrice } from '../../components/PartnerPrices/PartnerPrices';
 
 export function Partners() {
     const canPlayWebm = useCanPlayVideoType('webm');
@@ -98,10 +99,26 @@ export function Partners() {
                     All partnerships have a base price for entry which gives you everything described above.
                     We also have some add ons, as well as tickets for your employees, priced below.
                 </p>
+                <p>
+                    <i style={{fontSize: '1.2rem'}}>After 1st of March the price will increase to NOK 86.000,-.</i><br />
+                    <i style={{fontSize: '1rem'}}>All prices are ex VAT.</i>
+                </p>
             </CenterSection>
             <Section header={<h1>Partnership stand</h1>}>
+                <PartnerPriceList>
+                    <PartnerPrice item="Extra Stand Space">38.000</PartnerPrice>
+                    <PartnerPrice item="Restaurant Stand">63.000</PartnerPrice>
+                    <PartnerPrice item="Restaurant Stand (Evening)">20.000</PartnerPrice>
+                    <PartnerPrice item="Concept Stand">55.000</PartnerPrice>
+                </PartnerPriceList>
             </Section>
             <Section header={<h1>Partnership ticket</h1>}>
+                <PartnerPriceList>
+                    <PartnerPrice item="Tickets for employees (0 - 30)">5.590</PartnerPrice>
+                    <PartnerPrice item="Tickets for employees (31 - 50)">5.390</PartnerPrice>
+                    <PartnerPrice item="Tickets for employees (51 - ∞)">5.190</PartnerPrice>
+                    <PartnerPrice item="Tickets for employees (Late-Bird)">6.190</PartnerPrice>
+                </PartnerPriceList>
             </Section>
             <ImageSection imageName="2018/180912_JavaZone_0158" />
             <Seperator />
