@@ -56,7 +56,7 @@ export function Info() {
             <Seperator />
             <Section header={<h1>The JavaZone Program</h1>}>
                 <p>
-                    The program will be made available before summer holidays. Stay tuned!
+                    The program will be made available before the summer holidays. Stay tuned!
                 </p>
             </Section>
             <Section header={<h1>Lightning talks</h1>}>
@@ -89,7 +89,7 @@ export function Info() {
                     JavaZone is a 100% community-organized conference created by <InlineLink external url="https://javabin.no">javaBin</InlineLink>. The program is chosen by our independent program committee, and they operate under the principle that no-one is paid to hold a presentation, and likewise, that no-one can pay us to get their presentation accepted.
                 </p>
                 <p>
-                    We as organizers strive to create the best possible learning experience for all our speakers and participants, and we expect you to do the same. Everyone is welcome at JavaZone, but we do require that you treat your fellow conference participants with respect. We reserve the right to take any action necessary to make sure this principle is upheld. For more details, see our <InlineLink external url="https://java.no/principles.html">Code of Conduct</InlineLink> that applies to all events organised by javaBin.
+                    We as organizers strive to create the best possible learning experience for all our speakers and participants, and we expect you to do the same. Everyone is welcome at JavaZone, but we do require that you treat your fellow conference participants with respect. We reserve the right to take any action necessary to make sure this principle is upheld. For more details, see our <InlineLink external url="https://java.no/principles.html">Code of Conduct</InlineLink> that applies to all events organized by javaBin.
                 </p>
                 <p>
                     <strong>Should any unwanted event occur, we‘re here to help:</strong>
@@ -108,7 +108,7 @@ export function Info() {
                     Do not hesitate to contact us if you have any questions. Contact us at <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink> and we’ll try our best to give you an answer.
                 </p>
                 <p>
-                    We are looking forwards to seeing you at JavaZone 2019!
+                    We are looking forward to seeing you at JavaZone 2019!
                 </p>
             </Section>
         </>
