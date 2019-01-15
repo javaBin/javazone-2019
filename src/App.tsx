@@ -12,7 +12,6 @@ import { NotFound } from './pages/NotFound/NotFound';
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info'},
-  {title: 'Tickets', url: '/tickets'},
   {title: 'Partners', url: '/partners'},
   {title: 'Academy', url: '/academy'},
 ];
@@ -32,14 +31,14 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Frontpage} />
             <Route exact path="/info" component={Info} />
-            <Route exact path="/tickets" component={Tickets} />
+            {/* <Route exact path="/tickets" component={Tickets} /> */}
             <Route exact path="/partners" component={Partners} />
             <Route exact path="/academy" component={Academy} />
             <Route component={NotFound} />
           </Switch>
           <Footer routes={routes} />
           <CookieDisclaimer>
-            We have given you a dedicated cookie from our cookie jar in order to store your favorite program schedule. By using this site you agree to this.
+            We have given you a dedicated cookie from our cookie jar in order to store your favorite program schedule. We also use cookies to improve your experience on our site. By using this site you agree to this.
           </CookieDisclaimer>
         </>
       </Router>
