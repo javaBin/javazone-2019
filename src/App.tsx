@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation, { NavRoute } from './components/Navigation/Navigation';
 import { Frontpage } from './pages/Frontpage/Frontpage';
 import Footer from './components/Footer/Footer';
@@ -19,17 +19,25 @@ const routes: NavRoute[] = [
   {title: 'Academy', url: '/academy'},
 ];
 
+const ScrollToTop = () => {
+  window.scrollTo(0, 0);
+  return null;
+}
+
 class App extends React.Component {
   public render() {
     return (
       <Router>
         <>
           <Navigation sticky routes={routes} />
-          <Route exact path="/" component={Frontpage} />
-          <Route exact path="/info" component={Info} />
-          <Route exact path="/tickets" component={Tickets} />
-          <Route exact path="/partners" component={Partners} />
-          <Route exact path="/academy" component={Academy} />
+          <Route component={ScrollToTop}></Route>
+          <Switch>
+            <Route exact path="/" component={Frontpage} />
+            <Route exact path="/info" component={Info} />
+            <Route exact path="/tickets" component={Tickets} />
+            <Route exact path="/partners" component={Partners} />
+            <Route exact path="/academy" component={Academy} />
+          </Switch>
           {/* <Route exact path="/kids" component={Kids} /> */}
           <Footer />
           <CookieDisclaimer>
