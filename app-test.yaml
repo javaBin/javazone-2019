@@ -17,7 +17,7 @@ handlers:
 #   upload: build/*
 #   secure: always
 #   redirect_http_response_code: 301
-- url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
+- url: /(.*\.(gif|png|jpg|css|js|svg)(|\.map))$
   static_files: build/\1
   upload: build/(.*)(|\.map)
   secure: always
