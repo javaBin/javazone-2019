@@ -12,10 +12,10 @@ interface JumbotronProps {
 export function Jumbotron(props: JumbotronProps) {
 
     const canPlayWebm = useCanPlayVideoType('webm');
-    useEffect(() => {
-        const vid = document.getElementById('backgroundLapse') as HTMLVideoElement;
-        vid.playbackRate = 0.5;
-    });
+    // useEffect(() => {
+    //     const vid = document.getElementById('backgroundLapse') as HTMLVideoElement;
+    //     vid.playbackRate = 0.5;
+    // });
 
     return (
         <div className={styles.jumbotron}>
