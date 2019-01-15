@@ -8,7 +8,7 @@ handlers:
   upload: build/index.html
   secure: always
   redirect_http_response_code: 301
-- url: /.(gif|png|jpg|css|js|json)$
+- url: /
   static_dir: build
   secure: always
   redirect_http_response_code: 301
