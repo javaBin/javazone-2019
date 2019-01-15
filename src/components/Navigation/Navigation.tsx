@@ -18,6 +18,7 @@ interface NavigationProps extends RouteComponentProps {
     displayBrand?: boolean;
     position?: NavigationPosition;
     sticky?: boolean;
+    isNotFound?: boolean;
 }
 
 interface NavigationState {
@@ -27,12 +28,12 @@ interface NavigationState {
 function Navigation(props: NavigationProps) {
 
     const windowWidth = useWindowWidth();
-    const isFrontpage = useIsFrontpage(props.location.pathname);
+    const isFrontpage = useIsFrontpage(props.location.pathname, props.routes);
 
     const componentClass = classnames(
         styles.navigation,
         {[styles.space]: windowWidth <= 720},
-        {[styles.frontpage]: isFrontpage},
+        {[styles.frontpage]: isFrontpage || props.isNotFound},
         {[styles.navigationSticky]: props.sticky},
         {[styles.navigationEnd]: props.position === 'end'}
     );
@@ -104,11 +105,6 @@ const NavItem: React.StatelessComponent<NavItemProps> = (props: NavItemProps) =>
             setElementPosition(navItemRef.current.offsetWidth + navItemRef.current.offsetLeft);
         }
     }, []);
-/*     useEffect(() => {
-        if(props.windowWidth) {
-            props.windowWidth <= elementPosition ? setOutOfBounds(true) : setOutOfBounds(false);
-        }
-    }, [props.windowWidth]); */
     useEffect(() => {
         setIsActiveRoute(props.pathname === props.route.url);
     }, [props.pathname]);

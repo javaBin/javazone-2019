@@ -3,9 +3,14 @@ import styles from './Footer.module.scss';
 import { useIsFrontpage } from '../../core/hooks/UseIsFrontpage';
 import { RouteComponentProps, withRouter } from 'react-router';
 import classnames from 'classnames';
+import { NavRoute } from '../Navigation/Navigation';
 
-function Footer(props: RouteComponentProps) {
-    const isFrontpage = useIsFrontpage(props.location.pathname);
+interface FooterProps extends RouteComponentProps {
+    routes: NavRoute[];
+}
+
+function Footer(props: FooterProps) {
+    const isFrontpage = useIsFrontpage(props.location.pathname, props.routes);
     const componentClass = classnames(
         styles.footer,
         {[styles.frontpage]: isFrontpage},

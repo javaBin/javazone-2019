@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { createContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation, { NavRoute } from './components/Navigation/Navigation';
 import { Frontpage } from './pages/Frontpage/Frontpage';
@@ -7,10 +7,8 @@ import { Info } from './pages/Info/Info';
 import { Tickets } from './pages/Tickets/Tickets';
 import { Partners } from './pages/Partners/Partners';
 import { Academy } from './pages/Academy/Academy';
-import { Kids } from './pages/Kids/Kids';
 import { CookieDisclaimer } from './components/CookieDisclaimer/CookieDisclaimer';
-
-// Test
+import { NotFound } from './pages/NotFound/NotFound';
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info'},
@@ -37,9 +35,9 @@ class App extends React.Component {
             <Route exact path="/tickets" component={Tickets} />
             <Route exact path="/partners" component={Partners} />
             <Route exact path="/academy" component={Academy} />
+            <Route component={NotFound} />
           </Switch>
-          {/* <Route exact path="/kids" component={Kids} /> */}
-          <Footer />
+          <Footer routes={routes} />
           <CookieDisclaimer>
             We have given you a dedicated cookie from our cookie jar in order to store your favorite program schedule. By using this site you agree to this.
           </CookieDisclaimer>
