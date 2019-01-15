@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import styles from './AcademyLocationSection.module.scss';
 import { AcademyModel } from '../../core/models/Academy';
 import { Button } from '../Button/Button';
+import Link from '../Link/Link';
 
 interface AcademyLocationSectionProps {
     academies: AcademyModel[]
@@ -36,7 +37,7 @@ function AcademyLocation(academy: AcademyModel) {
                 <h1>{academy.date}</h1>
                 <a target="_blank" className={styles.location} href={academy.locationUrl}>{academy.location}</a>
                 <span className={styles.slots}>{academy.slots} students</span>
-                <Button>Registration</Button>
+                <Link external url="http://www.vg.no">Registration</Link>
             </div>
         </div>
     )

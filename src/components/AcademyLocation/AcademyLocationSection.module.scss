@@ -79,7 +79,7 @@
 }
 
 .oslo {
-    margin-left: -110%;
+    margin-left: -90%;
 }
 
 .bergen {
@@ -90,8 +90,42 @@
     margin-left: -50%;
 }
 
-@media only screen and (max-width: $screen-xs) {
+@media only screen and (max-width: 80rem) {
     .locations {
         grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .card {
+        max-width: 30rem;
+        width: auto;    
+    }
+}
+
+@media only screen and (max-width: $screen-sm) {
+    .locations {
+        grid-template-columns: 1fr;
+        justify-items: normal;
+    }
+    .card {
+        max-width: none;
+        height: 30rem;
+        .imageBox {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+        .contentBox {
+            h1 {
+                font-size: 1rem;
+            }
+        }
+        .location {
+            font-size: 1rem;
+            color: white;
+            margin: 0.5rem;
+        }
+        .slots {
+            font-size: 1rem;
+        }
     }
 }

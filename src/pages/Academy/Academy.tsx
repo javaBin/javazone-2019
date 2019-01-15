@@ -5,8 +5,6 @@ import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { AcademyModel } from '../../core/models/Academy';
 import { AcademyLocationSection } from '../../components/AcademyLocation/AcademyLocationSection';
 import { Section } from '../../components/Section/Section';
-import { AcademyProgram } from '../../components/AcademyProgram/AcademyProgram';
-import { ImageSection } from '../../components/ImageSection/ImageSection';
 
 const academies: AcademyModel[] = [
     {
@@ -16,7 +14,7 @@ const academies: AcademyModel[] = [
         date: '12th February',
         slots: 80,
         registrationUrl: '',
-        imageUrl: 'academy_teknologihuset.jpg'
+        imageUrl: 'https://storage.googleapis.com/javazone-assets/images/academy_teknologihuset.jpg'
     },
     {
         name: 'Bergen',
@@ -63,7 +61,6 @@ export function Academy() {
             <Seperator />
             <CenterSection header={<h1>Program & speakers</h1>}>
                 <p>A detailed overview of the program and speakers will be available soon.</p>
-{/*                 <AcademyProgram /> */}
             </CenterSection>
             <CenterSection header={<h1>Partners</h1>}>
                 <p>The partners for the JavaZone Academy will be posted here in the upcoming weeks.</p>
