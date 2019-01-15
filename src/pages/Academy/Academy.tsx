@@ -46,7 +46,7 @@ export function Academy() {
                     Are you a student? Interested in IT? Come join us for JavaZone Academy. JavaZone Academy is a free event for students in Norway, where we invite you to take part in the JavaZone experience.
                 </p>
                 <p>
-                    We will bring great talks, food, mingling and great partners to <strong>Oslo</strong>, <strong>Bergen</strong> and <strong>Tromsø</strong>. Join us for a great evening!
+                    We will bring great talks, food, mingling, and great partners to <strong>Oslo</strong>, <strong>Bergen</strong>, and <strong>Tromsø</strong>. Join us for a great evening!
                 </p>
                 <p>
                     A detailed program and more information will be soon posted here. Watch this space!
@@ -54,7 +54,7 @@ export function Academy() {
             </CenterSection>
             <Section header={<h1>How do I register?</h1>}>
                 <p>
-                   Fill in the form by clicking the "Registration" link below for your prefered town. We’ll contact you as soon as possible with information about whether you got a spot. The events are usually quite popular, so make sure to registrer as soon as possible.
+                   Fill in the form by clicking the "Registration" link below for your preferred town. We’ll contact you as soon as possible with information about whether you got a spot. The events are usually quite popular, so make sure to register as soon as possible.
                 </p> 
             </Section>
             <AcademyLocationSection academies={academies} />
