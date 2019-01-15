@@ -16,7 +16,7 @@ const academies: AcademyModel[] = [
         date: '12th February',
         slots: 80,
         registrationUrl: '',
-        imageUrl: 'http://www.teknologihuset.no/uploads/th_ekst-img_3679-1440x575.jpg'
+        imageUrl: 'academy_teknologihuset.jpg'
     },
     {
         name: 'Bergen',
