@@ -15,12 +15,12 @@ deploy:
   keyfile: web-jz-test-sa.json
   project: web-test-2019-javazone-no
   on: develop
-# - provider: gae
-#   skip_cleanup: true
-#   config: app-prod.yaml
-#   keyfile: web-jz-prod-sa.json
-#   project: web-2019-javazone-no
-#   on: master
+- provider: gae
+  skip_cleanup: true
+  config: app-prod.yaml
+  keyfile: web-jz-prod-sa.json
+  project: web-2019-javazone-no
+  on: master
 before_install:
 - openssl aes-256-cbc -K $encrypted_889fcfe41a2c_key -iv $encrypted_889fcfe41a2c_iv -in gcp.tar.enc -out gcp.tar -d
 - tar xvf gcp.tar
