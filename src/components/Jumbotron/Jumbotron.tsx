@@ -13,10 +13,8 @@ export function Jumbotron(props: JumbotronProps) {
 
     const canPlayWebm = useCanPlayVideoType('webm');
     useEffect(() => {
-        setTimeout(() => {
-            const vid = document.getElementById('backgroundLapse') as HTMLVideoElement;
-            vid.play();
-        }, 4000);
+        const vid = document.getElementById('backgroundLapse') as HTMLVideoElement;
+        vid.play();
     });
 
     return (
