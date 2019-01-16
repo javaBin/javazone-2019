@@ -1,7 +1,5 @@
 runtime: nodejs8
 
-env: flex
-
 handlers:
 - url: /(.*\.(gif|png|jpg|css|js|svg)(|\.map))$
   static_files: build/\1
