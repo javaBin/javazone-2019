@@ -16,13 +16,13 @@ export function Jumbotron(props: JumbotronProps) {
         setTimeout(() => {
             const vid = document.getElementById('backgroundLapse') as HTMLVideoElement;
             vid.play();
-        }, 500);
+        }, 4000);
     });
 
     return (
         <div className={styles.jumbotron}>
             <Suspense fallback={<img src="splash.jpg" />}>
-                <video playsInline muted loop poster="splash.jpg" id="backgroundLapse">
+                <video muted loop style={{background: "transparent no-repeat url('splash.jpg')", backgroundSize: "100%"}} className={styles.poster} id="backgroundLapse">
                     <VideoSource canPlayWebm={canPlayWebm} />
                     Your browser does not support HTML5 video.
                 </video>
