@@ -24,3 +24,5 @@ yarn-error.log*
 
 # gcp
 web-jz-test-sa.json
+web-jz-prod-sa.json
+gcp.tar
