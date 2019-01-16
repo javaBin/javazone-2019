@@ -13,7 +13,7 @@ const academies: AcademyModel[] = [
         locationUrl: 'http://www.teknologihuset.no/',
         date: '12th February',
         slots: 80,
-        registrationUrl: '',
+        registrationUrl: 'https://goo.gl/forms/1He9hzOMfKuRUVTg1',
         imageUrl: 'https://storage.googleapis.com/javazone-assets/images/academy_teknologihuset.jpg'
     },
     {
@@ -22,7 +22,7 @@ const academies: AcademyModel[] = [
         locationUrl: 'https://kvarteret.no/',
         date: '13th February',
         slots: 80,
-        registrationUrl: '',
+        registrationUrl: 'https://goo.gl/forms/2PyxrN4sbEOE0jls1',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Det_Akademiske_Kvarter.JPG'
     },
     {
@@ -31,7 +31,7 @@ const academies: AcademyModel[] = [
         locationUrl: 'https://www.uit.no/startsida',
         date: '14th February',
         slots: 80,
-        registrationUrl: '',
+        registrationUrl: 'https://goo.gl/forms/NJi8tlRqGGb0Z6WD3',
         imageUrl: 'http://res.cloudinary.com/simpleview/image/upload/v1451482793/clients/norway/northern-lights-tromso-norway_2-1_a8b03e36-f1cd-46be-939e-ebf6d70c41e2.jpg'
     }
 ];
