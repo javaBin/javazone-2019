@@ -41,7 +41,7 @@ export function Academy() {
         <>
             <PageBanner header="JavaZone Academy" subHeader="A free taste of JavaZone for IT-students!" imageName="academy" />
             <Seperator />
-            <CenterSection header={<h1>Come join is in february</h1>}>
+            <CenterSection header={<h1>Come join us in february</h1>}>
                 <p>
                     Are you a student? Interested in IT? Come join us for JavaZone Academy. JavaZone Academy is a free event for students in Norway, where we invite you to take part in the JavaZone experience.
                 </p>
