@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { PageBanner } from '../../components/PageBanner/PageBanner';
 import { Seperator } from '../../components/Seperator/Seperator';
 import { CenterSection } from '../../components/CenterSection/CenterSection';

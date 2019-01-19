@@ -15,7 +15,6 @@ export function ButtonGroup(props: ButtonGroupProps) {
     const [activeButton, setActiveButton] = useState({name: '', key: -1});
     function handleClick(child: ReactElement<any>, key: number) {
         const activeButton = {name: child.props.children, key};
-        console.log('active', activeButton);
         setActiveButton(activeButton);
         props.activeButton(activeButton);
     }
@@ -25,7 +24,7 @@ export function ButtonGroup(props: ButtonGroupProps) {
                 return React.cloneElement(child, {
                     key: index,
                     onClick: () => handleClick(child, index),
-                    className: index === activeButton.key ? 'active' : '' 
+                    className: index === activeButton.key ? styles.active : '' 
                 });
             })}
         </div>

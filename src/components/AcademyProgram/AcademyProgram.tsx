@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './AcademyProgram.module.scss';
 import { ButtonGroup, ActiveButton } from '../Button/ButtonGroup';
 
@@ -7,8 +7,9 @@ interface AcademyProgramProps {
 }
 
 export function AcademyProgram(props: AcademyProgramProps) {
+    const [selectedCity, setSelectedCity] = useState({name: '', key: -1} as ActiveButton)
     function activeButton(button: ActiveButton) {
-        console.log('her?', button);
+        setSelectedCity(button);
     }
     return (
         <div className={styles.section}>

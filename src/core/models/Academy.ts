@@ -1,3 +1,4 @@
+import { AcademyProgram } from "./AcademyProgram";
 
 export interface AcademyModel {
     name: string;
@@ -7,4 +8,5 @@ export interface AcademyModel {
     slots: number;
     registrationUrl: string;
     imageUrl: string;
+    program: AcademyProgram;
 }

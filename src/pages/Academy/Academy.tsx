@@ -1,10 +1,162 @@
-import * as React from 'react';
+import React from 'react';
 import { PageBanner } from '../../components/PageBanner/PageBanner';
 import { Seperator } from '../../components/Seperator/Seperator';
 import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { AcademyModel } from '../../core/models/Academy';
 import { AcademyLocationSection } from '../../components/AcademyLocation/AcademyLocationSection';
 import { Section } from '../../components/Section/Section';
+import { AcademyProgram } from '../../components/AcademyProgram/AcademyProgram';
+import { AcademyProgram as Program } from '../../core/models/AcademyProgram';
+
+const academyProgram: Program[] = [
+    {
+        city: 'Oslo',
+        scheduleSlot: [
+            {
+                title: 'Doors open',
+                time: '1130'
+            },
+            {
+                title: 'Intro',
+                time: '1200-1245'
+            },
+            {
+                title: 'It\'s about time',
+                time: '1245-1330',
+                speaker: 'Christin Gorman'
+            },
+            {
+                title: 'Break',
+                time: '1330-1400'
+            },
+            {
+                title: 'Hallo, hører du meg? Slutten på kleine videosamtaler takket være kode',
+                time: '1400-1445',
+                speaker: 'Ingvild Indrebø'
+            },
+            {
+                title: 'Break',
+                time: '1445-1530'
+            },
+            {
+                title: 'A Brief History of Computer Art',
+                time: '1530-1630',
+                speaker: 'Anders Norås'
+            },
+            {
+                title: 'Break',
+                time: '1630-1700'
+            },
+            {
+                title: 'Feltrapport fra en systemarkeolog',
+                time: '1700-1800',
+                speaker: 'Hilde Nøkland'
+            },
+            {
+                title: 'AweZone Party',
+                time: '1800-∞'
+            }
+        ]
+    },
+    {
+        city: 'Bergen',
+        scheduleSlot: [
+            {
+                title: 'Doors open',
+                time: '1130'
+            },
+            {
+                title: 'Intro',
+                time: '1200-1245'
+            },
+            {
+                title: '',
+                time: '1245-1330',
+                speaker: ''
+            },
+            {
+                title: 'Break',
+                time: '1330-1400'
+            },
+            {
+                title: '',
+                time: '1400-1445',
+                speaker: ''
+            },
+            {
+                title: 'Break',
+                time: '1445-1530'
+            },
+            {
+                title: '',
+                time: '1530-1630',
+                speaker: ''
+            },
+            {
+                title: 'Break',
+                time: '1630-1700'
+            },
+            {
+                title: '',
+                time: '1700-1800',
+                speaker: ''
+            },
+            {
+                title: 'AweZone Party',
+                time: '1800-∞'
+            }
+        ]
+    },
+    {
+        city: 'Tromsø',
+        scheduleSlot: [
+            {
+                title: 'Doors open',
+                time: '1130'
+            },
+            {
+                title: 'Intro',
+                time: '1200-1245'
+            },
+            {
+                title: '',
+                time: '1245-1330',
+                speaker: ''
+            },
+            {
+                title: 'Break',
+                time: '1330-1400'
+            },
+            {
+                title: '',
+                time: '1400-1445',
+                speaker: ''
+            },
+            {
+                title: 'Break',
+                time: '1445-1530'
+            },
+            {
+                title: '',
+                time: '1530-1630',
+                speaker: ''
+            },
+            {
+                title: 'Break',
+                time: '1630-1700'
+            },
+            {
+                title: '',
+                time: '1700-1800',
+                speaker: ''
+            },
+            {
+                title: 'AweZone Party',
+                time: '1800-∞'
+            }
+        ]
+    }
+]
 
 const academies: AcademyModel[] = [
     {
@@ -14,7 +166,8 @@ const academies: AcademyModel[] = [
         date: '12th February',
         slots: 80,
         registrationUrl: 'https://goo.gl/forms/1He9hzOMfKuRUVTg1',
-        imageUrl: 'https://storage.googleapis.com/javazone-assets/images/academy_teknologihuset.jpg'
+        imageUrl: 'https://storage.googleapis.com/javazone-assets/images/academy_teknologihuset.jpg',
+        program: academyProgram[0]
     },
     {
         name: 'Bergen',
@@ -23,7 +176,8 @@ const academies: AcademyModel[] = [
         date: '13th February',
         slots: 80,
         registrationUrl: 'https://goo.gl/forms/2PyxrN4sbEOE0jls1',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Det_Akademiske_Kvarter.JPG'
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Det_Akademiske_Kvarter.JPG',
+        program: academyProgram[1]
     },
     {
         name: 'Tromsø',
@@ -32,9 +186,12 @@ const academies: AcademyModel[] = [
         date: '14th February',
         slots: 80,
         registrationUrl: 'https://goo.gl/forms/NJi8tlRqGGb0Z6WD3',
-        imageUrl: 'http://res.cloudinary.com/simpleview/image/upload/v1451482793/clients/norway/northern-lights-tromso-norway_2-1_a8b03e36-f1cd-46be-939e-ebf6d70c41e2.jpg'
+        imageUrl: 'http://res.cloudinary.com/simpleview/image/upload/v1451482793/clients/norway/northern-lights-tromso-norway_2-1_a8b03e36-f1cd-46be-939e-ebf6d70c41e2.jpg',
+        program: academyProgram[2]
     }
-];
+]
+
+
 
 export function Academy() {
     return (
@@ -59,11 +216,8 @@ export function Academy() {
             </Section>
             <AcademyLocationSection academies={academies} />
             <Seperator />
-            <CenterSection header={<h1>Program & speakers</h1>}>
-                <p>A detailed overview of the program and speakers will be available soon.</p>
-            </CenterSection>
-            <CenterSection header={<h1>Partners</h1>}>
-                <p>The partners for the JavaZone Academy will be posted here in the upcoming weeks.</p>
+            <CenterSection header={<h1>Program, speakers and partners</h1>}>
+                <AcademyProgram />
             </CenterSection>
         </>
     )
