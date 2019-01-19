@@ -9,17 +9,19 @@ import { Partners } from './pages/Partners/Partners';
 import { Academy } from './pages/Academy/Academy';
 import { CookieDisclaimer } from './components/CookieDisclaimer/CookieDisclaimer';
 import { NotFound } from './pages/NotFound/NotFound';
+import {Kids} from "./pages/Kids/Kids";
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info'},
   {title: 'Partners', url: '/partners'},
   {title: 'Academy', url: '/academy'},
+  {title: 'Kids', url: '/kids'},
 ];
 
 const ScrollToTop = () => {
   window.scrollTo(0, 0);
   return null;
-}
+};
 
 class App extends React.Component {
   public render() {
@@ -34,6 +36,7 @@ class App extends React.Component {
             {/* <Route exact path="/tickets" component={Tickets} /> */}
             <Route exact path="/partners" component={Partners} />
             <Route exact path="/academy" component={Academy} />
+            <Route exact path="/kids" component={Kids} />
             <Route component={NotFound} />
           </Switch>
           <Footer routes={routes} />
