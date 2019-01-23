@@ -1,9 +1,47 @@
 @import '../../variables.scss';
 
-.program {
+.container {
+    margin-top: 2rem;
+    box-sizing: border-box;
     background: black;
     width: 100%;
-    height: 100px;
+    padding: 2rem;
+    height: auto;
+}
+
+.program {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    h2 {
+        margin: 0;
+    }
+}
+
+.speaker {
+    color: $color-logo-orange;
+}
+
+.partner {
+    width: 15rem;
+    @media only screen and (max-width: $screen-sm) {
+        width: 12rem;
+    }
+}
+
+.time {
+    min-width: 12rem;
+    text-align: start;
+    min-height: 4rem;
+}
+
+.description {
+    width: 100%;
+    text-align: start;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .active {

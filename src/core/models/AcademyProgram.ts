@@ -1,6 +1,7 @@
 import { ScheduleSlot } from "./ScheduleSlot";
 
 export interface AcademyProgram {
-    city: string;
-    scheduleSlot: ScheduleSlot[];
+    title: string;
+    sponsors: {name: string, url: string}[];
+    program: {title: string, time: string, speaker?: string}[];
 }

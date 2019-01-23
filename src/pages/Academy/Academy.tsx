@@ -10,149 +10,191 @@ import { AcademyProgram as Program } from '../../core/models/AcademyProgram';
 
 const academyProgram: Program[] = [
     {
-        city: 'Oslo',
-        scheduleSlot: [
+        title: "oslo",
+        sponsors: [
             {
-                title: 'Doors open',
-                time: '1130'
+                name: "Vipps",
+                url: "https://www.vipps.no/"
             },
             {
-                title: 'Intro',
-                time: '1200-1245'
+                name: "Sysco",
+                url: "https://sysco.no/"
             },
             {
-                title: 'It\'s about time',
-                time: '1245-1330',
-                speaker: 'Christin Gorman'
+                name: "Sportradar",
+                url: "https://www.sportradar.com/"
             },
             {
-                title: 'Break',
-                time: '1330-1400'
+                name: "Tripletex",
+                url: "https://www.tripletex.no/"
             },
             {
-                title: 'Hallo, hører du meg? Slutten på kleine videosamtaler takket være kode',
-                time: '1400-1445',
-                speaker: 'Ingvild Indrebø'
+                name: "Kantega",
+                url: "https://www.kantega.no/"
             },
             {
-                title: 'Break',
-                time: '1445-1530'
+                name: "Netcompany",
+                url: "https://www.netcompany.com/no"
+            }
+        ],
+        program: [
+            {
+                "time": "11:30",
+                "title": "Doors open"
             },
             {
-                title: 'A Brief History of Computer Art',
-                time: '1530-1630',
-                speaker: 'Anders Norås'
+                "time": "12:00 - 12:30",
+                "title": "Introduction"
             },
             {
-                title: 'Break',
-                time: '1630-1700'
+                "time": "12:30 - 13:30",
+                "title": "It's about time",
+                "speaker": "Christin Gorman"
             },
             {
-                title: 'Feltrapport fra en systemarkeolog',
-                time: '1700-1800',
-                speaker: 'Hilde Nøkland'
+                "time": "13:30 - 14:00",
+                "title": "Break"
             },
             {
-                title: 'AweZone Party',
-                time: '1800-∞'
+                "time": "14:00 - 15:00",
+                "title": "Hallo, hører du meg? Slutten på kleine videosamtaler takket være kode",
+                "speaker": "Ingvild Indrebø"
+            },
+            {
+                "time": "15:00 - 15:30",
+                "title": "Break"
+            },
+            {
+                "time": "15:30 - 16:30",
+                "title": "A Brief History of Computer Art.",
+                "speaker": "Anders Norås"
+            },
+            {
+                "time": "16:30 - 17:00",
+                "title": "Break"
+            },
+            {
+                "time": "17:00 - 18:00",
+                "title": "Feltrapport fra en systemarkeolog",
+                "speaker": "Hilde Nøkland"
+            },
+            {
+                "time": "18:00 - ∞",
+                "title": "Party"
             }
         ]
     },
     {
-        city: 'Bergen',
-        scheduleSlot: [
+        title: "bergen",
+        sponsors: [
             {
-                title: 'Doors open',
-                time: '1130'
+                name: "Kantega",
+                url: "https://www.kantega.no/"
             },
             {
-                title: 'Intro',
-                time: '1200-1245'
+                name: "Ambita",
+                url: "https://www.ambita.com/"
+            }
+        ],
+        program: [
+            {
+                "time": "11:30",
+                "title": "Doors open"
             },
             {
-                title: '',
-                time: '1245-1330',
-                speaker: ''
+                "time": "12:00 - 12:30",
+                "title": "Introduction"
             },
             {
-                title: 'Break',
-                time: '1330-1400'
+                "time": "12:30 - 13:30",
+                "title": "A Brief History of Computer Art.",
+                "speaker": "Anders Norås"
             },
             {
-                title: '',
-                time: '1400-1445',
-                speaker: ''
+                "time": "13:30 - 14:00",
+                "title": "Break"
             },
             {
-                title: 'Break',
-                time: '1445-1530'
+                "time": "14:00 - 15:00",
+                "title": "Open Source all the offentlig things! - men hvordan gjør vi det i NAV?",
+                "speaker": "Audun Fauchald Strand, Truls Jørgensen"
             },
             {
-                title: '',
-                time: '1530-1630',
-                speaker: ''
+                "time": "15:00 - 15:30",
+                "title": "Break"
             },
             {
-                title: 'Break',
-                time: '1630-1700'
+                "time": "15:30 - 16:30",
+                "title": "Feltrapport fra en systemarkeolog",
+                "speaker": "Hilde Nøkland"
             },
             {
-                title: '',
-                time: '1700-1800',
-                speaker: ''
+                "time": "16:30 - 17:00",
+                "title": "Break"
             },
             {
-                title: 'AweZone Party',
-                time: '1800-∞'
+                "time": "17:00 - 18:00",
+                "title": "Skikkelig garasje-IT: Hvordan lage system som kjører på P-hus",
+                "speaker": "Stian Mathiassen"
+            },
+            {
+                "time": "18:00 - ∞",
+                "title": "Party"
             }
         ]
     },
     {
-        city: 'Tromsø',
-        scheduleSlot: [
+        title: "tromsø",
+        sponsors: [
             {
-                title: 'Doors open',
-                time: '1130'
+                name: "Sysco",
+                url: "https://sysco.no/"
+            }
+        ],
+        program: [
+            {
+                "time": "11:30",
+                "title": "Doors open"
             },
             {
-                title: 'Intro',
-                time: '1200-1245'
+                "time": "12:00 - 12:30",
+                "title": "Introduction"
             },
             {
-                title: '',
-                time: '1245-1330',
-                speaker: ''
+                "time": "12:30 - 13:30",
+                "title": "Hallo, hører du meg? Slutten på kleine videosamtaler takket være kode",
+                "speaker": "Ingvild Indrebø"
             },
             {
-                title: 'Break',
-                time: '1330-1400'
+                "time": "13:30 - 14:00",
+                "title": "Break"
             },
             {
-                title: '',
-                time: '1400-1445',
-                speaker: ''
+                "time": "14:00 - 15:00",
+                "title": "A Brief History of Computer Art.",
+                "speaker": "Anders Norås"
             },
             {
-                title: 'Break',
-                time: '1445-1530'
+                "time": "15:00 - 15:30",
+                "title": "Break"
             },
             {
-                title: '',
-                time: '1530-1630',
-                speaker: ''
+                "time": "15:30 - 16:30",
+                "title": "Open Source all the offentlig things! - men hvordan gjør vi det i NAV?",
+                "speaker": "Audun Fauchald Strand, Truls Jørgensen"
             },
             {
-                title: 'Break',
-                time: '1630-1700'
+                "time": "16:30 - 17:00",
+                "title": "Break"
             },
             {
-                title: '',
-                time: '1700-1800',
-                speaker: ''
+                "time": "17:00 - 18:00",
+                "title": "Skikkelig garasje-IT: Hvordan lage system som kjører på P-hus",
+                "speaker": "Stian Mathiassen"
             },
             {
-                title: 'AweZone Party',
-                time: '1800-∞'
+                "time": "18:00 - ∞",
+                "title": "Party"
             }
         ]
     }
@@ -166,8 +208,7 @@ const academies: AcademyModel[] = [
         date: '12th February',
         slots: 80,
         registrationUrl: 'https://goo.gl/forms/1He9hzOMfKuRUVTg1',
-        imageUrl: 'https://storage.googleapis.com/javazone-assets/images/academy_teknologihuset.jpg',
-        program: academyProgram[0]
+        imageUrl: 'https://storage.googleapis.com/javazone-assets/images/academy_teknologihuset.jpg'
     },
     {
         name: 'Bergen',
@@ -176,8 +217,7 @@ const academies: AcademyModel[] = [
         date: '13th February',
         slots: 80,
         registrationUrl: 'https://goo.gl/forms/2PyxrN4sbEOE0jls1',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Det_Akademiske_Kvarter.JPG',
-        program: academyProgram[1]
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Det_Akademiske_Kvarter.JPG'
     },
     {
         name: 'Tromsø',
@@ -186,8 +226,7 @@ const academies: AcademyModel[] = [
         date: '14th February',
         slots: 80,
         registrationUrl: 'https://goo.gl/forms/NJi8tlRqGGb0Z6WD3',
-        imageUrl: 'http://res.cloudinary.com/simpleview/image/upload/v1451482793/clients/norway/northern-lights-tromso-norway_2-1_a8b03e36-f1cd-46be-939e-ebf6d70c41e2.jpg',
-        program: academyProgram[2]
+        imageUrl: 'http://res.cloudinary.com/simpleview/image/upload/v1451482793/clients/norway/northern-lights-tromso-norway_2-1_a8b03e36-f1cd-46be-939e-ebf6d70c41e2.jpg'
     }
 ]
 
@@ -217,7 +256,7 @@ export function Academy() {
             <AcademyLocationSection academies={academies} />
             <Seperator />
             <CenterSection header={<h1>Program, speakers and partners</h1>}>
-                <AcademyProgram />
+                <AcademyProgram program={academyProgram} />
             </CenterSection>
         </>
     )

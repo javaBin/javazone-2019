@@ -8,5 +8,4 @@ export interface AcademyModel {
     slots: number;
     registrationUrl: string;
     imageUrl: string;
-    program: AcademyProgram;
 }
