@@ -12,9 +12,12 @@
 .program {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    margin-bottom: 1rem;
     h2 {
         margin: 0;
+    }
+    @media only screen and (max-width: $screen-sm) {
+        flex-wrap: wrap;
     }
 }
 
@@ -32,7 +35,6 @@
 .time {
     min-width: 12rem;
     text-align: start;
-    min-height: 4rem;
 }
 
 .description {
