@@ -53,6 +53,7 @@ export function AcademyProgram(props: AcademyProgramProps) {
                     {selectedPartners.map(partner => {
                         return <PartnerImage key={partner.name} name={partner.name} url={partner.homepageUrl} />
                     })}
+                    <div className={styles.partnerAir}></div>
                     {selectedProgram.schedule.map((slot, index) => {
                         return <ProgramSlot key={index} title={slot.title} time={slot.time} speaker={slot.speakers} />
                     })}
