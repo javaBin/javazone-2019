@@ -11,7 +11,7 @@ import VideoSource from '../../components/Jumbotron/VideoSource';
 import { useCanPlayVideoType } from '../../core/hooks/UseCanPlayVideoType';
 import { PartnerPriceList, PartnerPrice } from '../../components/PartnerPrices/PartnerPrices';
 
-export function Partners() {
+export function PartnersPage() {
     const canPlayWebm = useCanPlayVideoType('webm');
     return (
         <>

@@ -1,6 +1,6 @@
-import { Sponsor } from '../models';
+import { Partner } from '../models';
 
-export const sponsors: Sponsor[] = [
+export const partners: Partner[] = [
     {
         name: 'Vipps',
         homepageUrl: 'https://www.vipps.no/'
@@ -24,5 +24,9 @@ export const sponsors: Sponsor[] = [
     {
         name: 'Netcompany',
         homepageUrl: 'https://www.netcompany.com/no'
+    },
+    {
+        name: 'Ambita',
+        homepageUrl: 'https://www.ambita.com/'
     }
 ]

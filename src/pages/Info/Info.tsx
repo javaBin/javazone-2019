@@ -5,7 +5,7 @@ import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { Seperator } from '../../components/Seperator/Seperator';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
 
-export function Info() {
+export function InfoPage() {
     return (
         <>
             <PageBanner header="Another year, another JavaZone!" subHeader="September 11th - 12th, 2019" imageName="2018/180913_JavaZone_0010" />

@@ -1,1 +1,2 @@
-export * from './Sponsors.data';
+export * from './Partners.data';
+export * from './Academies.data';

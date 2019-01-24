@@ -1,1 +1,3 @@
-export * from './Sponsor.model';
+export * from './Partner.model';
+export * from './Academy.model';
+export * from './AcademyProgram.model';

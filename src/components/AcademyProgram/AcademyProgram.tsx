@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import styles from './AcademyProgram.module.scss';
 import { ButtonGroup, ActiveButton } from '../Button/ButtonGroup';
-import { AcademyProgram as Program } from '../../core/models/AcademyProgram';
+import { AcademyProgram as Program } from '../../core/models/AcademyProgram.model';
+import { Partner } from '../../core/models';
 
 interface AcademyProgramProps {
+    partners: Partner[][];
     program: Program[];
 }
 
@@ -21,7 +23,7 @@ function ProgramSlot(props: {title: string, time: string, speaker?: string}) {
     )
 }
 
-function Partner(props: {name: string, url: string}) {
+function PartnerImage(props: {name: string, url: string}) {
     const partnerImage = `https://storage.googleapis.com/javazone-assets/logos/${props.name.toLocaleLowerCase()}.svg`;
     return (
         <a target="_blank" href={props.url}>
@@ -33,9 +35,11 @@ function Partner(props: {name: string, url: string}) {
 export function AcademyProgram(props: AcademyProgramProps) {
     const [selectedCity, setSelectedCity] = useState({name: '', key: -1} as ActiveButton)
     const [selectedProgram, setSelectedProgram] = useState({} as Program);
+    const [selectedPartners, setSelectedPartners] = useState([] as Partner[]);
     function activeButton(button: ActiveButton) {
         setSelectedCity(button);
         setSelectedProgram(props.program[button.key]);
+        setSelectedPartners(props.partners[button.key]);
     }
     return (
         <div>
@@ -46,11 +50,11 @@ export function AcademyProgram(props: AcademyProgramProps) {
             </ButtonGroup>
             {!!selectedCity.name
                 ? <div className={styles.container}>
-                    {selectedProgram.sponsors.map(sponsor => {
-                        return <Partner key={sponsor.name} name={sponsor.name} url={sponsor.url} />
+                    {selectedPartners.map(partner => {
+                        return <PartnerImage key={partner.name} name={partner.name} url={partner.homepageUrl} />
                     })}
-                    {selectedProgram.program.map((slot, index) => {
-                        return <ProgramSlot key={index} title={slot.title} time={slot.time} speaker={slot.speaker} />
+                    {selectedProgram.schedule.map((slot, index) => {
+                        return <ProgramSlot key={index} title={slot.title} time={slot.time} speaker={slot.speakers} />
                     })}
                 </div>
                 : null
