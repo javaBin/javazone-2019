@@ -1,12 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
 import styles from './AcademyLocationSection.module.scss';
-import { AcademyModel } from '../../core/models/Academy';
-import { Button } from '../Button/Button';
+import { Academy } from '../../core/models/Academy.model';
 import Link from '../Link/Link';
 
 interface AcademyLocationSectionProps {
-    academies: AcademyModel[]
+    academies: Academy[]
 }
 
 export function AcademyLocationSection(props: AcademyLocationSectionProps) {
@@ -21,7 +20,7 @@ export function AcademyLocationSection(props: AcademyLocationSectionProps) {
     )
 }
 
-function AcademyLocation(academy: AcademyModel) {
+function AcademyLocation(academy: Academy) {
     const classes = classnames(
         {[styles.oslo]: academy.name === 'Oslo'},
         {[styles.bergen]: academy.name === 'Bergen'},

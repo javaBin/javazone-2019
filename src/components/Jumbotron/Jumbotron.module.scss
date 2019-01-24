@@ -47,17 +47,9 @@
         width: auto;
         height: auto;
         z-index: -100;
-        -ms-transform: translateX(-50%) translateY(-50%);
-        -moz-transform: translateX(-50%) translateY(-50%);
-        -webkit-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%);
         background-size: cover; 
         filter: brightness(25%);
         object-fit: cover;
     }
-}
-
-.poster {
-    // background: transparent no-repeat url('../../../public/splash.jpg');
-    // background-size:100%;
 }

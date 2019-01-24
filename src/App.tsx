@@ -1,14 +1,13 @@
 import React, { createContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation, { NavRoute } from './components/Navigation/Navigation';
-import { Frontpage } from './pages/Frontpage/Frontpage';
+import { FrontPage } from './pages/Frontpage/Frontpage';
 import Footer from './components/Footer/Footer';
-import { Info } from './pages/Info/Info';
-import { Tickets } from './pages/Tickets/Tickets';
-import { Partners } from './pages/Partners/Partners';
-import { Academy } from './pages/Academy/Academy';
+import { InfoPage } from './pages/Info/Info';
+import { PartnersPage } from './pages/Partners/Partners';
+import { AcademyPage } from './pages/Academy/Academy';
 import { CookieDisclaimer } from './components/CookieDisclaimer/CookieDisclaimer';
-import { NotFound } from './pages/NotFound/NotFound';
+import { NotFoundPage } from './pages/NotFound/NotFound';
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info'},
@@ -29,12 +28,12 @@ class App extends React.Component {
           <Navigation sticky routes={routes} />
           <Route component={ScrollToTop}></Route>
           <Switch>
-            <Route exact path="/" component={Frontpage} />
-            <Route exact path="/info" component={Info} />
+            <Route exact path="/" component={FrontPage} />
+            <Route exact path="/info" component={InfoPage} />
             {/* <Route exact path="/tickets" component={Tickets} /> */}
-            <Route exact path="/partners" component={Partners} />
-            <Route exact path="/academy" component={Academy} />
-            <Route component={NotFound} />
+            <Route exact path="/partners" component={PartnersPage} />
+            <Route exact path="/academy" component={AcademyPage} />
+            <Route component={NotFoundPage} />
           </Switch>
           <Footer routes={routes} />
           <CookieDisclaimer>

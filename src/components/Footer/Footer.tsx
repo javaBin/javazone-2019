@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styles from './Footer.module.scss';
 import { useIsFrontpage } from '../../core/hooks/UseIsFrontpage';
 import { RouteComponentProps, withRouter } from 'react-router';

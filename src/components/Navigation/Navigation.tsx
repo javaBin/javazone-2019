@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import * as React from 'react';
+import React from 'react';
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import styles from './Navigation.module.scss';
 import { useRef, useEffect, useState } from 'react';
