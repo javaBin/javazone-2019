@@ -34,14 +34,26 @@
         color: white;
         background: $color-logo-red-dark;
     }
+    @media only screen and (max-width: $screen-xxs) {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
 }
 
 .buttonGroup button:not(:last-child) {
     border-right: none;
+    @media only screen and (max-width: $screen-xxs) {
+        border-right: 2px solid $color-logo-red;
+        border-bottom: none;
+    }
 }
 
 .buttonGroup button:last-child {
     border-radius: 0 3px 3px 0;
+    @media only screen and (max-width: $screen-xxs) {
+        border-radius: 0 0 3px 3px;
+    }
 }
 
 .buttonGroup button:not(:first-child):not(:last-child) {
@@ -50,6 +62,9 @@
 
 .buttonGroup button:first-child {
     border-radius: 3px 0 0 3px;
+    @media only screen and (max-width: $screen-xxs) {
+        border-radius: 3px 3px 0 0;
+    }
 }
 
 .buttonGroup > button:hover {
