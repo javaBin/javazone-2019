@@ -50,10 +50,11 @@ export function AcademyProgram(props: AcademyProgramProps) {
             </ButtonGroup>
             {!!selectedCity.name
                 ? <div className={styles.container}>
-                    {selectedPartners.map(partner => {
-                        return <PartnerImage key={partner.name} name={partner.name} url={partner.homepageUrl} />
-                    })}
-                    <div className={styles.partnerAir}></div>
+                    <div className={styles.partnerAir}>
+                        {selectedPartners.map(partner => {
+                            return <PartnerImage key={partner.name} name={partner.name} url={partner.homepageUrl} />
+                        })}
+                    </div>
                     {selectedProgram.schedule.map((slot, index) => {
                         return <ProgramSlot key={index} title={slot.title} time={slot.time} speaker={slot.speakers} />
                     })}
