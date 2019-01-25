@@ -16,14 +16,13 @@ export function CookieInfoPage() {
                     This Website uses cookies. A cookie is a small file of letters and numbers that we put on your computer. These cookies allow us to distinguish you from other users of the Website which helps us to provide you with a good experience when you browse our Website, and to improve our Website.
                 </p>
                 <p>
-                    A cookie can be classified by its lifespan and the domain to which it belongs. By lifespan, a cookie is either a:
-
+                    A cookie can be classified by its lifespan and the domain to which it belongs. By lifespan, a cookie is one of the following:
                     <List>
-                        <li>session cookie which is erased when the user closes the browser, or</li> 
+                        <li>session cookie which is erased when the user closes the browser</li> 
                         <li>persistent cookie which remains on the user's computer/device for a pre-defined period of time.</li>
                     </List>
                 </p>
-                <p>
+                <p> 
                     As for the domain to which it belongs, there are either:
                     <List>
                         <li>first-party cookies which are set by the web server of the visited page and share the same domain</li>
@@ -35,7 +34,7 @@ export function CookieInfoPage() {
                 <p>
                     The cookies we use has two main purposes:
                     <List>
-                        <li>To let you store your favorite program schedule in your browser – we don't see or collect that information from you.</li>
+                        <li>To let you store your favorite program schedule in your browser – we don't see or collect that information from you;</li>
                         <li>To see some basic information about people visiting our site – it is described in detail in the next section.</li>
                     </List>
                 </p>
