@@ -15,7 +15,6 @@ const routes: NavRoute[] = [
   {title: 'Info', url: '/info'},
   {title: 'Partners', url: '/partners'},
   {title: 'Academy', url: '/academy'},
-  {title: 'Cookies', url: '/privacy-cookies'},
 ];
 
 const ScrollToTop = () => {
