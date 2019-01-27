@@ -7,7 +7,7 @@ import { InfoPage } from './pages/Info/Info';
 import { PartnersPage } from './pages/Partners/Partners';
 import { AcademyPage } from './pages/Academy/Academy';
 import { MonetaryPolicyPage } from './pages/Speakers/MonetaryPolicy';
-import { CookieInfoPage } from './pages/CookieInfoPage/CookieInfoPage';
+import { CookieInfoPage } from './pages/CookieInfo/CookieInfo';
 import { CookieDisclaimer } from './components/CookieDisclaimer/CookieDisclaimer';
 import { InlineLink } from './components/InlineLink/InlineLink';
 import { NotFoundPage } from './pages/NotFound/NotFound';
