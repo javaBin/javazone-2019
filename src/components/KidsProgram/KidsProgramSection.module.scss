@@ -1,0 +1,47 @@
+@import '../../variables.scss';
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 1rem
+}
+
+.container {
+    text-align: center;
+    display: grid;
+    grid-template-areas: 'imgBlock content';
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 2rem;
+}
+
+@media only screen and (max-width: $screen-md) {
+    .container {
+        grid-template-columns: 100%;
+        grid-template-areas:
+                'imgBlock'
+                'content';
+        width: 100%;
+    }
+}
+
+.imgBlock{
+    width: 100%;
+}
+
+.img {
+    overflow: hidden;
+    border-radius: 50%;
+    height: 18rem;
+    width: 18rem;
+}
+
+
+.content {
+    color: white;
+    grid-area: content;
+    font-size: 1.4rem;
+    line-height: 140%;
+    text-align: initial;
+}
