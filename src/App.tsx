@@ -7,6 +7,7 @@ import { InfoPage } from './pages/Info/Info';
 import { PartnersPage } from './pages/Partners/Partners';
 import { AcademyPage } from './pages/Academy/Academy';
 import { MonetaryPolicyPage } from './pages/Speakers/MonetaryPolicy';
+import { SpeakerTipsPage } from './pages/Speakers/Tips';
 import { CookieInfoPage } from './pages/CookieInfo/CookieInfo';
 import { CookieDisclaimer } from './components/CookieDisclaimer/CookieDisclaimer';
 import { InlineLink } from './components/InlineLink/InlineLink';
@@ -36,7 +37,8 @@ class App extends React.Component {
             {/* <Route exact path="/tickets" component={Tickets} /> */}
             <Route exact path="/partners" component={PartnersPage} />
             <Route exact path="/academy" component={AcademyPage} />
-            <Route exact path="/monetary-policy" component={MonetaryPolicyPage} />
+            <Route exact path="/speakers/tips" component={SpeakerTipsPage} />
+            <Route exact path="/speakers/monetary-policy" component={MonetaryPolicyPage} />
             <Route exact path="/privacy-cookies" component={CookieInfoPage} />
             <Route component={NotFoundPage} />
           </Switch>
