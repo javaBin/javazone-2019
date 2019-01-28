@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import { InfoPage } from './pages/Info/Info';
 import { PartnersPage } from './pages/Partners/Partners';
 import { AcademyPage } from './pages/Academy/Academy';
+import { SpeakersPage } from './pages/Speakers/Speakers';
 import { MonetaryPolicyPage } from './pages/Speakers/MonetaryPolicy';
 import { SpeakerTipsPage } from './pages/Speakers/Tips';
 import { CookieInfoPage } from './pages/CookieInfo/CookieInfo';
@@ -17,6 +18,7 @@ const routes: NavRoute[] = [
   {title: 'Info', url: '/info'},
   {title: 'Partners', url: '/partners'},
   {title: 'Academy', url: '/academy'},
+  {title: 'Speakers', url: '/speakers'},
 ];
 
 const ScrollToTop = () => {
@@ -37,6 +39,7 @@ class App extends React.Component {
             {/* <Route exact path="/tickets" component={Tickets} /> */}
             <Route exact path="/partners" component={PartnersPage} />
             <Route exact path="/academy" component={AcademyPage} />
+            <Route exact path="/speakers" component={SpeakersPage} />
             <Route exact path="/speakers/tips" component={SpeakerTipsPage} />
             <Route exact path="/speakers/monetary-policy" component={MonetaryPolicyPage} />
             <Route exact path="/privacy-cookies" component={CookieInfoPage} />
