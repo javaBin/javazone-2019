@@ -4,6 +4,7 @@ import {Seperator} from "../../components/Seperator/Seperator";
 import {CenterSection} from "../../components/CenterSection/CenterSection";
 import {Section} from "../../components/Section/Section";
 import {KidsProgramSection} from "../../components/KidsProgram/KidsProgramSection";
+import {KidsSection} from "../../components/KidsProgram/KidsSection";
 
 export function Kids() {
     return (
@@ -41,7 +42,7 @@ export function Kids() {
             </Section>
             <Seperator />
 
-            <CenterSection header={<h1>Sesjoner</h1>}>
+            <KidsSection header={<h1>Sesjoner</h1>}>
                 <KidsProgramSection header={<h2>Skilpadden Tom</h2>} imageName={"kids-george"} imageType={'png'}>
                     <p>Hils på Tom! Tom er en skilpadde. Tom lærer raskt, og er god på å følge instrukser. Han er dyktig med farger og bevegelse, og gjør stort sett alt du ber ham om. I løpet av 2 timer lærer vi først å kommandere Tom. Vi får ham til å bevege seg og tegne det vi vil. Så lærer vi ham nye ord og kommandoer. Og ja; han lærer gjerne ord på hvilket som helst språk. Vi kommer også til å lære hvordan man styrer flere skilpadder samtidig. Og har vi tid, så bygger vi til og med et spill. Deretter tar du med deg det du har lært hjem – for å fortsette å utvikle dine kunnskaper og ferdigheter. Og du må gjerne dele med venner og familie, på skolen, og online.</p>
                     <p><b>8 år+</b></p>
@@ -57,7 +58,7 @@ export function Kids() {
                     <p><b>12 år+</b></p>
                 </KidsProgramSection>
 
-            </CenterSection>
+            </KidsSection>
 
             <Seperator />
             <CenterSection header={<h1>Vi sees på teknologihuset søndag 24. mars!</h1>}>
