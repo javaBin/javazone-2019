@@ -26,3 +26,5 @@ yarn-error.log*
 web-jz-test-sa.json
 web-jz-prod-sa.json
 gcp.tar
+
+.idea
