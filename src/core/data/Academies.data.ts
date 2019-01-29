@@ -16,8 +16,8 @@ export const academyPrograms: AcademyProgram[] = [
             },
             {
                 time: '12:30 - 13:30',
-                title: 'It\'s about time',
-                speakers: 'Christin Gorman'
+                title: 'A Brief History of Computer Art.',
+                speakers: 'Anders Norås'
             },
             {
                 time: '13:30 - 14:00',
@@ -34,8 +34,8 @@ export const academyPrograms: AcademyProgram[] = [
             },
             {
                 time: '15:30 - 16:30',
-                title: 'A Brief History of Computer Art.',
-                speakers: 'Anders Norås'
+                title: 'It\'s about time',
+                speakers: 'Christin Gorman'
             },
             {
                 time: '16:30 - 17:00',
@@ -65,8 +65,8 @@ export const academyPrograms: AcademyProgram[] = [
             },
             {
                 time: '12:30 - 13:30',
-                title: 'A Brief History of Computer Art.',
-                speakers: 'Anders Norås'
+                title: 'Skikkelig garasje-IT: Hvordan lage system som kjører på P-hus',
+                speakers: 'Stian Mathiassen'
             },
             {
                 time: '13:30 - 14:00',
@@ -74,8 +74,8 @@ export const academyPrograms: AcademyProgram[] = [
             },
             {
                 time: '14:00 - 15:00',
-                title: 'Open Source all the offentlig things! - men hvordan gjør vi det i NAV?',
-                speakers: 'Audun Fauchald Strand, Truls Jørgensen'
+                title: 'A Brief History of Computer Art.',
+                speakers: 'Anders Norås'
             },
             {
                 time: '15:00 - 15:30',
@@ -92,8 +92,8 @@ export const academyPrograms: AcademyProgram[] = [
             },
             {
                 time: '17:00 - 18:00',
-                title: 'Skikkelig garasje-IT: Hvordan lage system som kjører på P-hus',
-                speakers: 'Stian Mathiassen'
+                title: 'Open Source all the offentlig things! - men hvordan gjør vi det i NAV?',
+                speakers: 'Audun Fauchald Strand, Truls Jørgensen'
             },
             {
                 time: '18:00 - ∞',
@@ -114,8 +114,8 @@ export const academyPrograms: AcademyProgram[] = [
             },
             {
                 time: '12:30 - 13:30',
-                title: 'Hallo, hører du meg? Slutten på kleine videosamtaler takket være kode',
-                speakers: 'Ingvild Indrebø'
+                title: 'Open Source all the offentlig things! - men hvordan gjør vi det i NAV?',
+                speakers: 'Audun Fauchald Strand, Truls Jørgensen'
             },
             {
                 time: '13:30 - 14:00',
@@ -123,8 +123,8 @@ export const academyPrograms: AcademyProgram[] = [
             },
             {
                 time: '14:00 - 15:00',
-                title: 'A Brief History of Computer Art.',
-                speakers: 'Anders Norås'
+                title: 'Hallo, hører du meg? Slutten på kleine videosamtaler takket være kode',
+                speakers: 'Ingvild Indrebø'
             },
             {
                 time: '15:00 - 15:30',
@@ -132,8 +132,8 @@ export const academyPrograms: AcademyProgram[] = [
             },
             {
                 time: '15:30 - 16:30',
-                title: 'Open Source all the offentlig things! - men hvordan gjør vi det i NAV?',
-                speakers: 'Audun Fauchald Strand, Truls Jørgensen'
+                title: 'A Brief History of Computer Art.',
+                speakers: 'Anders Norås'
             },
             {
                 time: '16:30 - 17:00',
