@@ -11,6 +11,7 @@ export type NavigationPosition = 'start' | 'end';
 export interface NavRoute {
     title: string;
     url: string;
+    show: boolean;
 }
 
 interface NavigationProps extends RouteComponentProps {
@@ -51,7 +52,7 @@ function Navigation(props: NavigationProps) {
                 ? renderMenuButton()
                 : props.routes.map((navRoute: NavRoute) => {
                     return (
-                        <NavItem pathname={props.location.pathname} key={navRoute.title} route={navRoute} />
+                        navRoute.show ? <NavItem pathname={props.location.pathname} key={navRoute.title} route={navRoute} /> : null
                     )
                 })}
         </div>

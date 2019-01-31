@@ -14,9 +14,10 @@ import { InlineLink } from './components/InlineLink/InlineLink';
 import { NotFoundPage } from './pages/NotFound/NotFound';
 
 const routes: NavRoute[] = [
-  {title: 'Info', url: '/info'},
-  {title: 'Partners', url: '/partners'},
-  {title: 'Academy', url: '/academy'},
+  {title: 'Info', url: '/info', show: true},
+  {title: 'Partners', url: '/partners', show: true},
+  {title: 'Academy', url: '/academy', show: true},
+  {title: 'Cookies', url: '/privacy-cookies', show: false},
 ];
 
 const ScrollToTop = () => {
