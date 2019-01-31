@@ -3,7 +3,6 @@ import { PageBanner } from '../../components/PageBanner/PageBanner';
 import { Section } from '../../components/Section/Section';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { Seperator } from '../../components/Seperator/Seperator';
-import { ImageSection } from '../../components/ImageSection/ImageSection';
 import { List } from '../../components/List/List';
 
 export function CookieInfoPage() {
