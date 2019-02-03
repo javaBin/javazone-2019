@@ -7,7 +7,8 @@ import { Seperator } from '../../components/Seperator/Seperator';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
 import { CenterSection } from '../../components/CenterSection/CenterSection';
 import './Speakers.scss';
-import '../../presentation-format.scss'
+import '../../presentation-format.scss';
+import Timeline from './Timeline/Timeline';
 
 export function SpeakersPage() {
     return (
@@ -96,9 +97,7 @@ export function SpeakersPage() {
                 </p>
             </Section>
             <CenterSection header={<h1>Dates & Deadlines for JavaZone 2019</h1>}>
-                <p>
-                    //TODO: 'timeline here'<br />
-                </p>
+                <Timeline />
             </CenterSection>
             <Section header={<h1>What’s in it for me?</h1>}>
                 <p>
