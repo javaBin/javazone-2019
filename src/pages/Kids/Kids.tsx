@@ -67,7 +67,7 @@ export function KidsPage() {
                 </KidsProgramSection>
 
                 <KidsProgramSection header={<h2>Hjelp roboten å tenke selv</h2>} imageName={"kids-robot"}>
-                    <p>I dette kurset vil du bygge og programmere verdens tøffeste robot. Robot heter bit:bot og kan enkelt programmeres i et grafisk programmeringsspråk. Med roboten kan du finne på mye rart: du kan få den til å følge en linje eller tegne fine tegninger, den kan blinke og lyse og ikke minst, den ser supertøff ut! Dette blir supergøy</p>
+                    <p>I dette kurset vil du bygge og programmere verdens tøffeste robot. Robot heter bit:bot og kan enkelt programmeres i et grafisk programmeringsspråk. Med roboten kan du finne på mye rart: du kan få den til å følge en linje eller tegne fine tegninger, den kan blinke og lyse og ikke minst, den ser supertøff ut! Dette blir supergøy!</p>
                     <p><b>10 år+</b></p>
                 </KidsProgramSection>
 
