@@ -17,16 +17,16 @@ export function SpeakersPage() {
             <Seperator />
             <Section header={<h1>About JavaZone</h1>}>
                 <p>
-                    JavaZone 2019 will be the 18th consecutive JavaZone conference, and will consist of a day of pre-conference workshops on September 10th, followed by two days of lightning talks and presentations on September 11th and 12th.
+                    JavaZone 2019 will be the 19th consecutive JavaZone conference and will consist of a day of pre-conference workshops on September 10th, followed by two days of lightning talks and presentations on September 11th and 12th.
                 </p>
                 <p>
-                    Last year's event was completely sold out, with more than 3100 attendees enjoying 141 sessions.
+                    Last year's event was completely sold out, with more than 3100 attendees enjoying 142 sessions.
                 </p>
                 <p>
-                    JavaZone hosts both internationals and home-grown Norwegian talent as speakers. We'd love to have you join us in 2019!
+                JavaZone hosts both international and Norwegian speakers. We'd love to have you join us in 2019!
                 </p>
                 <p>
-                    Our call for speakers will open on February 11, 2019, but you can still see (and edit) the talks you have submitted previously.
+                    Our call for speakers will open on February 11th, 2019, but you can still see (and edit) the talks you have submitted previously.
                 </p>
                 <p>
                     <Link external url="http://submit.javazone.no">See your submitted sessions</Link>
@@ -36,10 +36,10 @@ export function SpeakersPage() {
             <Seperator />
             <Section header={<h1>What is it like speaking at JavaZone?</h1>}>
                 <p>
-                    Over the last decade JavaZone has grown to become one of the most important Java events in Europe! You can see for yourself – 1304 videos from previous years talks are available for free at <InlineLink external url='https://vimeo.com/javazone'>Vimeo</InlineLink>, and the <InlineLink external url='https://2018.javazone.no/program'>full program from JavaZone 2018</InlineLink> is also available.
+                    Over the last decade JavaZone has grown to become one of the most important Java events in Europe! You can see for yourself – over 1300 videos from previous years talks are available for free at <InlineLink external url='https://vimeo.com/javazone'>Vimeo</InlineLink>, and the <InlineLink external url='https://2018.javazone.no/program'>full program from JavaZone 2018</InlineLink> is also available.
                 </p>
                 <p>
-                    We can brag as much as we want, but JavaZone would be nothing without all the great speakers! That's why we need your help to make sure that JavaZone 2019 will be at least as awesome as the earlier events. If you think you have something interesting to share, please submit your talk or workshop at the latest on April 8th, 2019.
+                    We can brag as much as we want, but JavaZone would be nothing without all the great speakers! That's why we need your help to make sure that JavaZone 2019 will be at least as awesome as the earlier events. If you think you have something interesting to share, please submit your talk or workshop at the latest on April 22nd, 2019.
                 </p>
                 <p>
                     JavaZone is committed to diversity, and we are especially interested in quality submissions from groups that are under-represented in tech.
@@ -50,11 +50,7 @@ export function SpeakersPage() {
 
             <Section header={<h1>Formats and Durations</h1>}>
                 <p>
-                    You should think about which format your talk will work
-                    best in. Are you presenting a new idea, or do you require
-                    more time to elaborate on your subject? How hands-on do
-                    you want to be? We have three formats you can present
-                    your material in.
+                    You should think about which format your talk will work best in. Are you presenting a new idea, or do you require more time to elaborate on your subject? How hands-on do you want to be? We have three formats you can present your material in.
                 </p>
             </Section>
             <CenterSection>
@@ -67,7 +63,7 @@ export function SpeakersPage() {
             <Section header={<h1>Get Some Inspiration</h1>}>
                 <p>
                     <h3>Speakers workshop</h3>
-                    On the 12th of March we will be {/*<InlineLink external url='https://www.meetup.com/javaBin/events/TODO/'>*/}hosting a workshop for all those considering submitting a talk to JavaZone.
+                    On the 12th of March we will be {/*<InlineLink external url='https://www.meetup.com/javaBin/events/TODO/'>*/}hosting a workshop for all those considering submitting a talk to JavaZone. More information and the registation link will be posted here later.
                 </p>
                 <p>
                     <h3>Presentation skills workshop</h3> 
@@ -81,10 +77,10 @@ export function SpeakersPage() {
                 <p>
                     Despite our conference's name, we do not limit our content to Java technology. We will consider all talks based on their relevance to developers and technical architects. We do however set a focus on technology surrounding the JVM when selecting talks.
                 </p>
-	        </Section>
+            </Section>
             <Section header={<h1>Ongoing Evaluation of Talks</h1>}>
                 <p>
-                    Each year we receive hundreds of submissions and we consider each submission as it arrives. Due to the big amount of submission we can however not guarantee that you hear from us immediately. We do however answer all submissions and try to do so no later than in July.
+                    Each year we receive hundreds of submissions and we consider each submission as it arrives. Due to a large number of submissions, we can however not guarantee that you will hear from us immediately. We do however answer all submissions and try to do so no later than in July.
                 </p>
                 <p>
                     Our advice to you is simple. <strong>Submit early!</strong> The earlier you submit, the more likely you are to be noticed. Avoid drowning in the end-of-Call for Speakers-tsunami!
@@ -101,33 +97,31 @@ export function SpeakersPage() {
             </CenterSection>
             <Section header={<h1>What’s in it for me?</h1>}>
                 <p>
-                    <h3>Accepted presentations and workshops</h3>
-                    You get free admission to the conference. Additionally you are also invited to the speakers' dinner, held on September 11th. Finally, you have first priority on the limited number of slots for JourneyZone, our annual speaker adventure.
-                    <h3>Accepted lightning talks</h3>
-                    You are invited to the speakers' dinner, held on September 10th, and will also be invited to apply for a place at JourneyZone. Note that you have to provide your own ticket to JavaZone.
+                    <h3>Accepted presentations, lightning talks, and workshops</h3>
+                    As a JavaZone speaker, you get free admission to the conference. Additionally, you are also invited to the speakers' dinner, held on September 10th. Finally, you can apply for a place on JourneyZone, our annual speaker adventure.
                     <h3>Coverage of Expenses</h3>
                     Please see our <InlineLink external url='/speakers/monetary-policy'>reimbursement policy</InlineLink> if you have any questions regarding coverage of other expenses.
                 </p>
-	        </Section>
+            </Section>
             <Section header={<h1>Important principles</h1>}>
-                    <p>
-                        JavaZone is proud to be an independent and community-driven conference. It is organized by volunteers from javaBin (the Norwegian Java User Group) and is run as a non-profit organisation. This means that we have three important principles for selecting talks:
-                    </p>
-                    <ul>
-                        <li>We do not sell speaker slots.</li>
-                        <li>We do not accept sales pitches masked as presentations</li>
-                        <li>We do not differentiate between speakers from partners and independent speakers</li>
-                    </ul>
-                    <p>
-                        If your talk adheres to these very important principles, you are more than welcome to submit it to our Call for Speakers!
-                    </p>
-	        </Section>
+                <p>
+                    JavaZone is proud to be an independent and community-driven conference. It is organized by volunteers from javaBin (the Norwegian Java User Group) and is run as a non-profit organization. This means that we have three important principles for selecting talks:
+                </p>
+                <ul>
+                    <li>We do not sell speaker slots.</li>
+                    <li>We do not accept sales pitches masked as presentations</li>
+                    <li>We do not differentiate between speakers from partners and independent speakers</li>
+                </ul>
+                <p>
+                    If your talk adheres to these very important principles, you are more than welcome to submit it to our Call for Speakers!
+                </p>
+            </Section>
             <CenterSection header={<h1>We hope to see you at JavaZone 2019 – please feel free to spread the word to your local community!</h1>}>
-                    <p className='speakers__regards'>
-                        <br />
-                        Best regards,<br />the JavaZone Program Committee
-                    </p>
-	        </CenterSection>
+                <p className='speakers__regards'>
+                    <br />
+                    Best regards,<br />the JavaZone Program Committee
+                </p>
+            </CenterSection>
         </>
     )
 }
@@ -160,5 +154,5 @@ const workshops = {
     icon: 'cui-screen-desktop',
     title: 'Workshops',
     length: '2 hours, 4 hours, 8 hours',
-    description: 'We will continue the popular workshop concept with a range of sessions on Tuesday September 11th. The format for the workshops is in-depth, hands-on and interactive.'
+    description: 'We will continue the popular workshop concept with a range of sessions on Tuesday, September 11th. The format for the workshops is in-depth, hands-on and interactive.'
 };
