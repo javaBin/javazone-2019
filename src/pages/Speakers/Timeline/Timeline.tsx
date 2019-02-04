@@ -19,7 +19,7 @@ const data = [
         month: 'Mar',
         events: [{
             title: 'Workshop for Potential Speakers',
-            date: 'March 6th',
+            date: 'March 12th',
             location: '-40px',
             align: 'left'
         },]
@@ -28,7 +28,7 @@ const data = [
         month: 'Apr',
         events: [{
             title: 'Call for speakers closes',
-            date: 'April 22ndh',
+            date: 'April 22nd',
             location: '25px',
             align: 'right'
         }]
@@ -64,7 +64,7 @@ const data = [
         events: [
             {
                 title: 'Speakers dinner',
-                date: 'September 11th',
+                date: 'September 10th',
                 location: '-20px',
                 align: 'left'
             }, {
