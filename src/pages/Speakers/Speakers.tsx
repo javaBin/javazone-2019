@@ -29,7 +29,7 @@ export function SpeakersPage() {
                     Our call for speakers will open on February 11th, 2019. However, you can still see (and edit) the talks you have submitted before.
                 </p>
                 <p>
-                    <Link external url="http://submit.javazone.no">See your submitted sessions</Link>
+                    <Link external url="http://talks.javazone.no">See your submitted sessions</Link>
                 </p> 
             </Section>
             <ImageSection imageName="partners_1" />
