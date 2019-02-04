@@ -26,7 +26,7 @@ export function SpeakersPage() {
                 JavaZone hosts both international and Norwegian speakers. We'd love to have you join us in 2019!
                 </p>
                 <p>
-                    Our call for speakers will open on February 11th, 2019, but you can still see (and edit) the talks you have submitted previously.
+                    Our call for speakers will open on February 11th, 2019. However, you can still see (and edit) the talks you have submitted before.
                 </p>
                 <p>
                     <Link external url="http://submit.javazone.no">See your submitted sessions</Link>
@@ -63,7 +63,7 @@ export function SpeakersPage() {
             <Section header={<h1>Get Some Inspiration</h1>}>
                 <p>
                     <h3>Workshop for Potential Speakers</h3>
-                    On the 12th of March we will be {/*<InlineLink external url='https://www.meetup.com/javaBin/events/TODO/'>*/}hosting a workshop for all those considering submitting a talk to JavaZone. More information and the registation link will be posted here later.
+                    On March 12th, we will be {/*<InlineLink external url='https://www.meetup.com/javaBin/events/TODO/'>*/}hosting a workshop for all those considering submitting a talk to JavaZone. More information and the registation link will be posted here later.
                 </p>
             </Section>
             <Section header={<h1>Audience and Topics</h1>}>
