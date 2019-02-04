@@ -62,12 +62,8 @@ export function SpeakersPage() {
             </CenterSection>
             <Section header={<h1>Get Some Inspiration</h1>}>
                 <p>
-                    <h3>Speakers workshop</h3>
+                    <h3>Workshop for Potential Speakers</h3>
                     On the 12th of March we will be {/*<InlineLink external url='https://www.meetup.com/javaBin/events/TODO/'>*/}hosting a workshop for all those considering submitting a talk to JavaZone. More information and the registation link will be posted here later.
-                </p>
-                <p>
-                    <h3>Presentation skills workshop</h3> 
-                    JavaZone has a strong tradition of nurturing local speaker talent. To help with this we arrange a presentation skills workshop in August. This workshop is held in Oslo and is free for all accepted speakers. This workshop will be held in Norwegian.
                 </p>
             </Section>
             <Section header={<h1>Audience and Topics</h1>}>

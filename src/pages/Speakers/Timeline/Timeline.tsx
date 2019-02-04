@@ -10,7 +10,7 @@ const data = [
         month: 'Feb',
         events: [{
             title: 'Call for speakers',
-            date: 'February 12th',
+            date: 'February 11th',
             location: '0px',
             align: 'right'
         }]
@@ -18,7 +18,7 @@ const data = [
     {
         month: 'Mar',
         events: [{
-            title: 'Speakers workshop',
+            title: 'Workshop for Potential Speakers',
             date: 'March 6th',
             location: '-40px',
             align: 'left'
@@ -28,7 +28,7 @@ const data = [
         month: 'Apr',
         events: [{
             title: 'Call for speakers closes',
-            date: 'April 8th',
+            date: 'April 22ndh',
             location: '25px',
             align: 'right'
         }]
@@ -53,8 +53,8 @@ const data = [
     {
         month: 'Aug',
         events: [{
-            title: 'Presentation workshop',
-            date: 'TBD',
+            title: 'Deadline for Reimbursement Applications',
+            date: 'August 1st',
             location: '15px',
             align: 'right'
         }]
@@ -68,8 +68,8 @@ const data = [
                 location: '-20px',
                 align: 'left'
             }, {
-                title: 'JavaZone 2018!',
-                date: 'September 12th',
+                title: 'JavaZone 2019!',
+                date: 'September 11th',
                 location: '-10px',
                 align: 'right'
             }
