@@ -18,8 +18,8 @@ const routes: NavRoute[] = [
   {title: 'Partners', url: '/partners', show: true},
   {title: 'Academy', url: '/academy', show: true},
   {title: 'Cookies', url: '/privacy-cookies', show: false},
-  {title: 'Cookies', url: '/speakers/tips', show: false},
-  {title: 'Cookies', url: '/speakers/monetary-policy', show: false},
+  {title: 'Tips for Speakers', url: '/speakers/tips', show: false},
+  {title: 'Monetary Policy', url: '/speakers/monetary-policy', show: false},
 
 ];
 
