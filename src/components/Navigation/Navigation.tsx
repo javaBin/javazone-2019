@@ -6,6 +6,8 @@ import { useRef, useEffect, useState } from 'react';
 import { useWindowWidth } from '../../core/hooks/UseWindowWidth';
 import { useIsFrontpage } from '../../core/hooks/UseIsFrontpage';
 
+const logo = `${process.env.PUBLIC_URL}/logo-sharp.svg`;
+
 export type NavigationPosition = 'start' | 'end';
 
 export interface NavRoute {
@@ -138,7 +140,7 @@ const Brand: React.StatelessComponent<BrandProps> = (props) => {
     return (
         <Link to="/">
             <div className={styles.navigationBrand}>
-                <img src="logo-sharp.svg" alt="Logo" />
+                <img src={logo} alt="Logo" />
 				<h1>{props.title}</h1>
             </div>
         </Link>
