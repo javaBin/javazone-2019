@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation, { NavRoute } from './components/Navigation/Navigation';
 import { FrontPage } from './pages/Frontpage/Frontpage';
@@ -13,6 +13,7 @@ import { CookieInfoPage } from './pages/CookieInfo/CookieInfo';
 import { CookieDisclaimer } from './components/CookieDisclaimer/CookieDisclaimer';
 import { InlineLink } from './components/InlineLink/InlineLink';
 import { NotFoundPage } from './pages/NotFound/NotFound';
+import ReactGA from 'react-ga';
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info', show: true},
@@ -29,33 +30,37 @@ const ScrollToTop = () => {
   return null;
 }
 
-class App extends React.Component {
-  public render() {
-    return (
-      <Router>
-        <>
-          <Navigation sticky routes={routes} />
-          <Route component={ScrollToTop}></Route>
-          <Switch>
-            <Route exact path="/" component={FrontPage} />
-            <Route exact path="/info" component={InfoPage} />
-            {/* <Route exact path="/tickets" component={Tickets} /> */}
-            <Route exact path="/partners" component={PartnersPage} />
-            <Route exact path="/academy" component={AcademyPage} />
-            <Route exact path="/speakers" component={SpeakersPage} />
-            <Route exact path="/speakers/tips" component={SpeakerTipsPage} />
-            <Route exact path="/speakers/monetary-policy" component={MonetaryPolicyPage} />
-            <Route exact path="/privacy-cookies" component={CookieInfoPage} />
-            <Route component={NotFoundPage} />
-          </Switch>
-          <Footer routes={routes} />
-          <CookieDisclaimer>
-            We have given you a dedicated cookie from our cookie jar in order to store your favorite program schedule. We also use cookies to improve your experience on our site. By using this site you agree to this. For more information please visit our <InlineLink url="/privacy-cookies">cookie information page.</InlineLink>
-          </CookieDisclaimer>
-        </>
-      </Router>
-    );
-  }
+function App() {
+
+  useEffect(() => {
+    ReactGA.initialize('UA-3676724-14');
+    ReactGA.pageview('/');
+  }, []);
+
+  return (
+    <Router>
+      <>
+        <Navigation sticky routes={routes} />
+        <Route component={ScrollToTop}></Route>
+        <Switch>
+          <Route exact path="/" component={FrontPage} />
+          <Route exact path="/info" component={InfoPage} />
+          {/* <Route exact path="/tickets" component={Tickets} /> */}
+          <Route exact path="/partners" component={PartnersPage} />
+          <Route exact path="/academy" component={AcademyPage} />
+          <Route exact path="/speakers" component={SpeakersPage} />
+          <Route exact path="/speakers/tips" component={SpeakerTipsPage} />
+          <Route exact path="/speakers/monetary-policy" component={MonetaryPolicyPage} />
+          <Route exact path="/privacy-cookies" component={CookieInfoPage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+        <Footer routes={routes} />
+        <CookieDisclaimer>
+          We have given you a dedicated cookie from our cookie jar in order to store your favorite program schedule. We also use cookies to improve your experience on our site. By using this site you agree to this. For more information please visit our <InlineLink url="/privacy-cookies">cookie information page.</InlineLink>
+        </CookieDisclaimer>
+      </>
+    </Router>
+  );
 }
 
 export default App;
