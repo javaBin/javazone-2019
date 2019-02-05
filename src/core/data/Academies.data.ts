@@ -161,7 +161,7 @@ export const academies: Academy[] = [
         slots: 80,
         registrationUrl: 'https://goo.gl/forms/1He9hzOMfKuRUVTg1',
         imageUrl: 'https://storage.googleapis.com/javazone-assets/images/academy_teknologihuset.jpg',
-        partners: getAcademyPartners(['Kantega', 'Netcompany', 'Sysco', 'Tripletex', 'Vipps', 'Sportradar']),
+        partners: getAcademyPartners(['Kantega', 'Netcompany', 'Sysco', 'Tripletex', 'Vipps', 'Sportradar', '2Park', 'Systek']),
         program: academyPrograms[0]
     },
     {
@@ -172,7 +172,7 @@ export const academies: Academy[] = [
         slots: 80,
         registrationUrl: 'https://goo.gl/forms/2PyxrN4sbEOE0jls1',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Det_Akademiske_Kvarter.JPG',
-        partners: getAcademyPartners(['Kantega', 'Ambita']),
+        partners: getAcademyPartners(['Kantega', 'Ambita', 'Miles']),
         program: academyPrograms[1]
     },
     {
@@ -183,7 +183,7 @@ export const academies: Academy[] = [
         slots: 80,
         registrationUrl: 'https://goo.gl/forms/NJi8tlRqGGb0Z6WD3',
         imageUrl: 'http://res.cloudinary.com/simpleview/image/upload/v1451482793/clients/norway/northern-lights-tromso-norway_2-1_a8b03e36-f1cd-46be-939e-ebf6d70c41e2.jpg',
-        partners: getAcademyPartners(['Sysco']),
+        partners: getAcademyPartners(['Sysco', 'Finn']),
         program: academyPrograms[2]
     }
 ]

@@ -28,5 +28,21 @@ export const partners: Partner[] = [
     {
         name: 'Ambita',
         homepageUrl: 'https://www.ambita.com/'
+    },
+    {
+        name: 'Systek',
+        homepageUrl: 'https://www.systek.no/'
+    },
+    {
+        name: 'Finn',
+        homepageUrl: 'https://www.finn.no/'
+    },
+    {
+        name: '2Park',
+        homepageUrl: 'https://www.2park.no/'
+    },
+    {
+        name: 'Miles',
+        homepageUrl: 'https://www.miles.no/'
     }
 ]
