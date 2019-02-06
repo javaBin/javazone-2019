@@ -26,10 +26,7 @@ export function SpeakersPage() {
                 JavaZone hosts both international and Norwegian speakers. We'd love to have you join us in 2019!
                 </p>
                 <p>
-                    Our call for speakers will open on February 11th, 2019. However, you can still see (and edit) the talks you have submitted before.
-                </p>
-                <p>
-                    <Link external url="http://talks.javazone.no">See your submitted sessions</Link>
+                    Our call for speakers will open on February 11th, 2019.
                 </p> 
             </Section>
             <ImageSection imageName="partners_1" />
