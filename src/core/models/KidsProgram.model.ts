@@ -4,6 +4,8 @@ export interface KidsProgram {
     desc: string;
     image: string;
     imageType?: string;
-    moreInfoLink: string;
+    moreInfoLink?: string;
     registrationLink: string;
+    speakers: string;
+    gear: string;
 }

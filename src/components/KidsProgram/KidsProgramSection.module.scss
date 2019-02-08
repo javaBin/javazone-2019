@@ -10,6 +10,11 @@
     margin: 4rem;
 }
 
+.speakers {
+  margin: 0;
+  color: $color-logo-orange;
+}
+
 .container {
     display: grid;
     grid-template-areas: 'img content';
