@@ -1,17 +1,24 @@
 @import '../../variables.scss';
 
 .link {
-    padding: 0.5rem 1rem;
+    width: fit-content;
     font-size: 1.4rem;
     font-weight: bold;
+    box-sizing: border-box;
     border-radius: 3px;
     border: 2px solid $color-logo-red;
     background: none;
-    text-decoration: none;
-    color: $color-logo-red;
+    text-align: center;
     cursor: pointer;
+    a {
+        padding: 3rem 1rem;
+        color: $color-logo-red;
+        text-decoration: none;
+    }
     &:hover {
-        color: white;
         background: $color-logo-red-dark;
+        a {
+            color: white;
+        }
     }
 }

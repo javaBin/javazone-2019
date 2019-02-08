@@ -11,9 +11,11 @@
     position: relative;
     background-position: center;
     img {
+        bottom: 0;
         position: absolute;
-        top: -100%;
-        bottom: -100%;
+        @media only screen and (min-width: 1439px) {
+            width: 100%;
+        }
         filter: brightness(70%);
     }
 }

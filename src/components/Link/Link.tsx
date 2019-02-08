@@ -12,10 +12,14 @@ interface LinkProps {
 function Link(props: LinkProps) {
     return (
         props.external 
-            ? <a className={styles.link} href={props.url} target={props.noBlankTarget ? '' : '_blank'}>{props.children}</a>
-            : <RouterLink className={styles.link} to={props.url}>
-                {props.children}
-            </RouterLink>
+            ? <div className={styles.link}>
+                <a href={props.url} target={props.noBlankTarget ? '' : '_blank'}>{props.children}</a>
+            </div>
+            : <div className={styles.link}>
+                <RouterLink to={props.url}>
+                    {props.children}
+                </RouterLink>
+            </div>
     )
 }
 
