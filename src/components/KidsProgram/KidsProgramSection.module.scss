@@ -46,6 +46,11 @@
     text-align: initial;
 }
 
+.buttons {
+    display: flex;
+}
+
 .buttons > * {
     margin-right: 0.5rem;
 }
+

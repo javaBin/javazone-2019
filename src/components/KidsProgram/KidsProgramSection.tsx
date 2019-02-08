@@ -24,8 +24,8 @@ export function KidsProgramSection(props: KidsProgramSectionProps) {
                 <div className={styles.content}>
                     {props.children}
                     <div className={styles.buttons}>
-                    <Link external url={props.moreInfoLink}>Mer Info</Link>
-                    <Link external url={props.registrationLink}>Påmelding</Link>
+                        <Link external url={props.moreInfoLink}>Mer Info</Link>
+                        <Link external url={props.registrationLink}>Påmelding</Link>
                     </div>
                 </div>
             </div>
