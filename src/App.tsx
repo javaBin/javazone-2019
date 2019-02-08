@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import { InfoPage } from './pages/Info/Info';
 import { PartnersPage } from './pages/Partners/Partners';
 import { AcademyPage } from './pages/Academy/Academy';
+import { KidsPage } from './pages/Kids/Kids';
 import { SpeakersPage } from './pages/Speakers/Speakers';
 import { MonetaryPolicyPage } from './pages/Speakers/MonetaryPolicy';
 import { SpeakerTipsPage } from './pages/Speakers/Tips';
@@ -19,6 +20,7 @@ const routes: NavRoute[] = [
   {title: 'Info', url: '/info', show: true},
   {title: 'Partners', url: '/partners', show: true},
   {title: 'Academy', url: '/academy', show: true},
+  {title: 'Kids', url: '/kids', show: true},
   {title: 'Speakers', url: '/speakers', show: true},
   {title: 'Cookies', url: '/privacy-cookies', show: false},
   {title: 'Tips for Speakers', url: '/speakers/tips', show: false},
@@ -28,7 +30,7 @@ const routes: NavRoute[] = [
 const ScrollToTop = () => {
   window.scrollTo(0, 0);
   return null;
-}
+};
 
 function App() {
 
@@ -41,13 +43,14 @@ function App() {
     <Router>
       <>
         <Navigation sticky routes={routes} />
-        <Route component={ScrollToTop}></Route>
+        <Route component={ScrollToTop}/>
         <Switch>
           <Route exact path="/" component={FrontPage} />
           <Route exact path="/info" component={InfoPage} />
           {/* <Route exact path="/tickets" component={Tickets} /> */}
           <Route exact path="/partners" component={PartnersPage} />
           <Route exact path="/academy" component={AcademyPage} />
+          <Route exact path="/kids" component={KidsPage} />
           <Route exact path="/speakers" component={SpeakersPage} />
           <Route exact path="/speakers/tips" component={SpeakerTipsPage} />
           <Route exact path="/speakers/monetary-policy" component={MonetaryPolicyPage} />
