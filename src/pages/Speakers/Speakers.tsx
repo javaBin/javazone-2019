@@ -60,7 +60,7 @@ export function SpeakersPage() {
             <Section header={<h1>Get Some Inspiration</h1>}>
                 <p>
                     <h3>Workshop for Potential Speakers</h3>
-                    On March 12th, we will be {/*<InlineLink external url='https://www.meetup.com/javaBin/events/TODO/'>*/}hosting a workshop for all those considering submitting a talk to JavaZone. More information and the registation link will be posted here later.
+                    On March 12th, we will be <InlineLink external url='https://www.meetup.com/javaBin/events/258787075'>hosting a workshop</InlineLink> for all those considering submitting a talk to JavaZone. More information and the registation link will be posted here later.
                 </p>
             </Section>
             <Section header={<h1>Audience and Topics</h1>}>
