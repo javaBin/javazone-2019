@@ -19,6 +19,7 @@ import { NotFoundPage } from './pages/NotFound/NotFound';
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info', show: true},
+  {title: 'Tickets', url: '/tickets', show: true},
   {title: 'Speakers', url: '/speakers', show: true},
   {title: 'Partners', url: '/partners', show: true},
   {title: 'Academy', url: '/academy', show: true},
@@ -48,6 +49,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={FrontPage} />
           <Route exact path="/info" component={InfoPage} />
+          <Route exact path="/tickets" component={TicketsPage} />
           <Route exact path="/speakers" component={SpeakersPage} />
           <Route exact path="/partners" component={PartnersPage} />
           <Route exact path="/academy" component={AcademyPage} />
