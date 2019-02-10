@@ -34,7 +34,7 @@ export function TicketsPage() {
             <ImageSection imageName="tickets_2" />
             <Section header={<h1>Working for one of our partners?</h1>}>
                 <p>
-                    All partners of JavaZone get reduced prices on tickets. Partners can buy tickets at a reduced price until July 1st. The main partner contact person can order tickets by using this <InlineLink external url="https://goo.gl/forms/OSr49HdV3LH7j62h1">invoice request form</InlineLink>invoice request form. Read more about <InlineLink url="/partners">JavaZone partnership</InlineLink> here.
+                    All partners of JavaZone get reduced prices on tickets. Partners can buy tickets at a reduced price until July 1st. The main partner contact person can order tickets by using this <InlineLink external url="https://goo.gl/forms/OSr49HdV3LH7j62h1">invoice request form</InlineLink>. Read more about <InlineLink url="/partners">JavaZone partnership</InlineLink> here.
                 </p>
             </Section>
             <Section header={<h1>Need more than one ticket?</h1>}>
