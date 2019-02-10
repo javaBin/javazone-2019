@@ -23,11 +23,14 @@ export function SpeakersPage() {
                     Last year's event was completely sold out, with more than 3100 attendees enjoying 142 sessions.
                 </p>
                 <p>
-                JavaZone hosts both international and Norwegian speakers. We'd love to have you join us in 2019!
+                    JavaZone hosts both international and Norwegian speakers. We'd love to have you join us in 2019!
                 </p>
                 <p>
-                    Our call for speakers will open on February 11th, 2019.
-                </p> 
+                    Our call for speakers opened on February 11th and it will remain open until April 22nd.
+                </p>
+                <p>
+                    <Link external url="http://talks.javazone.no">Submit your talk!</Link>
+                </p>
             </Section>
             <ImageSection imageName="partners_1" />
             <Seperator />
@@ -60,7 +63,7 @@ export function SpeakersPage() {
             <Section header={<h1>Get Some Inspiration</h1>}>
                 <p>
                     <h3>Workshop for Potential Speakers</h3>
-                    On March 12th, we will be {/*<InlineLink external url='https://www.meetup.com/javaBin/events/TODO/'>*/}hosting a workshop for all those considering submitting a talk to JavaZone. More information and the registation link will be posted here later.
+                    On March 12th, we will be <InlineLink external url='https://www.meetup.com/javaBin/events/258787075'>hosting a workshop</InlineLink> for all those considering submitting a talk to JavaZone. More information and the registation link will be posted here later.
                 </p>
             </Section>
             <Section header={<h1>Audience and Topics</h1>}>
