@@ -60,9 +60,6 @@ export function TicketsPage() {
                 <p>
                     JavaZone is organized for and by the community. Your ticket includes a membership to javaBin, giving you access to all the javaBin community events and voting rights for a full year after buying the ticket.
                 </p>
-                <p>
-                    Previously we used to sell tickets and memberships separately, but you saved a total of 500 NOK by buying both. It seemed silly to force you through two separate web shops to collect this discount, so we combined the two and thereby made the tickets cheaper for everyone. If you still would like to pay extra as before, let us know! ;-)
-                </p>
             </Section>
             <CenterSection header={<h1>Need more info about JavaZone?</h1>}>
                 <p>
