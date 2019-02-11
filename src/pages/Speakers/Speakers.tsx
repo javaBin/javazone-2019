@@ -32,7 +32,7 @@ export function SpeakersPage() {
                     <Link external url="http://talks.javazone.no">Submit your talk!</Link>
                 </p>
             </Section>
-            <ImageSection imageName="partners_1" />
+            <ImageSection bottom imageName="2018/180912_JavaZone_0039" />
             <Seperator />
             <Section header={<h1>What is it like speaking at JavaZone?</h1>}>
                 <p>

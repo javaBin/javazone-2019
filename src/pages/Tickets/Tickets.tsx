@@ -47,7 +47,7 @@ export function TicketsPage() {
                     Paying by invoice can be accommodated if required, but please consider buying the tickets using the webshop if you can. You’ll get a receipt which can be used for reimbursements even when paying with credit card.
                 </p>
                 <p>
-                    Request your invoice here: <InlineLink url="https://goo.gl/forms/OSr49HdV3LH7j62h1">Invoice request form</InlineLink>.
+                    Request your invoice here: <InlineLink external url="https://goo.gl/forms/OSr49HdV3LH7j62h1">Invoice request form</InlineLink>.
                 </p>
             </Section>
             <Section header={<h1>Refund policy</h1>}>
