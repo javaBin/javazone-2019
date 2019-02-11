@@ -21,7 +21,7 @@ export function TicketsPage() {
                     The JavaZone Ticket includes full access to the conference and entry to workshops on Tuesday (limited seating: first come, first served). 
                 </p>
                 <p>
-                    The price also includes a 1 year membership in javaBin, the Norwegian Java User Group prices ex VAT.
+                    The price also includes a 1-year membership in javaBin, the Norwegian Java User Group prices ex VAT.
                 </p>
                 <p>
                     After April 1st, the ticket price will be NOK 6.890,- (Late Bird price).
@@ -56,7 +56,7 @@ export function TicketsPage() {
                 </p>
             </Section>
             <ImageSection imageName="2018/180912_JavaZone_0035" />
-            <Section header={<h1>The javabin memebership included in the ticket</h1>}>
+            <Section header={<h1>The javaBin membership included in the ticket</h1>}>
                 <p>
                     JavaZone is organized for and by the community. Your ticket includes a membership to javaBin, giving you access to all the javaBin community events and voting rights for a full year after buying the ticket.
                 </p>
@@ -66,7 +66,7 @@ export function TicketsPage() {
                     We'll release more information about the conference before the summer, and the detailed program with information about all the talks will be ready in July. Until then, have a look at the video on top and <InlineLink external url="https://2018.javazone.no">the 2018 website</InlineLink> to get a feel for how awesome JavaZone is!
                 </p>
                 <p>
-                    Don't wait too long buying your ticket though – last year all of the 3,100 spots were gone, and we had long waiting lists. We expect a decent amout of interest this year as well.
+                    Don't wait too long buying your ticket, though – last year all of the 3,100 spots were gone, and we had long waiting lists. We expect a decent amount of interest this year as well.
                 </p>
             </CenterSection>
         </>
