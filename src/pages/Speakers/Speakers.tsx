@@ -9,6 +9,7 @@ import { CenterSection } from '../../components/CenterSection/CenterSection';
 import './Speakers.scss';
 import '../../presentation-format.scss';
 import Timeline from './Timeline/Timeline';
+import FeatherIcon from 'feather-icons-react';
 
 export function SpeakersPage() {
     return (
@@ -124,7 +125,7 @@ export function SpeakersPage() {
 
 const Format = (props:any) => (
     <li className='presentation-formats__format format'>
-        <span className={`format__icon ${props.icon}`}></span>
+        <FeatherIcon icon={`${props.icon}`} size="36" />
         <h3 className='format__title'>{props.title}</h3>
         <p className='format__length'>{props.length}</p>
         <p /* justify={"true"} */ className='format__description'>{props.description}</p>
@@ -132,22 +133,21 @@ const Format = (props:any) => (
 );
 
 const lightnings = {
-    icon: 'icon-energy',
+    icon: 'zap',
     title: 'Lightning talks',
     length: '10 or 20 minutes',
     description: 'Are you presenting a great new idea, or want to give the audience a teaser for a cool topic? Then you should strongly consider the lightning talk format.  Note that the 10-20 minute time limit is strictly enforced!'
 };
 
 const presentations = {
-    icon: 'icon-graduation',
+    icon: 'book-open',
     title: 'Presentations',
     length: '45 or 60 minutes',
     description: 'Presentations at JavaZone can be either 45 or 60 minutes long. This gives you room to elaborate on an idea. When submitting your talk, please indicate clearly in the outline how much time is reserved for questions.'
 };
 
 const workshops = {
-//    icon: 'icon-screen-desktop', /* <span class="cui-screen-desktop" aria-hidden="true"></span> */
-    icon: 'cui-screen-desktop',
+    icon: 'monitor',
     title: 'Workshops',
     length: '2 hours, 4 hours, 8 hours',
     description: 'We will continue the popular workshop concept with a range of sessions on Tuesday, September 11th. The format for the workshops is in-depth, hands-on and interactive.'
