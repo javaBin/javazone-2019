@@ -4,5 +4,8 @@ steps:
   args: ['install']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['run-script', 'build']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/javazone_test', '.']
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy', './app-test.ayml']
+images: ['gcr.io/$PROJECT_ID/javazone_test']
