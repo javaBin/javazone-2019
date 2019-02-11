@@ -5,4 +5,4 @@ steps:
 - name: 'gcr.io/cloud-builders/npm'
   args: ['run-script', 'build']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy', './app-test.yaml']
+  args: ['app', 'deploy', './_DEPLOY_CONFIG.yaml']
