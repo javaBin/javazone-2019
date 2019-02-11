@@ -10,6 +10,7 @@ import { PartnersPage } from './pages/Partners/Partners';
 import { AcademyPage } from './pages/Academy/Academy';
 import { KidsPage } from './pages/Kids/Kids';
 import { SpeakersPage } from './pages/Speakers/Speakers';
+import { AboutUsPage } from './pages/About/About';
 import { MonetaryPolicyPage } from './pages/Speakers/MonetaryPolicy';
 import { SpeakerTipsPage } from './pages/Speakers/Tips';
 import { CookieInfoPage } from './pages/CookieInfo/CookieInfo';
@@ -24,6 +25,7 @@ const routes: NavRoute[] = [
   {title: 'Partners', url: '/partners', show: true},
   {title: 'Academy', url: '/academy', show: true},
   {title: 'Kids', url: '/kids', show: true},
+  {title: 'About', url: '/about', show: true},
   {title: 'Cookies', url: '/privacy-cookies', show: false},
   {title: 'Tips for Speakers', url: '/speakers/tips', show: false},
   {title: 'Monetary Policy', url: '/speakers/monetary-policy', show: false},
@@ -54,6 +56,7 @@ function App() {
           <Route exact path="/partners" component={PartnersPage} />
           <Route exact path="/academy" component={AcademyPage} />
           <Route exact path="/kids" component={KidsPage} />
+          <Route exact path="/about" component={AboutUsPage} />
           <Route exact path="/speakers/tips" component={SpeakerTipsPage} />
           <Route exact path="/speakers/monetary-policy" component={MonetaryPolicyPage} />
           <Route exact path="/privacy-cookies" component={CookieInfoPage} />
