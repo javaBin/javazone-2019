@@ -1,4 +1,4 @@
-import { Speaker } from "./Speaker";
+import { Speaker } from "./Speaker.model";
 
 
 export interface ScheduleSlot {

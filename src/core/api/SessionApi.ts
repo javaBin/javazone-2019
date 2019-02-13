@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Session } from '../models/Session';
+import { Session } from '../models/Session.model';
 
 const SLEEPING_PILL_URL = 'https://sleepingpill.javazone.no/public/allSessions/javazone_2018';
 

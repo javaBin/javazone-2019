@@ -1,4 +1,4 @@
-import { Speaker } from './Speaker';
+import { Speaker } from './Speaker.model';
 import { UUID } from '../Types';
 
 export interface Session {
