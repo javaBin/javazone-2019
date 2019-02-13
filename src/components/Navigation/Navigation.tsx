@@ -10,6 +10,8 @@ const logo = `${process.env.PUBLIC_URL}/logo-sharp.svg`;
 
 export type NavigationPosition = 'start' | 'end';
 
+const MENU_WIDTH = 900;
+
 export interface NavRoute {
     title: string;
     url: string;
@@ -35,7 +37,7 @@ function Navigation(props: NavigationProps) {
 
     const componentClass = classnames(
         styles.navigation,
-        {[styles.space]: windowWidth <= 720},
+        {[styles.space]: windowWidth <= MENU_WIDTH},
         {[styles.frontpage]: isFrontpage || props.isNotFound},
         {[styles.navigationSticky]: props.sticky},
         {[styles.navigationEnd]: props.position === 'end'}
@@ -50,7 +52,7 @@ function Navigation(props: NavigationProps) {
     return (
         <div className={componentClass}>
             {props.displayBrand ? <Brand /> : null}
-            {windowWidth <= 720
+            {windowWidth <= MENU_WIDTH
                 ? renderMenuButton()
                 : props.routes.map((navRoute: NavRoute) => {
                     return (
@@ -83,7 +85,7 @@ function MenuButton(props: MenuButtonProps) {
             </button>
             {isMenuOpen ? <div className={styles.menuContainer}>
                 {props.routes.map(route => {
-                    return <NavItem itemClicked={handleOpenMenu} pathname={props.pathname} key={route.title} route={route} />
+                    return route.show ? <NavItem itemClicked={handleOpenMenu} pathname={props.pathname} key={route.title} route={route} /> : null
                 })}
             </div> : null}
         </>
