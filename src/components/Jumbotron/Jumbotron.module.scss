@@ -28,6 +28,9 @@
             }
         }
         h2 {
+            &.locationText {
+                font-size: 2.5rem;
+            }
             margin: 0;
             font-size: 3rem;
             @media only screen and (max-width: $screen-xxxs) {

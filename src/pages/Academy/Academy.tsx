@@ -14,10 +14,16 @@ export function AcademyPage() {
             <Seperator />
             <CenterSection header={<h1>Come join us in february</h1>}>
                 <p>
-                    Are you a student? Interested in IT? Come join us for JavaZone Academy. JavaZone Academy is a free event for students in Norway, where we invite you to take part in the JavaZone experience.
+                    Are you a student? Interested in IT? Come join us for JavaZone Academy. 
+                    <br />
+                    JavaZone Academy is a free event for students in Norway, where we invite 
+                    <br />
+                    you to take part in the JavaZone experience.
                 </p>
                 <p>
-                    We will bring great talks, food, mingling, and great partners to <strong>Oslo</strong>, <strong>Bergen</strong>, and <strong>Tromsø</strong>. Join us for a great evening!
+                    We will bring great talks, free food, mingling, and great partners to <strong>Oslo</strong>, <strong>Bergen</strong>, and <strong>Tromsø</strong>. 
+                    <br />
+                    Join us for a great evening!
                 </p>
                 <p>
                     A detailed program and more information will be soon posted here. Watch this space!

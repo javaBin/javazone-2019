@@ -7,6 +7,7 @@ const VideoSource = lazy(() => import('./VideoSource'));
 interface JumbotronProps {
     title?: string;
     subTitle?: string;
+    location?: string;
 }
 
 export function Jumbotron(props: JumbotronProps) {
@@ -28,6 +29,7 @@ export function Jumbotron(props: JumbotronProps) {
             <div className={styles.jumbotronContent}>
                 <h1>{props.title}</h1>
                 <h2>{props.subTitle}</h2>
+                <h2 className={styles.locationText}>{props.location}</h2>
             </div>
         </div>
     )
