@@ -1,7 +1,7 @@
 runtime: nodejs8
 
 handlers:
-- url: /(.*\.(gif|png|jpg|css|js|svg)(|\.map))$
+- url: /(.*\.(gif|png|jpg|ico|css|js|svg)(|\.map))$
   static_files: build/\1
   upload: build/(.*)(|\.map)
   secure: always
