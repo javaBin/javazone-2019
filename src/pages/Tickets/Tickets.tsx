@@ -21,7 +21,9 @@ export function TicketsPage() {
                     The JavaZone Ticket includes full access to the conference and entry to workshops on Tuesday (limited seating: first come, first served). 
                 </p>
                 <p>
-                    The price also includes a 1-year membership in javaBin, the Norwegian Java User Group prices ex VAT.
+                    The price also includes a 1-year membership in javaBin, the Norwegian Java User Group.
+                    <br />
+                    Prices are ex. VAT.
                 </p>
                 <p>
                     After April 1st, the ticket price will be NOK 6.890,- (Late Bird price).
