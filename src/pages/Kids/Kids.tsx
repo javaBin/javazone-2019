@@ -36,7 +36,7 @@ export function KidsPage() {
             </Section>
             <Section header={<h1>Påmelding</h1>}>
                 <p>
-                    Vi har et begrenset antall plasser, derfor er det viktig at du melder dine barn på arrangementet. Påmelding er åpen fra <strong><em>torsdag 1. mars - kl 12:00</em></strong>.
+                    Vi har et begrenset antall plasser, derfor er det viktig at du melder dine barn på arrangementet. Påmelding er åpen fra <strong><em>fredag 1. mars - kl 12:00</em></strong>.
                 </p>
                 <p>                   
                     Det er også viktig om du sier ifra eller melder deg av om du blir forhindret fra å delta, da det pleier å være ventelister på alle våre kurs.
