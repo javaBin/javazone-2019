@@ -32,7 +32,7 @@ export function SpeakersPage() {
                 <p>
                     Our call for speakers opened on February 11th and it will remain open until April 22nd.
                 </p>
-                <Link external url="http://talks.javazone.no">Submit your talk!</Link>
+                <Link external url="https://talks.javazone.no">Submit your talk!</Link>
             </Section>
             <ImageSection bottom imageName="2018/180912_JavaZone_0039" />
             <Seperator />
