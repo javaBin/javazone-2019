@@ -106,7 +106,7 @@ export function PartnersPage() {
                 </p>
             </CenterSection>
             <Section header={<h1>Partnership stand</h1>}>
-                <PartnerPriceList>
+                <PartnerPriceList soldOut>
                     <PartnerPrice item="Extra Stand Space">38.000</PartnerPrice>
                     <PartnerPrice item="Restaurant Stand">65.000</PartnerPrice>
                     <PartnerPrice item="Restaurant Stand (Evening)">20.000</PartnerPrice>
