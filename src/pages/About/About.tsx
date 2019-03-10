@@ -12,7 +12,7 @@ export function AboutUsPage() {
             <Seperator />
             <Section header={<h1>What is JavaZone?</h1>}>
                 <p>
-                    JavaZone is the biggest community-driven Java conference that has been organized in Oslo, Norway since 2001. It is organized on a voluntary basis by a group of people from <InlineLink url="https://java.no">javaBin</InlineLink>, the Norwegian Java User Group, working around the year and putting many hours to create an amazing conference experience for you. 
+                    JavaZone is the biggest community-driven Java conference that has been organized in Oslo, Norway since 2001. It is organized on a voluntary basis by a group of people from <InlineLink external url="https://java.no">javaBin</InlineLink>, the Norwegian Java User Group, working around the year and putting many hours to create an amazing conference experience for you. 
                 </p>
                 <p>    
                     Our goal is to organize a community-driven conference for developers where they can learn new things, share knowledge, and socialize.
