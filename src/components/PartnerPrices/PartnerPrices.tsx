@@ -24,7 +24,7 @@ export function PartnerPrice(props: PartnerPriceProps) {
             <p>
                 {props.item}
             </p>
-            <p>
+            <p className={styles.soldOut}>
                 NOK {props.children},-
             </p>
         </div>

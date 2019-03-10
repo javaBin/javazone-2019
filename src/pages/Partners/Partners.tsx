@@ -10,6 +10,7 @@ import { TicketPrice } from '../../components/TicketPrice/TicketPrice';
 import VideoSource from '../../components/Jumbotron/VideoSource';
 import { useCanPlayVideoType } from '../../core/hooks/UseCanPlayVideoType';
 import { PartnerPriceList, PartnerPrice } from '../../components/PartnerPrices/PartnerPrices';
+import Box from '../../components/Box/Box';
 
 export function PartnersPage() {
     const canPlayWebm = useCanPlayVideoType('webm');
@@ -85,7 +86,13 @@ export function PartnersPage() {
             </Section>
             <Seperator />
             <CenterSection header={<h1>Partnership prices</h1>}>
-                <TicketPrice>71.000</TicketPrice>
+                <TicketPrice soldOut>71.000</TicketPrice>
+                <Box>
+                    <h1>Sold out!</h1>
+                    <p>
+                        Our partner packges for 2019 are now sold out. But if you would like to join the waiting list and stay informed of any changes to the 2019 partnership possibilities then please <InlineLink external url="https://tinyurl.com/jzpartner2019">register your contact details and partnership preferences</InlineLink>
+                    </p>
+                </Box>
                 <p>
                     <i>Note that all 50+ partnerships for JavaZone 2018 were sold out long before the conference.</i>
                 </p>
