@@ -90,7 +90,7 @@ export function PartnersPage() {
                 <Box>
                     <h1>Sold out!</h1>
                     <p>
-                        Our partner packges for 2019 are now sold out. But if you would like to join the waiting list and stay informed of any changes to the 2019 partnership possibilities then please <InlineLink external url="https://tinyurl.com/jzpartner2019">register your contact details and partnership preferences</InlineLink>
+                        Our partner packages for 2019 are now sold out. But if you would like to join the waiting list and stay informed of any changes to the 2019 partnership possibilities then please <InlineLink external url="https://tinyurl.com/jzpartner2019">register your contact details and partnership preferences</InlineLink>
                     </p>
                 </Box>
                 <p>
