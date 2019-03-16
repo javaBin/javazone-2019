@@ -1,13 +1,19 @@
 import React, { ReactElement } from 'react';
 import styles from './PartnerPrices.module.scss';
+import classnames from 'classnames';
 
 interface PartnerPriceListProps {
+    soldOut?: boolean;
     children: React.ReactNode; 
 }
 
 export function PartnerPriceList(props: PartnerPriceListProps) {
+    const classes = classnames(
+        styles.priceList,
+        {[styles.soldOut]: props.soldOut},
+    )
     return (
-       <div className={styles.priceList}>
+       <div className={classes}>
             {props.children}
        </div> 
     )
@@ -24,7 +30,7 @@ export function PartnerPrice(props: PartnerPriceProps) {
             <p>
                 {props.item}
             </p>
-            <p>
+            <p id="price">
                 NOK {props.children},-
             </p>
         </div>
