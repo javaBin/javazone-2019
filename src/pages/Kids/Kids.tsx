@@ -5,6 +5,7 @@ import {CenterSection} from "../../components/CenterSection/CenterSection";
 import {Section} from "../../components/Section/Section";
 import {KidsSection} from "../../components/KidsProgram/KidsSection";
 import {KidsProgram} from "../../components/KidsProgram/KidsProgram";
+import Box from '../../components/Box/Box';
 
 export function KidsPage() {
     return (
@@ -59,8 +60,13 @@ export function KidsPage() {
                 </p>
             </Section>
             <Seperator />
-
             <KidsSection header={<h1>Sesjoner</h1>}>
+                <Box>
+                    <h1>Fullt!</h1>
+                    <p>
+                        Alle workshopene er desverre fulle. Du kan melde deg på ventelisten, og vil få bedskjed om du får plass.
+                    </p>
+                </Box>
                 <KidsProgram/>
             </KidsSection>
 
