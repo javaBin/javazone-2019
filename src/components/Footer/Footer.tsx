@@ -15,6 +15,11 @@ function Footer(props: FooterProps) {
         styles.footer,
         {[styles.frontpage]: isFrontpage},
     );
+
+    if(isFrontpage){
+        return null;
+    }
+    else{
     return (
         <footer className={componentClass}>
             <div className={styles.javabin}>
@@ -37,7 +42,7 @@ function Footer(props: FooterProps) {
                 </a>
             </div>
         </footer>
-    )
+    )}
 }
 
 export default withRouter(Footer);
