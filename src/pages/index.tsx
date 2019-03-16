@@ -1,13 +1,17 @@
 import React from 'react';
-import { Jumbotron } from '../components/Jumbotron/Jumbotron';
+import Page from '../components/Layouts/Page';
 
-function FrontPage() {
+const ScrollToTop = () => {
+    window.scrollTo(0, 0);
+    return null;
+};
+
+function Index() {
     return (
-        <>
-            <Jumbotron title="JavaZone 2019" subTitle="September 11th - 12th" location="Oslo Spektrum" />
-        </>
+        <Page>
+            <h1>Landing</h1>
+        </Page>
     )
 }
 
-
-export default FrontPage;
+export default Index;
