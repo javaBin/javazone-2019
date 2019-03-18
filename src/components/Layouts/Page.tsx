@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Navigation, { NavRoute } from '../Navigation/Navigation';
+import Footer from '../Footer/Footer';
+import { CookieDisclaimer } from '../CookieDisclaimer/CookieDisclaimer';
+import { InlineLink } from '../InlineLink/InlineLink';
 
 const routes: NavRoute[] = [
     {title: 'Info', url: '/info', show: true},
@@ -24,6 +27,10 @@ function Page(props: PageProps) {
         <>
             <Navigation routes={routes} />
             {props.children}
+            <Footer routes={routes} />
+            <CookieDisclaimer>
+                We have given you a dedicated cookie from our cookie jar in order to store your favorite program schedule. We also use cookies to improve your experience on our site. By using this site you agree to this. For more information please visit our <InlineLink url="/privacy-cookies">cookie information page.</InlineLink>
+            </CookieDisclaimer>
         </>
     )
 }

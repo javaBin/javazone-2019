@@ -1,16 +1,16 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import { useIsFrontpage } from '../../core/hooks/UseIsFrontpage';
-import { RouteComponentProps, withRouter } from 'react-router';
 import classnames from 'classnames';
 import { NavRoute } from '../Navigation/Navigation';
+import { RouteComponentProps } from '@reach/router';
 
 interface FooterProps extends RouteComponentProps {
     routes: NavRoute[];
 }
 
 function Footer(props: FooterProps) {
-    const isFrontpage = useIsFrontpage(props.location.pathname, props.routes);
+    const isFrontpage = useIsFrontpage('', props.routes);
     const componentClass = classnames(
         styles.footer,
         {[styles.frontpage]: isFrontpage},
@@ -40,4 +40,4 @@ function Footer(props: FooterProps) {
     )
 }
 
-export default withRouter(Footer);
+export default Footer;
