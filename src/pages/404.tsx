@@ -1,10 +1,13 @@
-// import React from 'react';
-// import { Jumbotron } from '../../components/Jumbotron/Jumbotron';
+import React from 'react';
+import { Jumbotron } from '../components/Jumbotron/Jumbotron';
+import Page from '../components/Layouts/Page';
 
-// export function NotFoundPage() {
-//     return (
-//         <>
-//             <Jumbotron title="404" subTitle="Where did it go?" />
-//         </>
-//     )
-// }
+function NotFoundPage() {
+    return (
+        <Page>
+            <Jumbotron title="404" subTitle="Where did it go?" />
+        </Page>
+    )
+}
+
+export default NotFoundPage;
