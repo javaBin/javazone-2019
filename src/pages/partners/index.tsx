@@ -47,12 +47,10 @@ function PartnersPage() {
                 </p>
             </CenterSection>
             <CenterSection>
-                <Suspense fallback={<img src="splash.jpg" />}>
-                    <video style={{width: '100%'}} muted controls id="backgroundLapse">
-                        <VideoSource canPlayWebm={canPlayWebm} />
-                        Your browser does not support HTML5 video.
-                    </video>
-                </Suspense>
+                <video style={{width: '100%'}} muted controls id="backgroundLapse">
+                    <VideoSource canPlayWebm={canPlayWebm} />
+                    Your browser does not support HTML5 video.
+                </video>
             </CenterSection>
             <Section header={<h1>Partner Options</h1>}>
                 <p>
