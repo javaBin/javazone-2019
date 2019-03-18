@@ -11,11 +11,12 @@ import classnames from 'classnames';
 import { PresentationFormat } from '../../core/models/PresentationFormat.model';
 import { lightning, presentation, workshop } from '../../core/data/PresentationFormats.data';
 import Timeline from '../../components/Timeline/Timeline';
+import Page from '../../components/Layouts/Page';
 
 
 function SpeakersPage() {
     return (
-        <>
+        <Page>
             <PageBanner header="Call for Speakers" subHeader="Speak at JavaZone 2019" imageName="2018/180913_JavaZone_0010" />
             <Seperator />
             <Section header={<h1>About JavaZone</h1>}>
@@ -118,7 +119,7 @@ function SpeakersPage() {
                     Best regards,<br />the JavaZone Program Committee
                 </p>
             </CenterSection>
-        </>
+        </Page>
     )
 }
 
