@@ -6,10 +6,11 @@ import { AcademyLocationSection } from '../../components/AcademyLocation/Academy
 import { Section } from '../../components/Section/Section';
 import { AcademyProgram } from '../../components/AcademyProgram/AcademyProgram';
 import { academies } from '../../core/data';
+import Page from '../../components/Layouts/Page';
 
-export function AcademyPage() {
+function AcademyPage() {
     return (
-        <>
+        <Page>
             <PageBanner header="JavaZone Academy" subHeader="A free taste of JavaZone for IT-students!" imageName="academy" />
             <Seperator />
             <CenterSection header={<h1>Come join us in february</h1>}>
@@ -39,6 +40,8 @@ export function AcademyPage() {
             <CenterSection header={<h1>Program, speakers and partners</h1>}>
                 <AcademyProgram program={academies.map(academy => academy.program)} partners={academies.map(city => city.partners)} />
             </CenterSection>
-        </>
+        </Page>
     )
 }
+
+export default AcademyPage;

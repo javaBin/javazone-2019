@@ -8,15 +8,15 @@ import { ImageSection } from '../../components/ImageSection/ImageSection';
 import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { Zap, BookOpen, Monitor } from 'react-feather';
 import classnames from 'classnames';
-import styles from './Speakers.module.scss';
-import Timeline from './Timeline/Timeline';
 import { PresentationFormat } from '../../core/models/PresentationFormat.model';
 import { lightning, presentation, workshop } from '../../core/data/PresentationFormats.data';
+import Timeline from '../../components/Timeline/Timeline';
+import Page from '../../components/Layouts/Page';
 
 
-export function SpeakersPage() {
+function SpeakersPage() {
     return (
-        <>
+        <Page>
             <PageBanner header="Call for Speakers" subHeader="Speak at JavaZone 2019" imageName="2018/180913_JavaZone_0010" />
             <Seperator />
             <Section header={<h1>About JavaZone</h1>}>
@@ -55,13 +55,13 @@ export function SpeakersPage() {
                     You should think about which format your talk will work best in. Are you presenting a new idea, or do you require more time to elaborate on your subject? How hands-on do you want to be? We have three formats you can present your material in.
                 </p>
             </Section>
-            <CenterSection>
+            {/* <CenterSection>
                 <ul className={styles.formatList}>
                     <Format {...lightning} />
                     <Format {...presentation} />
                     <Format {...workshop} />
                 </ul>
-            </CenterSection>
+            </CenterSection> */}
             <Section header={<h1>Get Some Inspiration</h1>}>
                 <h3>Workshop for Potential Speakers</h3>
                 <p>
@@ -98,7 +98,7 @@ export function SpeakersPage() {
                 </p>
                 <h3>Coverage of Expenses</h3>
                 <p>
-                    Please see our <InlineLink external url='/speakers/monetary-policy'>reimbursement policy</InlineLink> if you have any questions regarding coverage of other expenses.
+                    Please see our <InlineLink url='/speakers/monetary-policy'>reimbursement policy</InlineLink> if you have any questions regarding coverage of other expenses.
                 </p>
             </Section>
             <Section header={<h1>Important principles</h1>}>
@@ -119,26 +119,28 @@ export function SpeakersPage() {
                     Best regards,<br />the JavaZone Program Committee
                 </p>
             </CenterSection>
-        </>
+        </Page>
     )
 }
 
-function Format(props: PresentationFormat) {
+// function Format(props: PresentationFormat) {
 
-    function getIconElement(icon: string) {
-        switch(icon) {
-            case 'zap': return <Zap size={36} />
-            case 'book-open': return <BookOpen size={36} />
-            case 'monitor': return <Monitor size={36} />
-        }
-    }
+//     function getIconElement(icon: string) {
+//         switch(icon) {
+//             case 'zap': return <Zap size={36} />
+//             case 'book-open': return <BookOpen size={36} />
+//             case 'monitor': return <Monitor size={36} />
+//         }
+//     }
 
-    return (
-        <li>
-            {getIconElement(props.icon)}
-            <h3 className={classnames(styles.format, styles.title)}>{props.title}</h3>
-            <p className={classnames(styles.format, styles.length)}>{props.length}</p>
-            <p className={classnames(styles.format, styles.description)}>{props.description}</p>
-        </li>
-    );
-};
+//     return (
+//         <li>
+//             {getIconElement(props.icon)}
+//             <h3 className={classnames(styles.format, styles.title)}>{props.title}</h3>
+//             <p className={classnames(styles.format, styles.length)}>{props.length}</p>
+//             <p className={classnames(styles.format, styles.description)}>{props.description}</p>
+//         </li>
+//     );
+// };
+
+export default SpeakersPage;
