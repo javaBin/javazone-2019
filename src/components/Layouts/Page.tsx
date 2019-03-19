@@ -25,7 +25,7 @@ interface PageProps {
 function Page(props: PageProps) {
     return (
         <>
-            <Navigation routes={routes} />
+            <Navigation sticky routes={routes} />
             {props.children}
             <Footer routes={routes} />
             <CookieDisclaimer>
