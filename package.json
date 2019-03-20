@@ -5,11 +5,10 @@
   "description": "Web page for JavaZone 2019.",
   "homepage": "https://2019.javazone.no/",
   "dependencies": {
-    "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
-    "gatsby": "^2.1.22",
-    "gatsby-image": "^2.0.31",
+    "gatsby": "^2.2.3",
+    "gatsby-image": "^2.0.34",
     "gatsby-plugin-favicon": "^3.1.5",
     "gatsby-plugin-manifest": "^2.0.21",
     "gatsby-plugin-offline": "^2.0.24",
@@ -29,9 +28,7 @@
   },
   "scripts": {
     "start": "gatsby develop",
-    "build": "gatsby build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "gatsby build"
   },
   "eslintConfig": {
     "extends": "react-app"
