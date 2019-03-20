@@ -5,8 +5,8 @@ import { CookieDisclaimer } from '../CookieDisclaimer/CookieDisclaimer';
 import { InlineLink } from '../InlineLink/InlineLink';
 
 const routes: NavRoute[] = [
-    {title: 'Info', url: '/info', show: true},
-    {title: 'Tickets', url: '/tickets', show: true},
+    {title: 'Info', url: '/info/', show: true},
+    {title: 'Tickets', url: '/tickets/', show: true},
     {title: 'Speakers', url: '/speakers', show: true},
     {title: 'Partners', url: '/partners', show: true},
     {title: 'Academy', url: '/academy', show: true},
