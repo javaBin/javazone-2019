@@ -6,7 +6,7 @@ handlers:
   upload: public/(.*)(|\.map)
   secure: always
   redirect_http_response_code: 301
-- url: /
+- url: /(.*)
   static_files: public/index.html
   upload: public/index.html
   secure: always
