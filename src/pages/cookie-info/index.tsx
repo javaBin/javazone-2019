@@ -4,10 +4,11 @@ import { Section } from '../../components/Section/Section';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { Seperator } from '../../components/Seperator/Seperator';
 import { List } from '../../components/List/List';
+import Page from '../../components/Layouts/Page';
 
-export function CookieInfoPage() {
+function CookieInfoPage() {
     return (
-        <>
+        <Page>
             <PageBanner header="JavaZone Website and Cookies" subHeader="Here, have a cookie from our cookie jar!" imageName="2018/180913_JavaZone_0010" />
             <Seperator />
             <Section header={<h1>What Are Cookies?</h1>}>
@@ -78,6 +79,8 @@ export function CookieInfoPage() {
                     You can also opt-out of personalized advertising in Google AdWords Settings. For instructions, see <InlineLink external url="https://support.google.com/ads/answer/2662922?hl=en">https://support.google.com/ads/answer/2662922?hl=en</InlineLink>
                 </p>
             </Section>
-        </>
+        </Page>
     )
 }
+
+export default CookieInfoPage;

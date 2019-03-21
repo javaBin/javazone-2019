@@ -1,13 +1,15 @@
+
 import React from 'react';
 import { PageBanner } from '../../components/PageBanner/PageBanner';
 import { Section } from '../../components/Section/Section';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { Seperator } from '../../components/Seperator/Seperator';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
+import Page from '../../components/Layouts/Page';
 
-export function InfoPage() {
+function InfoPage() {
     return (
-        <>
+        <Page>
             <PageBanner header="Another year, another JavaZone!" subHeader="September 11th - 12th, 2019" imageName="2018/180913_JavaZone_0010" />
             <Seperator />
             <Section header={<h1>JavaZone 101 the who, what and where</h1>}>
@@ -110,6 +112,8 @@ export function InfoPage() {
                     We are looking forward to seeing you at JavaZone 2019!
                 </p>
             </Section>
-        </>
+        </Page>
     )
 }
+
+export default InfoPage;

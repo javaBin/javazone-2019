@@ -11,6 +11,8 @@ package-lock.json
 
 # production
 /build
+.cache
+/public
 
 # misc
 .DS_Store

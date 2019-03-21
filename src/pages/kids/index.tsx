@@ -5,10 +5,11 @@ import {CenterSection} from "../../components/CenterSection/CenterSection";
 import {Section} from "../../components/Section/Section";
 import {KidsSection} from "../../components/KidsProgram/KidsSection";
 import {KidsProgram} from "../../components/KidsProgram/KidsProgram";
+import Page from '../../components/Layouts/Page';
 
-export function KidsPage() {
+function KidsPage() {
     return (
-        <>
+        <Page>
             <PageBanner header="JavaZone Kids" subHeader="En smakebit på JavaZone for framtidens utviklere" imageName="kids" />
             <Seperator />
             <CenterSection header={<h1>Tre sesjoner: En smakebit på voksenlivet</h1>}>
@@ -72,6 +73,8 @@ export function KidsPage() {
                     javaBin
                 </p>
             </CenterSection>
-        </>
+        </Page>
     )
 }
+
+export default KidsPage;
