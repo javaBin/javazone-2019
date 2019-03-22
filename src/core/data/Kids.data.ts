@@ -17,6 +17,7 @@ export const kidsProgram: KidsProgram[] = [
         desc: '<p>I dette kurset vil du bygge og programmere verdens tøffeste robot. Robot heter bit:bot og kan enkelt programmeres i et grafisk programmeringsspråk. Med roboten kan du finne på mye rart: du kan få den til å følge en linje eller tegne fine tegninger, den kan blinke og lyse og ikke minst, den ser supertøff ut! Dette blir supergøy!<p><strong>Hva lærer du:</strong><br>Grunnleggende programmering<br>Elektronikk<br>Følge en oppskrift for å bygge en robot.</p></p>',
         recommendedAge: '10 år+',
         image: 'kids-robot',
+        moreInfoLink: 'https://github.com/tanzr/bitbot-workshop/blob/master/Bit_Bot_Micro_Bit.pdf',
         registrationLink: 'https://moosehead.javazone.no/#/register/hjelprobot',
         speakers: 'Tannaz N. Roshandel & Krister Borge',
         gear: 'Ta med din egen laptop, vi låner bort roboter under workshopen.'
