@@ -1,13 +1,12 @@
 import React from 'react';
-import Page from '../../../components/Layouts/Page';
-import { PageBanner } from '../../../components/PageBanner/PageBanner';
-import { Seperator } from '../../../components/Seperator/Seperator';
-import { Section } from '../../../components/Section/Section';
-import { InlineLink } from '../../../components/InlineLink/InlineLink';
+import { PageBanner } from '../../components/PageBanner/PageBanner';
+import { Section } from '../../components/Section/Section';
+import { InlineLink } from '../../components/InlineLink/InlineLink';
+import { Seperator } from '../../components/Seperator/Seperator';
 
-function MonetaryPolicyPage() {
+export function MonetaryPolicyPage() {
     return (
-        <Page>
+        <>
             <PageBanner header="Reimbursement Policy" subHeader="Refunds for speakers" imageName="2018/180913_JavaZone_0010" />
             <Seperator />
             <Section header={<h1>What & How</h1>}>
@@ -40,8 +39,6 @@ function MonetaryPolicyPage() {
                     Reimbursements are processed and paid after the conference. We will reach out to speakers who applied for reimbursement and process the payments once payment details are provided.
                 </p>
             </Section>
-        </Page>
+        </>
     )
 }
-
-export default MonetaryPolicyPage;

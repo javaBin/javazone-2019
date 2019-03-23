@@ -1,13 +1,12 @@
 import classnames from 'classnames';
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import styles from './Navigation.module.scss';
 import { useRef, useEffect, useState } from 'react';
 import { useWindowWidth } from '../../core/hooks/UseWindowWidth';
 import { useIsFrontpage } from '../../core/hooks/UseIsFrontpage';
-import { RouteComponentProps } from '@reach/router';
 
-import logo from '../../images/logo-sharp.svg';
+const logo = `${process.env.PUBLIC_URL}/logo-sharp.svg`;
 
 export type NavigationPosition = 'start' | 'end';
 
@@ -34,19 +33,19 @@ interface NavigationState {
 function Navigation(props: NavigationProps) {
 
     const windowWidth = useWindowWidth();
-    //const isFrontpage = useIsFrontpage('', props.routes);
+    const isFrontpage = useIsFrontpage(props.location.pathname, props.routes);
 
     const componentClass = classnames(
         styles.navigation,
         {[styles.space]: windowWidth <= MENU_WIDTH},
-        //{[styles.frontpage]: isFrontpage || props.isNotFound},
+        {[styles.frontpage]: isFrontpage || props.isNotFound},
         {[styles.navigationSticky]: props.sticky},
         {[styles.navigationEnd]: props.position === 'end'}
     );
 
     function renderMenuButton() {
         return (
-            <MenuButton pathname="" routes={props.routes} />
+            <MenuButton pathname={props.location.pathname} routes={props.routes} />
         )
     }
 
@@ -57,7 +56,7 @@ function Navigation(props: NavigationProps) {
                 ? renderMenuButton()
                 : props.routes.map((navRoute: NavRoute) => {
                     return (
-                        navRoute.show ? <NavItem pathname="" key={navRoute.title} route={navRoute} /> : null
+                        navRoute.show ? <NavItem pathname={props.location.pathname} key={navRoute.title} route={navRoute} /> : null
                     )
                 })}
         </div>
@@ -155,4 +154,4 @@ Brand.defaultProps = {
     title: 'JAVAZONE'
 }
 
-export default Navigation; 
+export default withRouter(Navigation);

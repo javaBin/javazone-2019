@@ -10,12 +10,12 @@ import { TicketPrice } from '../../components/TicketPrice/TicketPrice';
 import VideoSource from '../../components/Jumbotron/VideoSource';
 import { useCanPlayVideoType } from '../../core/hooks/UseCanPlayVideoType';
 import { PartnerPriceList, PartnerPrice } from '../../components/PartnerPrices/PartnerPrices';
-import Page from '../../components/Layouts/Page';
+import Box from '../../components/Box/Box';
 
-function PartnersPage() {
+export function PartnersPage() {
     const canPlayWebm = useCanPlayVideoType('webm');
     return (
-        <Page>
+        <>
             <PageBanner header="Partner love <3" subHeader="September 11th - 12th, 2019" imageName="partners_2" />
             <Seperator />
             <CenterSection header={<h1>JavaZone 2019: Bigger and better than ever</h1>}>
@@ -47,10 +47,12 @@ function PartnersPage() {
                 </p>
             </CenterSection>
             <CenterSection>
-                <video style={{width: '100%'}} muted controls id="backgroundLapse">
-                    <VideoSource canPlayWebm={canPlayWebm} />
-                    Your browser does not support HTML5 video.
-                </video>
+                <Suspense fallback={<img src="splash.jpg" />}>
+                    <video style={{width: '100%'}} muted controls id="backgroundLapse">
+                        <VideoSource canPlayWebm={canPlayWebm} />
+                        Your browser does not support HTML5 video.
+                    </video>
+                </Suspense>
             </CenterSection>
             <Section header={<h1>Partner Options</h1>}>
                 <p>
@@ -84,7 +86,13 @@ function PartnersPage() {
             </Section>
             <Seperator />
             <CenterSection header={<h1>Partnership prices</h1>}>
-                <TicketPrice>71.000</TicketPrice>
+                <TicketPrice soldOut>71.000</TicketPrice>
+                <Box>
+                    <h1>Sold out!</h1>
+                    <p>
+                        Our partner packages for 2019 are now sold out. But if you would like to join the waiting list and stay informed of any changes to the 2019 partnership possibilities then please <InlineLink external url="https://tinyurl.com/jzpartner2019">register your contact details and partnership preferences</InlineLink>
+                    </p>
+                </Box>
                 <p>
                     <i>Note that all 50+ partnerships for JavaZone 2018 were sold out long before the conference.</i>
                 </p>
@@ -98,7 +106,7 @@ function PartnersPage() {
                 </p>
             </CenterSection>
             <Section header={<h1>Partnership stand</h1>}>
-                <PartnerPriceList>
+                <PartnerPriceList soldOut>
                     <PartnerPrice item="Extra Stand Space">38.000</PartnerPrice>
                     <PartnerPrice item="Restaurant Stand">65.000</PartnerPrice>
                     <PartnerPrice item="Restaurant Stand (Evening)">20.000</PartnerPrice>
@@ -118,8 +126,6 @@ function PartnersPage() {
             <CenterSection header={<h1>Contact us</h1>}>
                 <p>You can contact us about partnership details at <InlineLink external url="mailto:partner@java.no">partner@java.no</InlineLink></p>
             </CenterSection>
-        </Page>
+        </>
     )
 }
-
-export default PartnersPage;

@@ -1,6 +1,8 @@
-@import '../../_variables.scss';
+@import '../../variables.scss';
 
 .jumbotron {
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     color: white;
     &Content {

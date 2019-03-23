@@ -1,12 +1,11 @@
 import React from 'react';
-import Page from '../../../components/Layouts/Page';
-import { PageBanner } from '../../../components/PageBanner/PageBanner';
-import { Seperator } from '../../../components/Seperator/Seperator';
-import { Section } from '../../../components/Section/Section';
+import { PageBanner } from '../../components/PageBanner/PageBanner';
+import { Section } from '../../components/Section/Section';
+import { Seperator } from '../../components/Seperator/Seperator';
 
 export function SpeakerTipsPage() {
     return (
-        <Page>
+        <>
             <PageBanner header="Tips And Tricks for Speakers" subHeader="Make that abstract shine" imageName="2018/180913_JavaZone_0010" />
             <Seperator />
             <Section header={<h1>Increase the chance of your talk being accepted</h1>}>
@@ -95,8 +94,6 @@ export function SpeakerTipsPage() {
                             We often receive multiple good proposals covering exactly the same topic. The program committee then has to decide between these multiple excellent submissions. In 2016 we received many great proposals covering "how we do DevOps in the cloud". Limited space in the program meant that many of these ended up being rejected.
                         </p>
                 </Section>
-        </Page>
+        </>
     )
 }
-
-export default SpeakerTipsPage;

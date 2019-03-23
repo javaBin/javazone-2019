@@ -7,11 +7,10 @@ import { ImageSection } from '../../components/ImageSection/ImageSection';
 import { Section } from '../../components/Section/Section';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 import Link from '../../components/Link/Link';
-import Page from '../../components/Layouts/Page';
 
-function TicketsPage() {
+export function TicketsPage() {
     return (
-        <Page>
+        <>
             <PageBanner header="The Ticket Booth" subHeader="Come join us in Oslo, September 11th - 12th, 2019" imageName="2018/180912_JavaZone_0019" />
             <Seperator />
             <CenterSection header={<h1>Get your tickets for JavaZone 2019 – Early Bird</h1>}>
@@ -72,8 +71,6 @@ function TicketsPage() {
                     Don't wait too long buying your ticket, though – last year all of the 3,100 spots were gone, and we had long waiting lists. We expect a decent amount of interest this year as well.
                 </p>
             </CenterSection>
-        </Page>
+        </>
     )
 }
-
-export default TicketsPage;
