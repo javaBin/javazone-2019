@@ -13,10 +13,10 @@ import { SpeakersPage } from './pages/Speakers/Speakers';
 import { AboutUsPage } from './pages/About/About';
 import { MonetaryPolicyPage } from './pages/Speakers/MonetaryPolicy';
 import { SpeakerTipsPage } from './pages/Speakers/Tips';
-import { CookieInfoPage } from './pages/CookieInfo/CookieInfo';
 import { CookieDisclaimer } from './components/CookieDisclaimer/CookieDisclaimer';
 import { InlineLink } from './components/InlineLink/InlineLink';
 import { NotFoundPage } from './pages/NotFound/NotFound';
+import { CookieInfoPage } from './pages/CookieInfo/CookieInfo';
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info', show: true},

@@ -9,9 +9,9 @@ import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { Zap, BookOpen, Monitor } from 'react-feather';
 import classnames from 'classnames';
 import styles from './Speakers.module.scss';
-import Timeline from './Timeline/Timeline';
 import { PresentationFormat } from '../../core/models/PresentationFormat.model';
 import { lightning, presentation, workshop } from '../../core/data/PresentationFormats.data';
+import Timeline from '../../components/Timeline/Timeline';
 
 
 export function SpeakersPage() {
