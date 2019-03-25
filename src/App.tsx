@@ -49,7 +49,7 @@ function App() {
     <Router>
       <ThemeProvider theme={theme}>
         <>
-          {/* <Navigation sticky routes={routes} /> */}
+          <Navigation sticky routes={routes} />
           <Route component={ScrollToTop}/>
           <Switch>
             <Route exact path="/" component={Index} />

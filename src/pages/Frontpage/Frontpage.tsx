@@ -7,6 +7,7 @@ import { Link } from '../../components/Link/Link';
 const logo = `${process.env.PUBLIC_URL}/logo-sharp.svg`;
 const floating = `${process.env.PUBLIC_URL}/floating-logo.svg`;
 const hamburger = `${process.env.PUBLIC_URL}/menu.svg`;
+const floatingTree = `${process.env.PUBLIC_URL}/floating-tree.svg`;
 
 const Content = styled.div`
     position: absolute;
@@ -18,45 +19,6 @@ const Content = styled.div`
     display: flex;
     pointer-events: none;
     flex-direction: column;
-`
-
-const Header = styled.div`
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-`
-
-const Brand = styled.div`
-    pointer-events: auto;
-    line-height: 0;
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 2rem 1rem;
-    & > h1 {
-        font-size: 2.5rem;
-        margin-left: 1rem;
-    }
-`
-
-const Logo = styled.img`
-    width: 4rem;
-`
-
-const Icon = styled.img`
-    height: 2rem;
-    width: 2rem;
-`
-
-const Menu = styled.button`
-    pointer-events: auto;
-    margin: 1rem;
-    padding: 0.5rem;
-    background: #FFC236;
-    border-radius: 0.4rem;
 `
 
 const LandingBanner = styled.div`
@@ -138,20 +100,35 @@ const Gap = styled.div`
     height: 100%;
 `
 
+const BackgroundFloaters = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15%;
+    box-sizing: border-box;
+`
+const Art = styled.img`
+    position: relative;
+    width: ${(props: any) => `${props.size}rem`}; 
+    top: ${(props: any) => `${props.top}rem`};
+    left: ${(props: any) => `${props.left}rem`};
+    animation: ${float} 4s infinite; 
+    animation-delay: ${(props: any) => `-${props.delay}s`};
+`
+
 function Index() {
     return (
         <>
             <Particles width="100vw" height="99vh" params={config} />
+            <BackgroundFloaters>
+                <Art src={floatingTree} size={4} top={10} left={10} delay={1} />
+                <Art src={floatingTree} size={8} top={30} left={40} delay={3} />
+                <Art src={floatingTree} size={6} top={13} left={20} delay={2} />
+                <Art src={floatingTree} size={10} top={0} left={80} delay={1} />
+            </BackgroundFloaters>
             <Content>
-                <Header>
-                    <Brand>
-                        <Logo src={logo} />
-                        <h1>JAVAZONE</h1>
-                    </Brand>
-                    <Menu>
-                        <Icon src={hamburger} />
-                    </Menu>
-                </Header>
                 <LandingBanner>
                     <BannerContent>
                         <FloatingLogo src={floating} />
