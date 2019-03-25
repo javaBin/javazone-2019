@@ -65,7 +65,7 @@ function App() {
             <Route exact path="/privacy-cookies" component={CookieInfoPage} />
             <Route component={NotFoundPage} />
           </Switch>
-          <Footer routes={routes} />
+          {/* <Footer routes={routes} /> */}
           <CookieDisclaimer>
             We have given you a dedicated cookie from our cookie jar in order to store your favorite program schedule. We also use cookies to improve your experience on our site. By using this site you agree to this. For more information please visit our <InlineLink url="/privacy-cookies">cookie information page.</InlineLink>
           </CookieDisclaimer>

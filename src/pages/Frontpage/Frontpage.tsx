@@ -107,10 +107,10 @@ const Gap = styled.div`
 
 
 const Art = styled.img`
-    position: fixed;
+    position: relative;
     width: ${(props: any) => `${props.imgSize}rem`}; 
-    top: ${(props: any) => `calc(100vh - ${props.top}vh)`};
-    left: ${(props: any) => `calc(100vw - ${props.left}vw)`};
+    top: ${(props: any) => `${props.top}vh`};
+    left: ${(props: any) => `${props.left}vw`};
     animation: ${float} 4s infinite; 
     animation-delay: ${(props: any) => `-${props.delay}s`};
 `
@@ -122,18 +122,24 @@ interface BackgroundFloatersProps {
 
 function BackgroundFloaters(props: BackgroundFloatersProps) {
 
+    const positions = [
+        {top: 40, left: 70},
+        {top: 70, left: 30},
+        {top: 50, left: 70},
+        {top: 30, left: 0},
+        {top: 60, left: -10}
+    ]
+
     function getRandomAnimationProps() {
         const delay = Math.floor(Math.random() * Math.floor(4));
-        const size = Math.floor(Math.random() * (Math.floor(14) - Math.ceil(6) + 1)) + Math.ceil(6);
-        const top = Math.floor(Math.random() * (Math.floor(80) - Math.ceil(20) + 1)) + Math.ceil(20);
-        const left = Math.floor(Math.random() * (Math.floor(80) - Math.ceil(20) + 1)) + Math.ceil(20);
-        return {delay: delay, imgSize: size, top: top, left: left};
+        const size = Math.floor(Math.random() * (Math.floor(12) - Math.ceil(6) + 1)) + Math.ceil(6);
+        return {delay: delay, imgSize: size};
     }
 
     return (
         <div className={props.className}>
             {props.floaters.map(art => {
-                return <Art src={art} {...getRandomAnimationProps()}  />
+                return <Art src={art} {...getRandomAnimationProps()} {...positions.shift()} />
             })}
         </div>
     );
@@ -147,7 +153,6 @@ const StyledBackgroundFloaters = styled(BackgroundFloaters)`
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 6rem;
     box-sizing: border-box;
 `
 
@@ -156,7 +161,7 @@ function Index() {
     return (
         <>
             <Particles width="100vw" height="99vh" params={config} />
-            <StyledBackgroundFloaters floaters={[floatingTree1, floatingTree2, floatingAstronaut, floatingKid1, floatingPlanet]} />
+            <StyledBackgroundFloaters floaters={[floatingTree1, floatingKid1, floatingAstronaut, floatingPlanet, floatingTree2]} />
                 {/* <Art src={floatingTree1} size={4} top={10} left={10} delay={1} />
                 <Art src={floatingTree2} size={8} top={30} left={40} delay={3} />
                 <Art src={floatingKid1} size={6} top={13} left={20} delay={2} />
