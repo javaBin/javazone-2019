@@ -7,7 +7,12 @@ import { Link } from '../../components/Link/Link';
 const logo = `${process.env.PUBLIC_URL}/logo-sharp.svg`;
 const floating = `${process.env.PUBLIC_URL}/floating-logo.svg`;
 const hamburger = `${process.env.PUBLIC_URL}/menu.svg`;
-const floatingTree = `${process.env.PUBLIC_URL}/floating-tree.svg`;
+
+const floatingTree1 = `${process.env.PUBLIC_URL}/floating-tree1.svg`;
+const floatingTree2 = `${process.env.PUBLIC_URL}/floating-tree2.svg`;
+const floatingKid1 = `${process.env.PUBLIC_URL}/floating-kid1.svg`;
+const floatingAstronaut = `${process.env.PUBLIC_URL}/floating-astronaut.svg`;
+const floatingPlanet = `${process.env.PUBLIC_URL}/floating-planet.svg`;
 
 const Content = styled.div`
     position: absolute;
@@ -100,34 +105,63 @@ const Gap = styled.div`
     height: 100%;
 `
 
-const BackgroundFloaters = styled.div`
+
+const Art = styled.img`
+    position: fixed;
+    width: ${(props: any) => `${props.imgSize}rem`}; 
+    top: ${(props: any) => `calc(100vh - ${props.top}vh)`};
+    left: ${(props: any) => `calc(100vw - ${props.left}vw)`};
+    animation: ${float} 4s infinite; 
+    animation-delay: ${(props: any) => `-${props.delay}s`};
+`
+
+interface BackgroundFloatersProps {
+    className: string;
+    floaters: {}[];
+}
+
+function BackgroundFloaters(props: BackgroundFloatersProps) {
+
+    function getRandomAnimationProps() {
+        const delay = Math.floor(Math.random() * Math.floor(4));
+        const size = Math.floor(Math.random() * (Math.floor(14) - Math.ceil(6) + 1)) + Math.ceil(6);
+        const top = Math.floor(Math.random() * (Math.floor(80) - Math.ceil(20) + 1)) + Math.ceil(20);
+        const left = Math.floor(Math.random() * (Math.floor(80) - Math.ceil(20) + 1)) + Math.ceil(20);
+        return {delay: delay, imgSize: size, top: top, left: left};
+    }
+
+    return (
+        <div className={props.className}>
+            {props.floaters.map(art => {
+                return <Art src={art} {...getRandomAnimationProps()}  />
+            })}
+        </div>
+    );
+}
+
+const StyledBackgroundFloaters = styled(BackgroundFloaters)`
+    overflow: hidden;
+    pointer-events: none;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 15%;
+    padding: 6rem;
     box-sizing: border-box;
 `
-const Art = styled.img`
-    position: relative;
-    width: ${(props: any) => `${props.size}rem`}; 
-    top: ${(props: any) => `${props.top}rem`};
-    left: ${(props: any) => `${props.left}rem`};
-    animation: ${float} 4s infinite; 
-    animation-delay: ${(props: any) => `-${props.delay}s`};
-`
+
 
 function Index() {
     return (
         <>
             <Particles width="100vw" height="99vh" params={config} />
-            <BackgroundFloaters>
-                <Art src={floatingTree} size={4} top={10} left={10} delay={1} />
-                <Art src={floatingTree} size={8} top={30} left={40} delay={3} />
-                <Art src={floatingTree} size={6} top={13} left={20} delay={2} />
-                <Art src={floatingTree} size={10} top={0} left={80} delay={1} />
-            </BackgroundFloaters>
+            <StyledBackgroundFloaters floaters={[floatingTree1, floatingTree2, floatingAstronaut, floatingKid1, floatingPlanet]} />
+                {/* <Art src={floatingTree1} size={4} top={10} left={10} delay={1} />
+                <Art src={floatingTree2} size={8} top={30} left={40} delay={3} />
+                <Art src={floatingKid1} size={6} top={13} left={20} delay={2} />
+                <Art src={floatingTree2} size={10} top={0} left={80} delay={1} />
+                <Art src={floatingAstronaut} size={7} top={30} left={40} delay={2} /> */}
             <Content>
                 <LandingBanner>
                     <BannerContent>
