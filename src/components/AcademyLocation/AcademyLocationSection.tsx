@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './AcademyLocationSection.module.scss';
 import { Academy } from '../../core/models/Academy.model';
-import Link from '../Link/Link';
+import { Link } from '../Link/Link';
 
 interface AcademyLocationSectionProps {
     academies: Academy[]

@@ -6,7 +6,7 @@ import { TicketPrice } from '../../components/TicketPrice/TicketPrice';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
 import { Section } from '../../components/Section/Section';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
-import Link from '../../components/Link/Link';
+import { Link } from '../../components/Link/Link';
 
 export function TicketsPage() {
     return (
