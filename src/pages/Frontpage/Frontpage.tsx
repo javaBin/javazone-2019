@@ -105,7 +105,6 @@ const Gap = styled.div`
     height: 100%;
 `
 
-
 const Art = styled.img`
     position: relative;
     width: ${(props: any) => `${props.imgSize}rem`}; 
@@ -162,11 +161,6 @@ function Index() {
         <>
             <Particles width="100vw" height="99vh" params={config} />
             <StyledBackgroundFloaters floaters={[floatingTree1, floatingKid1, floatingAstronaut, floatingPlanet, floatingTree2]} />
-                {/* <Art src={floatingTree1} size={4} top={10} left={10} delay={1} />
-                <Art src={floatingTree2} size={8} top={30} left={40} delay={3} />
-                <Art src={floatingKid1} size={6} top={13} left={20} delay={2} />
-                <Art src={floatingTree2} size={10} top={0} left={80} delay={1} />
-                <Art src={floatingAstronaut} size={7} top={30} left={40} delay={2} /> */}
             <Content>
                 <LandingBanner>
                     <BannerContent>

@@ -5,7 +5,7 @@ import styles from './Navigation.module.scss';
 import { useRef, useEffect, useState } from 'react';
 import { useWindowWidth } from '../../core/hooks/UseWindowWidth';
 import { useIsFrontpage } from '../../core/hooks/UseIsFrontpage';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const logo = `${process.env.PUBLIC_URL}/logo-sharp.svg`;
 const hamburger = `${process.env.PUBLIC_URL}/menu.svg`;
@@ -47,16 +47,41 @@ const Icon = styled.img`
 const MenuButton = styled.button`
     pointer-events: auto;
     padding: 0.5rem;
-    background: #FFC236;
-    border-radius: 0.4rem;
+    width: fit-content;
+    background: none;
+    border: none;
+`
+
+const MenuToggle = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 `
 
 const Menu = styled.div`
+    z-index: 1000;
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
     width: fit-content;
     height: fit-content;
     background: #FFC236;
     border-radius: 0.4rem;
+    ${(props: any) => props.isToggled && css`
+        width: 12rem;
+    `};
+`
+
+const MenuContent = styled.div`
+    padding: 0 1rem 1rem 1rem;
+`
+
+const MenuLink = styled(Link)`
+    color: black;
+    text-decoration: none;
+    & > h2 {
+        margin: 0.5rem 0;
+    }
 `
 
 interface NavigationProps extends RouteComponentProps {
@@ -91,10 +116,17 @@ function Navigation(props: NavigationProps) {
                 <Logo src={logo} />
                 <h1>JAVAZONE</h1>
             </Brand>
-            <Menu>
-                <MenuButton onClick={toggleMenu}>
-                    <Icon src={hamburger} />
-                </MenuButton>
+            <Menu isToggled={isToggled}>
+                <MenuToggle>
+                    <MenuButton onClick={toggleMenu}>
+                        <Icon src={hamburger} />
+                    </MenuButton>
+                </MenuToggle>
+                {isToggled ? <MenuContent>
+                    {props.routes.map(route => {
+                        return route.show ? <MenuLink onClick={toggleMenu} to={route.url}><h2>{route.title}</h2></MenuLink> : null
+                    })}
+                </MenuContent>: null}
             </Menu>
         </Header>
     );
