@@ -53,14 +53,11 @@ const BannerContent = styled.div`
     display: grid;
     grid-template-areas: 'logo bannerstuff';
     @media (max-width: 1150px) {
-        top: -6rem;
         grid-template-areas: 'logo' 'bannerstuff';
         justify-items: center;
     }
-    @media (max-width: 450px) {
-        top: 0rem;
-    }
 `
+
 const float = keyframes`
     0% {
 		transform: translatey(0px);
@@ -88,7 +85,7 @@ const FloatingLogo = styled.img`
         margin: 0;
         width: 16rem;
     }
-    @media (max-width: 450px) {
+    @media (max-width: 500px) {
         width: 12rem;
     }
 `
@@ -104,7 +101,7 @@ const BannerTitle = styled.h1`
     @media (max-width: 690px) {
         font-size: 4.5em;
     }
-    @media (max-width: 450px) {
+    @media (max-width: 500px) {
         font-size: 3em;
     }
 `
@@ -120,7 +117,7 @@ const BannerDate = styled.h2`
     @media (max-width: 690px) {
         font-size: 2em;
     }
-    @media (max-width: 450px) {
+    @media (max-width: 500px) {
         font-size: 1.5em;
     }
 `
@@ -136,7 +133,7 @@ const BannerLocation = styled.h3`
     @media (max-width: 690px) {
         font-size: 2em;
     }
-    @media (max-width: 450px) {
+    @media (max-width: 500px) {
         font-size: 1.5em;
     }
 `
@@ -148,7 +145,7 @@ const BannerActions = styled.div`
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    @media (max-width: 450px) {
+    @media (max-width: 500px) {
         flex-direction: column;
     }
 `
@@ -156,7 +153,7 @@ const BannerActions = styled.div`
 const Gap = styled.div`
     width: 1rem;
     height: 100%;
-    @media (max-width: 450px) {
+    @media (max-width: 500px) {
         flex-direction: column;
         height: 1rem;
     }
@@ -176,8 +173,46 @@ interface BackgroundFloatersProps {
     className: string;
 }
 
+const desktopProps = [
+        {
+            imgSize: 15,
+            top: 16,
+            left: 84
+        },
+        {
+            imgSize: 12,
+            top: 68,
+            left: 70
+        },
+        {
+            imgSize: 8,
+            top: 30,
+            left: 7
+        }
+]
+
+const mobileProps = [
+        {
+            imgSize: 3,
+            top: 25,
+            left: 84
+        },
+        {
+            imgSize: 4,
+            top: 85,
+            left: 60
+        },
+        {
+            imgSize: 4,
+            top: 15,
+            left: 7
+        }
+]
+
 function BackgroundFloaters(props: BackgroundFloatersProps) {
     const [floaters, setFloaters] = useState(['']);
+    const [floaterProps, setFloaterProps] = useState(mobileProps)
+    const width = useWindowWidth();
     function getRandomFloaters() {
         const shuffled = floaterList.sort(() => 0.5 - Math.random());
         let selected = shuffled.slice(0, 3);
@@ -186,11 +221,21 @@ function BackgroundFloaters(props: BackgroundFloatersProps) {
     useEffect(() => {
         getRandomFloaters();
     }, []);
+    useEffect(() => {
+        if(width < 650) {
+            setFloaterProps(mobileProps);
+        } else {
+            setFloaterProps(desktopProps);
+        }
+    }, [width]);
     return (
         <div className={props.className}>
-            <Art src={floaters[0]} delay={2} imgSize={15} top={16} left={84} />
-            <Art src={floaters[1]} delay={3} imgSize={12} top={68} left={70} />
-            <Art src={floaters[2]} delay={1} imgSize={8} top={30} left={7} />
+            <Art src={floaters[0]} delay={2} 
+                imgSize={floaterProps[0].imgSize} top={floaterProps[0].top} left={floaterProps[0].left} />
+            <Art src={floaters[1]} delay={3} 
+                imgSize={floaterProps[1].imgSize} top={floaterProps[1].top} left={floaterProps[1].left} />
+            <Art src={floaters[2]} delay={1} 
+                imgSize={floaterProps[2].imgSize} top={floaterProps[2].top} left={floaterProps[2].left} />
         </div>
     );
 }
