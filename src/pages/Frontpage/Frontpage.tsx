@@ -51,11 +51,7 @@ const BannerContent = styled.div`
     position: relative;
     display: grid;
     grid-template-rows: auto;
-    grid-template-areas:
-        'logo title'
-        'logo date'
-        'logo location'
-        'logo actions';
+    grid-template-areas: 'logo bannerstuff';
 `
 const float = keyframes`
     0% {
@@ -80,14 +76,13 @@ const BannerTitle = styled.h1`
     pointer-events: auto;
     margin: 0;
     grid-area: title;
-    font-size: 8em;
+    font-size: 9em;
 `
 
 const BannerDate = styled.h2`
     pointer-events: auto;
     margin: 0;
     grid-area: date;
-    line-height: 50%;
     font-size: 4.5em;
 `
 
@@ -95,11 +90,11 @@ const BannerLocation = styled.h3`
     pointer-events: auto;
     margin: 0;
     grid-area: location;
-    line-height: 50%;
     font-size: 3.5em;
 `
 
 const BannerActions = styled.div`
+    margin-top: 2rem;
     pointer-events: auto;
     display: flex;
     flex-direction: row;
@@ -108,7 +103,7 @@ const BannerActions = styled.div`
 `
 
 const Gap = styled.div`
-    width: 0.6rem;
+    width: 1rem;
     height: 100%;
 `
 
@@ -161,6 +156,13 @@ const ParticleWrapper = styled.div`
     height: 100vh;
 `
 
+const BannerStuff = styled.div`
+    grid-area: bannerstuff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+`
+
 function Index() {
     return (
         <>
@@ -172,14 +174,16 @@ function Index() {
                 <LandingBanner>
                     <BannerContent>
                         <FloatingLogo src={floatingLogo} />
-                        <BannerTitle>JavaZone 2019</BannerTitle>
-                        <BannerDate>September 11th - 12th</BannerDate>
-                        <BannerLocation>Oslo Spektrum, Norway</BannerLocation>
-                        <BannerActions>
-                            <Link color="red" url="/tickets">Get your ticket</Link>
-                            <Gap />
-                            <Link color="blue" url="/speakers">Call for speakers</Link>
-                        </BannerActions>
+                        <BannerStuff>
+                            <BannerTitle>JavaZone 2019</BannerTitle>
+                            <BannerDate>September 11th - 12th</BannerDate>
+                            <BannerLocation>Oslo Spektrum, Norway</BannerLocation>
+                            <BannerActions>
+                                <Link color="red" url="/tickets">Get your ticket</Link>
+                                <Gap />
+                                <Link color="blue" url="/speakers">Call for speakers</Link>
+                            </BannerActions>
+                        </BannerStuff>
                     </BannerContent>
                 </LandingBanner>
             </Content>

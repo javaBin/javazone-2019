@@ -25,7 +25,7 @@ function Link(props: LinkProps) {
 
 const StyledLink = styled(Link)`
     width: fit-content;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.8rem 1.8rem;
     font-weight: bold;
     box-sizing: border-box;
