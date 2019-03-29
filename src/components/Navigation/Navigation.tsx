@@ -30,8 +30,11 @@ const Brand = styled(Link)`
     text-decoration: none;
     color: black;
     & > h1 {
-        font-size: 2.5rem;
+        font-size: 2.5em;
         margin-left: 1rem;
+        @media (max-width: 450px) {
+            font-size: 1.5em;
+        }
     }
 `
 

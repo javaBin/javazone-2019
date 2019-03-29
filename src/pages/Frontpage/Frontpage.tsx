@@ -3,6 +3,7 @@ import ParticleField from 'react-particles-webgl';
 import { config } from '../../core/particlesConfig';
 import styled, { keyframes } from 'styled-components';
 import { Link } from '../../components/Link/Link';
+import { useWindowWidth } from '../../core/hooks/UseWindowWidth';
 
 const floatingLogo = `${process.env.PUBLIC_URL}/floating-logo.svg`;
 
@@ -50,8 +51,15 @@ const LandingBanner = styled.div`
 const BannerContent = styled.div`
     position: relative;
     display: grid;
-    grid-template-rows: auto;
     grid-template-areas: 'logo bannerstuff';
+    @media (max-width: 1150px) {
+        top: -6rem;
+        grid-template-areas: 'logo' 'bannerstuff';
+        justify-items: center;
+    }
+    @media (max-width: 450px) {
+        top: 0rem;
+    }
 `
 const float = keyframes`
     0% {
@@ -67,9 +75,22 @@ const float = keyframes`
 
 const FloatingLogo = styled.img`
     grid-area: logo;
-    margin-right: 5rem;
+    margin: 0 5rem;
     width: 30rem;
     animation: ${float} 4s infinite;
+    @media (max-width: 1600px) {
+        width: 25rem;
+    }
+    @media (max-width: 1150px) {
+        margin: 3rem 0;
+    }
+    @media (max-width: 690px) {
+        margin: 0;
+        width: 16rem;
+    }
+    @media (max-width: 450px) {
+        width: 12rem;
+    }
 `
 
 const BannerTitle = styled.h1`
@@ -77,6 +98,15 @@ const BannerTitle = styled.h1`
     margin: 0;
     grid-area: title;
     font-size: 9em;
+    @media (max-width: 1600px) {
+        font-size: 6em;
+    }
+    @media (max-width: 690px) {
+        font-size: 4.5em;
+    }
+    @media (max-width: 450px) {
+        font-size: 3em;
+    }
 `
 
 const BannerDate = styled.h2`
@@ -84,6 +114,15 @@ const BannerDate = styled.h2`
     margin: 0;
     grid-area: date;
     font-size: 4.5em;
+    @media (max-width: 1600px) {
+        font-size: 3em;
+    }
+    @media (max-width: 690px) {
+        font-size: 2em;
+    }
+    @media (max-width: 450px) {
+        font-size: 1.5em;
+    }
 `
 
 const BannerLocation = styled.h3`
@@ -91,6 +130,15 @@ const BannerLocation = styled.h3`
     margin: 0;
     grid-area: location;
     font-size: 3.5em;
+    @media (max-width: 1600px) {
+        font-size: 2.5em;
+    }
+    @media (max-width: 690px) {
+        font-size: 2em;
+    }
+    @media (max-width: 450px) {
+        font-size: 1.5em;
+    }
 `
 
 const BannerActions = styled.div`
@@ -100,11 +148,18 @@ const BannerActions = styled.div`
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    @media (max-width: 450px) {
+        flex-direction: column;
+    }
 `
 
 const Gap = styled.div`
     width: 1rem;
     height: 100%;
+    @media (max-width: 450px) {
+        flex-direction: column;
+        height: 1rem;
+    }
 `
 
 const Art = styled.img`
@@ -161,15 +216,20 @@ const BannerStuff = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
+    @media (max-width: 1150px) {
+        align-items: center;
+        text-align: center;
+    }
 `
 
 function Index() {
+    const width = useWindowWidth();
     return (
         <>
             <ParticleWrapper>
                 <ParticleField config={config} />
             </ParticleWrapper>
-            <StyledBackgroundFloaters />
+            <StyledBackgroundFloaters width={width} />
             <Content>
                 <LandingBanner>
                     <BannerContent>

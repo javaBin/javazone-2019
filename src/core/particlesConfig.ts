@@ -42,13 +42,13 @@ export const config =
     "transparency": 0.9,
     "shape": "circle",
     "boundingBox": "canvas",
-    "count": 709,
+    "count": 700,
     "minSize": 20,
-    "maxSize": 50,
+    "maxSize": 60,
     "visible": true
   },
   "cameraControls": {
-    "enabled": true,
+    "enabled": false,
     "enableDamping": false,
     "dampingFactor": 0.65,
     "enableZoom": false,
