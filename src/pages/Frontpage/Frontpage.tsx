@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ParticleField from 'react-particles-webgl';
 import { config } from '../../core/particlesConfig';
 import styled, { keyframes } from 'styled-components';
 import { Link } from '../../components/Link/Link';
-import { useRandomFloaterProps, FloaterProps } from '../../core/hooks/UseRandomFloaterProps';
 
 const floatingLogo = `${process.env.PUBLIC_URL}/floating-logo.svg`;
 
 const floatingTree1 = `${process.env.PUBLIC_URL}/floating-tree1.svg`;
 const floatingTree2 = `${process.env.PUBLIC_URL}/floating-tree2.svg`;
-const floatingKid1 = `${process.env.PUBLIC_URL}/floating-kid1.svg`;
+const floatingTurtle = `${process.env.PUBLIC_URL}/floating-turtle.svg`;
+const floatingRocket = `${process.env.PUBLIC_URL}/floating-rocket.svg`;
 const floatingAstronaut = `${process.env.PUBLIC_URL}/floating-astronaut.svg`;
 const floatingPlanet = `${process.env.PUBLIC_URL}/floating-planet.svg`;
 
-const floaters = [
+const floaterList = [
     floatingTree1,
     floatingTree2,
-    floatingKid1,
+    floatingTurtle,
+    floatingRocket,
     floatingAstronaut,
     floatingPlanet
 ];
@@ -48,7 +49,6 @@ const LandingBanner = styled.div`
 
 const BannerContent = styled.div`
     position: relative;
-    top: -10rem;
     display: grid;
     grid-template-rows: auto;
     grid-template-areas:
@@ -71,8 +71,8 @@ const float = keyframes`
 
 const FloatingLogo = styled.img`
     grid-area: logo;
-    margin: 2rem;
-    width: 16rem;
+    margin-right: 5rem;
+    width: 30rem;
     animation: ${float} 4s infinite;
 `
 
@@ -80,7 +80,7 @@ const BannerTitle = styled.h1`
     pointer-events: auto;
     margin: 0;
     grid-area: title;
-    font-size: 5.5rem;
+    font-size: 8em;
 `
 
 const BannerDate = styled.h2`
@@ -88,7 +88,7 @@ const BannerDate = styled.h2`
     margin: 0;
     grid-area: date;
     line-height: 50%;
-    font-size: 3rem;
+    font-size: 4.5em;
 `
 
 const BannerLocation = styled.h3`
@@ -96,7 +96,7 @@ const BannerLocation = styled.h3`
     margin: 0;
     grid-area: location;
     line-height: 50%;
-    font-size: 2.5rem;
+    font-size: 3.5em;
 `
 
 const BannerActions = styled.div`
@@ -116,8 +116,8 @@ const Art = styled.img`
     position: absolute;
     width: ${(props: any) => `${props.imgSize}rem`}; 
     height: auto;
-    top: ${(props: any) => `${props.top}px`};
-    left: ${(props: any) => `${props.left}px`};
+    top: ${(props: any) => `${props.top}%`};
+    left: ${(props: any) => `${props.left}%`};
     animation: ${float} 4s infinite; 
     animation-delay: ${(props: any) => `-${props.delay}s`};
 `
@@ -127,15 +127,20 @@ interface BackgroundFloatersProps {
 }
 
 function BackgroundFloaters(props: BackgroundFloatersProps) {
-    function getRandomAnimationProps() {
-        return Math.floor(Math.random() * Math.floor(4));
+    const [floaters, setFloaters] = useState(['']);
+    function getRandomFloaters() {
+        const shuffled = floaterList.sort(() => 0.5 - Math.random());
+        let selected = shuffled.slice(0, 3);
+        setFloaters(selected);
     }
-    const floaterElementProps: FloaterProps[] = useRandomFloaterProps(floaters);
+    useEffect(() => {
+        getRandomFloaters();
+    }, []);
     return (
         <div className={props.className}>
-            {floaterElementProps.map((props, index) => {
-                return <Art key={index} src={props.img} delay={getRandomAnimationProps()} imgSize={props.imgSize} top={props.top} left={props.left} />
-            })}
+            <Art src={floaters[0]} delay={2} imgSize={15} top={16} left={84} />
+            <Art src={floaters[1]} delay={3} imgSize={12} top={68} left={70} />
+            <Art src={floaters[2]} delay={1} imgSize={8} top={30} left={7} />
         </div>
     );
 }
@@ -155,7 +160,6 @@ const ParticleWrapper = styled.div`
     width: 100%;
     height: 100vh;
 `
-
 
 function Index() {
     return (
