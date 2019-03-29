@@ -1,5 +1,3 @@
-import { IParticlesParams } from "react-particles-js";
-
 function getRandomColor() {
     const colors = [
         '#6F86C0', // Blue

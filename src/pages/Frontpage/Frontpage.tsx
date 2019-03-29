@@ -142,7 +142,7 @@ function BackgroundFloaters(props: BackgroundFloatersProps) {
 
 const StyledBackgroundFloaters = styled(BackgroundFloaters)`
     overflow: hidden;
-    pointer-events: none;
+    pointer-events: auto;
     position: absolute;
     top: 0;
     left: 0;
