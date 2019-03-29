@@ -1,18 +1,25 @@
 import React from 'react';
-import Particles from 'react-particles-js';
+import ParticleField from 'react-particles-webgl';
 import { config } from '../../core/particlesConfig';
 import styled, { keyframes } from 'styled-components';
 import { Link } from '../../components/Link/Link';
+import { useRandomFloaterProps, FloaterProps } from '../../core/hooks/UseRandomFloaterProps';
 
-const logo = `${process.env.PUBLIC_URL}/logo-sharp.svg`;
-const floating = `${process.env.PUBLIC_URL}/floating-logo.svg`;
-const hamburger = `${process.env.PUBLIC_URL}/menu.svg`;
+const floatingLogo = `${process.env.PUBLIC_URL}/floating-logo.svg`;
 
 const floatingTree1 = `${process.env.PUBLIC_URL}/floating-tree1.svg`;
 const floatingTree2 = `${process.env.PUBLIC_URL}/floating-tree2.svg`;
 const floatingKid1 = `${process.env.PUBLIC_URL}/floating-kid1.svg`;
 const floatingAstronaut = `${process.env.PUBLIC_URL}/floating-astronaut.svg`;
 const floatingPlanet = `${process.env.PUBLIC_URL}/floating-planet.svg`;
+
+const floaters = [
+    floatingTree1,
+    floatingTree2,
+    floatingKid1,
+    floatingAstronaut,
+    floatingPlanet
+];
 
 const Content = styled.div`
     position: absolute;
@@ -106,39 +113,28 @@ const Gap = styled.div`
 `
 
 const Art = styled.img`
-    position: relative;
+    position: absolute;
     width: ${(props: any) => `${props.imgSize}rem`}; 
-    top: ${(props: any) => `${props.top}vh`};
-    left: ${(props: any) => `${props.left}vw`};
+    height: auto;
+    top: ${(props: any) => `${props.top}px`};
+    left: ${(props: any) => `${props.left}px`};
     animation: ${float} 4s infinite; 
     animation-delay: ${(props: any) => `-${props.delay}s`};
 `
 
 interface BackgroundFloatersProps {
     className: string;
-    floaters: {}[];
 }
 
 function BackgroundFloaters(props: BackgroundFloatersProps) {
-
-    const positions = [
-        {top: 40, left: 70},
-        {top: 70, left: 30},
-        {top: 50, left: 70},
-        {top: 30, left: 0},
-        {top: 60, left: -10}
-    ]
-
     function getRandomAnimationProps() {
-        const delay = Math.floor(Math.random() * Math.floor(4));
-        const size = Math.floor(Math.random() * (Math.floor(12) - Math.ceil(6) + 1)) + Math.ceil(6);
-        return {delay: delay, imgSize: size};
+        return Math.floor(Math.random() * Math.floor(4));
     }
-
+    const floaterElementProps: FloaterProps[] = useRandomFloaterProps(floaters);
     return (
         <div className={props.className}>
-            {props.floaters.map(art => {
-                return <Art src={art} {...getRandomAnimationProps()} {...positions.shift()} />
+            {floaterElementProps.map((props, index) => {
+                return <Art key={index} src={props.img} delay={getRandomAnimationProps()} imgSize={props.imgSize} top={props.top} left={props.left} />
             })}
         </div>
     );
@@ -155,16 +151,23 @@ const StyledBackgroundFloaters = styled(BackgroundFloaters)`
     box-sizing: border-box;
 `
 
+const ParticleWrapper = styled.div`
+    width: 100%;
+    height: 100vh;
+`
+
 
 function Index() {
     return (
         <>
-            <Particles width="100vw" height="99vh" params={config} />
-            <StyledBackgroundFloaters floaters={[floatingTree1, floatingKid1, floatingAstronaut, floatingPlanet, floatingTree2]} />
+            <ParticleWrapper>
+                <ParticleField config={config} />
+            </ParticleWrapper>
+            <StyledBackgroundFloaters />
             <Content>
                 <LandingBanner>
                     <BannerContent>
-                        <FloatingLogo src={floating} />
+                        <FloatingLogo src={floatingLogo} />
                         <BannerTitle>JavaZone 2019</BannerTitle>
                         <BannerDate>September 11th - 12th</BannerDate>
                         <BannerLocation>Oslo Spektrum, Norway</BannerLocation>

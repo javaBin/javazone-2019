@@ -11,6 +11,7 @@ const logo = `${process.env.PUBLIC_URL}/logo-sharp.svg`;
 const hamburger = `${process.env.PUBLIC_URL}/menu.svg`;
 
 const Header = styled.div`
+    z-index: 1000;
     position: absolute;
     top: 0;
     left: 0;
@@ -45,6 +46,7 @@ const Icon = styled.img`
 `
 
 const MenuButton = styled.button`
+    outline: none;
     pointer-events: auto;
     padding: 0.5rem;
     width: fit-content;
@@ -59,7 +61,6 @@ const MenuToggle = styled.div`
 `
 
 const Menu = styled.div`
-    z-index: 1000;
     margin: 1rem;
     display: flex;
     flex-direction: column;

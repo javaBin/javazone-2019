@@ -15,107 +15,47 @@ function getRandomColor() {
     return colors[r];
 }
 
-export const config: IParticlesParams = {
-  particles: {
-    number: {
-      value: 400,
-      density: {
-        enable: true,
-        value_area: 800
-      }
-    },
-    color: {
-      value: getRandomColor()
-    },
-    shape: {
-      type: "circle",
-      stroke: {
-        width: 0,
-        color: "#ffffff"
-      },
-      polygon: {
-        nb_sides: 5
-      }
-    },
-    opacity: {
-      value: 1,
-      random: true,
-      anim: {
-        enable: true,
-        speed: 1,
-        opacity_min: 0,
-        sync: false
-      }
-    },
-    size: {
-      value: 4,
-      random: true,
-      anim: {
-        enable: false,
-        speed: 4,
-        size_min: 0.3,
-        sync: false
-      }
-    },
-    line_linked: {
-      enable: false,
-      distance: 150,
-      color: "",
-      opacity: 0.8,
-      width: 1
-    },
-    move: {
-      enable: true,
-      speed: 1,
-      direction: "left",
-      random: true,
-      straight: true,
-      out_mode: "out",
-      bounce: false,
-      attract: {
-        enable: false,
-        rotateX: 600,
-        rotateY: 600
-      }
-    }
+export const config = 
+{
+  "showCube": false,
+  "dimension": "2D",
+  "velocity": 0.5,
+  "boundaryType": "passthru",
+  "direction": {
+    "xMin": 1,
+    "xMax": 0.3,
+    "yMin": 0,
+    "yMax": 0,
+    "zMin": 0,
+    "zMax": 0
   },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: {
-        enable: true,
-        mode: "bubble"
-      },
-      onclick: {
-        enable: true,
-        mode: "repulse"
-      },
-      resize: true
-    },
-    modes: {
-      grab: {
-        distance: 50,
-        line_linked: {
-          opacity: 1
-        }
-      },
-      bubble: {
-        distance: 100,
-        size: 0,
-        duration: 2,
-        opacity: 0,
-      },
-      repulse: {
-        distance: 300,
-        duration: 0.4
-      },
-      push: {
-        particles_nb: 4
-      },
-      remove: {
-        particles_nb: 2
-      }
-    }
+  "lines": {
+    "colorMode": "solid",
+    "color": "#4831d5",
+    "transparency": 0.9,
+    "limitConnections": true,
+    "maxConnections": 20,
+    "minDistance": 110,
+    "visible": false
   },
-  retina_detect: true
+  "particles": {
+    "colorMode": "solid",
+    "color": getRandomColor(),
+    "transparency": 0.9,
+    "shape": "circle",
+    "boundingBox": "canvas",
+    "count": 709,
+    "minSize": 20,
+    "maxSize": 50,
+    "visible": true
+  },
+  "cameraControls": {
+    "enabled": true,
+    "enableDamping": false,
+    "dampingFactor": 0.65,
+    "enableZoom": false,
+    "autoRotate": false,
+    "autoRotateSpeed": 0.3,
+    "resetCameraFlag": true
+  }
 }
