@@ -23,6 +23,10 @@ function TextBlock(props: SectionProps) {
     )
 }
 
+const AlignedParagraph = styled.div`
+    text-align: ${(props: any) => props.align};
+`
+
 const StyledTextBlock = styled(TextBlock)`
     margin: 3rem 0;
     box-sizing: border-box;
@@ -33,4 +37,4 @@ const StyledTextBlock = styled(TextBlock)`
     align-items: center;
 `
 
-export { StyledTextBlock as TextBlock };
+export { StyledTextBlock as TextBlock, AlignedParagraph };

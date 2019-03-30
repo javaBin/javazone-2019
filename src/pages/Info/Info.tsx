@@ -2,9 +2,8 @@ import React, { useContext } from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
 import { Section } from '../../components/Section/Section';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
-import { Seperator } from '../../components/Seperator/Seperator';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
-import { TextBlock } from '../../components/Blocks/TextBlock';
+import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 
 export function InfoPage() {
     return (
@@ -96,17 +95,19 @@ export function InfoPage() {
                     <p>
                         We as organizers strive to create the best possible learning experience for all our speakers and participants, and we expect you to do the same. Everyone is welcome at JavaZone, but we do require that you treat your fellow conference participants with respect. We reserve the right to take any action necessary to make sure this principle is upheld. For more details, see our <InlineLink external url="https://java.no/principles.html">Code of Conduct</InlineLink> that applies to all events organized by javaBin.
                     </p>
-                    <p>
-                        <strong>Should any unwanted event occur, we‘re here to help:</strong>
-                    </p>
-                    <p>
-                        <strong>Before the conference</strong><br />
-                        You can contact us by email: <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink> (this goes to a small group of people, the core organizers of JavaZone), or <InlineLink external noBlankTarget url="mailto:styret@java.no">styret@java.no</InlineLink> (this goes to the javaBin board).
-                    </p>
-                    <p>
-                        <strong>During the conference</strong><br />
-                        Ask at the info stand, and we‘ll be in touch. Contact information will also be available at the info stand.
-                    </p>
+                    <AlignedParagraph align="left">
+                        <p>
+                            <strong>Should any unwanted event occur, we‘re here to help:</strong>
+                        </p>
+                        <p>
+                            <strong>Before the conference</strong><br />
+                            You can contact us by email: <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink> (this goes to a small group of people, the core organizers of JavaZone), or <InlineLink external noBlankTarget url="mailto:styret@java.no">styret@java.no</InlineLink> (this goes to the javaBin board).
+                        </p>
+                        <p>
+                            <strong>During the conference</strong><br />
+                            Ask at the info stand, and we‘ll be in touch. Contact information will also be available at the info stand.
+                        </p>
+                    </AlignedParagraph>
                 </TextBlock>
             </Section>
             <Section>

@@ -75,15 +75,8 @@ const FloatingLogo = styled.img`
     margin-right: 5rem;
     width: 30rem;
     animation: ${float} 4s infinite;
-    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        width: 20rem;
-        margin-right: 3rem; 
-    }
     @media only screen and (max-width: 1600px) {
         width: 25rem;
-    }
-    @media only screen and (max-width: 1600px) and (-webkit-min-device-pixel-ratio : 2) {
-        width: 20rem;
     }
     @media (max-width: 1150px) {
         margin: 3rem 0;
@@ -101,18 +94,15 @@ const BannerTitle = styled.h1`
     pointer-events: auto;
     margin: 0;
     grid-area: title;
-    font-size: 9em;
-    @media only screen and (-webkit-min-device-pixel-ratio : 2) {
-        font-size: 6em;
-    }
+    font-size: 9rem;
     @media (max-width: 1600px) {
-        font-size: 6em;
+        font-size: 6rem;
     }
     @media (max-width: 690px) {
-        font-size: 4.5em;
+        font-size: 4.5rem;
     }
     @media (max-width: 500px) {
-        font-size: 3em;
+        font-size: 3rem;
     }
 `
 
@@ -120,18 +110,15 @@ const BannerDate = styled.h2`
     pointer-events: auto;
     margin: 0;
     grid-area: date;
-    font-size: 4.5em;
-    @media only screen and (-webkit-min-device-pixel-ratio : 2) {
-        font-size: 3.5em;
-    }
+    font-size: 4.5rem;
     @media (max-width: 1600px) {
-        font-size: 3em;
+        font-size: 3rem;
     }
     @media (max-width: 690px) {
-        font-size: 2em;
+        font-size: 2rem;
     }
     @media (max-width: 500px) {
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
 `
 
@@ -139,18 +126,15 @@ const BannerLocation = styled.h3`
     pointer-events: auto;
     margin: 0;
     grid-area: location;
-    font-size: 3.5em;
-    @media only screen and (-webkit-min-device-pixel-ratio : 2) {
-        font-size: 2.5em;
-    }
+    font-size: 3.5rem;
     @media (max-width: 1600px) {
-        font-size: 2.5em;
+        font-size: 2.5rem;
     }
     @media (max-width: 690px) {
-        font-size: 2em;
+        font-size: 2rem;
     }
     @media (max-width: 500px) {
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
 `
 

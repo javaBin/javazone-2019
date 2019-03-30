@@ -7,13 +7,13 @@ import { Seperator } from '../../components/Seperator/Seperator';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
 import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { Zap, BookOpen, Monitor } from 'react-feather';
+import styled from 'styled-components';
 import classnames from 'classnames';
 import styles from './Speakers.module.scss';
 import { PresentationFormat } from '../../core/models/PresentationFormat.model';
 import { lightning, presentation, workshop } from '../../core/data/PresentationFormats.data';
 import Timeline from '../../components/Timeline/Timeline';
 import { TextBlock } from '../../components/Blocks/TextBlock';
-
 
 export function SpeakersPage() {
     return (
@@ -58,13 +58,27 @@ export function SpeakersPage() {
                     </p>
                 </TextBlock>
             </Section>
+
+
+            <Section>
+                <Formats>
+                    <FormatContent grid="lightning" {...lightning}></FormatContent>
+                    <FormatContent grid="presentation" {...presentation}></FormatContent>
+                    <FormatContent grid="workshop" {...workshop}></FormatContent>
+                </Formats>
+            </Section>
+
+
+
+
+{/* 
             <CenterSection>
                 <ul className={styles.formatList}>
                     <Format {...lightning} />
                     <Format {...presentation} />
                     <Format {...workshop} />
                 </ul>
-            </CenterSection>
+            </CenterSection> */}
             <Section>
                 <TextBlock title="Get some inspiration">
                     <h3>Workshop for Potential Speakers</h3>
@@ -128,22 +142,83 @@ export function SpeakersPage() {
     )
 }
 
-function Format(props: PresentationFormat) {
 
-    function getIconElement(icon: string) {
-        switch(icon) {
-            case 'zap': return <Zap size={36} />
-            case 'book-open': return <BookOpen size={36} />
-            case 'monitor': return <Monitor size={36} />
-        }
+const Formats = styled.div`
+    width: 100%;
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-areas: 'lightning presentation workshop';
+    @media only screen and (max-width: 900px) {
+        grid-template-areas:
+            'lightning'
+            'presentation'
+            'workshop';
     }
+`
 
+const FormatContent = styled(Format)`
+    box-sizing: border-box;
+    grid-area: ${(props: any) => props.grid};
+    border-radius: 6px;
+    width: 100%;
+    height: auto;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    background: ${(props: any) => props.theme.colors['warm300']};
+    & > img {
+        width: 3rem;
+    }
+    & > h1 {
+        font-size: 2rem;
+    }
+`
+
+interface FormatProps {
+    children?: React.ReactNode;
+    className: string;
+    title: string;
+    icon: string;
+    description: string;
+    length: string;
+}
+
+function Format(props: FormatProps) {
     return (
-        <li>
-            {getIconElement(props.icon)}
-            <h3 className={classnames(styles.format, styles.title)}>{props.title}</h3>
-            <p className={classnames(styles.format, styles.length)}>{props.length}</p>
-            <p className={classnames(styles.format, styles.description)}>{props.description}</p>
-        </li>
-    );
-};
+        <div className={props.className}>
+            <img src={props.icon} />
+            <h1>{props.title}</h1>
+            <h3>{props.length}</h3>
+            <p>{props.description}</p>
+        </div>  
+    )
+}
+
+
+
+
+
+
+
+// function Format(props: PresentationFormat) {
+
+//     function getIconElement(icon: string) {
+//         switch(icon) {
+//             case 'zap': return <Zap size={36} />
+//             case 'book-open': return <BookOpen size={36} />
+//             case 'monitor': return <Monitor size={36} />
+//         }
+//     }
+
+//     return (
+//         <li>
+//             {getIconElement(props.icon)}
+//             <h3 className={classnames(styles.format, styles.title)}>{props.title}</h3>
+//             <p className={classnames(styles.format, styles.length)}>{props.length}</p>
+//             <p className={classnames(styles.format, styles.description)}>{props.description}</p>
+//         </li>
+//     );
+// };
