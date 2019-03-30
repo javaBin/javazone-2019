@@ -10,7 +10,6 @@ export function KidsPage() {
     return (
         <>
             <PageBanner header="JavaZone Kids" subHeader="En smakebit på JavaZone for framtidens utviklere" color="blue" />
-            <Seperator />
             <CenterSection header={<h1>Tre sesjoner: En smakebit på voksenlivet</h1>}>
                 <p>
                     JavaZone inviterer alle, og spesielt deltakere på JavaZone, til å ta med seg sine barn på 
@@ -59,12 +58,9 @@ export function KidsPage() {
                 </p>
             </Section>
             <Seperator />
-
             <KidsSection header={<h1>Sesjoner</h1>}>
                 <KidsProgram/>
             </KidsSection>
-
-            <Seperator />
             <CenterSection header={<h1>Vi sees på teknologihuset søndag 24. mars!</h1>}>
                 <p>
                     Vennlig hilsen,

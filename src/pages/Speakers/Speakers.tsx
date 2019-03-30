@@ -13,7 +13,8 @@ import styles from './Speakers.module.scss';
 import { PresentationFormat } from '../../core/models/PresentationFormat.model';
 import { lightning, presentation, workshop } from '../../core/data/PresentationFormats.data';
 import Timeline from '../../components/Timeline/Timeline';
-import { TextBlock } from '../../components/Blocks/TextBlock';
+import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
+import { List } from '../../components/List/List';
 
 export function SpeakersPage() {
     return (
@@ -120,24 +121,26 @@ export function SpeakersPage() {
                     </p>
                 </TextBlock>
             </Section>
-            <Section header={<h1>Important principles</h1>}>
-                <p>
-                    JavaZone is proud to be an independent and community-driven conference. It is organized by volunteers from javaBin (the Norwegian Java User Group) and is run as a non-profit organization. This means that we have three important principles for selecting talks:
-                </p>
-                <ul>
-                    <li>We do not sell speaker slots.</li>
-                    <li>We do not accept sales pitches masked as presentations</li>
-                    <li>We do not differentiate between speakers from partners and independent speakers</li>
-                </ul>
-                <p>
-                    If your talk adheres to these very important principles, you are more than welcome to submit it to our Call for Speakers!
-                </p>
+            <Section>
+                <TextBlock title="Important principles">
+                    <AlignedParagraph aling="left">
+                        <p>
+                            JavaZone is proud to be an independent and community-driven conference. It is organized by volunteers from javaBin (the Norwegian Java User Group) and is run as a non-profit organization. This means that we have three important principles for selecting talks:
+                        </p>
+                        <List>
+                            <li>We do not sell speaker slots.</li>
+                            <li>We do not accept sales pitches masked as presentations</li>
+                            <li>We do not differentiate between speakers from partners and independent speakers</li>
+                        </List>
+                        <p>
+                            If your talk adheres to these very important principles, you are more than welcome to submit it to our Call for Speakers!
+                        </p>
+                    </AlignedParagraph>
+                </TextBlock>
+                <AlignedParagraph align="center">
+                <TextBlock title="We hope to see you at JavaZone 2019 – please feel free to spread the word to your local community!"></TextBlock>
+                </AlignedParagraph>
             </Section>
-            <CenterSection header={<h1>We hope to see you at JavaZone 2019 – please feel free to spread the word to your local community!</h1>}>
-                <p>
-                    Best regards,<br />the JavaZone Program Committee
-                </p>
-            </CenterSection>
         </>
     )
 }
@@ -196,29 +199,3 @@ function Format(props: FormatProps) {
         </div>  
     )
 }
-
-
-
-
-
-
-
-// function Format(props: PresentationFormat) {
-
-//     function getIconElement(icon: string) {
-//         switch(icon) {
-//             case 'zap': return <Zap size={36} />
-//             case 'book-open': return <BookOpen size={36} />
-//             case 'monitor': return <Monitor size={36} />
-//         }
-//     }
-
-//     return (
-//         <li>
-//             {getIconElement(props.icon)}
-//             <h3 className={classnames(styles.format, styles.title)}>{props.title}</h3>
-//             <p className={classnames(styles.format, styles.length)}>{props.length}</p>
-//             <p className={classnames(styles.format, styles.description)}>{props.description}</p>
-//         </li>
-//     );
-// };

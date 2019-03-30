@@ -11,7 +11,7 @@ import VideoSource from '../../components/Jumbotron/VideoSource';
 import { useCanPlayVideoType } from '../../core/hooks/UseCanPlayVideoType';
 import { PartnerPriceList, PartnerPrice } from '../../components/PartnerPrices/PartnerPrices';
 import Box from '../../components/Box/Box';
-import { TextBlock } from '../../components/Blocks/TextBlock';
+import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 
 export function PartnersPage() {
     const canPlayWebm = useCanPlayVideoType('webm');
@@ -50,12 +50,14 @@ export function PartnersPage() {
                 </TextBlock>
             </Section>
             <Section particles color="warm">
-                <Suspense fallback={<img src="splash.jpg" />}>
-                    <video style={{width: '100%'}} muted controls id="backgroundLapse">
-                        <VideoSource canPlayWebm={canPlayWebm} />
-                        Your browser does not support HTML5 video.
-                    </video>
-                </Suspense>
+                <div style={{margin: '2rem 0'}}>
+                    <Suspense fallback={<img src="splash.jpg" />}>
+                        <video style={{width: '100%'}} muted controls id="backgroundLapse">
+                            <VideoSource canPlayWebm={canPlayWebm} />
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </Suspense>
+                </div>
             </Section>
             <Section>
                 <TextBlock title="Partner options">
@@ -63,72 +65,80 @@ export function PartnersPage() {
                         Even though all partners are considered equal, there are a few options to choose from. There is a base package that everyone gets, and then there are a few available expansions. Note that these expansions have limited availability.
                     </p>
                     <h2>Included in all partnerships</h2>
-                    <List>
-                        <li>A 6-square meter stand space in the central arena at Oslo Spektrum with two side walls.</li>
-                        <li>4 tickets to the conference for manning the stand.</li>
-                        <li>Discounted participant tickets for your employees.</li>
-                        <li>Branding on <InlineLink external url="https://www.javazone.no">javazone.no</InlineLink>, at the venue, the program and in other promotional material that JavaZone produces.</li>
-                    </List>
-                    <h2>Possible expansions</h2>
-                    <h4>Double Stand Space</h4>
-                    <List>
-                        <li>Double the stand area to 12 square meters.</li>
-                        <li>One long back wall. It is also possible to divide the area in two if you would prefer.</li>
-                    </List>
-                    <h4>Restaurant Stand</h4>
-                    <List>
-                        <li>A dedicated food stand serving food throughout the conference. The menu will be decided in collaboration between yourselves and our event partners.</li>
-                        <li>Approx. 108 square meters (12 x 9).</li>
-                        <li>4-meter high back wall.</li>
-                    </List>
-                    <h4>Concept Stand</h4>
-                    <List>
-                        <li>A large space for presenting your own 'concept'. This could be, for example, a gaming area, a coffee bar, or a chillout area.</li>
-                        <li>Approx. 70 square meters (10 x 7).</li>
-                        <li>4-meter high back wall.</li>
-                    </List>
+                    <AlignedParagraph align="left">
+                        <List>
+                            <li>A 6-square meter stand space in the central arena at Oslo Spektrum with two side walls.</li>
+                            <li>4 tickets to the conference for manning the stand.</li>
+                            <li>Discounted participant tickets for your employees.</li>
+                            <li>Branding on <InlineLink external url="https://www.javazone.no">javazone.no</InlineLink>, at the venue, the program and in other promotional material that JavaZone produces.</li>
+                        </List>
+                        <h1>Possible expansions:</h1>
+                        <h2>Double Stand Space</h2>
+                        <List>
+                            <li>Double the stand area to 12 square meters.</li>
+                            <li>One long back wall. It is also possible to divide the area in two if you would prefer.</li>
+                        </List>
+                        <h2>Restaurant Stand</h2>
+                        <List>
+                            <li>A dedicated food stand serving food throughout the conference. The menu will be decided in collaboration between yourselves and our event partners.</li>
+                            <li>Approx. 108 square meters (12 x 9).</li>
+                            <li>4-meter high back wall.</li>
+                        </List>
+                        <h2>Concept Stand</h2>
+                        <List>
+                            <li>A large space for presenting your own 'concept'. This could be, for example, a gaming area, a coffee bar, or a chillout area.</li>
+                            <li>Approx. 70 square meters (10 x 7).</li>
+                            <li>4-meter high back wall.</li>
+                        </List>
+                    </AlignedParagraph>
                 </TextBlock>
             </Section>
-            <CenterSection header={<h1>Partnership prices</h1>}>
-                <TicketPrice soldOut>71.000</TicketPrice>
-                <Box>
-                    <h1>Sold out!</h1>
+            <Section color="blue">
+                <TextBlock title="Partnership prices">
+                    <TicketPrice soldOut>71.000</TicketPrice>
+                    <Box>
+                        <h1>Sold out!</h1>
+                        <p>
+                            Our partner packages for 2019 are now sold out. But if you would like to join the waiting list and stay informed of any changes to the 2019 partnership possibilities then please <InlineLink external url="https://tinyurl.com/jzpartner2019">register your contact details and partnership preferences</InlineLink>
+                        </p>
+                    </Box>
                     <p>
-                        Our partner packages for 2019 are now sold out. But if you would like to join the waiting list and stay informed of any changes to the 2019 partnership possibilities then please <InlineLink external url="https://tinyurl.com/jzpartner2019">register your contact details and partnership preferences</InlineLink>
+                        <i>Note that all 50+ partnerships for JavaZone 2018 were sold out long before the conference.</i>
                     </p>
-                </Box>
-                <p>
-                    <i>Note that all 50+ partnerships for JavaZone 2018 were sold out long before the conference.</i>
-                </p>
-                <p>
-                    All partnerships have a base price for entry which gives you everything described above.
-                    We also have some add-ons, as well as tickets for your employees, priced below.
-                </p>
-                <p>
-                    <i style={{fontSize: '1.2rem'}}>After March 1st, the price will increase to NOK 86.000,-.</i><br />
-                    <i style={{fontSize: '1rem'}}>All prices are ex VAT.</i>
-                </p>
-            </CenterSection>
-            <Section header={<h1>Partnership stand</h1>}>
-                <PartnerPriceList soldOut>
-                    <PartnerPrice item="Extra Stand Space">38.000</PartnerPrice>
-                    <PartnerPrice item="Restaurant Stand">65.000</PartnerPrice>
-                    <PartnerPrice item="Restaurant Stand (Evening)">20.000</PartnerPrice>
-                    <PartnerPrice item="Concept Stand">60.000</PartnerPrice>
-                </PartnerPriceList>
+                    <p>
+                        All partnerships have a base price for entry which gives you everything described above.
+                        We also have some add-ons, as well as tickets for your employees, priced below.
+                    </p>
+                    <p>
+                        <i style={{fontSize: '1.2rem'}}>After March 1st, the price will increase to NOK 86.000,-.</i><br />
+                        <i style={{fontSize: '1rem'}}>All prices are ex VAT.</i>
+                    </p>
+                </TextBlock>
             </Section>
-            <Section header={<h1>Partnership ticket</h1>}>
-                <PartnerPriceList>
-                    <PartnerPrice item="Tickets for employees (0 - 30)">5.890</PartnerPrice>
-                    <PartnerPrice item="Tickets for employees (31 - 50)">5.690</PartnerPrice>
-                    <PartnerPrice item="Tickets for employees (51 - ∞)">5.490</PartnerPrice>
-                    <PartnerPrice item="Tickets for employees (Late-Bird)">6.490</PartnerPrice>
-                </PartnerPriceList>
+            <Section>
+                <TextBlock title="Partnership stands">
+                    <PartnerPriceList soldOut>
+                        <PartnerPrice item="Extra Stand Space">38.000</PartnerPrice>
+                        <PartnerPrice item="Restaurant Stand">65.000</PartnerPrice>
+                        <PartnerPrice item="Restaurant Stand (Evening)">20.000</PartnerPrice>
+                        <PartnerPrice item="Concept Stand">60.000</PartnerPrice>
+                    </PartnerPriceList>
+                </TextBlock>
+                <TextBlock title="Partnership tickets">
+                    <PartnerPriceList>
+                        <PartnerPrice item="Tickets for employees (0 - 30)">5.890</PartnerPrice>
+                        <PartnerPrice item="Tickets for employees (31 - 50)">5.690</PartnerPrice>
+                        <PartnerPrice item="Tickets for employees (51 - ∞)">5.490</PartnerPrice>
+                        <PartnerPrice item="Tickets for employees (Late-Bird)">6.490</PartnerPrice>
+                    </PartnerPriceList>
+                </TextBlock>
             </Section>
             <ImageSection imageName="2018/180912_JavaZone_0158" />
-            <CenterSection header={<h1>Contact us</h1>}>
-                <p>You can contact us about partnership details at <InlineLink external url="mailto:partner@java.no">partner@java.no</InlineLink></p>
-            </CenterSection>
+            <Section>
+                <TextBlock title="Contact us">
+                    <p>You can contact us about partnership details at <InlineLink external url="mailto:partner@java.no">partner@java.no</InlineLink></p>
+                </TextBlock>
+            </Section>
         </>
     )
 }

@@ -11,7 +11,6 @@ export function AcademyPage() {
     return (
         <>
             <PageBanner header="JavaZone Academy" subHeader="A free taste of JavaZone for IT-students!" color="blue" />
-            <Seperator />
             <CenterSection header={<h1>Come join us in february</h1>}>
                 <p>
                     Are you a student? Interested in IT? Come join us for JavaZone Academy. 
@@ -35,7 +34,6 @@ export function AcademyPage() {
                 </p> 
             </Section>
             <AcademyLocationSection academies={academies} />
-            <Seperator />
             <CenterSection header={<h1>Program, speakers and partners</h1>}>
                 <AcademyProgram program={academies.map(academy => academy.program)} partners={academies.map(city => city.partners)} />
             </CenterSection>

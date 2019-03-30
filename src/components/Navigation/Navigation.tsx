@@ -3,6 +3,7 @@ import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import { useRef, useEffect, useState } from 'react';
 import useOnClickOutside from 'use-onclickoutside'
 import styled, { css } from 'styled-components';
+import { useIsTop } from '../../core/hooks/UseIsTop';
 
 const logo = `${process.env.PUBLIC_URL}/logo-sharp.svg`;
 const hamburger = `${process.env.PUBLIC_URL}/menu.svg`;
@@ -17,6 +18,10 @@ const Header = styled.div`
     height: 5rem;
     display: flex;
     flex-direction: row;
+    ${(props: any) => props.isTop ? css`
+        border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    ` : null};
     justify-content: space-between;
 `
 
@@ -106,6 +111,7 @@ export interface NavRoute {
 function Navigation(props: NavigationProps) {
     const [isToggled, setIsToggled] = useState(false);
     const isSubpage = props.location.pathname !== '/';
+    const isTop = useIsTop();
     const ref = useRef(null);
     useOnClickOutside(ref, () => setIsToggled(false));
     function toggleMenu() {
@@ -113,7 +119,7 @@ function Navigation(props: NavigationProps) {
     }
 
     return (
-        <Header isSubpage={isSubpage}>
+        <Header isTop={!isTop} isSubpage={isSubpage}>
             <Brand to="/">
                 <Logo src={logo} />
                 <h1>JAVAZONE</h1>
