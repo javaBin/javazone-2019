@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation, { NavRoute } from './components/Navigation/Navigation';
-import Footer from './components/Footer/Footer';
+import { Footer } from './components/Footer/Footer';
 import { InfoPage } from './pages/Info/Info';
 import { TicketsPage } from './pages/Tickets/Tickets';
 import { PartnersPage } from './pages/Partners/Partners';
@@ -49,7 +49,7 @@ function App() {
     <Router>
       <ThemeProvider theme={theme}>
         <>
-          <Navigation sticky routes={routes} />
+          <Navigation routes={routes} />
           <Route component={ScrollToTop}/>
           <Switch>
             <Route exact path="/" component={Index} />
@@ -65,7 +65,7 @@ function App() {
             <Route exact path="/privacy-cookies" component={CookieInfoPage} />
             <Route component={NotFoundPage} />
           </Switch>
-          {/* <Footer routes={routes} /> */}
+          <Footer routes={routes} />
           <CookieDisclaimer>
             We have given you a dedicated cookie from our cookie jar in order to store your favorite program schedule. We also use cookies to improve your experience on our site. By using this site you agree to this. For more information please visit our <InlineLink url="/privacy-cookies">cookie information page.</InlineLink>
           </CookieDisclaimer>

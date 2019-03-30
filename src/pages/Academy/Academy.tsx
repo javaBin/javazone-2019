@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageBanner } from '../../components/PageBanner/PageBanner';
+import PageBanner from '../../components/PageBanner/PageBanner';
 import { Seperator } from '../../components/Seperator/Seperator';
 import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { AcademyLocationSection } from '../../components/AcademyLocation/AcademyLocationSection';
@@ -10,7 +10,7 @@ import { academies } from '../../core/data';
 export function AcademyPage() {
     return (
         <>
-            <PageBanner header="JavaZone Academy" subHeader="A free taste of JavaZone for IT-students!" imageName="academy" />
+            <PageBanner header="JavaZone Academy" subHeader="A free taste of JavaZone for IT-students!" color="blue" />
             <Seperator />
             <CenterSection header={<h1>Come join us in february</h1>}>
                 <p>

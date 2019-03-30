@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageBanner } from '../../components/PageBanner/PageBanner';
+import PageBanner from '../../components/PageBanner/PageBanner';
 import { Section } from '../../components/Section/Section';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { Seperator } from '../../components/Seperator/Seperator';
@@ -7,7 +7,7 @@ import { Seperator } from '../../components/Seperator/Seperator';
 export function MonetaryPolicyPage() {
     return (
         <>
-            <PageBanner header="Reimbursement Policy" subHeader="Refunds for speakers" imageName="2018/180913_JavaZone_0010" />
+            <PageBanner header="Reimbursement Policy" subHeader="Refunds for speakers" color="pink" />
             <Seperator />
             <Section header={<h1>What & How</h1>}>
                 <p>

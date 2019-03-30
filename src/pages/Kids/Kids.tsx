@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {PageBanner} from "../../components/PageBanner/PageBanner";
+import PageBanner from "../../components/PageBanner/PageBanner";
 import {Seperator} from "../../components/Seperator/Seperator";
 import {CenterSection} from "../../components/CenterSection/CenterSection";
 import {Section} from "../../components/Section/Section";
@@ -9,7 +9,7 @@ import {KidsProgram} from "../../components/KidsProgram/KidsProgram";
 export function KidsPage() {
     return (
         <>
-            <PageBanner header="JavaZone Kids" subHeader="En smakebit på JavaZone for framtidens utviklere" imageName="kids" />
+            <PageBanner header="JavaZone Kids" subHeader="En smakebit på JavaZone for framtidens utviklere" color="blue" />
             <Seperator />
             <CenterSection header={<h1>Tre sesjoner: En smakebit på voksenlivet</h1>}>
                 <p>

@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { PageBanner } from '../../components/PageBanner/PageBanner';
+import PageBanner from '../../components/PageBanner/PageBanner';
 import { Seperator } from '../../components/Seperator/Seperator';
 import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { Section } from '../../components/Section/Section';
@@ -16,7 +16,7 @@ export function PartnersPage() {
     const canPlayWebm = useCanPlayVideoType('webm');
     return (
         <>
-            <PageBanner header="Partner love <3" subHeader="September 11th - 12th, 2019" imageName="partners_2" />
+            <PageBanner header="Partner love <3" subHeader="September 11th - 12th, 2019" color="green" />
             <Seperator />
             <CenterSection header={<h1>JavaZone 2019: Bigger and better than ever</h1>}>
                 <p>

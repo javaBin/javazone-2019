@@ -9,7 +9,8 @@ const hamburger = `${process.env.PUBLIC_URL}/menu.svg`;
 
 const Header = styled.div`
     z-index: 1000;
-    position: absolute;
+    position: ${(props: any) => props.isSubpage ? 'sticky' : 'absolute'};
+    background: ${(props: any) => props.isSubpage ? 'white' : 'transparent'};
     top: 0;
     left: 0;
     width: 100%;
@@ -93,7 +94,6 @@ interface NavigationProps extends RouteComponentProps {
     routes: NavRoute[];
     displayBrand?: boolean;
     // position?: NavigationPosition;
-    sticky?: boolean;
     isNotFound?: boolean;
 }
 
@@ -105,18 +105,15 @@ export interface NavRoute {
 
 function Navigation(props: NavigationProps) {
     const [isToggled, setIsToggled] = useState(false);
+    const isSubpage = props.location.pathname !== '/';
     const ref = useRef(null);
     useOnClickOutside(ref, () => setIsToggled(false));
-    useEffect(() => {
-
-    }, [isToggled]);
-
     function toggleMenu() {
         setIsToggled(!isToggled);
     }
 
     return (
-        <Header>
+        <Header isSubpage={isSubpage}>
             <Brand to="/">
                 <Logo src={logo} />
                 <h1>JAVAZONE</h1>

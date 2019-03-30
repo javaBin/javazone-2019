@@ -1,21 +1,44 @@
 import React from 'react';
-import styles from './PageBanner.module.scss';
-
+import styled from 'styled-components';
+import { Section } from '../Section/Section';
 export interface PageBannerProps {
     header: string;
     subHeader: string;
-    imageName: string;
+    color?: 'green' | 'blue' | 'pink' | 'orange' | 'warm';
 }
 
-export function PageBanner(props: PageBannerProps) {
-    const imagePath = `https://storage.googleapis.com/javazone-assets/images/${props.imageName}.jpg`;
+const PageBannerContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30rem;
+`
+
+const PageBannerTitle = styled.h1`
+    font-size: 5em;
+    margin: 0;
+`
+
+const PageBannerSubTitle = styled.h2`
+    font-size: 3.5em;
+    margin: 0;
+`
+
+const ParticleWrapper = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+`
+
+function PageBanner(props: PageBannerProps) {
     return (
-        <section className={styles.pageBanner}>
-            <img src={imagePath} />
-            <div className={styles.pageBannerHeader}>
-                <h1>{props.header}</h1>
-                <h2>{props.subHeader}</h2>
-            </div>
-        </section>
+        <Section particles color={props.color}>
+            <PageBannerContent>
+                <PageBannerTitle>{props.header}</PageBannerTitle>
+                <PageBannerSubTitle>{props.subHeader}</PageBannerSubTitle>
+            </PageBannerContent>
+        </Section>
     )
 }
+
+export default PageBanner;

@@ -30,7 +30,7 @@ const StyledLink = styled(Link)`
     font-weight: bold;
     box-sizing: border-box;
     border-radius: 3px;
-    background: ${(props: any) => props.theme.colors[props.color]};
+    background: ${(props: any) => props.theme.colors[`${props.color}300`]};
     border: 4px solid transparent; 
     text-decoration: none;
     text-align: center;
@@ -39,7 +39,7 @@ const StyledLink = styled(Link)`
     transition: 400ms background;
     &:hover {
         border: 4px solid rgba(255, 255, 255, 0.5);
-        background: ${(props: any) => props.theme.colors[`${props.color}Dark`]};
+        background: ${(props: any) => props.theme.colors[`${props.color}400`]};
     }
 `
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageBanner } from '../../components/PageBanner/PageBanner';
+import PageBanner from '../../components/PageBanner/PageBanner';
 import { Seperator } from '../../components/Seperator/Seperator';
 import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { TicketPrice } from '../../components/TicketPrice/TicketPrice';
@@ -11,7 +11,7 @@ import { Link } from '../../components/Link/Link';
 export function TicketsPage() {
     return (
         <>
-            <PageBanner header="The Ticket Booth" subHeader="Come join us in Oslo, September 11th - 12th, 2019" imageName="2018/180912_JavaZone_0019" />
+            <PageBanner header="The Ticket Booth" subHeader="Come join us in Oslo, September 11th - 12th, 2019" color="green" />
             <Seperator />
             <CenterSection header={<h1>Get your tickets for JavaZone 2019 – Early Bird</h1>}>
                 <TicketPrice>6.290</TicketPrice>

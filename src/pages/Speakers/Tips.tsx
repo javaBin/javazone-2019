@@ -1,12 +1,12 @@
 import React from 'react';
-import { PageBanner } from '../../components/PageBanner/PageBanner';
+import PageBanner from '../../components/PageBanner/PageBanner';
 import { Section } from '../../components/Section/Section';
 import { Seperator } from '../../components/Seperator/Seperator';
 
 export function SpeakerTipsPage() {
     return (
         <>
-            <PageBanner header="Tips And Tricks for Speakers" subHeader="Make that abstract shine" imageName="2018/180913_JavaZone_0010" />
+            <PageBanner header="Tips And Tricks for Speakers" subHeader="Make that abstract shine" color="pink" />
             <Seperator />
             <Section header={<h1>Increase the chance of your talk being accepted</h1>}>
                     <p>

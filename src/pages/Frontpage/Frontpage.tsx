@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ParticleField from 'react-particles-webgl';
-import { config } from '../../core/particlesConfig';
+import { getParticlesConfig } from '../../core/particlesConfig';
 import styled, { keyframes } from 'styled-components';
 import { Link } from '../../components/Link/Link';
 import { useWindowWidth } from '../../core/hooks/UseWindowWidth';
@@ -72,11 +72,18 @@ const float = keyframes`
 
 const FloatingLogo = styled.img`
     grid-area: logo;
-    margin: 0 5rem;
+    margin-right: 5rem;
     width: 30rem;
     animation: ${float} 4s infinite;
-    @media (max-width: 1600px) {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        width: 20rem;
+        margin-right: 3rem; 
+    }
+    @media only screen and (max-width: 1600px) {
         width: 25rem;
+    }
+    @media only screen and (max-width: 1600px) and (-webkit-min-device-pixel-ratio : 2) {
+        width: 20rem;
     }
     @media (max-width: 1150px) {
         margin: 3rem 0;
@@ -95,6 +102,9 @@ const BannerTitle = styled.h1`
     margin: 0;
     grid-area: title;
     font-size: 9em;
+    @media only screen and (-webkit-min-device-pixel-ratio : 2) {
+        font-size: 6em;
+    }
     @media (max-width: 1600px) {
         font-size: 6em;
     }
@@ -111,6 +121,9 @@ const BannerDate = styled.h2`
     margin: 0;
     grid-area: date;
     font-size: 4.5em;
+    @media only screen and (-webkit-min-device-pixel-ratio : 2) {
+        font-size: 3.5em;
+    }
     @media (max-width: 1600px) {
         font-size: 3em;
     }
@@ -127,6 +140,9 @@ const BannerLocation = styled.h3`
     margin: 0;
     grid-area: location;
     font-size: 3.5em;
+    @media only screen and (-webkit-min-device-pixel-ratio : 2) {
+        font-size: 2.5em;
+    }
     @media (max-width: 1600px) {
         font-size: 2.5em;
     }
@@ -272,7 +288,7 @@ function Index() {
     return (
         <>
             <ParticleWrapper>
-                <ParticleField config={config} />
+                <ParticleField config={getParticlesConfig('frontpage')} />
             </ParticleWrapper>
             <StyledBackgroundFloaters width={width} />
             <Content>
@@ -284,7 +300,7 @@ function Index() {
                             <BannerDate>September 11th - 12th</BannerDate>
                             <BannerLocation>Oslo Spektrum, Norway</BannerLocation>
                             <BannerActions>
-                                <Link color="red" url="/tickets">Get your ticket</Link>
+                                <Link color="green" url="/tickets">Get your ticket</Link>
                                 <Gap />
                                 <Link color="blue" url="/speakers">Call for speakers</Link>
                             </BannerActions>

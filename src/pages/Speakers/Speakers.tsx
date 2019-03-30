@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageBanner } from '../../components/PageBanner/PageBanner';
+import PageBanner from '../../components/PageBanner/PageBanner';
 import { Section } from '../../components/Section/Section';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { Link } from '../../components/Link/Link';
@@ -17,7 +17,7 @@ import Timeline from '../../components/Timeline/Timeline';
 export function SpeakersPage() {
     return (
         <>
-            <PageBanner header="Call for Speakers" subHeader="Speak at JavaZone 2019" imageName="2018/180913_JavaZone_0010" />
+            <PageBanner header="Call for Speakers" subHeader="Speak at JavaZone 2019" color="pink" />
             <Seperator />
             <Section header={<h1>About JavaZone</h1>}>
                 <p>
