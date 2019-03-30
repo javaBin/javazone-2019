@@ -14,9 +14,7 @@ interface LinkProps {
 function Link(props: LinkProps) {
     return (
         props.external 
-            ? <div className={props.className}>
-                <a href={props.url} target={props.noBlankTarget ? '' : '_blank'}>{props.children}</a>
-            </div>
+            ? <a className={props.className} href={props.url} target={props.noBlankTarget ? '' : '_blank'}>{props.children}</a>
             : <RouterLink className={props.className} to={props.url}>
                     {props.children}
                 </RouterLink>
