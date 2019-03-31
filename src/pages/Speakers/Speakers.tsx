@@ -59,8 +59,6 @@ export function SpeakersPage() {
                     </p>
                 </TextBlock>
             </Section>
-
-
             <Section>
                 <Formats>
                     <FormatContent grid="lightning" {...lightning}></FormatContent>
@@ -68,18 +66,6 @@ export function SpeakersPage() {
                     <FormatContent grid="workshop" {...workshop}></FormatContent>
                 </Formats>
             </Section>
-
-
-
-
-{/* 
-            <CenterSection>
-                <ul className={styles.formatList}>
-                    <Format {...lightning} />
-                    <Format {...presentation} />
-                    <Format {...workshop} />
-                </ul>
-            </CenterSection> */}
             <Section>
                 <TextBlock title="Get some inspiration">
                     <h3>Workshop for Potential Speakers</h3>

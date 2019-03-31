@@ -8,6 +8,7 @@ export interface SectionProps {
     children?: React.ReactNode;
     particles?: boolean;
     className: string;
+    full?: boolean;
 }
 
 function Section(props: SectionProps) {
@@ -18,16 +19,13 @@ function Section(props: SectionProps) {
                 <ParticleField config={getParticlesConfig('pageBanner')} />
             </ParticleWrapper>
             : null }
-            <SectionContent>
+            <SectionContent full={props.full}>
                 {props.children}
             </SectionContent>
         </section>
     )
 }
 
-Section.defaultProps = {
-    particles: false
-}
 
 const ParticleWrapper = styled.div`
     position: absolute;
@@ -37,7 +35,7 @@ const ParticleWrapper = styled.div`
 
 const SectionContent = styled.div`
     position: relative;
-    width: 100rem;
+    width: ${(props: any) => props.full ? '100%' : '100rem'};
     height: auto;
     @media only screen and (max-width: 103rem) {
         width: 100%;
@@ -47,6 +45,7 @@ const SectionContent = styled.div`
 const StyledSection = styled(Section)`
     position: relative;
     box-sizing: border-box;
+    padding: ${(props: any) => props.full ? '0 3rem' : ''};
     width: 100%;
     height: auto;
     display: flex;
@@ -58,5 +57,10 @@ const StyledSection = styled(Section)`
         padding: 0 3rem;
     }
 `
+
+StyledSection.defaultProps = {
+    particles: false,
+    full: false
+}
 
 export { StyledSection as Section };
