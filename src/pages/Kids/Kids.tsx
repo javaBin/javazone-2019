@@ -1,9 +1,6 @@
 import * as React from 'react';
 import PageBanner from "../../components/PageBanner/PageBanner";
-import {CenterSection} from "../../components/CenterSection/CenterSection";
 import {Section} from "../../components/Section/Section";
-import {KidsSection} from "../../components/KidsProgram/KidsSection";
-import {KidsProgram} from "../../components/KidsProgram/KidsProgram";
 import styled from 'styled-components';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 import { kidsProgram } from '../../core/data/Kids.data';
@@ -119,13 +116,22 @@ const FormatContent = styled(Session)`
         & > a {
             margin-right: 2rem;
         }
+        @media only screen and (max-width: 450px) {
+            flex-direction: column;
+            align-items: flex-start;
+            & > a {
+                margin: 0;
+                width: 100%;
+            }
+            & > a:first-child {
+                margin-bottom: 1rem;
+            }
+        }
     }
     & > #lol {
         min-width: 15rem;
         min-height: 15rem;
         position: relative;
-        border-radius: 6px;
-        border: 3px solid rgba(255, 255, 255, 0.5);
         overflow: hidden;
         & > img {
             width: 100%;
@@ -156,11 +162,10 @@ interface SessionProps {
 }
 
 function Session(props: SessionProps) {
-    const imagePath = `https://storage.googleapis.com/javazone-assets/images/${props.image}`;
     return (
         <div className={props.className}>
             <div id="lol">
-                <img src={imagePath} />
+                <img src={props.image} />
             </div>
             <h1>{props.title}</h1>
             <h3>{props.speakers}</h3>
@@ -174,8 +179,8 @@ function Session(props: SessionProps) {
                 </p>
             </div>
             <div id="actions">
-                {props.moreInfoLink ? <Link color="blue" external to={props.moreInfoLink}>Mer info</Link> : null}
-                <Link color="blue" external to={props.registrationLink}>Påmelding</Link>
+                {props.moreInfoLink ? <Link color="blue" external url={props.moreInfoLink}>Mer info</Link> : null}
+                <Link color="blue" external url={props.registrationLink}>Påmelding</Link>
             </div>
         </div>  
     )

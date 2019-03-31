@@ -11,17 +11,27 @@ const PageBannerContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 30rem;
+    text-align: left;
+    min-height: 30rem;
+    @media only screen and (max-width: 450px) {
+        min-height: 20rem;
+    }
 `
 
 const PageBannerTitle = styled.h1`
-    font-size: 5em;
+    font-size: 5rem;
     margin: 0;
+    @media only screen and (max-width: 450px) {
+        font-size: 3rem;
+    }
 `
 
 const PageBannerSubTitle = styled.h2`
-    font-size: 3.5em;
+    font-size: 3.5rem;
     margin: 0;
+    @media only screen and (max-width: 450px) {
+        font-size: 2rem;
+    }
 `
 
 const ParticleWrapper = styled.div`

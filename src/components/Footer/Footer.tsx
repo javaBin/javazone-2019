@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { NavRoute } from '../Navigation/Navigation';
 import { Section } from '../Section/Section';
+import { useWindowWidth } from '../../core/hooks/UseWindowWidth';
 
 const facebook = `${process.env.PUBLIC_URL}/facebook.svg`;
 const twitter = `${process.env.PUBLIC_URL}/twitter.svg`;
@@ -40,6 +41,7 @@ const SocialIcon = styled.img`
 
 function Footer(props: FooterProps) {
     const isSubpage = props.location.pathname !== '/';
+    const width = useWindowWidth();
     if(!isSubpage) return null;
     return (
         <Section particles color="orange">
@@ -48,15 +50,15 @@ function Footer(props: FooterProps) {
                 <FooterLink grid="coc" target="_blank" href="https://javabin.no/principles">Code of Coduct</FooterLink>
                 <FooterLink grid="facebook" target="_blank" href="https://facebook.com/javazoneconference">
                     <SocialIcon src={facebook} />
-                    Facebook
+                    {width < 450 ? '' : 'Facebook'}
                 </FooterLink>
                 <FooterLink grid="twitter" target="_blank" href="https://twitter.com/javazone">
                     <SocialIcon src={twitter} />
-                    Twitter
+                    {width < 450 ? '' : 'Twitter'}
                 </FooterLink>
                 <FooterLink grid="email" target="_blank" href="mailto:javazone@java.no">
                     <SocialIcon src={email} />
-                    Email
+                    {width < 450 ? '' : 'Email'}
                 </FooterLink>
             </footer>
         </Section>
@@ -69,8 +71,14 @@ const StyledFooter = styled(withRouter(Footer))`
     display: grid;
     align-items: center;
     grid-template-areas:
-        'javabin d coc'
+        'javabin . coc'
         'twitter facebook email';
+    @media only screen and (max-width: 450px) {
+        grid-template-areas:
+            'javabin javabin javabin'
+            'coc coc coc'
+            'twitter facebook email';  
+    };
 `
 
 export { StyledFooter as Footer};

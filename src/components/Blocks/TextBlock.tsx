@@ -8,10 +8,14 @@ export interface SectionProps {
 }
 
 const TextBlockTitle = styled.h1`
-    font-size: 3em;
+    font-size: 3rem;
     text-transform: uppercase;
+    text-align: center;
     margin: 1rem 0;
     color: inherit;
+    @media only screen and (max-width: 450px) {
+        font-size: 2rem;
+    }
 `
 
 function TextBlock(props: SectionProps) {
@@ -36,6 +40,9 @@ const StyledTextBlock = styled(TextBlock)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media only screen and (max-width: 450px) {
+        margin: 1.5rem 0;
+    }
 `
 
 export { StyledTextBlock as TextBlock, AlignedParagraph };
