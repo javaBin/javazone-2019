@@ -7,6 +7,7 @@ import {KidsProgram} from "../../components/KidsProgram/KidsProgram";
 import styled from 'styled-components';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 import { kidsProgram } from '../../core/data/Kids.data';
+import { Link } from '../../components/Link/Link';
 
 export function KidsPage() {
     return (
@@ -108,9 +109,20 @@ const FormatContent = styled(Session)`
     & > #text {
         text-align: left;
     }
+    & > #actions {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        height: 100%;
+        justify-content: flex-start;
+        align-items: flex-end;
+        & > a {
+            margin-right: 2rem;
+        }
+    }
     & > #lol {
-        width: 15rem;
-        height: 15rem;
+        min-width: 15rem;
+        min-height: 15rem;
         position: relative;
         border-radius: 6px;
         border: 3px solid rgba(255, 255, 255, 0.5);
@@ -160,6 +172,10 @@ function Session(props: SessionProps) {
                 <p>
                     <strong>Anbefalt alder:</strong> {props.recommendedAge}
                 </p>
+            </div>
+            <div id="actions">
+                {props.moreInfoLink ? <Link color="blue" external to={props.moreInfoLink}>Mer info</Link> : null}
+                <Link color="blue" external to={props.registrationLink}>Påmelding</Link>
             </div>
         </div>  
     )
