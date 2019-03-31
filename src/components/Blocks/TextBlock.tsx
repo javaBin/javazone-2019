@@ -25,6 +25,7 @@ function TextBlock(props: SectionProps) {
 
 const AlignedParagraph = styled.div`
     text-align: ${(props: any) => props.align};
+    width: 100%;
 `
 
 const StyledTextBlock = styled(TextBlock)`

@@ -8,6 +8,7 @@ interface InlineLinkProps {
     url: string;
     children: React.ReactNode;
     className: string;
+    plain?: boolean;
 }
 
 function InlineLink(props: InlineLinkProps) {
@@ -20,23 +21,23 @@ function InlineLink(props: InlineLinkProps) {
     )
 }
 
-InlineLink.defaultProps = {
-    external: false,
-    noBlankTarget: false
-}
-
 const StyledInlineLink = styled(InlineLink)`
     font-weight: 700;
     text-decoration: none;
     border: 2px solid transparent;
     padding: 0.1rem 0.4rem;
-    color: ${(props: any) => props.theme.colors['warm400']};
+    color: ${(props: any) => props.plain ? 'white' : props.theme.colors['warm400']};
     &:hover {
         color: white;
         border-radius: 5px;
         border: 2px solid rgba(255, 255, 255, 0.6);
-        background: ${(props: any) => props.theme.colors['warm400']};
+        background: ${(props: any) => props.plain ? 'rgba(255, 255, 255, 0.3)' : props.theme.colors['warm400']};
     }
 `
 
+StyledInlineLink.defaultProps = {
+    external: false,
+    noBlankTarget: false,
+    plain: false
+}
 export { StyledInlineLink as InlineLink};

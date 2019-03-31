@@ -1,7 +1,5 @@
 import React, { Suspense } from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
-import { Seperator } from '../../components/Seperator/Seperator';
-import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { Section } from '../../components/Section/Section';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
@@ -12,6 +10,29 @@ import { useCanPlayVideoType } from '../../core/hooks/UseCanPlayVideoType';
 import { PartnerPriceList, PartnerPrice } from '../../components/PartnerPrices/PartnerPrices';
 import Box from '../../components/Box/Box';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
+import styled from 'styled-components';
+
+const SoldOutBox = styled.div`
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 60%;
+    height: auto;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    align-items: center;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    background: ${(props: any) => props.theme.colors['blue400']};
+    & > h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+    @media only screen and (max-width: 1200px) {
+        width: 100%;
+    }
+`
 
 export function PartnersPage() {
     const canPlayWebm = useCanPlayVideoType('webm');
@@ -95,24 +116,26 @@ export function PartnersPage() {
             </Section>
             <Section color="blue">
                 <TextBlock title="Partnership prices">
-                    <TicketPrice soldOut>71.000</TicketPrice>
-                    <Box>
+                    <TicketPrice color="blue400" soldOut>71.000</TicketPrice>
+                    <SoldOutBox>
                         <h1>Sold out!</h1>
                         <p>
-                            Our partner packages for 2019 are now sold out. But if you would like to join the waiting list and stay informed of any changes to the 2019 partnership possibilities then please <InlineLink external url="https://tinyurl.com/jzpartner2019">register your contact details and partnership preferences</InlineLink>
+                            Our partner packages for 2019 are now sold out. But if you would like to join the waiting list and stay informed of any changes to the 2019 partnership possibilities then please <InlineLink plain external url="https://tinyurl.com/jzpartner2019">register your contact details and partnership preferences</InlineLink>
                         </p>
-                    </Box>
-                    <p>
-                        <i>Note that all 50+ partnerships for JavaZone 2018 were sold out long before the conference.</i>
-                    </p>
-                    <p>
-                        All partnerships have a base price for entry which gives you everything described above.
-                        We also have some add-ons, as well as tickets for your employees, priced below.
-                    </p>
-                    <p>
-                        <i style={{fontSize: '1.2rem'}}>After March 1st, the price will increase to NOK 86.000,-.</i><br />
-                        <i style={{fontSize: '1rem'}}>All prices are ex VAT.</i>
-                    </p>
+                    </SoldOutBox>
+                    <AlignedParagraph align="center">
+                        <p>
+                            <i>Note that all 50+ partnerships for JavaZone 2018 were sold out long before the conference.</i>
+                        </p>
+                        <p>
+                            All partnerships have a base price for entry which gives you everything described above.
+                            We also have some add-ons, as well as tickets for your employees, priced below.
+                        </p>
+                        <p>
+                            <i style={{fontSize: '1.2rem'}}>After March 1st, the price will increase to NOK 86.000,-.</i><br />
+                            <i style={{fontSize: '1rem'}}>All prices are ex VAT.</i>
+                        </p>
+                    </AlignedParagraph>
                 </TextBlock>
             </Section>
             <Section>
