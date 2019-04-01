@@ -18,7 +18,7 @@ export function TicketsPage() {
                     <TicketPrice>6.290</TicketPrice>
                 </TextBlock>
             </Section>
-            <Section>
+            <CenterSection>
                 <TextBlock title="What's included?">
                     <p>
                         The JavaZone Ticket includes full access to the conference and entry to workshops on Tuesday (limited seating: first come, first served). 
@@ -35,9 +35,9 @@ export function TicketsPage() {
                         <Link color="green" external url="https://www.eventbrite.com/e/javazone-2019-tickets-55988719768">Get your tickets now!</Link>
                     </p>
                 </TextBlock>
-            </Section>
+            </CenterSection>
             <ImageSection imageName="tickets_2" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="">
                     <p>
                     </p>
@@ -65,16 +65,16 @@ export function TicketsPage() {
                         If you need a refund on your ticket, send an email with your request to <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink>. We'll refund the full ticket price minus a small processing fee (to cover credit card fees or invoice fees) for requests submitted before August 1st. Refund requests received after August 1st will only be accepted if javaBin are able to resell the tickets. For tickets bought in bulk (applies to both partner tickets and large regular orders), a maximum of 5 tickets can be refunded under this policy.
                     </p>
                 </TextBlock>
-            </Section>
+            </CenterSection>
             <ImageSection imageName="2018/180912_JavaZone_0035" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="The javaBin membership included in the ticket">
                     <p>
                         JavaZone is organized for and by the community. Your ticket includes a membership to javaBin, giving you access to all the javaBin community events and voting rights for a full year after buying the ticket.
                     </p>
                 </TextBlock>
-            </Section>
-            <Section>
+            </CenterSection>
+            <CenterSection>
                 <TextBlock title="Need more info about JavaZone?">
                     <p>
                         We'll release more information about the conference before the summer, and the detailed program with information about all the talks will be ready in July. Until then, have a look at the video on top and <InlineLink external url="https://2018.javazone.no">the 2018 website</InlineLink> to get a feel for how awesome JavaZone is!
@@ -83,7 +83,7 @@ export function TicketsPage() {
                         Don't wait too long buying your ticket, though – last year all of the 3,100 spots were gone, and we had long waiting lists. We expect a decent amount of interest this year as well.
                     </p>
                 </TextBlock>
-            </Section>
+            </CenterSection>
         </>
     )
 }

@@ -20,7 +20,7 @@ export function SpeakersPage() {
     return (
         <>
             <PageBanner header="Call for Speakers" subHeader="Speak at JavaZone 2019" color="pink" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="About JavaZone">
                     <p>
                         JavaZone 2019 will be the 19th consecutive JavaZone conference and will consist of a day of pre-conference workshops on September 10th, followed by two days of lightning talks and presentations on September 11th and 12th.
@@ -36,9 +36,9 @@ export function SpeakersPage() {
                     </p>
                     <Link color="pink" external url="https://talks.javazone.no">Submit your talk!</Link>
                 </TextBlock>
-            </Section>
+            </CenterSection>
             <ImageSection bottom imageName="2018/180912_JavaZone_0039" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="What is it like speaking at JavaZone?">
                     <p>
                         Over the last decade JavaZone has grown to become one of the most important Java events in Europe! You can see for yourself – over 1300 videos from previous years talks are available for free at <InlineLink external url='https://vimeo.com/javazone'>Vimeo</InlineLink>, and the <InlineLink external url='https://2018.javazone.no/program'>full program from JavaZone 2018</InlineLink> is also available.
@@ -50,23 +50,23 @@ export function SpeakersPage() {
                         JavaZone is committed to diversity, and we are especially interested in quality submissions from groups that are under-represented in tech.
                     </p>
                 </TextBlock>
-            </Section>
+            </CenterSection>
             <ImageSection imageName="partners_1" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="Formats and durations">
                     <p>
                         You should think about which format your talk will work best in. Are you presenting a new idea, or do you require more time to elaborate on your subject? How hands-on do you want to be? We have three formats you can present your material in.
                     </p>
                 </TextBlock>
-            </Section>
-            <Section>
+            </CenterSection>
+            <CenterSection>
                 <Formats>
                     <FormatContent grid="lightning" {...lightning}></FormatContent>
                     <FormatContent grid="presentation" {...presentation}></FormatContent>
                     <FormatContent grid="workshop" {...workshop}></FormatContent>
                 </Formats>
-            </Section>
-            <Section>
+            </CenterSection>
+            <CenterSection>
                 <TextBlock title="Get some inspiration">
                     <h3>Workshop for Potential Speakers</h3>
                     <p>
@@ -106,8 +106,8 @@ export function SpeakersPage() {
                         Please see our <InlineLink external url='/speakers/monetary-policy'>reimbursement policy</InlineLink> if you have any questions regarding coverage of other expenses.
                     </p>
                 </TextBlock>
-            </Section>
-            <Section>
+            </CenterSection>
+            <CenterSection>
                 <TextBlock title="Important principles">
                     <AlignedParagraph aling="left">
                         <p>
@@ -126,7 +126,7 @@ export function SpeakersPage() {
                 <AlignedParagraph align="center">
                 <TextBlock title="We hope to see you at JavaZone 2019 – please feel free to spread the word to your local community!"></TextBlock>
                 </AlignedParagraph>
-            </Section>
+            </CenterSection>
         </>
     )
 }

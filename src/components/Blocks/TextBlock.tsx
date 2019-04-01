@@ -10,7 +10,7 @@ export interface SectionProps {
 const TextBlockTitle = styled.h1`
     font-size: 3rem;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     margin: 1rem 0;
     color: inherit;
     @media only screen and (max-width: 450px) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
 import { Section } from '../../components/Section/Section';
+import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { List } from '../../components/List/List';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
@@ -9,7 +10,7 @@ export function AboutUsPage() {
     return (
         <>
             <PageBanner header="JavaZone: The biggest community-driven Java conference" subHeader="What is it? Who is behind it?" color="blue" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="What is javazone?">
                     <p>
                         JavaZone is the biggest community-driven Java conference that has been organized in Oslo, Norway since 2001. It is organized on a voluntary basis by a group of people from <InlineLink external url="https://java.no">javaBin</InlineLink>, the Norwegian Java User Group, working around the year and putting many hours to create an amazing conference experience for you. 
@@ -50,7 +51,7 @@ export function AboutUsPage() {
                         If you have any questions or comments, you can always reach the Core Team at <InlineLink url="mailto:javazone@java.no">javazone@java.no</InlineLink>.
                     </p>
                 </TextBlock>
-            </Section>
+            </CenterSection>
         </>
     )
 }

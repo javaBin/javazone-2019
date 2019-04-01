@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
-import { Section } from '../../components/Section/Section';
+import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
@@ -9,7 +9,7 @@ export function InfoPage() {
     return (
         <>
             <PageBanner header="Another year, another JavaZone!" subHeader="September 11th - 12th, 2019" color="orange" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="JAVAZONE 101 THE WHO, WHAT AND WHERE">
                     <p>
                         JavaZone – the biggest European community-driven conference for modern developers will be 18 years old in 2019! Don’t miss out on two days of inspiring tech talks, a day of hands-on sessions, mingling, and a great party!
@@ -29,9 +29,9 @@ export function InfoPage() {
                         To attend JavaZone you will need a ticket. The ticket grants you access to the full JavaZone experience, including workshops. The ticket sales ticket sales will open in February. The start for ticket sales will be announced on social media and on this page. The number of tickets is limited and distributed on a first-come-first-served basis, so it pays to be quick.
                     </p>
                 </TextBlock>
-            </Section>
+            </CenterSection>
             <ImageSection imageName="partners_1" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="Two conference days">
                     <p>
                         Two days full of talks from renowned Norwegian and international speakers, in varying formats and categories. You don´t want to miss our amazing lineup.
@@ -52,9 +52,9 @@ export function InfoPage() {
                         You will meet lots of interesting people at JavaZone! Grab your coffee (or tea) and mingle away! 
                     </p>
                 </TextBlock>
-            </Section>
+            </CenterSection>
             <ImageSection imageName="partners_3" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="The Javazone program">
                     <p>
                         The program will be made available before the summer holidays. Stay tuned!
@@ -75,9 +75,9 @@ export function InfoPage() {
                         Full blown learning sessions. This is where you get down and dirty with code. This year we’ll be offering a wide variety of 2-hour and 4-hour workshops.
                     </p>
                 </TextBlock>
-            </Section>
+            </CenterSection>
             <ImageSection imageName="info_1" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="AweZone: celebrating the community">
                     <p>
                         AweZone is JavaZone's traditional party which takes place on Wednesday evening.
@@ -86,8 +86,8 @@ export function InfoPage() {
                         The party offers a great chance to catch up with old friends, meet new ones, and also experience a great line-up of entertainment! More information about the party will be given in August.
                     </p>
                 </TextBlock>
-            </Section>
-            <Section>
+            </CenterSection>
+            <CenterSection>
                 <TextBlock title="A few very important principles">
                     <p>
                         JavaZone is a 100% community-organized conference created by <InlineLink external url="https://javabin.no">javaBin</InlineLink>. The program is chosen by our independent program committee, and they operate under the principle that no-one is paid to hold a presentation, and likewise, that no-one can pay us to get their presentation accepted.
@@ -109,8 +109,8 @@ export function InfoPage() {
                         </p>
                     </AlignedParagraph>
                 </TextBlock>
-            </Section>
-            <Section>
+            </CenterSection>
+            <CenterSection>
                 <TextBlock title="Questions?">
                     <p>
                         Do not hesitate to contact us if you have any questions. Contact us at <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink> and we’ll try our best to give you an answer.
@@ -119,7 +119,7 @@ export function InfoPage() {
                         We are looking forward to seeing you at JavaZone 2019!
                     </p>
                 </TextBlock>
-            </Section>
+            </CenterSection>
         </>
     )
 }

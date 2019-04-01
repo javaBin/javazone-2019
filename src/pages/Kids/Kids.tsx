@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PageBanner from "../../components/PageBanner/PageBanner";
 import {Section} from "../../components/Section/Section";
+import { CenterSection } from '../../components/CenterSection/CenterSection';
 import styled from 'styled-components';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 import { kidsProgram } from '../../core/data/Kids.data';
@@ -10,7 +11,7 @@ export function KidsPage() {
     return (
         <>
             <PageBanner header="JavaZone Kids" subHeader="En smakebit på JavaZone for framtidens utviklere" color="blue" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="Tre sesjoner: en smakebit på voksenlivet">
                     <AlignedParagraph align="center">
                         <p>
@@ -59,7 +60,7 @@ export function KidsPage() {
                         </p>
                     </AlignedParagraph>
                 </TextBlock>
-            </Section>
+            </CenterSection>
             <Section full>
                 <TextBlock title="Sesjoner">
                     <Formats>
