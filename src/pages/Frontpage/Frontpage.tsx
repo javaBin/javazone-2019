@@ -280,8 +280,8 @@ function Index() {
                     <BannerContent>
                         <FloatingLogo src={floatingLogo} />
                         <BannerStuff>
-                            <BannerTitle>JavaZone 2019</BannerTitle>
-                            <BannerDate>September 11th - 12th</BannerDate>
+                            <BannerTitle>JavaZone</BannerTitle>
+                            <BannerDate>September 11 - 12, 2019</BannerDate>
                             <BannerLocation>Oslo Spektrum, Norway</BannerLocation>
                             <BannerActions>
                                 <Link color="green" url="/tickets">Get your ticket</Link>
