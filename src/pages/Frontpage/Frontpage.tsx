@@ -96,7 +96,7 @@ const BannerTitle = styled.h1`
     grid-area: title;
     font-size: 9rem;
     @media (max-width: 1600px) {
-        font-size: 8rem;
+        font-size: 7rem;
     }
     @media (max-width: 690px) {
         font-size: 6rem;
@@ -112,7 +112,7 @@ const BannerDate = styled.h2`
     grid-area: date;
     font-size: 4.5rem;
     @media (max-width: 1600px) {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
     @media (max-width: 690px) {
         font-size: 2rem;
