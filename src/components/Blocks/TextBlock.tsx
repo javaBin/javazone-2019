@@ -39,7 +39,8 @@ const StyledTextBlock = styled(TextBlock)`
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
+    text-align: left;
     @media only screen and (max-width: 450px) {
         margin: 1.5rem 0;
     }

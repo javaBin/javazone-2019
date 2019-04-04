@@ -4,6 +4,7 @@ $border-color: lighten(green, 7%);
 
 .timeline {
     position: relative;
+    align-content: center;
 
     &__now {
         border-radius: 100%;
