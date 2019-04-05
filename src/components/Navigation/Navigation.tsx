@@ -122,7 +122,7 @@ function Navigation(props: NavigationProps) {
         <Header isTop={!isTop} isSubpage={isSubpage}>
             <Brand to="/">
                 <Logo src={logo} />
-                <h1>JAVAZONE</h1>
+                <h1>JavaZone</h1>
             </Brand>
             <Menu ref={ref} isToggled={isToggled}>
                 <MenuToggle>

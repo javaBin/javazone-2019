@@ -96,13 +96,13 @@ const BannerTitle = styled.h1`
     grid-area: title;
     font-size: 9rem;
     @media (max-width: 1600px) {
-        font-size: 6rem;
+        font-size: 7rem;
     }
     @media (max-width: 690px) {
-        font-size: 4.5rem;
+        font-size: 6rem;
     }
     @media (max-width: 500px) {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 `
 
@@ -112,7 +112,7 @@ const BannerDate = styled.h2`
     grid-area: date;
     font-size: 4.5rem;
     @media (max-width: 1600px) {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
     @media (max-width: 690px) {
         font-size: 2rem;
@@ -280,8 +280,8 @@ function Index() {
                     <BannerContent>
                         <FloatingLogo src={floatingLogo} />
                         <BannerStuff>
-                            <BannerTitle>JavaZone 2019</BannerTitle>
-                            <BannerDate>September 11th - 12th</BannerDate>
+                            <BannerTitle>JavaZone</BannerTitle>
+                            <BannerDate>September 11 - 12, 2019</BannerDate>
                             <BannerLocation>Oslo Spektrum, Norway</BannerLocation>
                             <BannerActions>
                                 <Link color="green" url="/tickets">Get your ticket</Link>
