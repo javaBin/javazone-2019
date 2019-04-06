@@ -76,13 +76,18 @@ const FloatingLogo = styled.img`
     width: 30rem;
     animation: ${float} 4s infinite;
     @media only screen and (max-width: 1600px) {
-        width: 25rem;
+        width: 42rem;
     }
     @media (max-width: 1150px) {
-        margin: 3rem 0;
+        margin: 5rem 0 0 0;
+        width: 30rem;
+    }
+    @media (max-width: 900px) {
+        margin: 9rem 0 0 0;
+        width: 18rem;
     }
     @media (max-width: 690px) {
-        margin: 0;
+        margin: 3rem 0;
         width: 16rem;
     }
     @media (max-width: 500px) {
@@ -96,7 +101,7 @@ const BannerTitle = styled.h1`
     grid-area: title;
     font-size: 9rem;
     @media (max-width: 1600px) {
-        font-size: 7rem;
+        font-size: 12rem;
     }
     @media (max-width: 690px) {
         font-size: 6rem;
@@ -112,7 +117,7 @@ const BannerDate = styled.h2`
     grid-area: date;
     font-size: 4.5rem;
     @media (max-width: 1600px) {
-        font-size: 2.8rem;
+        font-size: 4.75rem;
     }
     @media (max-width: 690px) {
         font-size: 2rem;
@@ -128,7 +133,7 @@ const BannerLocation = styled.h3`
     grid-area: location;
     font-size: 3.5rem;
     @media (max-width: 1600px) {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
     @media (max-width: 690px) {
         font-size: 2rem;
