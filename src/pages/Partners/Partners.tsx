@@ -116,6 +116,7 @@ export function PartnersPage() {
                 </TextBlock>
             </CenterSection>
             <Section color="blue">
+            <CenterSection>
                 <TextBlock title="Partnership prices">
                     <TicketPrice color="blue400" soldOut>71.000</TicketPrice>
                     <SoldOutBox>
@@ -124,7 +125,7 @@ export function PartnersPage() {
                             Our partner packages for 2019 are now sold out. But if you would like to join the waiting list and stay informed of any changes to the 2019 partnership possibilities then please <InlineLink plain external url="https://tinyurl.com/jzpartner2019">register your contact details and partnership preferences</InlineLink>
                         </p>
                     </SoldOutBox>
-                    <AlignedParagraph align="center">
+                    <AlignedParagraph align="left">
                         <p>
                             <i>Note that all 50+ partnerships for JavaZone 2018 were sold out long before the conference.</i>
                         </p>
@@ -138,6 +139,7 @@ export function PartnersPage() {
                         </p>
                     </AlignedParagraph>
                 </TextBlock>
+                </CenterSection>
             </Section>
             <CenterSection>
                 <TextBlock title="Partnership stands">

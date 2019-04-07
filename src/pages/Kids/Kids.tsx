@@ -13,18 +13,14 @@ export function KidsPage() {
             <PageBanner header="JavaZone Kids" subHeader="En smakebit på JavaZone for framtidens utviklere" color="blue" />
             <CenterSection>
                 <TextBlock title="Tre sesjoner: en smakebit på voksenlivet">
-                    <AlignedParagraph align="center">
+                    <AlignedParagraph>
                         <p>
-                            JavaZone inviterer alle, og spesielt deltakere på JavaZone, til å ta med seg sine barn på 
-                            <br />
-                            <br />
-                            <strong><em>Teknologihuset – søndag 24. mars</em></strong>
-                            <br />
-                            <br />
-                            For å gi dem en smakebit på voksenlivet.
-                            <br />  
-                            Vi kjører 3 parallelle sesjoner, slik at vi har noe for både de aller minste og de litt eldre barna.
-                            <br />
+                            JavaZone inviterer alle, og spesielt deltakere på JavaZone,
+                             til å ta med seg sine barn på 
+                            <strong><em> Teknologihuset – søndag 24. mars</em></strong>. <br />
+                            For å gi dem en smakebit på voksenlivet. 
+                            Vi kjører 3 parallelle sesjoner, 
+                            slik at vi har noe for både de aller minste og de litt eldre barna.
                         </p>
                         <p>
                             Arrangementet er gratis for alle, men har begrenset antall plasser.
@@ -70,10 +66,10 @@ export function KidsPage() {
                     </Formats>
                 </TextBlock>
             </Section>
-            <Section>
+            <CenterSection>
                 <TextBlock title="Vi sees på teknologihuset søndag 24. mars!">
                 </TextBlock>
-            </Section>
+            </CenterSection>
         </>
     )
 }
