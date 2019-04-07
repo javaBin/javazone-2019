@@ -9,7 +9,7 @@ export interface SectionProps {
 
 const TextBlockTitle = styled.h1`
     font-size: 3rem;
-    text-transform: lowercase;
+    text-transform: uppercase;
     text-align: left;
     margin: 1rem 0;
     color: inherit;
@@ -32,18 +32,18 @@ const AlignedParagraph = styled.div`
     width: 100%;
 `
 
-const StyledTextBlock = styled(TextBlock)`
+const StyledCenterTextBlock = styled(TextBlock)`
     margin: 3rem 0;
     box-sizing: border-box;
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: left;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     @media only screen and (max-width: 450px) {
         margin: 1.5rem 0;
     }
 `
 
-export { StyledTextBlock as TextBlock, AlignedParagraph };
+export { StyledCenterTextBlock as CenterTextBlock, AlignedParagraph };
