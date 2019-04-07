@@ -34,7 +34,7 @@ export function AboutUsPage() {
                                 <li><em>Program Committee</em> – <InlineLink url="program@java.no">program@java.no</InlineLink> – Rafael Winterhalter</li>
                                 <li><em>Partners</em> – <InlineLink url="partner@java.no">partner@java.no</InlineLink> – Gareth Western</li>
                                 <li><em>IT Systems</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Anders Karlsen</li>
-                                <li><em>Web Pages</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Steffen Lien / Mateusz Zych</li>
+                                <li><em>Web Pages</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Steffen Lien</li>
                                 <li><em>Design & Profile</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel / Rustam Mehmandarov</li>
                                 <li><em>javaBin stand</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel</li>
                                 <li><em>MicroZone</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel</li>
