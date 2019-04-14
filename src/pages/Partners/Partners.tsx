@@ -115,10 +115,9 @@ export function PartnersPage() {
                     </AlignedParagraph>
                 </TextBlock>
             </Section>
-            <Section color="blue">
             <Section>
                 <TextBlock color={themeColor} title="Partnership prices">
-                    <TicketPrice color="blue400" soldOut>71.000</TicketPrice>
+                    <TicketPrice soldOut>71.000</TicketPrice>
                     <SoldOutBox>
                         <h1>Sold out!</h1>
                         <p>
@@ -139,7 +138,6 @@ export function PartnersPage() {
                         </p>
                     </AlignedParagraph>
                 </TextBlock>
-                </Section>
             </Section>
             <Section>
                 <TextBlock color={themeColor} title="Partnership stands">

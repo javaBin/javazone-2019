@@ -64,7 +64,7 @@ export function SpeakersPage() {
             </Section>
             <Section>
                 <TextBlock color={themeColor} title="Get some inspiration">
-                    <h3>Workshop for Potential Speakers</h3>
+                    <h1>Workshop for Potential Speakers</h1>
                     <p>
                         On March 12th, we will be <InlineLink external url='https://www.meetup.com/javaBin/events/258787075'>hosting a workshop</InlineLink> for all those considering submitting a talk to JavaZone. More information and the registation link will be posted here later.
                     </p>
@@ -97,11 +97,11 @@ export function SpeakersPage() {
             </Section>
             <Section>
                 <TextBlock color={themeColor} title="What’s in it for me?">
-                    <h3>Accepted presentations, lightning talks, and workshops</h3>
+                    <h1>Accepted presentations, lightning talks, and workshops</h1>
                     <p>
                         As a JavaZone speaker, you get free admission to the conference. Additionally, you are also invited to the speakers' dinner, held on September 10th. Finally, you can apply for a place on JourneyZone, our annual speaker adventure.
                     </p>
-                    <h3>Coverage of Expenses</h3>
+                    <h1>Coverage of Expenses</h1>
                     <p>
                         Please see our <InlineLink external url='/speakers/monetary-policy'>reimbursement policy</InlineLink> if you have any questions regarding coverage of other expenses.
                     </p>
