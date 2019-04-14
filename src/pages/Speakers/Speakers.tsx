@@ -1,16 +1,10 @@
 import React from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
-import { Section } from '../../components/Section/Section';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { Link } from '../../components/Link/Link';
-import { Seperator } from '../../components/Seperator/Seperator';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
-import { CenterSection } from '../../components/CenterSection/CenterSection';
-import { Zap, BookOpen, Monitor } from 'react-feather';
-import styled from 'styled-components';
-import classnames from 'classnames';
-import styles from './Speakers.module.scss';
-import { PresentationFormat } from '../../core/models/PresentationFormat.model';
+import {Section} from '../../components/Section/Section';
+import styled from 'styled-components/macro';
 import { lightning, presentation, workshop } from '../../core/data/PresentationFormats.data';
 import Timeline from '../../components/Timeline/Timeline';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
@@ -18,11 +12,12 @@ import { CenterTextBlock } from '../../components/Blocks/CenterTextBlock';
 import { List } from '../../components/List/List';
 
 export function SpeakersPage() {
+    const themeColor = 'pink';
     return (
         <>
-            <PageBanner header="Call for Speakers" subHeader="Speak at JavaZone 2019" color="pink" />
-            <CenterSection>
-                <TextBlock title="About JavaZone">
+            <PageBanner header="Call for Speakers" subHeader="Speak at JavaZone 2019" color={themeColor} />
+            <Section>
+                <TextBlock color={themeColor} title="About JavaZone">
                     <p>
                         JavaZone 2019 will be the 19th consecutive JavaZone conference and will consist of a day of pre-conference workshops on September 10th, followed by two days of lightning talks and presentations on September 11th and 12th.
                     </p>
@@ -37,10 +32,10 @@ export function SpeakersPage() {
                     </p>
                     <Link color="pink" external url="https://talks.javazone.no">Submit your talk!</Link>
                 </TextBlock>
-            </CenterSection>
+            </Section>
             <ImageSection bottom imageName="2018/180912_JavaZone_0039" />
-            <CenterSection>
-                <TextBlock title="What is it like speaking at JavaZone?">
+            <Section>
+                <TextBlock color={themeColor} title="What is it like speaking at JavaZone?">
                     <p>
                         Over the last decade JavaZone has grown to become one of the most important Java events in Europe! You can see for yourself – over 1300 videos from previous years talks are available for free at <InlineLink external url='https://vimeo.com/javazone'>Vimeo</InlineLink>, and the <InlineLink external url='https://2018.javazone.no/program'>full program from JavaZone 2018</InlineLink> is also available.
                     </p>
@@ -51,30 +46,30 @@ export function SpeakersPage() {
                         JavaZone is committed to diversity, and we are especially interested in quality submissions from groups that are under-represented in tech.
                     </p>
                 </TextBlock>
-            </CenterSection>
+            </Section>
             <ImageSection imageName="partners_1" />
-            <CenterSection>
-                <TextBlock title="Formats and durations">
+            <Section>
+                <TextBlock color={themeColor} title="Formats and durations">
                     <p>
                         You should think about which format your talk will work best in. Are you presenting a new idea, or do you require more time to elaborate on your subject? How hands-on do you want to be? We have three formats you can present your material in.
                     </p>
                 </TextBlock>
-            </CenterSection>
-            <CenterSection>
+            </Section>
+            <Section>
                 <Formats>
                     <FormatContent grid="lightning" {...lightning}></FormatContent>
                     <FormatContent grid="presentation" {...presentation}></FormatContent>
                     <FormatContent grid="workshop" {...workshop}></FormatContent>
                 </Formats>
-            </CenterSection>
-            <CenterSection>
-                <TextBlock title="Get some inspiration">
+            </Section>
+            <Section>
+                <TextBlock color={themeColor} title="Get some inspiration">
                     <h3>Workshop for Potential Speakers</h3>
                     <p>
                         On March 12th, we will be <InlineLink external url='https://www.meetup.com/javaBin/events/258787075'>hosting a workshop</InlineLink> for all those considering submitting a talk to JavaZone. More information and the registation link will be posted here later.
                     </p>
                 </TextBlock>
-                <TextBlock title="Audience and Topics">
+                <TextBlock color={themeColor} title="Audience and Topics">
                     <p>
                         JavaZone is a conference for developers and technical architects, with an emphasis on technical talks. However, we are open to talks about other areas, including methodology, project management, and other topics related to programming.
                     </p>
@@ -82,7 +77,7 @@ export function SpeakersPage() {
                         Despite our conference's name, we do not limit our content to Java technology. We will consider all talks based on their relevance to developers and technical architects. We do however set a focus on technology surrounding the JVM when selecting talks.
                     </p>
                 </TextBlock>
-                <TextBlock title="Ongoing Evaluation of Talks">
+                <TextBlock color={themeColor} title="Ongoing Evaluation of Talks">
                     <p>
                         Each year we receive hundreds of submissions and we consider each submission as it arrives. Due to a large number of submissions, we can however not guarantee that you will hear from us immediately. We do however answer all submissions and try to do so no later than in July.
                     </p>
@@ -94,14 +89,14 @@ export function SpeakersPage() {
                         Some tips and tricks about your submission
                     </Link>
                 </TextBlock>
-            </CenterSection>
+            </Section>
             <Section>
                 <CenterTextBlock title="Dates & Deadlines for JavaZone 2019">
                     <Timeline />
                 </CenterTextBlock>
             </Section>
-            <CenterSection>
-                <TextBlock title="What’s in it for me?">
+            <Section>
+                <TextBlock color={themeColor} title="What’s in it for me?">
                     <h3>Accepted presentations, lightning talks, and workshops</h3>
                     <p>
                         As a JavaZone speaker, you get free admission to the conference. Additionally, you are also invited to the speakers' dinner, held on September 10th. Finally, you can apply for a place on JourneyZone, our annual speaker adventure.
@@ -111,9 +106,9 @@ export function SpeakersPage() {
                         Please see our <InlineLink external url='/speakers/monetary-policy'>reimbursement policy</InlineLink> if you have any questions regarding coverage of other expenses.
                     </p>
                 </TextBlock>
-            </CenterSection>
-            <CenterSection>
-                <TextBlock title="Important principles">
+            </Section>
+            <Section>
+                <TextBlock color={themeColor} title="Important principles">
                     <AlignedParagraph aling="left">
                         <p>
                             JavaZone is proud to be an independent and community-driven conference. It is organized by volunteers from javaBin (the Norwegian Java User Group) and is run as a non-profit organization. This means that we have three important principles for selecting talks:
@@ -129,9 +124,9 @@ export function SpeakersPage() {
                     </AlignedParagraph>
                 </TextBlock>
                 <AlignedParagraph align="center">
-                <TextBlock title="We hope to see you at JavaZone 2019 – please feel free to spread the word to your local community!"></TextBlock>
+                <TextBlock color={themeColor} title="We hope to see you at JavaZone 2019 – please feel free to spread the word to your local community!"></TextBlock>
                 </AlignedParagraph>
-            </CenterSection>
+            </Section>
         </>
     )
 }
@@ -156,13 +151,13 @@ const FormatContent = styled(Format)`
     border-radius: 6px;
     width: 100%;
     height: auto;
-    color: white;
+    color: ${(props: any) => props.theme.colors['orange400']};
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 5px solid rgba(255, 255, 255, 0.5);
-    background: ${(props: any) => props.theme.colors['warm300']};
+    background: ${(props: any) => props.theme.colors['orange100']};
     & > img {
         width: 3rem;
     }

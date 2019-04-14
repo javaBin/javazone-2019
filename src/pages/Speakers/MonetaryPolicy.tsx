@@ -5,11 +5,12 @@ import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 
 export function MonetaryPolicyPage() {
+    const themeColor = 'pink';
     return (
         <>
-            <PageBanner header="Reimbursement Policy" subHeader="Refunds for speakers" color="pink" />
+            <PageBanner header="Reimbursement Policy" subHeader="Refunds for speakers" color={themeColor} />
             <Section>
-                <TextBlock title="What & How">
+                <TextBlock color={themeColor} title="What & How">
                     <AlignedParagraph align="center">
                         <p>
                             If your presentation or a workshop is accepted, you may apply for a refund for travel and accommodation. Read below to find out if you are eligible.
@@ -19,7 +20,7 @@ export function MonetaryPolicyPage() {
                         </p>
                     </AlignedParagraph>
                 </TextBlock>
-                <TextBlock title="How to apply">
+                <TextBlock color={themeColor} title="How to apply">
                     <AlignedParagraph align="left">
                         <p>
                             The first thing to note is that you need to <strong><em>apply</em></strong> for reminbursement of costs. This is necessary for our budget planning. If you require financial support, please reach out to <InlineLink external url='mailto:refund@java.no'>refund@java.no</InlineLink> after your session or workshop was accepted.
@@ -35,7 +36,7 @@ export function MonetaryPolicyPage() {
                         </p>
                     </AlignedParagraph>
                 </TextBlock>
-                <TextBlock title="Confirmation & reimbursment">
+                <TextBlock color={themeColor} title="Confirmation & reimbursment">
                     <p>
                         Applications <strong><em>must</em></strong> be confirmed explicitly via <InlineLink external url='mailto:refund@java.no'>refund@java.no</InlineLink> and are only accepted prior to our conference. Reimbursements are provided after the conference. For this, we require you to send us copies of all receipts, the name of your bank and international account numbers (IBAN, BIC/SWIFT, if available). We reserve the right to decline a refund application. Speakers living in proximity to Oslo are not eligible.
                     </p>

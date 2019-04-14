@@ -1,18 +1,18 @@
 import * as React from 'react';
 import PageBanner from "../../components/PageBanner/PageBanner";
 import {Section} from "../../components/Section/Section";
-import { CenterSection } from '../../components/CenterSection/CenterSection';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 import { kidsProgram } from '../../core/data/Kids.data';
 import { Link } from '../../components/Link/Link';
 
 export function KidsPage() {
+    const themeColor = 'blue';
     return (
         <>
-            <PageBanner header="JavaZone Kids" subHeader="En smakebit på JavaZone for framtidens utviklere" color="blue" />
-            <CenterSection>
-                <TextBlock title="Tre sesjoner: en smakebit på voksenlivet">
+            <PageBanner header="JavaZone Kids" subHeader="En smakebit på JavaZone for framtidens utviklere" color={themeColor} />
+            <Section>
+                <TextBlock color={themeColor} title="Tre sesjoner: en smakebit på voksenlivet">
                     <AlignedParagraph>
                         <p>
                             JavaZone inviterer alle, og spesielt deltakere på JavaZone,
@@ -27,7 +27,7 @@ export function KidsPage() {
                         </p>
                     </AlignedParagraph>
                 </TextBlock>
-                <TextBlock title="Parktisk informasjon">
+                <TextBlock color={themeColor} title="Parktisk informasjon">
                     <AlignedParagraph align="left">
                         <h1>Tid & Sted</h1>
                         <p>
@@ -56,9 +56,9 @@ export function KidsPage() {
                         </p>
                     </AlignedParagraph>
                 </TextBlock>
-            </CenterSection>
-            <Section full>
-                <TextBlock title="Sesjoner">
+            </Section>
+            <Section>
+                <TextBlock color={themeColor} title="Sesjoner">
                     <Formats>
                         <FormatContent grid="turtle" {...kidsProgram[0]} />
                         <FormatContent grid="robot" {...kidsProgram[1]} />
@@ -66,10 +66,10 @@ export function KidsPage() {
                     </Formats>
                 </TextBlock>
             </Section>
-            <CenterSection>
-                <TextBlock title="Vi sees på teknologihuset søndag 24. mars!">
+            <Section>
+                <TextBlock color={themeColor} title="Vi sees på teknologihuset søndag 24. mars!">
                 </TextBlock>
-            </CenterSection>
+            </Section>
         </>
     )
 }

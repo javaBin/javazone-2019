@@ -1,6 +1,6 @@
 import React, { createContext, useEffect } from 'react';
 import ReactGA from 'react-ga';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components/macro';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation, { NavRoute } from './components/Navigation/Navigation';
 import { Footer } from './components/Footer/Footer';
@@ -25,7 +25,7 @@ const routes: NavRoute[] = [
   {title: 'Tickets', url: '/tickets', show: true},
   {title: 'Speakers', url: '/speakers', show: true},
   {title: 'Partners', url: '/partners', show: true},
-  {title: 'Academy', url: '/academy', show: true},
+  {title: 'Academy', url: '/academy', show: false},
   {title: 'Kids', url: '/kids', show: true},
   {title: 'About', url: '/about', show: true},
   {title: 'Cookies', url: '/privacy-cookies', show: false},
@@ -57,7 +57,7 @@ function App() {
             <Route exact path="/tickets" component={TicketsPage} />
             <Route exact path="/speakers" component={SpeakersPage} />
             <Route exact path="/partners" component={PartnersPage} />
-            <Route exact path="/academy" component={AcademyPage} />
+            {/* <Route exact path="/academy" component={AcademyPage} /> */}
             <Route exact path="/kids" component={KidsPage} />
             <Route exact path="/about" component={AboutUsPage} />
             <Route exact path="/speakers/tips" component={SpeakerTipsPage} />

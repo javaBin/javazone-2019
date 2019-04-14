@@ -1,19 +1,18 @@
 import React from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
-import { Section } from '../../components/Section/Section';
-import { CenterSection } from '../../components/CenterSection/CenterSection';
-import { AcademyProgram } from '../../components/AcademyProgram/AcademyProgram';
+import {Section} from '../../components/Section/Section';
 import { academies } from '../../core/data';
 import { TextBlock } from '../../components/Blocks/TextBlock';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Link } from '../../components/Link/Link';
 
 export function AcademyPage() {
+    const themeColor = 'blue';
     return (
         <>
-            <PageBanner header="JavaZone Academy" subHeader="A free taste of JavaZone for IT-students!" color="blue" />
-            <CenterSection>
-                <TextBlock title="Come join us in february">
+            <PageBanner header="JavaZone Academy" subHeader="A free taste of JavaZone for IT-students!" color={themeColor} />
+            <Section>
+                <TextBlock color={themeColor} title="Come join us in february">
                     <p>
                         Are you a student? Interested in IT? Come join us for JavaZone Academy. 
                         JavaZone Academy is a free event for students in Norway, where we invite 
@@ -27,20 +26,18 @@ export function AcademyPage() {
                         A detailed program and more information will be soon posted here. Watch this space!
                     </p>
                 </TextBlock>
-                <TextBlock title="How do i register?">
+                <TextBlock color={themeColor} title="How do i register?">
                     <p>
                     Fill in the form by clicking the "Registration" link below for your preferred town. We’ll contact you as soon as possible with information about whether you got a spot. The events are usually quite popular, so make sure to register as soon as possible.
                     </p> 
                 </TextBlock>
-            </CenterSection>
-            <Section full>
-                <TextBlock>
-                    <Formats>
-                        <FormatContent grid="oslo" {...academies[0]} />
-                        <FormatContent grid="bergen" {...academies[1]} />
-                        <FormatContent grid="tromso" {...academies[2]} />
-                    </Formats>
-                </TextBlock>
+            </Section>
+            <Section>
+                <Formats>
+                    <FormatContent grid="oslo" {...academies[0]} />
+                    <FormatContent grid="bergen" {...academies[1]} />
+                    <FormatContent grid="tromso" {...academies[2]} />
+                </Formats>
             </Section>
             {/* <Section>
                 <TextBlock title="Program, speakers and partners">
@@ -55,6 +52,7 @@ const Formats = styled.div`
     width: 100%;
     display: grid;
     grid-gap: 1.5rem;
+    margin-bottom: 3rem;
     grid-template-areas: 'oslo bergen tromso';
     @media only screen and (max-width: 1200px) {
         grid-template-areas:

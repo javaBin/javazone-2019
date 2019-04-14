@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ParticleField from 'react-particles-webgl';
 import { getParticlesConfig } from '../../core/particlesConfig';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components/macro';
 import { Link } from '../../components/Link/Link';
 import { useWindowWidth } from '../../core/hooks/UseWindowWidth';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import { useRef, useEffect, useState } from 'react';
 import useOnClickOutside from 'use-onclickoutside'
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 import { useIsTop } from '../../core/hooks/UseIsTop';
 
 const logo = `${process.env.PUBLIC_URL}/logo-sharp.svg`;
