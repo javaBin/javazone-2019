@@ -28,7 +28,7 @@ const PageBannerContent = styled.div`
 `
 
 const PageBannerTitle = styled.h1`
-    font-size: 5rem;
+    font-size: 6rem;
     z-index: 2;
     margin: 0;
     @media only screen and (max-width: 450px) {
@@ -61,6 +61,7 @@ const Art = styled.img`
     animation: ${float} 4s infinite;
     width: 15%;
     height: 15%;
+    margin-right: 14rem;
     animation-delay: 2;
 `
 
