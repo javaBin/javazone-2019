@@ -1,9 +1,9 @@
 import React, { createContext, useEffect } from 'react';
 import ReactGA from 'react-ga';
+import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation, { NavRoute } from './components/Navigation/Navigation';
-import { FrontPage } from './pages/Frontpage/Frontpage';
-import Footer from './components/Footer/Footer';
+import { Footer } from './components/Footer/Footer';
 import { InfoPage } from './pages/Info/Info';
 import { TicketsPage } from './pages/Tickets/Tickets';
 import { PartnersPage } from './pages/Partners/Partners';
@@ -17,6 +17,8 @@ import { CookieDisclaimer } from './components/CookieDisclaimer/CookieDisclaimer
 import { InlineLink } from './components/InlineLink/InlineLink';
 import { NotFoundPage } from './pages/NotFound/NotFound';
 import { CookieInfoPage } from './pages/CookieInfo/CookieInfo';
+import Index from './pages/Frontpage/Frontpage';
+import theme from './core/theme';
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info', show: true},
@@ -45,28 +47,30 @@ function App() {
 
   return (
     <Router>
-      <>
-        <Navigation sticky routes={routes} />
-        <Route component={ScrollToTop}/>
-        <Switch>
-          <Route exact path="/" component={FrontPage} />
-          <Route exact path="/info" component={InfoPage} />
-          <Route exact path="/tickets" component={TicketsPage} />
-          <Route exact path="/speakers" component={SpeakersPage} />
-          <Route exact path="/partners" component={PartnersPage} />
-          <Route exact path="/academy" component={AcademyPage} />
-          <Route exact path="/kids" component={KidsPage} />
-          <Route exact path="/about" component={AboutUsPage} />
-          <Route exact path="/speakers/tips" component={SpeakerTipsPage} />
-          <Route exact path="/speakers/monetary-policy" component={MonetaryPolicyPage} />
-          <Route exact path="/privacy-cookies" component={CookieInfoPage} />
-          <Route component={NotFoundPage} />
-        </Switch>
-        <Footer routes={routes} />
-        <CookieDisclaimer>
-          We have given you a dedicated cookie from our cookie jar in order to store your favorite program schedule. We also use cookies to improve your experience on our site. By using this site you agree to this. For more information please visit our <InlineLink url="/privacy-cookies">cookie information page.</InlineLink>
-        </CookieDisclaimer>
-      </>
+      <ThemeProvider theme={theme}>
+        <>
+          <Navigation routes={routes} />
+          <Route component={ScrollToTop}/>
+          <Switch>
+            <Route exact path="/" component={Index} />
+            <Route exact path="/info" component={InfoPage} />
+            <Route exact path="/tickets" component={TicketsPage} />
+            <Route exact path="/speakers" component={SpeakersPage} />
+            <Route exact path="/partners" component={PartnersPage} />
+            <Route exact path="/academy" component={AcademyPage} />
+            <Route exact path="/kids" component={KidsPage} />
+            <Route exact path="/about" component={AboutUsPage} />
+            <Route exact path="/speakers/tips" component={SpeakerTipsPage} />
+            <Route exact path="/speakers/monetary-policy" component={MonetaryPolicyPage} />
+            <Route exact path="/privacy-cookies" component={CookieInfoPage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+          <Footer routes={routes} />
+          <CookieDisclaimer>
+            We have given you a dedicated cookie from our cookie jar in order to store your favorite program schedule. We also use cookies to improve your experience on our site. By using this site you agree to this. For more information please visit our <InlineLink url="/privacy-cookies">cookie information page.</InlineLink>
+          </CookieDisclaimer>
+        </>
+      </ThemeProvider>
     </Router>
   );
 }

@@ -1,21 +1,34 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=BenchNine|Roboto');
 
+html {
+  font-size: 16px;
+  @media only screen and (max-width: 1920px) {
+    font-size: 12px;
+  }
+  @media only screen and (max-width: 1200px) {
+    font-size: 10px;
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: 12px;
+  }
+  @media only screen and (max-width: 450px) {
+    font-size: 10px;
+  }
+}
 
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(25, 25, 25);
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 p {
-  font-size: 1.4rem;
-  line-height: 140%;
+  font-size: 1.6rem;
+  line-height: 130%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h1, h2, h3, h4, h5 {
+  font-family: 'BenchNine', sans-serif;
 }

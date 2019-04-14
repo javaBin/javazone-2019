@@ -16,7 +16,8 @@
     "lib": ["es2015", "dom"]
   },
   "types": [
-    "axios"
+    "axios",
+    "react"
   ],
   "include": [
     "src"

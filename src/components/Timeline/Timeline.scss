@@ -4,13 +4,12 @@ $border-color: lighten(green, 7%);
 
 .timeline {
     position: relative;
+    align-content: center;
 
     &__now {
-        background: $primary-color;
         border-radius: 100%;
         display: block;
         height: 8px;
-        // left: calc('50% - 4px');
         left: 49%;
         position: absolute;
         width: 8px;
@@ -24,7 +23,7 @@ $border-color: lighten(green, 7%);
     }
 
     &__month {
-        border: 1px solid $primary-color;
+        border: 3px solid #6988C5;
         border-bottom: 0;
         color: green;
         margin: 0 auto;
@@ -33,16 +32,23 @@ $border-color: lighten(green, 7%);
         width: 30px;
 
         &:last-child {
-            border-bottom: 1px solid $primary-color;
+            border-bottom: 3px solid #6988C5;
+            border-radius: 0 0 3px 3px;
+        }
+
+        &:first-child {
+            border-radius: 3px 3px 0 0;
         }
 
         &:nth-child(odd) {
-            background: $primary-color;
+            background: #C2C9E8;
             color: black;
+            font-weight: 700;
         }
 
         &:nth-child(even) {
-            color: $primary-color;
+            color: #6988C5;
+            font-weight: 700;
         }
     }
 
@@ -51,25 +57,21 @@ $border-color: lighten(green, 7%);
         text-transform: uppercase;
     }
 
-    &__month-letter {
-        width: 14px;
-    }
-
     &__event {
-        border-bottom: 1px solid $primary-color;
+        border-bottom: 3px solid #6988C5;
         position: absolute;
         padding-bottom: 5px;
         width: 130px;
 
         &:after {
-            background: $primary-color;
+            background: #6988C5;
             border-radius: 100%;
             display: block;
             content: '';
-            height: 5px;
-            top: 8px;
+            height: 12px;
+            top: 12px;
             position: relative;
-            width: 5px;
+            width: 12px;
         }
 
         &--left {
@@ -99,7 +101,7 @@ $border-color: lighten(green, 7%);
         }
 
         &-title {
-            color: white;
+            color: black;
             font-size: .8rem;
             font-weight: 400;
             text-transform: uppercase;
@@ -110,8 +112,8 @@ $border-color: lighten(green, 7%);
         }
 
         &-date {
-            color: $primary-color;
-            font-size: .8rem;
+            color: #6988C5;
+            font-size: 0.8rem;
 
             @media (min-width: $screen-xs) {
                 font-size: 1rem;

@@ -1,1 +1,3 @@
 /// <reference types="react-scripts" />
+declare module 'styled-components'; // because the typings were causing a clash with react-native types for some reason...
+declare module 'react-particles-webgl';
