@@ -6,9 +6,10 @@ import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 
 export function MonetaryPolicyPage() {
     const themeColor = 'pink';
+    const pageArt = `${process.env.PUBLIC_URL}/page-speakers.svg`;
     return (
         <>
-            <PageBanner header="Reimbursement Policy" subHeader="Refunds for speakers" color={themeColor} />
+            <PageBanner header="Reimbursement Policy" subHeader="Refunds for speakers" color={themeColor} artPath={pageArt} />
             <Section>
                 <TextBlock color={themeColor} title="What & How">
                     <AlignedParagraph align="center">

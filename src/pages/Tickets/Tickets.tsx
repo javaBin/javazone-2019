@@ -10,9 +10,11 @@ import { TextBlock } from '../../components/Blocks/TextBlock';
 
 export function TicketsPage() {
     const themeColor = 'green';
+    const pageArt = `${process.env.PUBLIC_URL}/page-tickets.svg`;
     return (
         <>
-            <PageBanner header="The Ticket Booth" subHeader="Come join us in Oslo, September 11th - 12th, 2019" color={themeColor} />
+            <PageBanner header="The Ticket Booth" subHeader="Come join us in Oslo, September 11th - 12th, 2019" 
+                color={themeColor} artPath={pageArt} />
             <Section>
                 <TextBlock color={themeColor} title="Get your tickets for javazone 2019 - Early Bird">
                     <TicketPrice>6.290</TicketPrice>

@@ -43,9 +43,10 @@ const CenterStuff = styled.div`
 export function PartnersPage() {
     const canPlayWebm = useCanPlayVideoType('webm');
     const themeColor = 'green';
+    const pageArt = `${process.env.PUBLIC_URL}/page-partners.svg`;
     return (
         <>
-            <PageBanner header="Partner love <3" subHeader="September 11th - 12th, 2019" color={themeColor} />
+            <PageBanner header="Partner love <3" subHeader="September 11th - 12th, 2019" color={themeColor} artPath={pageArt} />
             <Section>
                 <TextBlock color={themeColor} title="JavaZone 2019: Bigger and better than ever">
                     <p>

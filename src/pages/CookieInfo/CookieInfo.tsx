@@ -7,9 +7,10 @@ import { TextBlock } from '../../components/Blocks/TextBlock';
 
 export function CookieInfoPage() {
     const themeColor = 'orange';
+    const pageArt = `${process.env.PUBLIC_URL}/page-about.svg`;
     return (
         <>
-            <PageBanner header="JavaZone Website and Cookies" subHeader="Here, have a cookie from our cookie jar!" color={themeColor} />
+            <PageBanner header="JavaZone Website and Cookies" subHeader="Here, have a cookie from our cookie jar!" color={themeColor} artPath={pageArt} />
             <Section>
                 <TextBlock color={themeColor} title="What are cookies?">
                     <p>

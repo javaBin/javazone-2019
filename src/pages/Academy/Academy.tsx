@@ -8,9 +8,10 @@ import { Link } from '../../components/Link/Link';
 
 export function AcademyPage() {
     const themeColor = 'blue';
+    const pageArt = `${process.env.PUBLIC_URL}/page-kids-academy.svg`;
     return (
         <>
-            <PageBanner header="JavaZone Academy" subHeader="A free taste of JavaZone for IT-students!" color={themeColor} />
+            <PageBanner header="JavaZone Academy" subHeader="A free taste of JavaZone for IT-students!" color={themeColor} artPath={pageArt} />
             <Section>
                 <TextBlock color={themeColor} title="Come join us in february">
                     <p>

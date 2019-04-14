@@ -5,9 +5,10 @@ import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 
 export function SpeakerTipsPage() {
     const themeColor = 'pink';
+    const pageArt = `${process.env.PUBLIC_URL}/page-speakers.svg`;
     return (
         <>
-            <PageBanner header="Tips And Tricks for Speakers" subHeader="Make that abstract shine" color={themeColor} />
+            <PageBanner header="Tips And Tricks for Speakers" subHeader="Make that abstract shine" color={themeColor} artPath={pageArt} />
             <Section header={<h1>Increase the chance of your talk being accepted</h1>}>
                 <TextBlock color={themeColor} title="Increase the chance of your talk being accepted">
                     <p>

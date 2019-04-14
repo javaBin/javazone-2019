@@ -13,9 +13,11 @@ import { List } from '../../components/List/List';
 
 export function SpeakersPage() {
     const themeColor = 'pink';
+    const pageArt = `${process.env.PUBLIC_URL}/page-speakers.svg`;
     return (
         <>
-            <PageBanner header="Call for Speakers" subHeader="Speak at JavaZone 2019" color={themeColor} />
+            <PageBanner header="Call for Speakers" subHeader="Speak at JavaZone 2019" 
+                color={themeColor} artPath={pageArt} />
             <Section>
                 <TextBlock color={themeColor} title="About JavaZone">
                     <p>

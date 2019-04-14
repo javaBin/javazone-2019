@@ -7,9 +7,11 @@ import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 
 export function InfoPage() {
     const themeColor = 'orange';
+    const pageArt = `${process.env.PUBLIC_URL}/page-info.svg`;
     return (
         <>
-            <PageBanner header="Another year, another JavaZone!" subHeader="September 11th - 12th, 2019" color={themeColor} />
+            <PageBanner header="Another year, another JavaZone!" subHeader="September 11th - 12th, 2019" 
+                color={themeColor} artPath={pageArt} />
             <Section>
                 <TextBlock color={themeColor} title="JavaZone 101 the Who, What and Where">
                     <p>
