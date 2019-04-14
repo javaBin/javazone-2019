@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
-import { CenterSection } from '../../components/CenterSection/CenterSection';
 import { Section } from '../../components/Section/Section';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
@@ -11,7 +10,7 @@ import { useCanPlayVideoType } from '../../core/hooks/UseCanPlayVideoType';
 import { PartnerPriceList, PartnerPrice } from '../../components/PartnerPrices/PartnerPrices';
 import Box from '../../components/Box/Box';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const SoldOutBox = styled.div`
     box-sizing: border-box;
@@ -37,29 +36,30 @@ const SoldOutBox = styled.div`
 
 export function PartnersPage() {
     const canPlayWebm = useCanPlayVideoType('webm');
+    const themeColor = 'green';
     return (
         <>
-            <PageBanner header="Partner love <3" subHeader="September 11th - 12th, 2019" color="green" />
-            <CenterSection>
-                <TextBlock title="JavaZone 2019: Bigger and better than ever">
+            <PageBanner header="Partner love <3" subHeader="September 11th - 12th, 2019" color={themeColor} />
+            <Section>
+                <TextBlock color={themeColor} title="JavaZone 2019: Bigger and better than ever">
                     <p>
                         JavaZone started out in 2002 as a small conference for Java developers but has since then evolved to become one of the largest developer conferences in the world. Each year thousands of people gather in Oslo Spektrum for three full days of learning, mingling, and fun!
                     </p>
                 </TextBlock>
-                <TextBlock title="Last three years: Completely. Sold. Out">
+                <TextBlock color={themeColor} title="Last three years: Completely. Sold. Out">
                     <p>
                         Last year, a record breaking 3100 people attended JavaZone. We were completely sold out of tickets AND partner stands. The same happened last year, and a year before. So you might want to join in early if you want to be part of the conference!
                     </p>
                 </TextBlock>
-                <TextBlock title="Our philosophy: Partners, not sponsors">
+                <TextBlock color={themeColor} title="Our philosophy: Partners, not sponsors">
                     <p>
                         We want JavaZone‘s Expo Area to be an attractive space where our partners and participants can hang out and spend time together. In previous years, our partners have done a great job helping us achieve this goal, and we look forward to seeing what they bring to JavaZone 2019! JavaZone’s Expo Area is a vibrant, busy space full of life and activity. As a partner you are not just supporting our conference economically – you participate in the event and help creating a unique atmosphere. We work closely with our partners to help them realize their ideas and make the most out of their stands. Have you got a great concept for your JavaZone stand and need help to realize it? Don’t be shy - just ask us. Almost anything is possible!
                     </p>
                 </TextBlock>
-            </CenterSection>
+            </Section>
             <ImageSection bottom imageName="2018/180912_JavaZone_0098" />
-            <CenterSection>
-                <TextBlock title="The Expo Area">
+            <Section>
+                <TextBlock color={themeColor} title="The Expo Area">
                     <p>
                         All our partner stands are traditionally located in the Expo Area, which is located in the center of the venue. During each break, the Expo is full of attendees. This is partly because we continuously serve food from the restaurant stands – throughout the day, and partly because of you – our partners – make this area one of the liveliest Expo Areas of any conference.
                     </p>
@@ -70,7 +70,7 @@ export function PartnersPage() {
                         <i>The video below shows a time-lapse of the JavaZone 2018 event.</i>
                     </p>
                 </TextBlock>
-            </CenterSection>
+            </Section>
             <Section particles color="warm">
                 <div style={{margin: '2rem 0'}}>
                     <Suspense fallback={<img src="splash.jpg" />}>
@@ -81,8 +81,8 @@ export function PartnersPage() {
                     </Suspense>
                 </div>
             </Section>
-            <CenterSection>
-                <TextBlock title="Partner options">
+            <Section>
+                <TextBlock color={themeColor} title="Partner options">
                     <p>
                         Even though all partners are considered equal, there are a few options to choose from. There is a base package that everyone gets, and then there are a few available expansions. Note that these expansions have limited availability.
                     </p>
@@ -114,10 +114,10 @@ export function PartnersPage() {
                         </List>
                     </AlignedParagraph>
                 </TextBlock>
-            </CenterSection>
+            </Section>
             <Section color="blue">
-            <CenterSection>
-                <TextBlock title="Partnership prices">
+            <Section>
+                <TextBlock color={themeColor} title="Partnership prices">
                     <TicketPrice color="blue400" soldOut>71.000</TicketPrice>
                     <SoldOutBox>
                         <h1>Sold out!</h1>
@@ -139,10 +139,10 @@ export function PartnersPage() {
                         </p>
                     </AlignedParagraph>
                 </TextBlock>
-                </CenterSection>
+                </Section>
             </Section>
-            <CenterSection>
-                <TextBlock title="Partnership stands">
+            <Section>
+                <TextBlock color={themeColor} title="Partnership stands">
                     <PartnerPriceList soldOut>
                         <PartnerPrice item="Extra Stand Space">38.000</PartnerPrice>
                         <PartnerPrice item="Restaurant Stand">65.000</PartnerPrice>
@@ -150,7 +150,7 @@ export function PartnersPage() {
                         <PartnerPrice item="Concept Stand">60.000</PartnerPrice>
                     </PartnerPriceList>
                 </TextBlock>
-                <TextBlock title="Partnership tickets">
+                <TextBlock color={themeColor} title="Partnership tickets">
                     <PartnerPriceList>
                         <PartnerPrice item="Tickets for employees (0 - 30)">5.890</PartnerPrice>
                         <PartnerPrice item="Tickets for employees (31 - 50)">5.690</PartnerPrice>
@@ -158,13 +158,13 @@ export function PartnersPage() {
                         <PartnerPrice item="Tickets for employees (Late-Bird)">6.490</PartnerPrice>
                     </PartnerPriceList>
                 </TextBlock>
-            </CenterSection>
+            </Section>
             <ImageSection imageName="2018/180912_JavaZone_0158" />
-            <CenterSection>
-                <TextBlock title="Contact us">
+            <Section>
+                <TextBlock color={themeColor} title="Contact us">
                     <p>You can contact us about partnership details at <InlineLink external url="mailto:partner@java.no">partner@java.no</InlineLink></p>
                 </TextBlock>
-            </CenterSection>
+            </Section>
         </>
     )
 }

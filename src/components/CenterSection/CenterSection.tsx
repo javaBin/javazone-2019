@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './CenterSection.module.scss';
+import styles from './Section.module.scss';
 
-interface CenterSectionProps {
+interface SectionProps {
     header?: React.ReactNode;
     children?: React.ReactNode;
 }
 
-export function CenterSection(props: CenterSectionProps) {
+export function Section(props: SectionProps) {
     return (
         <>
             <div className={styles.section}>

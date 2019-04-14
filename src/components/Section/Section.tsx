@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import ParticleField from 'react-particles-webgl';
 import { getParticlesConfig } from '../../core/particlesConfig';
 
@@ -35,7 +35,7 @@ const ParticleWrapper = styled.div`
 
 const SectionContent = styled.div`
     position: relative;
-    width: ${(props: any) => props.full ? '100%' : '100rem'};
+    width: ${(props: any) => props.full ? '100%' : '120rem'};
     height: auto;
     @media only screen and (max-width: 103rem) {
         width: 100%;

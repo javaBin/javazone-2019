@@ -6,11 +6,12 @@ import { List } from '../../components/List/List';
 import { TextBlock } from '../../components/Blocks/TextBlock';
 
 export function CookieInfoPage() {
+    const themeColor = 'orange';
     return (
         <>
-            <PageBanner header="JavaZone Website and Cookies" subHeader="Here, have a cookie from our cookie jar!" color="orange" />
+            <PageBanner header="JavaZone Website and Cookies" subHeader="Here, have a cookie from our cookie jar!" color={themeColor} />
             <Section>
-                <TextBlock title="What are cookies?">
+                <TextBlock color={themeColor} title="What are cookies?">
                     <p>
                         This Website uses cookies. A cookie is a small file of letters and numbers that we put on your computer. These cookies allow us to distinguish you from other users of the Website which helps us to provide you with a good experience when you browse our Website, and to improve our Website.
                     </p>
@@ -29,7 +30,7 @@ export function CookieInfoPage() {
                         </List>
                     </p>
                 </TextBlock>
-                <TextBlock title="How we use cookies">
+                <TextBlock color={themeColor} title="How we use cookies">
                     <p>
                         The cookies we use has two main purposes:
                         <List>

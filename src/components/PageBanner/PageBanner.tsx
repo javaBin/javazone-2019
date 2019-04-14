@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Section } from '../Section/Section';
 export interface PageBannerProps {
     header: string;
@@ -32,12 +32,6 @@ const PageBannerSubTitle = styled.h2`
     @media only screen and (max-width: 450px) {
         font-size: 2rem;
     }
-`
-
-const ParticleWrapper = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%; 
 `
 
 function PageBanner(props: PageBannerProps) {

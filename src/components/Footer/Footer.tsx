@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { NavRoute } from '../Navigation/Navigation';
 import { Section } from '../Section/Section';
