@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Neucha:700|Lato');
+@import url('https://fonts.googleapis.com/css?family=BenchNine|Roboto');
 
 html {
   font-size: 16px;
@@ -19,7 +19,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -29,10 +29,6 @@ p {
   line-height: 130%;
 }
 
-h1 {
-  font-family: 'Neucha', cursive;
-}
-
-h2, h3, h4, h5 {
-  font-family: 'Amaranth', sans-serif;
+h1, h2, h3, h4, h5 {
+  font-family: 'BenchNine', sans-serif;
 }

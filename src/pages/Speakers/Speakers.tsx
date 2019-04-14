@@ -14,6 +14,7 @@ import { PresentationFormat } from '../../core/models/PresentationFormat.model';
 import { lightning, presentation, workshop } from '../../core/data/PresentationFormats.data';
 import Timeline from '../../components/Timeline/Timeline';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
+import { CenterTextBlock } from '../../components/Blocks/CenterTextBlock';
 import { List } from '../../components/List/List';
 
 export function SpeakersPage() {
@@ -93,9 +94,13 @@ export function SpeakersPage() {
                         Some tips and tricks about your submission
                     </Link>
                 </TextBlock>
-                <TextBlock title="Dates & Deadlines for JavaZone 2019">
+            </CenterSection>
+            <Section>
+                <CenterTextBlock title="Dates & Deadlines for JavaZone 2019">
                     <Timeline />
-                </TextBlock>
+                </CenterTextBlock>
+            </Section>
+            <CenterSection>
                 <TextBlock title="What’s in it for me?">
                     <h3>Accepted presentations, lightning talks, and workshops</h3>
                     <p>

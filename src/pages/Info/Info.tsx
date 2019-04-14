@@ -10,7 +10,8 @@ export function InfoPage() {
         <>
             <PageBanner header="Another year, another JavaZone!" subHeader="September 11th - 12th, 2019" color="orange" />
             <CenterSection>
-                <TextBlock title="JAVAZONE 101 THE WHO, WHAT AND WHERE">
+            {/* JAVAZONE 101 THE WHO, WHAT AND WHERE" */}
+                <TextBlock title="JavaZone 101 the Who, What and Where">
                     <p>
                         JavaZone – the biggest European community-driven conference for modern developers will be 18 years old in 2019! Don’t miss out on two days of inspiring tech talks, a day of hands-on sessions, mingling, and a great party!
                     </p>
@@ -49,7 +50,7 @@ export function InfoPage() {
                 </TextBlock>
                 <TextBlock title="... And a whole lotta love">
                     <p>
-                        You will meet lots of interesting people at JavaZone! Grab your coffee (or tea) and mingle away! 
+                        You will meet lots of interesting people at JavaZone! Grab your coffee (or tea) and mingle away!
                     </p>
                 </TextBlock>
             </CenterSection>

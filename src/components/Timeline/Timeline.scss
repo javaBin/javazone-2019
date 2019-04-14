@@ -4,12 +4,12 @@ $border-color: lighten(green, 7%);
 
 .timeline {
     position: relative;
+    align-content: center;
 
     &__now {
         border-radius: 100%;
         display: block;
         height: 8px;
-        // left: calc('50% - 4px');
         left: 49%;
         position: absolute;
         width: 8px;
@@ -42,7 +42,7 @@ $border-color: lighten(green, 7%);
 
         &:nth-child(odd) {
             background: #C2C9E8;
-            color: white;
+            color: black;
             font-weight: 700;
         }
 
@@ -55,10 +55,6 @@ $border-color: lighten(green, 7%);
     &__month-name {
         text-align: center;
         text-transform: uppercase;
-    }
-
-    &__month-letter {
-        width: 14px;
     }
 
     &__event {
@@ -105,7 +101,7 @@ $border-color: lighten(green, 7%);
         }
 
         &-title {
-            color: white;
+            color: black;
             font-size: .8rem;
             font-weight: 400;
             text-transform: uppercase;

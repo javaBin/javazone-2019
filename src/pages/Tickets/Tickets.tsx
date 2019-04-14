@@ -13,11 +13,11 @@ export function TicketsPage() {
     return (
         <>
             <PageBanner header="The Ticket Booth" subHeader="Come join us in Oslo, September 11th - 12th, 2019" color="green" />
-            <Section>
+            <CenterSection>
                 <TextBlock title="Get your tickets for javazone 2019 - Early Bird">
                     <TicketPrice>6.290</TicketPrice>
                 </TextBlock>
-            </Section>
+            </CenterSection>
             <CenterSection>
                 <TextBlock title="What's included?">
                     <p>
