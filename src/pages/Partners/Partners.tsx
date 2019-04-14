@@ -34,6 +34,12 @@ const SoldOutBox = styled.div`
     }
 `
 
+const CenterStuff = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+`
+
 export function PartnersPage() {
     const canPlayWebm = useCanPlayVideoType('webm');
     const themeColor = 'green';
@@ -118,12 +124,14 @@ export function PartnersPage() {
             <Section>
                 <TextBlock color={themeColor} title="Partnership prices">
                     <TicketPrice soldOut>71.000</TicketPrice>
-                    <SoldOutBox>
-                        <h1>Sold out!</h1>
-                        <p>
-                            Our partner packages for 2019 are now sold out. But if you would like to join the waiting list and stay informed of any changes to the 2019 partnership possibilities then please <InlineLink plain external url="https://tinyurl.com/jzpartner2019">register your contact details and partnership preferences</InlineLink>
-                        </p>
-                    </SoldOutBox>
+                    <CenterStuff>
+                        <SoldOutBox>
+                            <h1>Sold out!</h1>
+                            <p>
+                                Our partner packages for 2019 are now sold out. But if you would like to join the waiting list and stay informed of any changes to the 2019 partnership possibilities then please <InlineLink plain external url="https://tinyurl.com/jzpartner2019">register your contact details and partnership preferences</InlineLink>
+                            </p>
+                        </SoldOutBox>
+                    </CenterStuff>
                     <AlignedParagraph align="left">
                         <p>
                             <i>Note that all 50+ partnerships for JavaZone 2018 were sold out long before the conference.</i>

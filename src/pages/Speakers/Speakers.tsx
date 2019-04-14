@@ -162,7 +162,10 @@ const FormatContent = styled(Format)`
         width: 3rem;
     }
     & > h1 {
-        font-size: 2rem;
+        font-size: 2.4rem;
+    }
+    & > h3 {
+        font-size: 1.4rem;
     }
 `
 
