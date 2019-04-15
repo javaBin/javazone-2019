@@ -16,8 +16,8 @@ export function TicketsPage() {
             <PageBanner header="The Ticket Booth" subHeader="Come join us in Oslo, September 11th - 12th, 2019" 
                 color={themeColor} artPath={pageArt} />
             <Section>
-                <TextBlock color={themeColor} title="Get your tickets for javazone 2019 - Early Bird">
-                    <TicketPrice>6.290</TicketPrice>
+                <TextBlock color={themeColor} title="Get your tickets for javazone 2019">
+                    <TicketPrice>6.890</TicketPrice>
                 </TextBlock>
             </Section>
             <Section>
