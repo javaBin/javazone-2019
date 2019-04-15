@@ -46,7 +46,7 @@ function Footer(props: FooterProps) {
     return (
         <Section particles color="orange">
             <footer className={props.className}>
-                <FooterLink grid="javabin" target="_blank" href="https://javabin.no">Made by Javabin</FooterLink>
+                <FooterLink grid="javabin" target="_blank" href="https://javabin.no">Made by javaBin</FooterLink>
                 <FooterLink grid="coc" target="_blank" href="https://javabin.no/principles">Code of Coduct</FooterLink>
                 <FooterLink grid="facebook" target="_blank" href="https://facebook.com/javazoneconference">
                     <SocialIcon src={facebook} />
