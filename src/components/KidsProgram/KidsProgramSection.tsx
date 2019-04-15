@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './KidsProgramSection.module.scss';
-import Link from "../Link/Link";
+import { Link } from "../Link/Link";
 
 interface KidsProgramSectionProps {
     header: string;

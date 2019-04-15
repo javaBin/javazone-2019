@@ -1,20 +1,22 @@
 import React from 'react';
-import { PageBanner } from '../../components/PageBanner/PageBanner';
+import PageBanner from '../../components/PageBanner/PageBanner';
 import { Section } from '../../components/Section/Section';
-import { Seperator } from '../../components/Seperator/Seperator';
+import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 
 export function SpeakerTipsPage() {
+    const themeColor = 'pink';
+    const pageArt = `${process.env.PUBLIC_URL}/page-speakers.svg`;
     return (
         <>
-            <PageBanner header="Tips And Tricks for Speakers" subHeader="Make that abstract shine" imageName="2018/180913_JavaZone_0010" />
-            <Seperator />
+            <PageBanner header="Tips And Tricks for Speakers" subHeader="Make that abstract shine" color={themeColor} artPath={pageArt} />
             <Section header={<h1>Increase the chance of your talk being accepted</h1>}>
+                <TextBlock color={themeColor} title="Increase the chance of your talk being accepted">
                     <p>
                         There is generally a very high correlation between how much work one puts into the creation of a proposal and the chance that the proposal is accepted. Even a proposal with an extremely cool theme, entertaining title, and an experienced speaker may be excluded if the description is lacking. We have gathered some tips that should be considered when writing a JavaZone proposal, and a few reasons why proposals may be rejected.
                     </p>
-                </Section>
-
-                <Section header={<h1>Things to think about when writing your abstract</h1>}>
+                </TextBlock>
+                <TextBlock color={themeColor} title="Things to think about when writing your abstract">
+                    <AlignedParagraph align="left">
                         <p>
                             <h3>Create a good title</h3>
                             The title is the first thing people will see. A poorly worded title may be the only thing many will see of your proposal. A good title is catchy and concise, and should describe what you will talk about.
@@ -59,41 +61,9 @@ export function SpeakerTipsPage() {
                             <h3>Don't shout</h3>
                             You will definitely be noticed IF YOUR TITLE IS ENTIRELY UPPERCASE (!!!!!!!!), but not necessarily in a positive way.
                         </p>
-                </Section>
-
-                <Section header={<h1>Why was my talk rejected?</h1>}>
-                        <p>
-                            Even though we are rooting for your talk to be accepted, the fact is that some talks must be rejected. Read through these tips to understand why this might happen. Even better, if you are reading this before the Call for Speakers deadline, you can go through your proposal and make sure you do your best to avoid these common pitfalls.
-                        </p>
-                        <p>
-                            <h3>Not Enough information</h3>
-                            The program committee was not sure what you're going to present, or there was not enough information about the technology/things you want to talk about to decide how awesome the presentation will be.
-                        </p>
-                        <p>
-                            <h3>The proposal is too thin</h3>
-                            The abstract doesn't convey the feeling that you have put a lot of work into it, or that you have thought through your presentation.
-                        </p>
-                        <p>
-                            <h3>You want to talk about more than we think you'll have time to cover</h3>
-                            10-minute lightning talk proposals that appear to require double that time will be discounted. The same applies to proposals that try to cover everything possible instead of focusing on a specific area. If you want to cover a breadth of material then be sure to convey to us that you have thought through the timeline for your talk. We must feel that you believe that it will work, something that can be achieved with a clear and detailed outline.
-                        </p>
-                        <p>
-                            <h3>The abstract was not catchy enough</h3>
-                            If the committee ends up with 600 or so proposals to go through, time becomes a factor. This is especially true in the first pass, and in the early stages. If your abstract catches the fancy of just one or more of the committee members, your proposal is likely to be thumbs-upped to the next phase. If not, it tends to drop out of the race early. It will help your chances to describe accurately and concisely what you want to talk about, and why people should come and listen to you.
-                        </p>
-                        <p>
-                            <h3>The theme did not fit in with what we want to include in the program this year</h3>
-                            Even though JavaZone has a place for many themes, there are some proposals that don't fit. Some proposals are rejected because we feel the presentation would be better served at a different conference.
-                        </p>
-                        <p>
-                            <h3>Your co-presenter had a different proposal accepted</h3>
-                            If you intend to present with a co-presenter, and she happens to have had a separate proposal already accepted then we may have to reject your joint proposal.
-                        </p>
-                        <p>
-                            <h3>You were unlucky</h3>
-                            We often receive multiple good proposals covering exactly the same topic. The program committee then has to decide between these multiple excellent submissions. In 2016 we received many great proposals covering "how we do DevOps in the cloud". Limited space in the program meant that many of these ended up being rejected.
-                        </p>
-                </Section>
+                    </AlignedParagraph>
+                </TextBlock>
+            </Section>
         </>
     )
 }

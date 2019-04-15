@@ -1,13 +1,6 @@
 import React from 'react';
+import styled from 'styled-components/macro';
 
-interface ListProps {
-    children: React.ReactNode;
-}
-
-export function List(props: ListProps) {
-    return (
-        <ul>
-            {props.children}
-        </ul>
-    )
-}
+export const List = styled.ul`
+    font-size: 1.5rem;
+`
