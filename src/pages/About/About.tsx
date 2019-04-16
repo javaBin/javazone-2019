@@ -10,7 +10,7 @@ export function AboutUsPage() {
     const pageArt = `${process.env.PUBLIC_URL}/page-about.svg`;
     return (
         <>
-            <PageBanner header="JavaZone: The biggest community-driven Java conference" subHeader="What is it? Who is behind it?" 
+            <PageBanner header="The biggest community-driven Java conference" subHeader="What is it? Who is behind it?" 
                 color={themeColor} artPath={pageArt} />
             <Section>
                 <TextBlock color={themeColor} title="What is javazone?">
