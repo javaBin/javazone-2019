@@ -289,9 +289,7 @@ function Index() {
                             <BannerDate>September 11 - 12, 2019</BannerDate>
                             <BannerLocation>Oslo Spektrum, Norway</BannerLocation>
                             <BannerActions>
-                                <Link color="green" url="/tickets">Get your ticket</Link>
-                                <Gap />
-                                <Link color="blue" url="/speakers">Call for speakers</Link>
+                                <Link color="blue" url="/tickets">Get your ticket</Link>
                             </BannerActions>
                         </BannerStuff>
                     </BannerContent>
