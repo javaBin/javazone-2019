@@ -17,7 +17,7 @@ const workshop = {
     icon: `${process.env.PUBLIC_URL}/workshop.svg`,
     title: 'Workshops',
     length: '2 hours, 4 hours, 8 hours',
-    description: 'We will continue the popular workshop concept with a range of sessions on Tuesday, September 11th. The format for the workshops is in-depth, hands-on and interactive.'
+    description: 'We will continue the popular workshop concept with a range of sessions on Tuesday, September 10th. The format for the workshops is in-depth, hands-on and interactive.'
 };
 
 export { lightning, presentation, workshop };
