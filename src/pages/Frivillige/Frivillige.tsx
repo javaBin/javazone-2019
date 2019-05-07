@@ -5,7 +5,7 @@ import { academies } from '../../core/data';
 import { TextBlock } from '../../components/Blocks/TextBlock';
 import styled from 'styled-components/macro';
 import { Link } from '../../components/Link/Link';
-import { InlineLink } from '../../components/InlineLink/InlineLink';c
+import { InlineLink } from '../../components/InlineLink/InlineLink';
 
 import styles from './Frivillige.module.scss';
 
