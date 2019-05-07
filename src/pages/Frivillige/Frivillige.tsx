@@ -5,7 +5,7 @@ import { academies } from '../../core/data';
 import { TextBlock } from '../../components/Blocks/TextBlock';
 import styled from 'styled-components/macro';
 import { Link } from '../../components/Link/Link';
-import { InlineLink } from '../../components/InlineLink/InlineLink';
+import { InlineLink } from '../../components/InlineLink/InlineLink';c
 
 import styles from './Frivillige.module.scss';
 
@@ -22,9 +22,9 @@ export function FrivilligePage() {
                     </p>
                     <p>
                         Har du lyst til å bidra til at disse menneskene skal få en fantastisk opplevelse, og også få ta del i dette selv?
-                        Er du student høsten 2018? 
+                        Er du student høsten 2019? 
                         Perfekt! Du er akkurat den vi leter etter! 
-                        Søk som frivillig på JavaZone 2018, og bli med å hjelpe oss å lage tidenes beste JavaZone!
+                        Søk som frivillig på JavaZone 2019, og bli med å hjelpe oss å lage tidenes beste JavaZone!
                     </p>
                 </TextBlock>
                 <TextBlock color={themeColor} title="How do i register?">
