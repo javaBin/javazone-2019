@@ -26,48 +26,57 @@ export function FrivilligePage() {
                         Perfekt! Du er akkurat den vi leter etter! 
                         Søk som frivillig på JavaZone 2019, og bli med å hjelpe oss å lage tidenes beste JavaZone!
                     </p>
-                    <Link color="blue" url="/tickets">Meld deg på som frivillig!</Link>
+                    <p>
+                        <br />
+                        <Link color="orange" url="/tickets">Meld deg på som frivillig!</Link>
+                    </p>
                 </TextBlock>
             </Section>
             <Section>
-                <ul className={styles.frivillig__questions}>
-                    <li className={styles.frivillig__question}>
-                        <div className={styles.frivillig__header}>Hvem kan bli frivillig på JavaZone?</div>
-                        <div className={styles.frivillig__answer}>Alle studenter som behersker norsk og engelsk flytende kan bli frivillige på JavaZone. Så lenge du vil gjøre en innsats, så er du hjertelig velkommen til å søke!</div>
-                    </li>
-                    <li className={styles.frivillig__question}>
-                        <div className={styles.frivillig__header}>Hvor mange frivillige bidrar på JavaZone?</div>
-                        <div className={styles.frivillig__answer}>Hvert år deltar over 50 frivillige på JavaZone. Interessen for dette er stor, så dessverre får ikke alle søkere plass. Men ikke la dette hindre deg i å søke, prøv da vel!</div>
-                    </li>
-                    <li className={styles.frivillig__question}>
-                        <div className={styles.frivillig__header}>Får jeg med meg noe faglig som frivillig?</div>
-                        <div className={styles.frivillig__answer}>Å være frivillig på JavaZone er litt som å være frivillig på en musikkfestival, bare mer nerdete! Du får ca. 50% fri, og kan da gå på foredrag, spise god mat og snakke med kule folk.</div>
-                    </li>
-                    <li className={styles.frivillig__question}>
-                        <div className={styles.frivillig__header}>Hva med reise hvis jeg ikke bor i Oslo?</div>
-                        <div className={styles.frivillig__answer}>JavaZone dekker ikke reise eller overnatting for frivillige. Men erfaringsmessig så er det mange studiesteder som velger å gi reisestøtte. Spør derfor instituttet/skolen din om dette.</div>
-                    </li>
-                    <li className={styles.frivillig__question}>
-                        <div className={styles.frivillig__header}>Når tid må jeg møte opp som frivillig?</div>
-                        <div className={styles.frivillig__answer}>Det er oppmøte i Oslo Spektrum kl. 19:00 tirsdag 11. september for opplæring, noen oppgaver, mat og omvisning i lokalene. JavaZone er ferdig kl. 18 på torsdag 13. september. Da rigger vi ned, og deretter går vi videre for mat og drikke. Vi spanderer :) Detaljert blir sendt ut til de som blir tatt opp som frivillige.</div>
-                    </li>
-                    <li className={styles.frivillig__question}>
-                        <div className={styles.frivillig__header}>Får jeg bli med på AweZone?</div>
-                        <div className={styles.frivillig__answer}>Selvsagt får du det! JavaZone er ikke det samme uten! Her får du se de kuleste bandene og snakke med de beste folka i IT-bransjen! Ingen jobbing på kvelden – bare fest og moro =)</div>
-                    </li>                         
-                    <li className={styles.frivillig__question}>
-                        <div className={styles.frivillig__header}>Spørsmål?</div>
-                        <div className={styles.frivillig__answer}>Kontakt de frivilligansvarlige på <InlineLink url="mailto:student@java.no">student@java.no</InlineLink>. Det er også noen flere detaljer i søknadsskjemaet.</div>
-                    </li>                                   
-                    <li className={styles.frivillig__question}>
-                        <div className={styles.frivillig__header}>I don’t speak Norwegian… What about me?</div>
-                        <div className={styles.frivillig__answer}>Being a volunteer at JavaZone requires you to be fluent in both Norwegian and English. This is because you are one of the main goto-people for 3100 guests.</div>
-                    </li>
-                </ul>            
+                <TextBlock color={themeColor} title="Ofte Stilte Spørsmål (FAQ)">
+                    <br />
+                    <ul className={styles.frivillig__questions}>
+                        <li className={styles.frivillig__question}>
+                            <div className={styles.frivillig__header}>Hvem kan bli frivillig på JavaZone?</div>
+                            <div className={styles.frivillig__answer}>Alle studenter som behersker norsk og engelsk flytende kan bli frivillige på JavaZone. Så lenge du vil gjøre en innsats, så er du hjertelig velkommen til å søke!</div>
+                        </li>
+                        <li className={styles.frivillig__question}>
+                            <div className={styles.frivillig__header}>Hvor mange frivillige bidrar på JavaZone?</div>
+                            <div className={styles.frivillig__answer}>Hvert år deltar over 50 frivillige på JavaZone. Interessen for dette er stor, så dessverre får ikke alle søkere plass. Men ikke la dette hindre deg i å søke, prøv da vel!</div>
+                        </li>
+                        <li className={styles.frivillig__question}>
+                            <div className={styles.frivillig__header}>Får jeg med meg noe faglig som frivillig?</div>
+                            <div className={styles.frivillig__answer}>Å være frivillig på JavaZone er litt som å være frivillig på en musikkfestival, bare mer nerdete! Du får ca. 50% fri, og kan da gå på foredrag, spise god mat og snakke med kule folk.</div>
+                        </li>
+                        <li className={styles.frivillig__question}>
+                            <div className={styles.frivillig__header}>Hva med reise hvis jeg ikke bor i Oslo?</div>
+                            <div className={styles.frivillig__answer}>JavaZone dekker ikke reise eller overnatting for frivillige. Men erfaringsmessig så er det mange studiesteder som velger å gi reisestøtte. Spør derfor instituttet/skolen din om dette.</div>
+                        </li>
+                        <li className={styles.frivillig__question}>
+                            <div className={styles.frivillig__header}>Når tid må jeg møte opp som frivillig?</div>
+                            <div className={styles.frivillig__answer}>Det er oppmøte i Oslo Spektrum kl. 19:00 tirsdag 11. september for opplæring, noen oppgaver, mat og omvisning i lokalene. JavaZone er ferdig kl. 18 på torsdag 13. september. Da rigger vi ned, og deretter går vi videre for mat og drikke. Vi spanderer :) Detaljert blir sendt ut til de som blir tatt opp som frivillige.</div>
+                        </li>
+                        <li className={styles.frivillig__question}>
+                            <div className={styles.frivillig__header}>Får jeg bli med på AweZone?</div>
+                            <div className={styles.frivillig__answer}>Selvsagt får du det! JavaZone er ikke det samme uten! Her får du se de kuleste bandene og snakke med de beste folka i IT-bransjen! Ingen jobbing på kvelden – bare fest og moro =)</div>
+                        </li>                         
+                        <li className={styles.frivillig__question}>
+                            <div className={styles.frivillig__header}>Spørsmål?</div>
+                            <div className={styles.frivillig__answer}>Kontakt de frivilligansvarlige på <InlineLink url="mailto:student@java.no">student@java.no</InlineLink>. Det er også noen flere detaljer i søknadsskjemaet.</div>
+                        </li>                                   
+                        <li className={styles.frivillig__question}>
+                            <div className={styles.frivillig__header}>I don’t speak Norwegian… What about me?</div>
+                            <div className={styles.frivillig__answer}>Being a volunteer at JavaZone requires you to be fluent in both Norwegian and English. This is because you are one of the main goto-people for 3100 guests.</div>
+                        </li>
+                    </ul>
+                </TextBlock>            
             </Section>
             <Section>
-                <TextBlock>
-                    <Link color="blue" url="/tickets">Meld deg på som frivillig!</Link>
+                <TextBlock color={themeColor} title="Bli med da vel!">
+                    <p>
+                        <Link color="orange" url="/tickets">Meld deg på som frivillig!</Link>
+                        <br />
+                    </p>                
                 </TextBlock>
             </Section>
         </>
