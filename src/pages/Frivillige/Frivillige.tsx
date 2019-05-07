@@ -26,12 +26,7 @@ export function FrivilligePage() {
                         Perfekt! Du er akkurat den vi leter etter! 
                         Søk som frivillig på JavaZone 2019, og bli med å hjelpe oss å lage tidenes beste JavaZone!
                     </p>
-                </TextBlock>
-                <TextBlock color={themeColor} title="How do i register?">
-                    <p>
-                        Fill in the form by clicking the "Registration" link below for your preferred town. We’ll contact you as soon as possible with information about whether you got a spot. The events are usually quite popular, so make sure to register as soon as possible.
-                    </p> 
-                    <Link color="green" url="/tickets">Meld deg som frivillig!</Link>
+                    <Link color="green" url="/tickets">Meld deg på som frivillig!</Link>
                 </TextBlock>
             </Section>
             <Section>
@@ -72,7 +67,7 @@ export function FrivilligePage() {
             </Section>
             <Section>
                 <TextBlock>
-                    <Link color="green" url="/tickets">Meld deg som frivillig!</Link>
+                    <Link color="green" url="/tickets">Meld deg på som frivillig!</Link>
                 </TextBlock>
             </Section>
         </>
