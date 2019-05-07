@@ -18,12 +18,19 @@ export function FrivilligePage() {
             <Section>
                 <TextBlock color={themeColor} title="Hva er JavaZone?">
                     <p>
-                        Hvert år strømmer over 3100 utviklere til Oslo for å delta på JavaZone. I tillegg kommer nærmere 200 foredragsholdere fra hele verden, pluss mennesker fra over 50 ulike partnere.
+                        JavaZone er verdens største community-drevne Java-konferanse.
                     </p>
                     <p>
-                        Har du lyst til å bidra til at disse menneskene skal få en fantastisk opplevelse, og også få ta del i dette selv?
-                        Er du student høsten 2019? 
-                        Perfekt! Du er akkurat den vi leter etter! 
+                        Hvert år strømmer over 3100 utviklere til Oslo for å delta på JavaZone. I tillegg kommer nærmere 200 foredragsholdere fra hele verden, pluss mennesker fra over 50 ulike partnere.
+                    </p>
+                </TextBlock>
+                <TextBlock color={themeColor} title="Hvem leter vi etter?">
+                    <p>
+                        Har du lyst til å bidra til at disse menneskene skal få en fantastisk opplevelse, og også få ta del i dette selv?<br />
+                        Er du student høsten 2019?
+                    </p>
+                    <p>
+                        Perfekt! Du er akkurat den vi leter etter! <br />
                         Søk som frivillig på JavaZone 2019, og bli med å hjelpe oss å lage tidenes beste JavaZone!
                     </p>
                     <p>
