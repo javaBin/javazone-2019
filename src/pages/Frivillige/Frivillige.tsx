@@ -26,7 +26,7 @@ export function FrivilligePage() {
                         Perfekt! Du er akkurat den vi leter etter! 
                         Søk som frivillig på JavaZone 2019, og bli med å hjelpe oss å lage tidenes beste JavaZone!
                     </p>
-                    <Link color="green" url="/tickets">Meld deg på som frivillig!</Link>
+                    <Link color="blue" url="/tickets">Meld deg på som frivillig!</Link>
                 </TextBlock>
             </Section>
             <Section>
@@ -67,7 +67,7 @@ export function FrivilligePage() {
             </Section>
             <Section>
                 <TextBlock>
-                    <Link color="green" url="/tickets">Meld deg på som frivillig!</Link>
+                    <Link color="blue" url="/tickets">Meld deg på som frivillig!</Link>
                 </TextBlock>
             </Section>
         </>
