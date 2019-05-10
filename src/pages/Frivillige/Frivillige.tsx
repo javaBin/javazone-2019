@@ -14,7 +14,8 @@ export function FrivilligePage() {
     const pageArt = `${process.env.PUBLIC_URL}/page-kids-academy.svg`;
     return (
         <>
-            <PageBanner header="Bli frivillig på JavaZone" subHeader="Meld deg på i dag!" color={themeColor} artPath={pageArt} />
+            <PageBanner header="Bli frivillig på JavaZone" subHeader="Påmeldingen åpner mandag 13. mai!" color={themeColor} artPath={pageArt} />
+            {/*<PageBanner header="Bli frivillig på JavaZone" subHeader="Meld deg på i dag!" color={themeColor} artPath={pageArt} />*/}            
             <Section>
                 <TextBlock color={themeColor} title="Hva er JavaZone?">
                     <p>
@@ -33,10 +34,13 @@ export function FrivilligePage() {
                         Perfekt! Du er akkurat den vi leter etter! <br />
                         Søk som frivillig på JavaZone 2019, og bli med å hjelpe oss å lage tidenes beste JavaZone!
                     </p>
+                    {/* 
                     <p>
                         <br />
                         <Link color="orange" url="/tickets">Meld deg på som frivillig!</Link>
+                        
                     </p>
+                    */}
                 </TextBlock>
             </Section>
             <Section>
@@ -60,8 +64,8 @@ export function FrivilligePage() {
                             <div className={styles.frivillig__answer}>JavaZone dekker ikke reise eller overnatting for frivillige. Men erfaringsmessig så er det mange studiesteder som velger å gi reisestøtte. Spør derfor instituttet/skolen din om dette.</div>
                         </li>
                         <li className={styles.frivillig__question}>
-                            <div className={styles.frivillig__header}>Når tid må jeg møte opp som frivillig?</div>
-                            <div className={styles.frivillig__answer}>Det er oppmøte i Oslo Spektrum kl. 19:00 tirsdag 11. september for opplæring, noen oppgaver, mat og omvisning i lokalene. JavaZone er ferdig kl. 18 på torsdag 13. september. Da rigger vi ned, og deretter går vi videre for mat og drikke. Vi spanderer :) Detaljert blir sendt ut til de som blir tatt opp som frivillige.</div>
+                            <div className={styles.frivillig__header}>Når må jeg møte opp som frivillig?</div>
+                            <div className={styles.frivillig__answer}>Det er oppmøte i Oslo Spektrum kl. 19:00 tirsdag 10. september for opplæring, noen oppgaver, mat og omvisning i lokalene. JavaZone er ferdig kl. 18 på torsdag 12. september. Da rigger vi ned, og deretter går vi videre for mat og drikke. Vi spanderer :) Detaljert blir sendt ut til de som blir tatt opp som frivillige.</div>
                         </li>
                         <li className={styles.frivillig__question}>
                             <div className={styles.frivillig__header}>Får jeg bli med på AweZone?</div>
@@ -78,6 +82,7 @@ export function FrivilligePage() {
                     </ul>
                 </TextBlock>            
             </Section>
+            {/*
             <Section>
                 <TextBlock color={themeColor} title="Bli med da vel!">
                     <p>
@@ -86,6 +91,7 @@ export function FrivilligePage() {
                     </p>                
                 </TextBlock>
             </Section>
+            */}
         </>
     )
 }
