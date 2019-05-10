@@ -8,6 +8,7 @@ import { Link } from '../../components/Link/Link';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 
 import styles from './Frivillige.module.scss';
+import { ImageSection } from '../../components/ImageSection/ImageSection';
 
 export function FrivilligePage() {
     const themeColor = 'blue';
@@ -43,6 +44,7 @@ export function FrivilligePage() {
                     */}
                 </TextBlock>
             </Section>
+            <ImageSection bottom imageName="2018/180912_JavaZone_0026" />
             <Section>
                 <TextBlock color={themeColor} title="Ofte Stilte Spørsmål (FAQ)">
                     <br />
