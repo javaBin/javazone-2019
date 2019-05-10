@@ -8,6 +8,7 @@ import { InfoPage } from './pages/Info/Info';
 import { TicketsPage } from './pages/Tickets/Tickets';
 import { PartnersPage } from './pages/Partners/Partners';
 import { AcademyPage } from './pages/Academy/Academy';
+import { FrivilligePage } from './pages/Frivillige/Frivillige';
 import { KidsPage } from './pages/Kids/Kids';
 import { SpeakersPage } from './pages/Speakers/Speakers';
 import { AboutUsPage } from './pages/About/About';
@@ -27,6 +28,7 @@ const routes: NavRoute[] = [
   {title: 'Partners', url: '/partners', show: true},
   {title: 'Academy', url: '/academy', show: false},
   {title: 'Kids', url: '/kids', show: true},
+  {title: 'Frivillige', url: '/frivillige', show: true},
   {title: 'About', url: '/about', show: true},
   {title: 'Cookies', url: '/privacy-cookies', show: false},
   {title: 'Tips for Speakers', url: '/speakers/tips', show: false},
@@ -57,6 +59,7 @@ function App() {
             <Route exact path="/tickets" component={TicketsPage} />
             <Route exact path="/speakers" component={SpeakersPage} />
             <Route exact path="/partners" component={PartnersPage} />
+            <Route exact path="/frivillige" component={FrivilligePage} />
             {/* <Route exact path="/academy" component={AcademyPage} /> */}
             <Route exact path="/kids" component={KidsPage} />
             <Route exact path="/about" component={AboutUsPage} />
