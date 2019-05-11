@@ -61,7 +61,6 @@ const Art = styled.img`
     animation: ${float} 4s infinite;
     width: 15%;
     height: 15%;
-    margin-right: 14rem;
     animation-delay: 2;
 `
 
