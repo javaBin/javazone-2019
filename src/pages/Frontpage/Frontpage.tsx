@@ -247,7 +247,7 @@ function BackgroundFloaters(props: BackgroundFloatersProps) {
     }, [width]);
     return (
         <div className={props.className}>
-            <Link url="/program"><Art src={floaters[0]} delay={2}
+            <Link url="/frivillige"><Art src={floaters[0]} delay={2}
                 imgSize={floaterProps[0].imgSize} top={floaterProps[0].top} left={floaterProps[0].left} /></Link>
             <Link url="/tickets"> <Art src={floaters[1]} delay={3}
                 imgSize={floaterProps[1].imgSize} top={floaterProps[1].top} left={floaterProps[1].left} /></Link>
