@@ -132,7 +132,7 @@ function Navigation(props: NavigationProps) {
                 </MenuToggle>
                 {isToggled ? <MenuContent>
                     {props.routes.map(route => {
-                        return route.show ? <MenuLink onClick={toggleMenu} to={route.url}><h2>{route.title}</h2></MenuLink> : null
+                        return route.show ? <MenuLink key={route.title} onClick={toggleMenu} to={route.url}><h2>{route.title}</h2></MenuLink> : null
                     })}
                 </MenuContent>: null}
             </Menu>
