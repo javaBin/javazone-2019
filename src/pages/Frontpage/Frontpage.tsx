@@ -155,6 +155,18 @@ const BannerActions = styled.div`
     }
 `
 
+const BannerLogoLink = styled.div`
+    margin-top: 0rem;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
+`
+
 const Gap = styled.div`
     width: 1rem;
     height: 100%;
@@ -179,39 +191,39 @@ interface BackgroundFloatersProps {
 }
 
 const desktopProps = [
-        {
-            imgSize: 15,
-            top: 16,
-            left: 84
-        },
-        {
-            imgSize: 12,
-            top: 68,
-            left: 70
-        },
-        {
-            imgSize: 8,
-            top: 30,
-            left: 7
-        }
+    {
+        imgSize: 15,
+        top: 16,
+        left: 84
+    },
+    {
+        imgSize: 12,
+        top: 68,
+        left: 70
+    },
+    {
+        imgSize: 8,
+        top: 30,
+        left: 7
+    }
 ]
 
 const mobileProps = [
-        {
-            imgSize: 3,
-            top: 25,
-            left: 84
-        },
-        {
-            imgSize: 4,
-            top: 85,
-            left: 60
-        },
-        {
-            imgSize: 4,
-            top: 15,
-            left: 7
-        }
+    {
+        imgSize: 3,
+        top: 25,
+        left: 84
+    },
+    {
+        imgSize: 4,
+        top: 85,
+        left: 60
+    },
+    {
+        imgSize: 4,
+        top: 15,
+        left: 7
+    }
 ]
 
 function BackgroundFloaters(props: BackgroundFloatersProps) {
@@ -227,7 +239,7 @@ function BackgroundFloaters(props: BackgroundFloatersProps) {
         getRandomFloaters();
     }, []);
     useEffect(() => {
-        if(width < 650) {
+        if (width < 650) {
             setFloaterProps(mobileProps);
         } else {
             setFloaterProps(desktopProps);
@@ -235,12 +247,12 @@ function BackgroundFloaters(props: BackgroundFloatersProps) {
     }, [width]);
     return (
         <div className={props.className}>
-            <Art src={floaters[0]} delay={2} 
-                imgSize={floaterProps[0].imgSize} top={floaterProps[0].top} left={floaterProps[0].left} />
-            <Art src={floaters[1]} delay={3} 
-                imgSize={floaterProps[1].imgSize} top={floaterProps[1].top} left={floaterProps[1].left} />
-            <Art src={floaters[2]} delay={1} 
-                imgSize={floaterProps[2].imgSize} top={floaterProps[2].top} left={floaterProps[2].left} />
+            <Link url="/program"><Art src={floaters[0]} delay={2}
+                imgSize={floaterProps[0].imgSize} top={floaterProps[0].top} left={floaterProps[0].left} /></Link>
+            <Link url="/tickets"> <Art src={floaters[1]} delay={3}
+                imgSize={floaterProps[1].imgSize} top={floaterProps[1].top} left={floaterProps[1].left} /></Link>
+            <Link url="/about"><Art src={floaters[2]} delay={1}
+                imgSize={floaterProps[2].imgSize} top={floaterProps[2].top} left={floaterProps[2].left} /></Link>
         </div>
     );
 }
@@ -283,7 +295,11 @@ function Index() {
             <Content>
                 <LandingBanner>
                     <BannerContent>
-                        <FloatingLogo src={floatingLogo} />
+                        <BannerLogoLink>
+                            <Link url="/info">
+                                <FloatingLogo src={floatingLogo} />
+                            </Link>
+                        </BannerLogoLink>
                         <BannerStuff>
                             <BannerTitle>JavaZone</BannerTitle>
                             <BannerDate>September 11 - 12, 2019</BannerDate>

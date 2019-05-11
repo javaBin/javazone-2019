@@ -12,7 +12,7 @@ import { ImageSection } from '../../components/ImageSection/ImageSection';
 
 export function FrivilligePage() {
     const themeColor = 'blue';
-    const pageArt = `${process.env.PUBLIC_URL}/page-kids-academy.svg`;
+    const pageArt = `${process.env.PUBLIC_URL}/page-frivillige.svg`;
     return (
         <>
             <PageBanner header="Bli frivillig på JavaZone" subHeader="Påmeldingen åpner mandag 13. mai!" color={themeColor} artPath={pageArt} />
