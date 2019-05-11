@@ -39,12 +39,19 @@ const data = [
     },
     {
         month: 'Jun',
-        events: [{
-            title: 'Accepted speakers notified',
-            date: 'By The End of June',
-            location: '60px',
-            align: 'left'
-        }]
+        events: [
+            {
+                title: 'Accepted speakers notified',
+                date: 'By The Beginning of June',
+                location: '-30px',
+                align: 'left'
+            }, {
+                title: 'Deadline for Reimbursement Applications',
+                date: 'June 20th',
+                location: '20px',
+                align: 'right'
+            }
+        ]
     },
     {
         month: 'Jul',
@@ -52,12 +59,7 @@ const data = [
     },
     {
         month: 'Aug',
-        events: [{
-            title: 'Deadline for Reimbursement Applications',
-            date: 'August 1st',
-            location: '15px',
-            align: 'right'
-        }]
+        events: []
     },
     {
         month: 'Sep',
