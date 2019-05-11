@@ -24,7 +24,7 @@ export function MonetaryPolicyPage() {
                 <TextBlock color={themeColor} title="How to apply">
                     <AlignedParagraph align="left">
                         <p>
-                            The first thing to note is that you need to <strong><em>apply</em></strong> for reminbursement. This is necessary for our budget planning. To apply please <InlineLink external url="https://forms.gle/oj2ZdotMqwL2cZcv7">provide an estimate of your travel expenses and list the nights you are going to stay in Oslo</InlineLink>.
+                            The first thing to note is that you need to <strong><em>apply</em></strong> for reimbursement. This is necessary for our budget planning. To apply please <InlineLink external url="https://forms.gle/oj2ZdotMqwL2cZcv7">provide an estimate of your travel expenses and list the nights you are going to stay in Oslo</InlineLink>.
                         </p>
                         <p>
                             Please note that we do not refund travel expenses for those holding lightning talks. However, speakers (including the ones holding lightning talks) will receive a free conference ticket.
@@ -33,7 +33,7 @@ export function MonetaryPolicyPage() {
                 </TextBlock>
                 <TextBlock color={themeColor} title="Confirmation & reimbursment">
                     <p>
-                        Applications must be confirmed to become valid and are only accepted if submitted prior to the 20th of June. Payments are provided after the conference. For this, we require you to send us copies of all receipts, the name of your bank and international account numbers (IBAN, BIC/SWIFT, if available) to <InlineLink external url='mailto:refund@java.no'>refund@java.no</InlineLink>. We reserve the right to decline a refund application. Speakers living in proximity to Oslo are not eligible.
+                        Applications must be confirmed to become valid and are only accepted if submitted prior to the 20th of June. Payments are provided after the conference. For this, we require you to send us copies of all receipts, the name of your bank and international account numbers (IBAN, BIC/SWIFT, if available) to <InlineLink external url='mailto:refund@java.no'>refund@java.no</InlineLink>. We reserve the right to decline a refund application. Speakers living in the proximity of Oslo are not eligible.
                     </p>
                     <p>
                         Reimbursements are processed and paid after the conference. We will reach out to speakers who applied for reimbursement and process the payments once payment details are provided.
