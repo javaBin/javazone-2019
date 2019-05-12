@@ -2,7 +2,9 @@ import PageBanner from "../../components/PageBanner/PageBanner";
 import {Section} from "../../components/Section/Section";
 import styled from 'styled-components/macro';
 import React from "react";
-import {getFavorites, getSessions, Session} from "./data";
+import {getFavorites, getSessions, Session, Speaker} from "./data";
+import {CheckCircle} from "react-feather";
+import {Circle} from "react-feather/src";
 
 interface ProgramProps {}
 interface ProgramState {
@@ -339,13 +341,50 @@ interface SessionItemProps {
 }
 
 function SessionItem(props: SessionItemProps) {
-    const isFavorite = props.favorites.indexOf(props.session.sessionId) !== -1;
+    const {session, favorites} = props;
+    const isFavorite = favorites.indexOf(props.session.sessionId) !== -1;
     return (
         <article className={`${isFavorite ? 'program-simple-session-item-fav' : 'program-simple-session-item'}`}>
-
+            <div>{session.title}</div>
+            <div>
+                <div className="program-margin-right">
+                    <strong>{sessionFormat(props.session.format)}</strong>
+                </div>
+                <div className="program-margin-right">
+                    {props.session.room}
+                </div>
+                <div className="program-margin-right">
+                    {props.session.language === 'en' ? 'English' : 'Norwegian'}
+                </div>
+                <div className="program-margin-right">
+                    {`${props.session.length} Minutes`}
+                </div>
+                <div>
+                    {props.session.speakers.length > 1 ? generateSpeakersString(session.speakers) : props.session.speakers[0].name}
+                </div>
+            </div>
+            <div>
+                <div className="program-favorite-button" >
+                    <button onClick={() => {props.toggleFav(props.session.sessionId)}}>
+                        {isFavorite ? <CheckCircle size={32} /> : <Circle size={32} />}
+                    </button>
+                </div>
+            </div>
         </article>
     );
 }
+
+function generateSpeakersString(speakers: Speaker[]): string {
+    let speakersCombined = '';
+    speakers.forEach((speaker, idx) => (idx < speakers.length-1) ? speakersCombined += `${speaker.name}, ` : speakersCombined += speaker.name);
+    return speakersCombined;
+}
+
+const sessionFormat = (format: string) => {
+    if (format === 'presentation') return 'Presentation';
+    if (format === 'lightning-talk') return 'Lightning Talk';
+    return 'Workshop';
+};
 
 function groupByTimeSlot(sessions: Session[]): {[a: string]: Session[]} {
     const sorted = sessions.sort(function(a, b) {
