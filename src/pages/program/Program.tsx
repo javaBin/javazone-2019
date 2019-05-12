@@ -2,7 +2,7 @@ import PageBanner from "../../components/PageBanner/PageBanner";
 import {Section} from "../../components/Section/Section";
 import styled from 'styled-components/macro';
 import React from "react";
-import {getFavorites, getSessions, Session, Speaker} from "./data";
+import {getFavorites, getSessions, LoadingState, Session, Speaker} from "./data";
 import {CheckCircle} from "react-feather";
 import {Circle} from "react-feather/src";
 
@@ -22,7 +22,6 @@ class Filter {
     ) {}
 }
 
-enum LoadingState {ERROR, LOADING, LOADED }
 
 const TuesdayPrefix = '2018-09-12';
 const WednesdayPrefix = '2018-09-12';

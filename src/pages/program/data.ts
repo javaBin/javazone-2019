@@ -29,6 +29,8 @@ export class Speaker {
     ){}
 }
 
+export enum LoadingState {ERROR, LOADING, LOADED }
+
 function transformSession(s: any): Session {
     return new Session(
         s.abstract,

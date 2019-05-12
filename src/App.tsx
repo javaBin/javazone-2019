@@ -21,6 +21,7 @@ import { CookieInfoPage } from './pages/CookieInfo/CookieInfo';
 import Index from './pages/Frontpage/Frontpage';
 import theme from './core/theme';
 import {ProgramPage} from "./pages/program/Program";
+import {ProgramDetailsPage} from "./pages/program/ProgramDetails";
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info', show: true},
@@ -59,6 +60,7 @@ function App() {
             <Route exact path="/" component={Index} />
             <Route exact path="/info" component={InfoPage} />
             <Route exact path="/program" component={ProgramPage} />
+            <Route path="/program/:sessionId" component={ProgramDetailsPage} />
             <Route exact path="/tickets" component={TicketsPage} />
             <Route exact path="/speakers" component={SpeakersPage} />
             <Route exact path="/partners" component={PartnersPage} />
