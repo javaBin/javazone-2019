@@ -52,7 +52,7 @@ export function FrivilligePage() {
                         </li>
                         <li className={styles.frivillig__question}>
                             <div className={styles.frivillig__header}>Hva skal jeg gjøre som frivillig?</div>
-                            <div className={styles.frivillig__answer}>Det vil være en del ulike oppgaver, og du kan blant annet være salvakt, ha ansvar for info-stand eller opp- og nedrigging. Nærmere informasjon rundt oppgavene vil gis under opplæringsmøtet i forkant av konferansen. Vi vil prøve å dele ut vakter og arbeidoppgaver tilpasset dine ønsker og interesser.</div>
+                            <div className={styles.frivillig__answer}>Det vil være en del ulike oppgaver, og du kan blant annet være salvakt, ha ansvar for info-stand eller utdeling av headsett. Nærmere informasjon om oppgavene vil gis rett før JavaZone og under opplæringsmøtet i forkant av konferansen. Vi vil prøve å dele ut vakter og arbeidoppgaver tilpasset dine ønsker og interesser.</div>
                         </li>
                         <li className={styles.frivillig__question}>
                             <div className={styles.frivillig__header}>Hvor mange frivillige bidrar på JavaZone?</div>
@@ -76,7 +76,7 @@ export function FrivilligePage() {
                         </li>
                         <li className={styles.frivillig__question}>
                             <div className={styles.frivillig__header}>Når er søknadsfristen?</div>
-                            <div className={styles.frivillig__answer}>Fristen for å søke er 3. juni, og du vil få svar på søknaden etter dette. Dersom du melder deg på etter fristen er gått ut, vil du havne på venteliste og du vil da få mail så snart frivillig-påmeldingen for neste JavaZone åpner.</div>
+                            <div className={styles.frivillig__answer}>Fristen for å søke er mandag 3. juni, og du vil få svar på søknaden etter dette. Dersom du melder deg på etter fristen er gått ut, vil du havne på venteliste og du vil da få e-post så snart frivillig-påmeldingen for neste JavaZone åpner.</div>
                         </li>
                         <li className={styles.frivillig__question}>
                             <div className={styles.frivillig__header}>I don’t speak Norwegian… What about me?</div>
