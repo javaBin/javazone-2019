@@ -36,11 +36,6 @@ export function FrivilligePage() {
                     <br />
                     </p>
                     <p>
-                        <b>PS:</b> JavaZone drives av javaBin, som i tillegg til denne konferansen, også jevnlig arrangerer kule meetups over hele landet.
-                        Så hvis du trives som frivillig på JavaZone, er det bare å slenge seg på et javaBin-arrangement!
-                        Informasjon om neste meetup finner du<InlineLink external url="https://java.no">her</InlineLink>:)
-                    </p>
-                    <p>
                         <br />
                         <Link color="orange" external url="http://bit.ly/jzf2019">Meld deg på som frivillig!</Link>
                     </p>
