@@ -77,7 +77,7 @@
                         <polygon id="Path" fill="#AA3A17" points="8.94193548 8.35555556 10.7419355 15.762963 1.10322581 12.9777778"></polygon>
                     </g>
                 </g>
-                <g id="object_asteroid" transform="translate(442.500000, 352.000000) scale(-1, 1) translate(-442.500000, -352.000000) translate(389.000000, 301.000000)">
+                <g id="object_asteroid" transform="translate(442.500000, 352.000000) scale(1, 1) translate(-442.500000, -352.000000) translate(389.000000, 301.000000)">
                     <polygon id="Path" fill="#F59F68" points="92.7387997 13.3381528 61.2882502 1 23.9537898 6.99026261 6.83967315 25.7359103 0 56.4918855 10.0952381 81.1681912 25.7458439 96.1885512 53.6421527 102 82.1656805 90.4963116 102.386024 68.889643 106 46.0014754"></polygon>
                     <polygon id="Path" fill="#E58B5A" points="63.895293 83 70 47 39 61.8767812"></polygon>
                     <polygon id="Path" fill="#CF6D3C" points="64 82.3235294 37 90 38.6666667 61"></polygon>
