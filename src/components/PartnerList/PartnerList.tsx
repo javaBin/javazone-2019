@@ -21,8 +21,12 @@ const PartnersListContainer = styled(Row)`
     margin-bottom: 3rem;
     justify-content: center;
 `
+
 const PartnerLogo = styled.img`
-    width: 10rem;    
+    width: 10rem;
+    &:hover {
+        transform: scale(1.2);
+    }    
 `
 
 function PartnerList(props: PartnerListProps) {
@@ -39,9 +43,9 @@ function PartnerList(props: PartnerListProps) {
                         {shuffled.map((partner) => {
                             return (
                                 <Col key={partner.name}>
-                                    <Link url={partner.homepageUrl} external={true}>
+                                    <a href={partner.homepageUrl}>
                                         <PartnerLogo src={partner.logoUrl} alt={partner.name}/>
-                                    </Link>
+                                    </a>
                                 </Col>
                             )
                         })}
