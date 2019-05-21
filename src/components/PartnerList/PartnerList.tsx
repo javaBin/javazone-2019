@@ -36,7 +36,7 @@ function PartnerList(props: PartnerListProps) {
     const shuffled = shuffle(partners);
     return !shuffled.length ? null :
         (
-            <Section>
+            <Section particles color={props.color}>
                 <TextBlock color={props.color} title="Partners"/>
                 <Grid fluid>
                     <PartnersListContainer>
