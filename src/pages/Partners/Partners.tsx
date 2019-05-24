@@ -78,7 +78,7 @@ export function PartnersPage() {
                     </p>
                 </TextBlock>
             </Section>
-            <PartnerList color={themeColor}/>
+            <PartnerList color='warm'/>
             <Section>
                 <TextBlock color={themeColor} title="The Expo Area">
                     <p>
