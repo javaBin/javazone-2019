@@ -4,7 +4,7 @@ import styled from 'styled-components/macro';
 import React from "react";
 import {getFavorites, getSessions, LoadingState, Session, Speaker} from "./data";
 import {CheckCircle} from "react-feather";
-import {Circle} from "react-feather/src";
+import {Circle} from "react-feather";
 
 interface ProgramProps {}
 interface ProgramState {
