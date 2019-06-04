@@ -35,7 +35,7 @@ const ParticleWrapper = styled.div`
 
 const SectionContent = styled.div`
     position: relative;
-    width: ${(props: any) => props.full ? '100%' : '120rem'};
+    width: ${(props: any) => props.full ? '100%' : '100rem'};
     height: auto;
     @media only screen and (max-width: 103rem) {
         width: 100%;

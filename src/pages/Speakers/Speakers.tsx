@@ -153,7 +153,7 @@ const FormatContent = styled(Format)`
     border-radius: 6px;
     width: 100%;
     height: auto;
-    color: ${(props: any) => props.theme.colors['orange400']};
+    color: ${(props: any) => props.theme.colors['warm400']};
     padding: 2rem;
     display: flex;
     flex-direction: column;
