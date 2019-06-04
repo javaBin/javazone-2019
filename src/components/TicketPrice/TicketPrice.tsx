@@ -16,7 +16,7 @@ function TicketPrice(props: TicketPriceProps) {
 
 const StyledTicketPrice = styled(TicketPrice)`
     margin-top: 3rem;
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: 700;
     color: ${(props: any) => props.theme.colors[props.color]};
     text-decoration: ${(props: any) => props.soldOut ? 'line-through' : 'none'};

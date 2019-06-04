@@ -9,7 +9,7 @@ export interface TextBlockProps {
 }
 
 const TextBlockTitle = styled.h1`
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-transform: uppercase;
     text-align: left;
     margin: 1rem 0;

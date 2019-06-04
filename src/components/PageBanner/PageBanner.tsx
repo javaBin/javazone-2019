@@ -27,7 +27,7 @@ const PageBannerContent = styled.div`
 `
 
 const PageBannerTitle = styled.h1`
-    font-size: 5rem;
+    font-size: 6rem;
     z-index: 2;
     margin: 0;
     @media only screen and (max-width: 450px) {
@@ -36,7 +36,7 @@ const PageBannerTitle = styled.h1`
 `
 
 const PageBannerSubTitle = styled.h2`
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin: 0;
     z-index: 2;
     @media only screen and (max-width: 450px) {
