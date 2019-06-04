@@ -5,7 +5,6 @@ import {TextBlock} from "../Blocks/TextBlock";
 import {Col, Grid, Row} from "react-flexbox-grid";
 import React from "react";
 import styled from "styled-components/macro";
-import {Link} from "../Link/Link";
 
 function shuffle(o: Partner[]) {
     for (let j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x) ;

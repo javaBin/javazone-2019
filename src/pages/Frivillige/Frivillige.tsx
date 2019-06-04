@@ -1,9 +1,7 @@
 import React from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
 import {Section} from '../../components/Section/Section';
-import { academies } from '../../core/data';
 import { TextBlock } from '../../components/Blocks/TextBlock';
-import styled from 'styled-components/macro';
 import { Link } from '../../components/Link/Link';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 
@@ -98,63 +96,5 @@ export function FrivilligePage() {
                 </TextBlock>
             </Section>
         </>
-    )
-}
-
-
-const Formats = styled.div`
-    width: 100%;
-    display: grid;
-    grid-gap: 1.5rem;
-    grid-template-areas: 'lightning presentation workshop';
-    @media only screen and (max-width: 900px) {
-        grid-template-areas:
-            'lightning'
-            'presentation'
-            'workshop';
-    }
-`
-
-const FormatContent = styled(Format)`
-    box-sizing: border-box;
-    grid-area: ${(props: any) => props.grid};
-    border-radius: 6px;
-    width: 100%;
-    height: auto;
-    color: ${(props: any) => props.theme.colors['orange400']};
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 5px solid rgba(255, 255, 255, 0.5);
-    background: ${(props: any) => props.theme.colors['orange100']};
-    & > img {
-        width: 3rem;
-    }
-    & > h1 {
-        font-size: 2.4rem;
-    }
-    & > h3 {
-        font-size: 1.4rem;
-    }
-`
-
-interface FormatProps {
-    children?: React.ReactNode;
-    className: string;
-    title: string;
-    icon: string;
-    description: string;
-    length: string;
-}
-
-function Format(props: FormatProps) {
-    return (
-        <div className={props.className}>
-            <img src={props.icon} />
-            <h1>{props.title}</h1>
-            <h3>{props.length}</h3>
-            <p>{props.description}</p>
-        </div>
     )
 }

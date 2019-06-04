@@ -11,6 +11,7 @@ function useFetch<T>(url: string) {
 
     useEffect(() => {
         fetchUrl();
+        // eslint-disable-next-line
     }, []);
     return data;
 }

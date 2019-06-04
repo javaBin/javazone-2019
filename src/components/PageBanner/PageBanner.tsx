@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components/macro';
 import { Section } from '../Section/Section';
-import { useWindowWidth } from '../../core/hooks/UseWindowWidth';
 export interface PageBannerProps {
     header: string;
     subHeader: string;
