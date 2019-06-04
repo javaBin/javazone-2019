@@ -158,15 +158,6 @@ const BannerLogoLink = styled.div`
     }
 `
 
-const Gap = styled.div`
-    width: 1rem;
-    height: 100%;
-    @media (max-width: 500px) {
-        flex-direction: column;
-        height: 1rem;
-    }
-`
-
 const Art = styled.img`
     position: absolute;
     width: ${(props: any) => `${props.imgSize}rem`}; 

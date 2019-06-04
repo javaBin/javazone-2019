@@ -100,7 +100,7 @@ export function PartnersPage() {
             </Section>
             <Section particles color="warm">
                 <div style={{margin: '2rem 0'}}>
-                    <Suspense fallback={<img src="splash.jpg"/>}>
+                    <Suspense fallback={<img src="splash.jpg" alt="splash"/>}>
                         <video style={{width: '100%'}} muted controls id="backgroundLapse">
                             <VideoSource canPlayWebm={canPlayWebm}/>
                             Your browser does not support HTML5 video.
