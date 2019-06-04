@@ -61,7 +61,7 @@ function App() {
             <Route exact path="/partners" component={PartnersPage} />
             <Route exact path="/frivillige" component={FrivilligePage} />
             {/* <Route exact path="/academy" component={AcademyPage} /> */}
-            <Route exact path="/kids" component={KidsPage} />
+            {/* <Route exact path="/kids" component={KidsPage} /> */}
             <Route exact path="/about" component={AboutUsPage} />
             <Route exact path="/speakers/tips" component={SpeakerTipsPage} />
             <Route exact path="/speakers/monetary-policy" component={MonetaryPolicyPage} />
