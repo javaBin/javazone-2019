@@ -1,4 +1,4 @@
-import React, { createContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { ThemeProvider } from 'styled-components/macro';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -7,9 +7,7 @@ import { Footer } from './components/Footer/Footer';
 import { InfoPage } from './pages/Info/Info';
 import { TicketsPage } from './pages/Tickets/Tickets';
 import { PartnersPage } from './pages/Partners/Partners';
-import { AcademyPage } from './pages/Academy/Academy';
 import { FrivilligePage } from './pages/Frivillige/Frivillige';
-import { KidsPage } from './pages/Kids/Kids';
 import { SpeakersPage } from './pages/Speakers/Speakers';
 import { AboutUsPage } from './pages/About/About';
 import { MonetaryPolicyPage } from './pages/Speakers/MonetaryPolicy';

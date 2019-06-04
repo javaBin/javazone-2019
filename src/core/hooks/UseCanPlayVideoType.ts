@@ -19,6 +19,7 @@ export function useCanPlayVideoType(type: string) {
     useEffect(() => {
         const canPlayVideoType = video.canPlayType(formats[type] || type);
         setCanPlayVideoType(canPlayVideoType === 'probably');
+        // eslint-disable-next-line
     }, []);
 
     return canPlayVideoType;

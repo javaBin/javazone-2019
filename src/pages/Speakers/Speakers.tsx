@@ -183,7 +183,7 @@ interface FormatProps {
 function Format(props: FormatProps) {
     return (
         <div className={props.className}>
-            <img src={props.icon} />
+            <img src={props.icon} alt="Format icon"/>
             <h1>{props.title}</h1>
             <h3>{props.length}</h3>
             <p>{props.description}</p>

@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components/macro';
 import { Section } from '../Section/Section';
-import { useWindowWidth } from '../../core/hooks/UseWindowWidth';
 export interface PageBannerProps {
     header: string;
     subHeader: string;
@@ -28,7 +27,7 @@ const PageBannerContent = styled.div`
 `
 
 const PageBannerTitle = styled.h1`
-    font-size: 5rem;
+    font-size: 6rem;
     z-index: 2;
     margin: 0;
     @media only screen and (max-width: 450px) {
@@ -37,7 +36,7 @@ const PageBannerTitle = styled.h1`
 `
 
 const PageBannerSubTitle = styled.h2`
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin: 0;
     z-index: 2;
     @media only screen and (max-width: 450px) {

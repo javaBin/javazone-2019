@@ -100,6 +100,9 @@ const BannerTitle = styled.h1`
     margin: 0;
     grid-area: title;
     font-size: 9rem;
+    @media (max-width: 1600px) {
+        font-size: 12rem;
+    }
     @media (max-width: 690px) {
         font-size: 6rem;
     }
@@ -112,7 +115,10 @@ const BannerDate = styled.h2`
     pointer-events: auto;
     margin: 0;
     grid-area: date;
-    font-size: 3.7rem;
+    font-size: 4.5rem;
+    @media (max-width: 1600px) {
+        font-size: 4.75rem;
+    }
     @media (max-width: 690px) {
         font-size: 2rem;
     }
@@ -125,7 +131,10 @@ const BannerLocation = styled.h3`
     pointer-events: auto;
     margin: 0;
     grid-area: location;
-    font-size: 3rem;
+    font-size: 3.5rem;
+    @media (max-width: 1600px) {
+        font-size: 3.5rem;
+    }
     @media (max-width: 690px) {
         font-size: 2rem;
     }
@@ -155,15 +164,6 @@ const BannerLogoLink = styled.div`
     align-items: center;
     @media (max-width: 500px) {
         flex-direction: column;
-    }
-`
-
-const Gap = styled.div`
-    width: 1rem;
-    height: 100%;
-    @media (max-width: 500px) {
-        flex-direction: column;
-        height: 1rem;
     }
 `
 
