@@ -123,11 +123,11 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     }
 
     private filterSessions(sessions: Session[], filter: Filter) {
-        const {day, language, format} = filter;
+        const {day, language} = filter;
         const dayPrefix = getDayPrefix(day);
         return sessions
             .filter(s => day === 'all' || s.startTime.startsWith(dayPrefix))
-            .filter(s => language === 'both' || s.language == language);
+            .filter(s => language === 'both' || s.language === language);
     }
 
     private toggleFavorite(sessionId: string) {
