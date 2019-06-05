@@ -39,7 +39,7 @@ export function AboutUsPage() {
                                 <li><em>Design & Profile</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel / Rustam Mehmandarov</li>
                                 <li><em>javaBin stand</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel</li>
                                 <li><em>MicroZone</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel</li>
-                                <li><em>JavaZone Kids</em> – <InlineLink url="kids@java.no">kids@java.no</InlineLink> – Aleksander Svendsen</li>
+                                <li><em>JavaZone Kids</em> – <InlineLink url="kids@java.no">kids@java.no</InlineLink> – Alexander Svendsen</li>
                                 <li><em>JavaZone Academy</em> – <InlineLink url="academy@java.no">academy@java.no</InlineLink> – Jan Erik Robertsen</li>
                                 <li><em>Volunteers</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Livar Bergheim</li>
                             </List>

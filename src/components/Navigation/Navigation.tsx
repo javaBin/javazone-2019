@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 import useOnClickOutside from 'use-onclickoutside'
 import styled, { css } from 'styled-components/macro';
 import { useIsTop } from '../../core/hooks/UseIsTop';

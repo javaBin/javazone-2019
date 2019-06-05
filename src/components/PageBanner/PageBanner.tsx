@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components/macro';
 import { Section } from '../Section/Section';
-import { useWindowWidth } from '../../core/hooks/UseWindowWidth';
 export interface PageBannerProps {
     header: string;
     subHeader: string;
@@ -61,7 +60,6 @@ const Art = styled.img`
     animation: ${float} 4s infinite;
     width: 15%;
     height: 15%;
-    margin-right: 14rem;
     animation-delay: 2;
 `
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
-import { Seperator } from '../../components/Seperator/Seperator';
 import { TicketPrice } from '../../components/TicketPrice/TicketPrice';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
 import { Section } from '../../components/Section/Section';

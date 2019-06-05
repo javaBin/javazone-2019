@@ -1,4 +1,4 @@
-import React, { createContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { ThemeProvider } from 'styled-components/macro';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -7,9 +7,7 @@ import { Footer } from './components/Footer/Footer';
 import { InfoPage } from './pages/Info/Info';
 import { TicketsPage } from './pages/Tickets/Tickets';
 import { PartnersPage } from './pages/Partners/Partners';
-import { AcademyPage } from './pages/Academy/Academy';
 import { FrivilligePage } from './pages/Frivillige/Frivillige';
-import { KidsPage } from './pages/Kids/Kids';
 import { SpeakersPage } from './pages/Speakers/Speakers';
 import { AboutUsPage } from './pages/About/About';
 import { MonetaryPolicyPage } from './pages/Speakers/MonetaryPolicy';
@@ -30,7 +28,7 @@ const routes: NavRoute[] = [
   {title: 'Speakers', url: '/speakers', show: true},
   {title: 'Partners', url: '/partners', show: true},
   {title: 'Academy', url: '/academy', show: false},
-  {title: 'Kids', url: '/kids', show: true},
+  {title: 'Kids', url: '/kids', show: false},
   {title: 'Frivillige', url: '/frivillige', show: true},
   {title: 'About', url: '/about', show: true},
   {title: 'Cookies', url: '/privacy-cookies', show: false},
@@ -66,7 +64,7 @@ function App() {
             <Route exact path="/partners" component={PartnersPage} />
             <Route exact path="/frivillige" component={FrivilligePage} />
             {/* <Route exact path="/academy" component={AcademyPage} /> */}
-            <Route exact path="/kids" component={KidsPage} />
+            {/* <Route exact path="/kids" component={KidsPage} /> */}
             <Route exact path="/about" component={AboutUsPage} />
             <Route exact path="/speakers/tips" component={SpeakerTipsPage} />
             <Route exact path="/speakers/monetary-policy" component={MonetaryPolicyPage} />
