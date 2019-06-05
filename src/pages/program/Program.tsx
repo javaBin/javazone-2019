@@ -2,7 +2,7 @@ import PageBanner from "../../components/PageBanner/PageBanner";
 import {Section} from "../../components/Section/Section";
 import styled from 'styled-components/macro';
 import React from "react";
-import {getFavorites, getSessions, LoadingState, Session, Speaker} from "./data";
+import {getFavorites, getSessions, LoadingState, Session, setFavorites, Speaker} from "./data";
 import {CheckCircle} from "react-feather";
 import {Circle} from "react-feather";
 
@@ -133,13 +133,16 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     private toggleFavorite(sessionId: string) {
         const isFavorite = this.state.favorites.indexOf(sessionId) !== -1;
         if(isFavorite) {
-            this.setState({
-                favorites: this.state.favorites.filter(id => id !== sessionId)
-            })
+            const favorites = this.state.favorites.filter(id => id !== sessionId)
+            this.setState({favorites: favorites});
+            setFavorites(favorites);
         } else {
+            const favorites = [sessionId].concat(this.state.favorites);
             this.setState(
                 {favorites: [sessionId].concat(this.state.favorites)}
+
             )
+            setFavorites(favorites);
         }
     }
 }
