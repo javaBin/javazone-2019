@@ -148,19 +148,36 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
 }
 
 const Filters = styled.div`
-
+    display: grid;
+    width: 100%;
+    grid-gap: 1.5rem;
+    grid-template-areas: 
+        'day language' 
+        'format .';
+    @media only screen and (max-width: 450px) {
+        grid-template-areas: 'day' 'language' 'format';
+    }
 `;
 
 const FilterDiv = styled.div`
-
+        grid-area: ${(props: any) => props.grid};
 `;
 
-const FilterHeader = styled.div`
-
+const FilterHeader = styled.h1`
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 1rem 0 0 0;
+    color: ${(props: any) => props.theme.colors[`pink400`]};
+    @media only screen and (max-width: 450px) {
+        font-size: 2rem;
+    }
 `;
+
 const FilterButtons = styled.div`
-
-`;
+   
+`
+;
 
 
 interface DayFilterProps {
@@ -169,7 +186,7 @@ interface DayFilterProps {
 function DayFilter(props: DayFilterProps) {
     const {selectedDay, setDayFilter} = props;
     return (
-        <FilterDiv>
+        <FilterDiv grid="day">
             <FilterHeader>Day</FilterHeader>
             <FilterButtons>
                 <button className={`program-filter-button ${selectedDay === 'tue' ? 'enabled' : ''}`}
@@ -196,9 +213,9 @@ interface LanguageFilterProps {
 function LanguageFilter(props: LanguageFilterProps) {
     const {selectedLanguage, setLanguageFilter} = props;
     return (
-        <FilterDiv>
+        <FilterDiv grid="language">
             <FilterHeader>Language</FilterHeader>
-            <FilterButtons>
+            <FilterButtons theme="pink">
                 <button className={`program-filter-button ${selectedLanguage === 'no' ? 'enabled' : ''}`}
                         onClick={() => setLanguageFilter('no')}>
                     Norwegian
@@ -218,7 +235,7 @@ interface FormatFilterProps {
 function FormatFilter(props: FormatFilterProps) {
     const {selectedFormat, setFormatFilter} = props;
     return (
-        <FilterDiv>
+        <FilterDiv grid="format">
             <FilterHeader>Format</FilterHeader>
             <FilterButtons>
                 <button className={`program-filter-button ${selectedFormat === 'no' ? 'enabled' : ''}`}
