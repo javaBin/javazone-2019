@@ -23,9 +23,9 @@ class Filter {
 }
 
 
-const TuesdayPrefix = '2018-09-12';
+const TuesdayPrefix = '2018-09-11';
 const WednesdayPrefix = '2018-09-12';
-const ThursdayPrefix = '2018-09-12';
+const ThursdayPrefix = '2018-09-13';
 function getDayPrefix(day: 'tue' | 'wed' | 'thu' | 'all'): string {
     if(day === 'tue') {
         return TuesdayPrefix;
@@ -73,9 +73,15 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
                 <PageBanner header="Javazone Program 2019" subHeader="Mark your schedule" color={themeColor} artPath={pageArt} />
                 <Section>
                     <Filters>
-                        <DayFilter selectedDay={this.state.filter.day} setDayFilter={(day: string) => this.filterDay(day)} />
-                        <LanguageFilter selectedLanguage={this.state.filter.language} setLanguageFilter={(lang: string) => this.filterLanguage(lang)} />
-                        <FormatFilter selectedFormat={this.state.filter.format} setFormatFilter={(lang: string) => this.filterFormat(lang)} />
+                        <DayFilter
+                            selectedDay={this.state.filter.day}
+                            setDayFilter={(day: string) => this.filterDay(day)} />
+                        <LanguageFilter
+                            selectedLanguage={this.state.filter.language}
+                            setLanguageFilter={(lang: string) => this.filterLanguage(lang)} />
+                        <FormatFilter
+                            selectedFormat={this.state.filter.format}
+                            setFormatFilter={(lang: string) => this.filterFormat(lang)} />
                     </Filters>
                     {this.getContent(this.state)}
                 </Section>
