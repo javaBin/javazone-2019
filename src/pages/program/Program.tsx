@@ -81,7 +81,7 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
                             setLanguageFilter={(lang: string) => this.filterLanguage(lang)} />
                         <FormatFilter
                             selectedFormat={this.state.filter.format}
-                            setFormatFilter={(lang: string) => this.filterFormat(lang)} />
+                            setFormatFilter={(format: string) => this.filterFormat(format)} />
                     </Filters>
                     {this.getContent(this.state)}
                 </Section>
@@ -121,19 +121,21 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
                 return <Failure/>;
             case LoadingState.LOADED:
                 return <SessionList favorites={state.favorites}
-                                    sessions={this.filterSessions(state.sessions, state.filter)}
+                                    sessions={this.filterSessions(state.sessions, state.filter, state.favorites)}
                                     addToFav={(sessionId: string) => this.toggleFavorite(sessionId)}/>;
             default:
                 makeSwitchExaustive(loadingState);
         }
     }
 
-    private filterSessions(sessions: Session[], filter: Filter) {
-        const {day, language} = filter;
+    private filterSessions(sessions: Session[], filter: Filter, fav: string[]) {
+        const {day, language, format} = filter;
         const dayPrefix = getDayPrefix(day);
+
         return sessions
             .filter(s => day === 'all' || s.startTime.startsWith(dayPrefix))
-            .filter(s => language === 'both' || s.language === language);
+            .filter(s => language === 'both' || s.language === language)
+            .filter(s => format === 'all' || s.format === format || (format === 'fav' && fav.includes(s.sessionId)));
     }
 
     private toggleFavorite(sessionId: string) {
@@ -236,21 +238,35 @@ function LanguageFilter(props: LanguageFilterProps) {
 }
 
 interface FormatFilterProps {
-    selectedFormat?: string, setFormatFilter: (Format: string) => void
+    selectedFormat?: string,
+    setFormatFilter: (Format: string) => void
 }
+
 function FormatFilter(props: FormatFilterProps) {
     const {selectedFormat, setFormatFilter} = props;
     return (
         <FilterDiv grid="format">
             <FilterHeader>Format</FilterHeader>
             <FilterButtons>
-                <button className={`program-filter-button ${selectedFormat === 'no' ? 'enabled' : ''}`}
-                        onClick={() => setFormatFilter('no')}>
-                    TuesFormat
+                <button className={`program-filter-button ${selectedFormat === 'all' ? 'enabled' : ''}`}
+                        onClick={() => setFormatFilter('all')}>
+                    All
                 </button>
-                <button className={`program-filter-button ${selectedFormat === 'en' ? 'enabled' : ''}`}
-                        onClick={() => setFormatFilter('en')}>
-                    WednesFormat
+                <button className={`program-filter-button ${selectedFormat === 'presentation' ? 'enabled' : ''}`}
+                        onClick={() => setFormatFilter('presentation')}>
+                    Presentations
+                </button>
+                <button className={`program-filter-button ${selectedFormat === 'lightning-talk' ? 'enabled' : ''}`}
+                        onClick={() => setFormatFilter('lightning-talk')}>
+                    Lightning Talks
+                </button>
+                <button className={`program-filter-button ${selectedFormat === 'workshop' ? 'enabled' : ''}`}
+                        onClick={() => setFormatFilter('workshop')}>
+                    Workshops
+                </button>
+                <button className={`program-filter-button ${selectedFormat === 'fav' ? 'enabled' : ''}`}
+                        onClick={() => setFormatFilter('fav')}>
+                    My Favorites
                 </button>
             </FilterButtons>
         </FilterDiv>
