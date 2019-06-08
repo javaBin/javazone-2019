@@ -109,7 +109,7 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
                     <p>{language === 'en' ? 'English' : 'Norwegian'}</p>
                 </TextBlock>
                 <TextBlock color={themeColor} title="Format">
-                    <p>{format}</p>
+                    <p>{this.transformFormat(format)}</p>
                 </TextBlock>
             </Section>
             </>
