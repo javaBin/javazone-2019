@@ -65,7 +65,7 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     }
 
     render() {
-        const themeColor = 'pink';
+        const themeColor = 'orange';
         const pageArt = `${process.env.PUBLIC_URL}/page-speakers.svg`;
 
         return (
@@ -306,11 +306,23 @@ function SessionList(props: SessionListProps) {
     );
 }
 
+
+const DayHeader = styled.h1`
+    color: ${(props: any) => props.theme.colors['warm400']};
+`;
+
+const TimeSlot = styled.h1`
+    color: ${(props: any) => props.theme.colors['warm400']};
+`;
+
+
 interface DayProps {
     sessions: Session[];
     favorites: string[];
     addToFav: (sessionId: string) => void;
 }
+
+
 
 function Wednesday(props: DayProps) {
     const filteredList = props.sessions.filter(session => session.startTime.startsWith(WednesdayPrefix));
@@ -318,12 +330,12 @@ function Wednesday(props: DayProps) {
     return (
         filteredList.length > 0 ?
             <div>
-                <h1 className="program-day-header">Wednesday</h1>
+                <DayHeader>Wednesday</DayHeader>
                 {Object
                     .keys(timeSlots)
                     .map((timeSlot, idx) => {
                         return <section key={timeSlot + idx}>
-                            <h1 className="program-day-timeslot">{timeSlot.substr(-5)}</h1>
+                            <TimeSlot>{timeSlot.substr(-5)}</TimeSlot>
                             {timeSlots[timeSlot]
                                 .map((session, idx) => {
                                 return <SessionItem favorites={props.favorites}
@@ -343,10 +355,10 @@ function Thursday(props: DayProps) {
     return (
         filteredList.length > 0 ?
             <div>
-                <h1 className="program-day-header">Thursday</h1>
+                <DayHeader>Thursday</DayHeader>
                 {Object.keys(timeSlots).map((timeSlot, idx) => {
                     return <section key={timeSlot + idx}>
-                        <h1 className="program-day-timeslot">{timeSlot.substr(-5)}</h1>
+                        <TimeSlot>{timeSlot.substr(-5)}</TimeSlot>
                         {timeSlots[timeSlot].map((session, idx) => {
                             return <SessionItem favorites={props.favorites} toggleFav={props.addToFav} key={session.sessionId} session={session} />
                         })}
@@ -362,10 +374,10 @@ function Tuesday(props: DayProps) {
     return (
         filteredList.length > 0 ?
             <div>
-                <h1 className="program-day-header">Tuesday</h1>
+                <DayHeader>Tuesday</DayHeader>
                 {Object.keys(timeSlots).map((timeSlot: string, idx) => {
                     return <section key={timeSlot + idx}>
-                        <h1 className="program-day-timeslot">{timeSlot.substr(-5)}</h1>
+                        <TimeSlot>{timeSlot.substr(-5)}</TimeSlot>
                         {timeSlots[timeSlot].map((session, idx) => {
                             return <SessionItem favorites={props.favorites} toggleFav={props.addToFav} key={session.sessionId} session={session} />
                         })}
@@ -381,7 +393,6 @@ const SessionItemArticle = styled.article`
     border-radius: 6px;
     width: 100%;
     height: auto;
-    color: ${(props: any) => props.theme.colors['warm400']};
     padding: 1rem;
     border: 5px solid rgba(255,255,255,0.5);
     background: ${(props: any) => props.theme.colors[`orange100`]};
@@ -394,7 +405,7 @@ const ProgramTitle = styled.a`
     text-decoration: none;
     font-size: 2.4rem;
     font-family: 'BenchNine', sans-serif;
-    color: ${(props: any) => props.theme.colors['warm400']};
+    color: black;
     &:hover {
         cursor: pointer;
         text-decoration: underline;
