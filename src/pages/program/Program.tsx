@@ -23,9 +23,9 @@ class Filter {
 }
 
 
-const TuesdayPrefix = '2018-09-11';
-const WednesdayPrefix = '2018-09-12';
-const ThursdayPrefix = '2018-09-13';
+const TuesdayPrefix = '2019-09-10';
+const WednesdayPrefix = '2019-09-11';
+const ThursdayPrefix = '2019-09-12';
 function getDayPrefix(day: 'tue' | 'wed' | 'thu' | 'all'): string {
     if(day === 'tue') {
         return TuesdayPrefix;

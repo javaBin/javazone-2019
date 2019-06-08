@@ -53,7 +53,7 @@ function transformSession(s: any): Session {
 }
 
 export function getSessions(): Promise<Session[]> {
-    return fetch('https://sleepingpill.javazone.no/public/allSessions/javazone_2018')
+    return fetch('https://sleepingpill.javazone.no/public/allSessions/javazone_2019')
         .then(response => response.json())
         .then(json => json.sessions)
         .then((sessions: any[]) => sessions.map(s => transformSession(s)))
