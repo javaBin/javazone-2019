@@ -4,6 +4,7 @@ import {RouteComponentProps} from "react-router";
 import {Section} from "../../components/Section/Section";
 import {TextBlock} from "../../components/Blocks/TextBlock";
 import PageBanner from "../../components/PageBanner/PageBanner";
+import styled from "styled-components/macro";
 
 type TParams = { sessionId: string };
 
@@ -13,6 +14,8 @@ interface ProgramState {
     loadingState: LoadingState,
     session?: Session,
     isFavorite: boolean
+    themeColor: ThemeType;
+    pageArt: string
 }
 
 type ThemeType = 'green' | 'blue' | 'pink' | 'orange' | 'warm';
@@ -40,11 +43,14 @@ function getTheme(): [string, ThemeType]{
 
 export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramState> {
     constructor(props: ProgramProps) {
+        const [pageArt, themeColor] = getTheme();
         super(props);
         this.state = {
             loadingState: LoadingState.LOADING,
             session: undefined,
-            isFavorite: false
+            isFavorite: false,
+            themeColor: themeColor,
+            pageArt: pageArt,
         }
     }
 
@@ -65,11 +71,12 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
     }
 
     render() {
-        const {loadingState, session} = this.state;
+        const {loadingState, session, pageArt, themeColor} = this.state;
+
         if(loadingState === LoadingState.LOADING) {
-            return <Section><Loading /></Section>
+            return <Loading pageArt={pageArt} themeColor={themeColor} />
         } else if (loadingState === LoadingState.ERROR) {
-            return <Section><Failure /></Section>
+            return <Failure pageArt={pageArt} themeColor={themeColor} />
         } else {
             // session should not be undefined at this point.
             return this.getSessionContent(session as Session)
@@ -79,7 +86,7 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
 
     private getSessionContent(session: Session) {
 
-        const [pageArt, themeColor] = getTheme();
+        const {pageArt, themeColor} = this.state;
         const {title, speakers, abstract, intendedAudience, room, language, format} = session;
         return <>
             <PageBanner header={title} subHeader={this.generateSpeakerString(speakers)} color={themeColor}
@@ -133,20 +140,33 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
     }
 }
 
-function Failure() {
+
+// to make the loading seem less "jumpy"
+const WhiteBlock = styled.div`
+    height: 50rem
+`;
+
+function Failure(props: {pageArt: string, themeColor: ThemeType}) {
     return (
-        <div className='program__loading'>
-            <h2 className='program__loading-header'>Woooops!</h2>
-            It seems something is seriously wrong here. We are most likely informed and working on it, so just try again in a while.
-        </div>
+        <PageBanner header="Woooops!"
+                    subHeader="It seems something is seriously wrong here. We are most likely informed and working on it, so just try again in a while."
+                    color={props.themeColor}
+                    artPath={props.pageArt}
+        />
     )
 }
 
-function Loading() {
+function Loading(props: {pageArt: string, themeColor: ThemeType}) {
     return (
-        <div className='program__loading'>
-            <h2 className='program__loading-header'>Loading program...</h2>
-            Hold on one second, fetching program!
-        </div>
+        <>
+            <PageBanner header="Loading program..."
+                        subHeader="Hold on one second, fetching program!"
+                        color={props.themeColor}
+                        artPath={props.pageArt}
+            />
+            <Section>
+                <WhiteBlock/>
+            </Section>
+        </>
     )
 }
