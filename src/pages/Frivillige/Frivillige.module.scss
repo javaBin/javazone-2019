@@ -21,10 +21,6 @@
         @media (min-width: $screen-sm) {
             width: 45%;
 
-            &:nth-child(odd) {
-                padding-right: 40px;
-            }
-
             &:nth-child(even) {
                 padding-left: 40px;
             }

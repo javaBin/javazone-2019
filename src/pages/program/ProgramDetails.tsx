@@ -2,15 +2,42 @@ import React from "react";
 import {getFavorites, getSessions, LoadingState, Session, Speaker} from "./data";
 import {RouteComponentProps} from "react-router";
 import {Section} from "../../components/Section/Section";
+import {TextBlock} from "../../components/Blocks/TextBlock";
+import PageBanner from "../../components/PageBanner/PageBanner";
 
 type TParams = { sessionId: string };
-interface ProgramProps extends RouteComponentProps<TParams>{
-}
+
+interface ProgramProps extends RouteComponentProps<TParams>{}
+
 interface ProgramState {
     loadingState: LoadingState,
     session?: Session,
     isFavorite: boolean
 }
+
+type ThemeType = 'green' | 'blue' | 'pink' | 'orange' | 'warm';
+
+function getTheme(): [string, ThemeType]{
+    const arts = [
+        `${process.env.PUBLIC_URL}/page-partners.svg`,
+        `${process.env.PUBLIC_URL}/page-kids-academy.svg`,
+        `${process.env.PUBLIC_URL}/page-about.svg`,
+        `${process.env.PUBLIC_URL}/page-frivillige.svg`,
+        `${process.env.PUBLIC_URL}/page-info.svg`,
+        `${process.env.PUBLIC_URL}/page-kids-academy.svg`,
+        `${process.env.PUBLIC_URL}/page-speakers.svg`,
+        `${process.env.PUBLIC_URL}/page-tickets.svg`,
+    ];
+
+    const themes: ThemeType[] = [
+        'green', 'blue', 'pink', 'orange' ,'warm'
+    ];
+
+    return [arts[Math.floor(Math.random() * arts.length)],
+        themes[Math.floor(Math.random() * themes.length)]]
+
+}
+
 export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramState> {
     constructor(props: ProgramProps) {
         super(props);
@@ -51,51 +78,43 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
     }
 
     private getSessionContent(session: Session) {
+
+        const [pageArt, themeColor] = getTheme();
         const {title, speakers, abstract, intendedAudience, room, language, format} = session;
-        return (
+        return <>
+            <PageBanner header={title} subHeader={this.generateSpeakerString(speakers)} color={themeColor}
+                        artPath={pageArt}/>
             <Section>
-                <article>
-                    <h1>{title}</h1>
-                    <div>
-                        <p className="text-wrap">
-                            {abstract}
-                        </p>
-                    </div>
-                    {speakers ? speakers.map(speaker => {
-                        return <div key={speaker.name}>
-                            <p>speaker.name</p>
-                            <p className="text-wrap">
-                                {speaker.bio}
-                            </p>
-                        </div>
-                    }) : null}
-                    <div>
-                        intended audience
+                <TextBlock color={themeColor} title="Abstract">
+                    <p>{abstract}</p>
+                </TextBlock>
+
+                {speakers ? speakers.map(speaker => {
+                    if (!speaker.bio) {
+                        return null;
+                    }
+                    return <TextBlock color={themeColor} key={speaker.name} title={speaker.name}>
                         <p>
-                            {intendedAudience}
+                            {speaker.bio}
                         </p>
-                    </div>
-                    <div>
-                        Location
-                        <p className="too-small">
-                            {room}
-                        </p>
-                    </div>
-                    <div>
-                        Language
-                        <p className="too-small">
-                            {language === 'en' ? 'English' : 'Norwegian'}
-                        </p>
-                    </div>
-                    <div >
-                        Format
-                        <p className="too-small">
-                            {format}
-                        </p>
-                    </div>
-                </article>
+                    </TextBlock>
+                }) : null}
+                <TextBlock color={themeColor} title="Intended audience">
+                    <p>{intendedAudience}</p>
+                </TextBlock>
+                <TextBlock color={themeColor} title="Location">
+                    <p>{room}</p>
+                </TextBlock>
+                <TextBlock color={themeColor} title="Language">
+                    <p>{language === 'en' ? 'English' : 'Norwegian'}</p>
+                </TextBlock>
+                <TextBlock color={themeColor} title="Format">
+                    <p>{format}</p>
+                </TextBlock>
             </Section>
-        );
+            </>
+
+
     }
 
     generateSpeakerString(speakers: Speaker[]) {
