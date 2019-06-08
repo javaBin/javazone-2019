@@ -375,6 +375,62 @@ function Tuesday(props: DayProps) {
     );
 }
 
+
+const SessionItemArticle = styled.article`
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 100%;
+    height: auto;
+    color: ${(props: any) => props.theme.colors['warm400']};
+    padding: 1rem;
+    border: 5px solid rgba(255,255,255,0.5);
+    background: ${(props: any) => props.theme.colors[`orange100`]};
+    margin-bottom: 1rem;
+    display: flex;  
+    flex-direction: row;
+`;
+
+const ProgramTitle = styled.a`
+    text-decoration: none;
+    font-size: 2.4rem;
+    font-family: 'BenchNine', sans-serif;
+    color: ${(props: any) => props.theme.colors['warm400']};
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+`;
+
+const ProgramSubInfo = styled.div`
+    font-size: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    & div:not(:last-child) {
+	    margin-right: 1.2rem;
+	}
+`;
+
+
+const ProgramInfo = styled.div`
+    width: 93%;
+`;
+
+const ProgramFav = styled.div`
+    width: 7%;
+    margin: auto;
+    button {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
+`;
+
+
 interface SessionItemProps {
     session: Session;
     favorites: string[];
@@ -385,33 +441,33 @@ function SessionItem(props: SessionItemProps) {
     const {session, favorites} = props;
     const isFavorite = favorites.indexOf(props.session.sessionId) !== -1;
     return (
-        <article className={`${isFavorite ? 'program-simple-session-item-fav' : 'program-simple-session-item'}`}>
-            <div>{session.title}</div>
-            <div>
-                <div className="program-margin-right">
-                    <strong>{sessionFormat(props.session.format)}</strong>
-                </div>
-                <div className="program-margin-right">
-                    {props.session.room}
-                </div>
-                <div className="program-margin-right">
-                    {props.session.language === 'en' ? 'English' : 'Norwegian'}
-                </div>
-                <div className="program-margin-right">
-                    {`${props.session.length} Minutes`}
-                </div>
-                <div>
-                    {props.session.speakers.length > 1 ? generateSpeakersString(session.speakers) : props.session.speakers[0].name}
-                </div>
-            </div>
-            <div>
-                <div className="program-favorite-button" >
+        <SessionItemArticle>
+            <ProgramInfo>
+                <ProgramTitle href={`/program/${session.sessionId}`}>{session.title}</ProgramTitle>
+                <ProgramSubInfo>
+                    <div className="program-margin-right">
+                        <strong>{sessionFormat(props.session.format)}</strong>
+                    </div>
+                    <div className="program-margin-right">
+                        {props.session.room}
+                    </div>
+                    <div className="program-margin-right">
+                        {props.session.language === 'en' ? 'English' : 'Norwegian'}
+                    </div>
+                    <div className="program-margin-right">
+                        {`${props.session.length} Minutes`}
+                    </div>
+                    <div>
+                        {props.session.speakers.length > 1 ? generateSpeakersString(session.speakers) : props.session.speakers[0].name}
+                    </div>
+                </ProgramSubInfo>
+            </ProgramInfo>
+            <ProgramFav>
                     <button onClick={() => {props.toggleFav(props.session.sessionId)}}>
                         {isFavorite ? <CheckCircle size={32} /> : <Circle size={32} />}
                     </button>
-                </div>
-            </div>
-        </article>
+            </ProgramFav>
+        </SessionItemArticle>
     );
 }
 
