@@ -72,17 +72,19 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
             <>
                 <PageBanner header="JavaZone Program 2019" subHeader="Mark your schedule" color={themeColor} artPath={pageArt} />
                 <Section>
-                    <Filters>
+                    <div>
+                        <TopFilterRow>
                         <DayFilter
                             selectedDay={this.state.filter.day}
                             setDayFilter={(day: string) => this.filterDay(day)} />
                         <LanguageFilter
                             selectedLanguage={this.state.filter.language}
                             setLanguageFilter={(lang: string) => this.filterLanguage(lang)} />
+                        </TopFilterRow>
                         <FormatFilter
                             selectedFormat={this.state.filter.format}
                             setFormatFilter={(format: string) => this.filterFormat(format)} />
-                    </Filters>
+                    </div>
                     {this.getContent(this.state)}
                 </Section>
             </>
@@ -155,21 +157,24 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     }
 }
 
-const Filters = styled.div`
-    display: grid;
+
+const TopFilterRow = styled.div`
+    display: flex;
+    flex-direction: row
     width: 100%;
-    grid-gap: 1.5rem;
-    grid-template-areas: 
-        'day language' 
-        'format .';
-    @media only screen and (max-width: 450px) {
-        grid-template-areas: 'day' 'language' 'format';
+    
+    & div:first-child {
+	    margin-right: 5rem;
+	}
+    
+    @media only screen and (max-width: 660px) {
+        flex-direction: column;
+        & div:first-child {
+	        margin-right: 0;
+	    }
     }
 `;
 
-const FilterDiv = styled.div`
-        grid-area: ${(props: any) => props.grid};
-`;
 
 const FilterHeader = styled.h1`
     font-size: 3rem;
@@ -182,10 +187,18 @@ const FilterHeader = styled.h1`
     }
 `;
 
-const FilterButtons = styled.div`
-   
-`
-;
+const FilterButton = styled.button`
+    background: ${(props: any) => props.enabled ? props.theme.colors[`blue300`] : props.theme.colors[`blue100`]};
+    border: 0;
+    border-radius: 0;
+    color: black;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    outline: 0;
+    padding: 10px 10px;
+    font-size: 1.5rem;
+`;
 
 
 interface DayFilterProps {
@@ -194,23 +207,23 @@ interface DayFilterProps {
 function DayFilter(props: DayFilterProps) {
     const {selectedDay, setDayFilter} = props;
     return (
-        <FilterDiv grid="day">
+        <div>
             <FilterHeader>Day</FilterHeader>
-            <FilterButtons>
-                <button className={`program-filter-button ${selectedDay === 'tue' ? 'enabled' : ''}`}
+            <div>
+                <FilterButton enabled={selectedDay === 'tue'}
                         onClick={() => setDayFilter('tue')}>
                     Tuesday
-                </button>
-                <button className={`program-filter-button ${selectedDay === 'wed' ? 'enabled' : ''}`}
+                </FilterButton>
+                <FilterButton enabled={selectedDay === 'wed'}
                         onClick={() => setDayFilter('wed')}>
                     Wednesday
-                </button>
-                <button className={`program-filter-button ${selectedDay === 'thu' ? 'enabled' : ''}`}
+                </FilterButton>
+                <FilterButton enabled={selectedDay === 'thu'}
                         onClick={() => setDayFilter('thu')}>
                     Thursday
-                </button>
-            </FilterButtons>
-        </FilterDiv>
+                </FilterButton>
+            </div>
+        </div>
     )
 }
 
@@ -221,19 +234,19 @@ interface LanguageFilterProps {
 function LanguageFilter(props: LanguageFilterProps) {
     const {selectedLanguage, setLanguageFilter} = props;
     return (
-        <FilterDiv grid="language">
+        <div>
             <FilterHeader>Language</FilterHeader>
-            <FilterButtons theme="pink">
-                <button className={`program-filter-button ${selectedLanguage === 'no' ? 'enabled' : ''}`}
+            <div>
+                <FilterButton enabled={selectedLanguage === 'no'}
                         onClick={() => setLanguageFilter('no')}>
                     Norwegian
-                </button>
-                <button className={`program-filter-button ${selectedLanguage === 'en' ? 'enabled' : ''}`}
+                </FilterButton>
+                <FilterButton enabled={selectedLanguage === 'en'}
                         onClick={() => setLanguageFilter('en')}>
                     English
-                </button>
-            </FilterButtons>
-        </FilterDiv>
+                </FilterButton>
+            </div>
+        </div>
     )
 }
 
@@ -245,31 +258,31 @@ interface FormatFilterProps {
 function FormatFilter(props: FormatFilterProps) {
     const {selectedFormat, setFormatFilter} = props;
     return (
-        <FilterDiv grid="format">
+        <div>
             <FilterHeader>Format</FilterHeader>
-            <FilterButtons>
-                <button className={`program-filter-button ${selectedFormat === 'all' ? 'enabled' : ''}`}
+            <div>
+                <FilterButton enabled={selectedFormat === 'all'}
                         onClick={() => setFormatFilter('all')}>
                     All
-                </button>
-                <button className={`program-filter-button ${selectedFormat === 'presentation' ? 'enabled' : ''}`}
+                </FilterButton>
+                <FilterButton enabled={selectedFormat === 'presentation'}
                         onClick={() => setFormatFilter('presentation')}>
                     Presentations
-                </button>
-                <button className={`program-filter-button ${selectedFormat === 'lightning-talk' ? 'enabled' : ''}`}
+                </FilterButton>
+                <FilterButton enabled={selectedFormat === 'lightning-talk'}
                         onClick={() => setFormatFilter('lightning-talk')}>
                     Lightning Talks
-                </button>
-                <button className={`program-filter-button ${selectedFormat === 'workshop' ? 'enabled' : ''}`}
+                </FilterButton>
+                <FilterButton enabled={selectedFormat === 'workshop'}
                         onClick={() => setFormatFilter('workshop')}>
                     Workshops
-                </button>
-                <button className={`program-filter-button ${selectedFormat === 'fav' ? 'enabled' : ''}`}
+                </FilterButton>
+                <FilterButton enabled={selectedFormat === 'fav'}
                         onClick={() => setFormatFilter('fav')}>
                     My Favorites
-                </button>
-            </FilterButtons>
-        </FilterDiv>
+                </FilterButton>
+            </div>
+        </div>
     )
 }
 
