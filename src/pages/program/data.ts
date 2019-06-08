@@ -52,11 +52,21 @@ function transformSession(s: any): Session {
     );
 }
 
+//cheesy cache
+export let sessions: Promise<Session[]> | undefined = undefined;
+
 export function getSessions(): Promise<Session[]> {
-    return fetch('https://sleepingpill.javazone.no/public/allSessions/javazone_2019')
+
+    if (sessions) {
+        return sessions;
+    }
+
+    sessions = fetch('https://sleepingpill.javazone.no/public/allSessions/javazone_2019')
         .then(response => response.json())
         .then(json => json.sessions)
         .then((sessions: any[]) => sessions.map(s => transformSession(s)))
+
+    return sessions;
 }
 
 const FAVORITES_KEY = 'favorites';

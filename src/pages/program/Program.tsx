@@ -5,6 +5,8 @@ import React from "react";
 import {getFavorites, getSessions, LoadingState, Session, setFavorites, Speaker} from "./data";
 import {CheckCircle} from "react-feather";
 import {Circle} from "react-feather";
+import {Link} from "react-router-dom";
+
 
 interface ProgramProps {}
 interface ProgramState {
@@ -50,6 +52,7 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     }
 
     componentDidMount() {
+        console.log(this.state.sessions)
         Promise.all([getSessions(), getFavorites()])
             .then(([sessions, favorites]) => {
                 this.setState({
@@ -414,15 +417,18 @@ const SessionItemArticle = styled.article`
     flex-direction: row;
 `;
 
-const ProgramTitle = styled.a`
-    text-decoration: none;
+const ProgramTitle = styled.h1`
     font-size: 2.4rem;
     font-family: 'BenchNine', sans-serif;
-    color: black;
+    margin 0;
+    a {
+        text-decoration: none;
+        color: black;
+    };
     &:hover {
         cursor: pointer;
         text-decoration: underline;
-    }
+    };
 `;
 
 const ProgramSubInfo = styled.div`
@@ -467,7 +473,9 @@ function SessionItem(props: SessionItemProps) {
     return (
         <SessionItemArticle>
             <ProgramInfo>
-                <ProgramTitle href={`/program/${session.sessionId}`}>{session.title}</ProgramTitle>
+                <ProgramTitle>
+                    <Link to={`/program/${session.sessionId}`}>{session.title}</Link>
+                </ProgramTitle>
                 <ProgramSubInfo>
                     <div className="program-margin-right">
                         <strong>{sessionFormat(props.session.format)}</strong>
