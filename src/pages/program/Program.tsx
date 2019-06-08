@@ -70,7 +70,7 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
 
         return (
             <>
-                <PageBanner header="Javazone Program 2019" subHeader="Mark your schedule" color={themeColor} artPath={pageArt} />
+                <PageBanner header="JavaZone Program 2019" subHeader="Mark your schedule" color={themeColor} artPath={pageArt} />
                 <Section>
                     <Filters>
                         <DayFilter
