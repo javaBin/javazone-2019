@@ -52,7 +52,6 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     }
 
     componentDidMount() {
-        console.log(this.state.sessions)
         Promise.all([getSessions(), getFavorites()])
             .then(([sessions, favorites]) => {
                 this.setState({
@@ -170,7 +169,7 @@ const FiltersHeader = styled.h1`
 
 const FiltersBox = styled.div`
     box-sizing: border-box;
-    width: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: row
     
