@@ -516,17 +516,17 @@ function SessionItem(props: SessionItemProps) {
                     <Link to={`/program/${session.sessionId}`}>{session.title}</Link>
                 </ProgramTitle>
                 <ProgramSubInfo>
-                    <div className="program-margin-right">
+                    <div>
                         <strong>{sessionFormat(props.session.format)}</strong>
                     </div>
-                    <div className="program-margin-right">
+                    <div>
                         {props.session.room}
                     </div>
-                    <div className="program-margin-right">
+                    <div>
                         {props.session.language === 'en' ? 'English' : 'Norwegian'}
                     </div>
-                    <div className="program-margin-right">
-                        {`${props.session.length} Minutes`}
+                    <div>
+                        {props.session.format === 'lightning-talk' ? props.session.startTime.substr(-5) + ' - ' : null}{`${props.session.length} Minutes`}
                     </div>
                     <div>
                         {props.session.speakers.length > 1 ? generateSpeakersString(session.speakers) : props.session.speakers[0].name}
@@ -554,6 +554,17 @@ const sessionFormat = (format: string) => {
     return 'Workshop';
 };
 
+const mainStartTimes = [
+    '18:20',
+    '17:00',
+    '15:40',
+    '14:20',
+    '13:00',
+    '11:40',
+    '10:20',
+    '09:00',
+];
+
 function groupByTimeSlot(sessions: Session[]): {[a: string]: Session[]} {
     const sorted = sessions.sort(function(a, b) {
         const timeDiff = new Date(a.startTime).getTime() - new Date(b.startTime).getTime();
@@ -567,11 +578,46 @@ function groupByTimeSlot(sessions: Session[]): {[a: string]: Session[]} {
         }
         return timeDiff
     });
-    const grouped = sorted.reduce(function(rv: {[a: string]: Session[]}, x: Session) {
+    const grouped: {[a: string]: Session[]} = sorted.reduce(function(rv: {[a: string]: Session[]}, x: Session) {
         (rv[x['startTime']] = rv[x['startTime']] || []).push(x);
         return rv;
     }, {});
-    return grouped;
+
+    // group lightning talks in the main slots
+    const lightningTalkMovedGrouped: {[a: string]: Session[]} = {};
+
+    Object
+        .keys(grouped)
+        .forEach((timeStamp, idx) => {
+            const timeSlot = timeStamp.substr(-5);
+            const day = timeStamp.substr(0,11);
+
+            if(grouped[timeStamp].length === 1 &&
+                !mainStartTimes.includes(timeSlot) &&
+                grouped[timeStamp][0].format === 'lightning-talk'){
+
+                // we should move it to prev timeSlot
+                const mainSlot = mainStartTimes.find((val) => {
+                    return val <= timeSlot
+                });
+                if (mainSlot === undefined){
+                    throw Error("BUG: could not find slot for lightning-talk");
+                }
+
+                if(lightningTalkMovedGrouped[day+mainSlot]){
+                    lightningTalkMovedGrouped[day+mainSlot].push(grouped[timeStamp][0])
+                } else {
+                    lightningTalkMovedGrouped[day+mainSlot] = grouped[timeStamp]
+                }
+
+            }
+            else {
+                lightningTalkMovedGrouped[timeStamp] = grouped[timeStamp]
+            }
+
+        });
+
+    return lightningTalkMovedGrouped;
 }
 
 export function makeSwitchExaustive(_unused: never): never {
