@@ -447,6 +447,9 @@ const SessionItemArticle = styled.article`
     margin-bottom: 1rem;
     display: flex;  
     flex-direction: row;
+    @media only screen and (max-width: 500px) {
+        flex-direction: column;
+    }
 `;
 
 const ProgramTitle = styled.h1`
@@ -489,6 +492,11 @@ const ProgramFav = styled.div`
         font: inherit;
         cursor: pointer;
         outline: inherit;
+    }
+    
+    @media only screen and (max-width: 500px) {
+        margin: 1rem 0 0 0;
+        width: 100%;
     }
 `;
 
