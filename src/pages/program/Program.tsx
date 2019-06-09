@@ -68,14 +68,15 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     }
 
     render() {
-        const themeColor = 'orange';
+        const themeColor = 'warm';
         const pageArt = `${process.env.PUBLIC_URL}/page-speakers.svg`;
 
         return (
             <>
                 <PageBanner header="JavaZone Program 2019" subHeader="Mark your schedule" color={themeColor} artPath={pageArt} />
                 <Section>
-                    <div>
+                    <FiltersHeader>Filters</FiltersHeader>
+                    <FiltersBox>
                         <TopFilterRow>
                         <DayFilter
                             selectedDay={this.state.filter.day}
@@ -87,7 +88,7 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
                         <FormatFilter
                             selectedFormat={this.state.filter.format}
                             setFormatFilter={(format: string) => this.filterFormat(format)} />
-                    </div>
+                    </FiltersBox>
                     {this.getContent(this.state)}
                 </Section>
             </>
@@ -160,6 +161,37 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     }
 }
 
+const FiltersHeader = styled.h1`
+    font-size: 3rem;
+    margin-bottom: 0;
+    color: #425282;
+`;
+
+
+const FiltersBox = styled.div`
+    box-sizing: border-box;
+    width: fit-content;
+    display: flex;
+    flex-direction: row
+    
+   
+    border-bottom: 5px solid #fff2c3;
+    border-bottom: ${(props: any) => `5px solid ${props.theme.colors[`blue300`]}`};
+    margin-bottom: 1rem;
+    padding-bottom: 3rem;
+    
+    & div:first-child {
+	    margin-right: 5rem;
+	}
+	
+	@media only screen and (max-width: 1160px) {
+        flex-direction: column;
+        & div:first-child {
+	        margin-right: 0;
+	    }
+    }
+`;
+
 
 const TopFilterRow = styled.div`
     display: flex;
@@ -180,11 +212,10 @@ const TopFilterRow = styled.div`
 
 
 const FilterHeader = styled.h1`
-    font-size: 3rem;
-    text-transform: uppercase;
+    font-size: 2rem;
     text-align: left;
     margin: 1rem 0 0 0;
-    color: ${(props: any) => props.theme.colors[`pink400`]};
+    color: #425282;
     @media only screen and (max-width: 450px) {
         font-size: 2rem;
     }
@@ -325,6 +356,7 @@ function SessionList(props: SessionListProps) {
 
 const DayHeader = styled.h1`
     color: ${(props: any) => props.theme.colors['warm400']};
+    font-size: 3rem;
 `;
 
 const TimeSlot = styled.h1`
@@ -411,7 +443,7 @@ const SessionItemArticle = styled.article`
     height: auto;
     padding: 1rem;
     border: 5px solid rgba(255,255,255,0.5);
-    background: ${(props: any) => props.theme.colors[`orange100`]};
+    background: ${(props: any) => props.isFavorite ? props.theme.colors[`warm100`] : props.theme.colors[`orange100`]};
     margin-bottom: 1rem;
     display: flex;  
     flex-direction: row;
@@ -471,7 +503,7 @@ function SessionItem(props: SessionItemProps) {
     const {session, favorites} = props;
     const isFavorite = favorites.indexOf(props.session.sessionId) !== -1;
     return (
-        <SessionItemArticle>
+        <SessionItemArticle isFavorite={isFavorite}>
             <ProgramInfo>
                 <ProgramTitle>
                     <Link to={`/program/${session.sessionId}`}>{session.title}</Link>
@@ -517,7 +549,16 @@ const sessionFormat = (format: string) => {
 
 function groupByTimeSlot(sessions: Session[]): {[a: string]: Session[]} {
     const sorted = sessions.sort(function(a, b) {
-        return new Date(a.startTime).getTime() - new Date(b.startTime).getTime();
+        const timeDiff = new Date(a.startTime).getTime() - new Date(b.startTime).getTime();
+        if(timeDiff === 0){
+            if (a.format === 'lightning-talk'){
+                return 1
+            } else if (b.format === 'lightning-talk'){
+                return -1;
+            }
+            else return 0;
+        }
+        return timeDiff
     });
     const grouped = sorted.reduce(function(rv: {[a: string]: Session[]}, x: Session) {
         (rv[x['startTime']] = rv[x['startTime']] || []).push(x);

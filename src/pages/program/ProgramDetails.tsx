@@ -87,11 +87,16 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
     private getSessionContent(session: Session) {
 
         const {pageArt, themeColor} = this.state;
-        const {title, speakers, abstract, intendedAudience, room, startTime, language, format} = session;
+        const {title, speakers, abstract, intendedAudience, room, startTime, language, format, length} = session;
         return <>
             <PageBanner header={title} subHeader={this.generateSpeakerString(speakers)} color={themeColor}
                         artPath={pageArt}/>
             <Section>
+                <FiltersBox color={themeColor}>
+                    <FilterHeader color={themeColor}>{this.transformTime(startTime)} - {room}</FilterHeader>
+                    <FilterHeader color={themeColor}>{language === 'en' ? 'English' : 'Norwegian'}</FilterHeader>
+                    <FilterHeader color={themeColor}>{this.transformFormat(format)} ({length} Min)</FilterHeader>
+                </FiltersBox>
                 <TextBlock color={themeColor} title="Abstract">
                     <p>{abstract}</p>
                 </TextBlock>
@@ -108,15 +113,6 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
                 }) : null}
                 <TextBlock color={themeColor} title="Intended audience">
                     <p>{intendedAudience}</p>
-                </TextBlock>
-                <TextBlock color={themeColor} title="Location - Time">
-                    <p>{room} - {this.transformTime(startTime)}</p>
-                </TextBlock>
-                <TextBlock color={themeColor} title="Language">
-                    <p>{language === 'en' ? 'English' : 'Norwegian'}</p>
-                </TextBlock>
-                <TextBlock color={themeColor} title="Format">
-                    <p>{this.transformFormat(format)}</p>
                 </TextBlock>
             </Section>
             </>
@@ -157,7 +153,7 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
 
     transformTime(time: string) {
         if (!time) return '';
-        return `${this.getDatPrefix(time)} ${time.substr(-5)}`
+        return `${this.getDatPrefix(time)}, ${time.substr(-5)}`
     }
 }
 
@@ -191,3 +187,39 @@ function Loading(props: {pageArt: string, themeColor: ThemeType}) {
         </>
     )
 }
+
+
+
+const FiltersBox = styled.div`
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: row
+    
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    border-bottom: ${(props: any) => `5px solid ${props.theme.colors[`${props.color}100`]}`};
+    margin-bottom: 1rem;
+    padding-bottom: 3rem;
+    
+    & h1 {
+	    margin-right: 10rem;
+	}
+	
+	@media only screen and (max-width: 900px) {
+        flex-direction: column;
+        & h1 {
+	        margin-right: 0;
+	    }
+    }
+`;
+
+const FilterHeader = styled.h1`
+    font-size: 3rem;
+    text-align: left;
+    margin: 1rem 0 0 0;
+    color: ${(props: any) => props.theme.colors[`${props.color}400`]};
+    @media only screen and (max-width: 450px) {
+        font-size: 2rem;
+    }
+`;
