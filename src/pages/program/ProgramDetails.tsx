@@ -87,7 +87,7 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
     private getSessionContent(session: Session) {
 
         const {pageArt, themeColor} = this.state;
-        const {title, speakers, abstract, intendedAudience, room, language, format} = session;
+        const {title, speakers, abstract, intendedAudience, room, startTime, language, format} = session;
         return <>
             <PageBanner header={title} subHeader={this.generateSpeakerString(speakers)} color={themeColor}
                         artPath={pageArt}/>
@@ -109,8 +109,8 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
                 <TextBlock color={themeColor} title="Intended audience">
                     <p>{intendedAudience}</p>
                 </TextBlock>
-                <TextBlock color={themeColor} title="Location">
-                    <p>{room}</p>
+                <TextBlock color={themeColor} title="Location - Time">
+                    <p>{room} - {this.transformTime(startTime)}</p>
                 </TextBlock>
                 <TextBlock color={themeColor} title="Language">
                     <p>{language === 'en' ? 'English' : 'Norwegian'}</p>
@@ -137,6 +137,27 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
         return replaced.replace(/\w\S*/g, function(txt){
             return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         });
+    }
+
+    getDatPrefix(time: string){
+        const TuesdayPrefix = '2019-09-10';
+        const WednesdayPrefix = '2019-09-11';
+        const ThursdayPrefix = '2019-09-12';
+
+        if (time.startsWith(ThursdayPrefix)){
+            return "Thursday";
+        } else if (time.startsWith(WednesdayPrefix)){
+            return "Wednesday"
+        } else if (time.startsWith(TuesdayPrefix)){
+            return "Tuesday"
+        }
+
+        return '';
+    }
+
+    transformTime(time: string) {
+        if (!time) return '';
+        return `${this.getDatPrefix(time)} ${time.substr(-5)}`
     }
 }
 
