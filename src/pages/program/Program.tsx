@@ -526,7 +526,7 @@ function SessionItem(props: SessionItemProps) {
                         {props.session.language === 'en' ? 'English' : 'Norwegian'}
                     </div>
                     <div>
-                        {props.session.format === 'lightning-talk' ? props.session.startTime.substr(-5) + ' - ' : null}{`${props.session.length} Minutes`}
+                        {props.session.format === 'lightning-talk' ? props.session.startTime.substr(-5) + ` (${props.session.length} min)` : `${props.session.length} min`}
                     </div>
                     <div>
                         {props.session.speakers.length > 1 ? generateSpeakersString(session.speakers) : props.session.speakers[0].name}
