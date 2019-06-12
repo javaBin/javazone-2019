@@ -15,8 +15,12 @@ export function TicketsPage() {
             <PageBanner header="The Ticket Booth" subHeader="Come join us in Oslo, September 11th - 12th, 2019" 
                 color={themeColor} artPath={pageArt} />
             <Section>
-                <TextBlock color={themeColor} title="Get your tickets for javazone 2019">
-                    <TicketPrice>6.890</TicketPrice>
+                <TextBlock color={themeColor} title="AND WE'RE SOLD OUT!">
+                    <TicketPrice soldOut>6.890</TicketPrice>
+                    <p>
+                        <br />
+                        <Link color="green" external url="https://forms.gle/d7KC4x22CAvHwUEy7">Add your name to the waiting list</Link>
+                    </p>
                 </TextBlock>
             </Section>
             <Section>
@@ -31,9 +35,6 @@ export function TicketsPage() {
                     </p>
                     <p>
                         After April 1st, the ticket price will be NOK 6.890,- (Late Bird price).
-                    </p>
-                    <p>
-                        <Link color="green" external url="https://www.eventbrite.com/e/javazone-2019-tickets-55988719768">Get your tickets now!</Link>
                     </p>
                 </TextBlock>
             </Section>
