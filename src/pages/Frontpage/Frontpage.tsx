@@ -143,18 +143,6 @@ const BannerLocation = styled.h3`
   }
 `;
 
-const BannerActions = styled.div`
-  margin-top: 2rem;
-  pointer-events: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  @media (max-width: 500px) {
-    flex-direction: column;
-  }
-`;
-
 const BannerLogoLink = styled.div`
   margin-top: 0rem;
   pointer-events: auto;
@@ -317,11 +305,6 @@ function Index() {
               <BannerTitle>JavaZone</BannerTitle>
               <BannerDate>September 11 - 12, 2019</BannerDate>
               <BannerLocation>Oslo Spektrum, Norway</BannerLocation>
-              <BannerActions>
-                <Link color="green" url="/tickets">
-                  Get your tickets
-                </Link>
-              </BannerActions>
             </BannerStuff>
           </BannerContent>
         </LandingBanner>
