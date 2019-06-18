@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PageBanner from "../../components/PageBanner/PageBanner";
-import {Section} from "../../components/Section/Section";
+import { Section } from "../../components/Section/Section";
 import styled from 'styled-components/macro';
 import { TextBlock, AlignedParagraph } from '../../components/Blocks/TextBlock';
 import { kidsProgram } from '../../core/data/Kids.data';
@@ -17,10 +17,10 @@ export function KidsPage() {
                     <AlignedParagraph>
                         <p>
                             JavaZone inviterer alle, og spesielt deltakere på JavaZone,
-                             til å ta med seg sine barn på 
+                             til å ta med seg sine barn på
                             <strong><em> Teknologihuset – søndag 24. mars</em></strong>. <br />
-                            For å gi dem en smakebit på voksenlivet. 
-                            Vi kjører 3 parallelle sesjoner, 
+                            For å gi dem en smakebit på voksenlivet.
+                            Vi kjører 3 parallelle sesjoner,
                             slik at vi har noe for både de aller minste og de litt eldre barna.
                         </p>
                         <p>
@@ -38,7 +38,7 @@ export function KidsPage() {
                         <p>
                             Vi har et begrenset antall plasser, derfor er det viktig at du melder dine barn på arrangementet. Påmelding er åpen fra <strong><em>fredag 1. mars - kl 12:00</em></strong>.
                         </p>
-                        <p>                   
+                        <p>
                             Det er også viktig om du sier ifra eller melder deg av om du blir forhindret fra å delta, da det pleier å være ventelister på alle våre kurs.
                         </p>
                         <h1>Forberedelser</h1>
@@ -47,9 +47,9 @@ export function KidsPage() {
                         </p>
                         <h1>Tre parallelle sesjoner</h1>
                         <p>
-                            Vi kjører 3 parallelle sesjoner. Du kan lese mer om de ulike sesjonene under, og melde dere på den dere ønsker å delta på. 
+                            Vi kjører 3 parallelle sesjoner. Du kan lese mer om de ulike sesjonene under, og melde dere på den dere ønsker å delta på.
                         </p>
-                        <p>                    
+                        <p>
                             Har du flere barn i forskjellige aldere som ønsker å være med på ulike sesjoner, så kan du melde deg på flere sesjoner – Sørg i så fall for å melde på riktig antall barn til hver sesjon.
                         </p>
                         <p>
@@ -163,12 +163,12 @@ function Session(props: SessionProps) {
     return (
         <div className={props.className}>
             <div id="lol">
-                <img src={props.image} />
+                <img src={props.image} alt="" />
             </div>
             <h1>{props.title}</h1>
             <h3>{props.speakers}</h3>
             <div id="text">
-                <div dangerouslySetInnerHTML={{__html: props.desc}} />
+                <div dangerouslySetInnerHTML={{ __html: props.desc }} />
                 <p>
                     <strong>Utstyr:</strong> {props.gear}
                 </p>
@@ -180,6 +180,6 @@ function Session(props: SessionProps) {
                 {props.moreInfoLink ? <Link color="blue" external url={props.moreInfoLink}>Mer info</Link> : null}
                 <Link color="blue" external url={props.registrationLink}>Påmelding</Link>
             </div>
-        </div>  
+        </div>
     )
 }
