@@ -32,16 +32,16 @@ export function AboutUsPage() {
                         <p>
                             The JavaZone Core Team for 2019:
                             <List>
-                                <li><em>Leader</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Rustam Mehmandarov</li>
-                                <li><em>Program Committee</em> – <InlineLink url="program@java.no">program@java.no</InlineLink> – Rafael Winterhalter</li>
-                                <li><em>Partners</em> – <InlineLink url="partner@java.no">partner@java.no</InlineLink> – Gareth Western</li>
-                                <li><em>IT Systems</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Anders Karlsen</li>
-                                <li><em>Design & Profile</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel / Rustam Mehmandarov</li>
-                                <li><em>javaBin stand</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel</li>
-                                <li><em>MicroZone</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel</li>
-                                <li><em>JavaZone Kids</em> – <InlineLink url="kids@java.no">kids@java.no</InlineLink> – Alexander Svendsen</li>
-                                <li><em>JavaZone Academy</em> – <InlineLink url="academy@java.no">academy@java.no</InlineLink> – Jan Erik Robertsen</li>
-                                <li><em>Volunteers</em> – <InlineLink url="javazone@java.no">javazone@java.no</InlineLink> – Livar Bergheim</li>
+                                <li><em>Leader</em> – <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink> – Rustam Mehmandarov</li>
+                                <li><em>Program Committee</em> – <InlineLink external noBlankTarget url="mailto:program@java.no">program@java.no</InlineLink> – Rafael Winterhalter</li>
+                                <li><em>Partners</em> – <InlineLink external noBlankTarget url="mailto:partner@java.no">partner@java.no</InlineLink> – Gareth Western</li>
+                                <li><em>IT Systems</em> – <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink> – Anders Karlsen</li>
+                                <li><em>Design & Profile</em> – <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel / Rustam Mehmandarov</li>
+                                <li><em>javaBin stand</em> – <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel</li>
+                                <li><em>MicroZone</em> – <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink> – Tannaz N. Roshandel</li>
+                                <li><em>JavaZone Kids</em> – <InlineLink external noBlankTarget url="mailto:kids@java.no">kids@java.no</InlineLink> – Alexander Svendsen</li>
+                                <li><em>JavaZone Academy</em> – <InlineLink external noBlankTarget url="mailto:academy@java.no">academy@java.no</InlineLink> – Jan Erik Robertsen</li>
+                                <li><em>Volunteers</em> – <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink> – Livar Bergheim</li>
                             </List>
                         </p>
                     </AlignedParagraph>

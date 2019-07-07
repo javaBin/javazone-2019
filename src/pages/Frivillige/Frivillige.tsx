@@ -1,6 +1,6 @@
 import React from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
-import {Section} from '../../components/Section/Section';
+import { Section } from '../../components/Section/Section';
 import { TextBlock } from '../../components/Blocks/TextBlock';
 import { Link } from '../../components/Link/Link';
 import { InlineLink } from '../../components/InlineLink/InlineLink';

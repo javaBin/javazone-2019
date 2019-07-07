@@ -1,14 +1,14 @@
 import PageBanner from "../../components/PageBanner/PageBanner";
-import {Section} from "../../components/Section/Section";
+import { Section } from "../../components/Section/Section";
 import styled from 'styled-components/macro';
 import React from "react";
-import {getFavorites, getSessions, LoadingState, Session, setFavorites, Speaker} from "./data";
-import {CheckCircle} from "react-feather";
-import {Circle} from "react-feather";
-import {Link} from "react-router-dom";
+import { getFavorites, getSessions, LoadingState, Session, setFavorites, Speaker } from "./data";
+import { CheckCircle } from "react-feather";
+import { Circle } from "react-feather";
+import { Link } from "react-router-dom";
 
 
-interface ProgramProps {}
+interface ProgramProps { }
 interface ProgramState {
     filter: Filter
     loadingState: LoadingState,
@@ -21,7 +21,7 @@ class Filter {
         readonly day: 'tue' | 'wed' | 'thu' | 'all' = 'all',
         readonly language: 'en' | 'no' | 'both' = 'both',
         readonly format: 'all' | 'presentation' | 'lightning-talk' | 'workshop' | 'fav' = 'all'
-    ) {}
+    ) { }
 }
 
 
@@ -29,9 +29,9 @@ const TuesdayPrefix = '2019-09-10';
 const WednesdayPrefix = '2019-09-11';
 const ThursdayPrefix = '2019-09-12';
 function getDayPrefix(day: 'tue' | 'wed' | 'thu' | 'all'): string {
-    if(day === 'tue') {
+    if (day === 'tue') {
         return TuesdayPrefix;
-    } else if(day === 'wed') {
+    } else if (day === 'wed') {
         return WednesdayPrefix;
     } else if (day === 'thu') {
         return ThursdayPrefix;
@@ -47,7 +47,7 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
             filter: new Filter(),
             loadingState: LoadingState.LOADING,
             sessions: [],
-            favorites:[]
+            favorites: []
         }
     }
 
@@ -63,7 +63,7 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
                 this.setState({
                     loadingState: LoadingState.ERROR
                 })
-        })
+            })
     }
 
     render() {
@@ -77,12 +77,12 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
                     <FiltersHeader>Filters</FiltersHeader>
                     <FiltersBox>
                         <TopFilterRow>
-                        <DayFilter
-                            selectedDay={this.state.filter.day}
-                            setDayFilter={(day: string) => this.filterDay(day)} />
-                        <LanguageFilter
-                            selectedLanguage={this.state.filter.language}
-                            setLanguageFilter={(lang: string) => this.filterLanguage(lang)} />
+                            <DayFilter
+                                selectedDay={this.state.filter.day}
+                                setDayFilter={(day: string) => this.filterDay(day)} />
+                            <LanguageFilter
+                                selectedLanguage={this.state.filter.language}
+                                setLanguageFilter={(lang: string) => this.filterLanguage(lang)} />
                         </TopFilterRow>
                         <FormatFilter
                             selectedFormat={this.state.filter.format}
@@ -97,7 +97,7 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     private filterDay(day: string) {
         this.setState(
             {
-                filter: Object.assign({}, this.state.filter, {day})
+                filter: Object.assign({}, this.state.filter, { day })
             }
         )
     }
@@ -105,14 +105,14 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     private filterLanguage(language: string) {
         this.setState(
             {
-                filter: Object.assign({}, this.state.filter, {language})
+                filter: Object.assign({}, this.state.filter, { language })
             }
         )
     }
     private filterFormat(format: string) {
         this.setState(
             {
-                filter: Object.assign({}, this.state.filter, {format})
+                filter: Object.assign({}, this.state.filter, { format })
             }
         )
     }
@@ -121,20 +121,20 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
         const loadingState = state.loadingState;
         switch (loadingState) {
             case LoadingState.LOADING:
-                return <Loading/>;
+                return <Loading />;
             case LoadingState.ERROR:
-                return <Failure/>;
+                return <Failure />;
             case LoadingState.LOADED:
                 return <SessionList favorites={state.favorites}
-                                    sessions={this.filterSessions(state.sessions, state.filter, state.favorites)}
-                                    addToFav={(sessionId: string) => this.toggleFavorite(sessionId)}/>;
+                    sessions={this.filterSessions(state.sessions, state.filter, state.favorites)}
+                    addToFav={(sessionId: string) => this.toggleFavorite(sessionId)} />;
             default:
                 makeSwitchExaustive(loadingState);
         }
     }
 
     private filterSessions(sessions: Session[], filter: Filter, fav: string[]) {
-        const {day, language, format} = filter;
+        const { day, language, format } = filter;
         const dayPrefix = getDayPrefix(day);
 
         return sessions
@@ -145,14 +145,14 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
 
     private toggleFavorite(sessionId: string) {
         const isFavorite = this.state.favorites.indexOf(sessionId) !== -1;
-        if(isFavorite) {
+        if (isFavorite) {
             const favorites = this.state.favorites.filter(id => id !== sessionId)
-            this.setState({favorites: favorites});
+            this.setState({ favorites: favorites });
             setFavorites(favorites);
         } else {
             const favorites = [sessionId].concat(this.state.favorites);
             this.setState(
-                {favorites: [sessionId].concat(this.state.favorites)}
+                { favorites: [sessionId].concat(this.state.favorites) }
 
             )
             setFavorites(favorites);
@@ -238,21 +238,21 @@ interface DayFilterProps {
     selectedDay?: string, setDayFilter: (day: string) => void
 }
 function DayFilter(props: DayFilterProps) {
-    const {selectedDay, setDayFilter} = props;
+    const { selectedDay, setDayFilter } = props;
     return (
         <div>
             <FilterHeader>Day</FilterHeader>
             <div>
                 <FilterButton enabled={selectedDay === 'tue'}
-                        onClick={() => setDayFilter('tue')}>
+                    onClick={() => setDayFilter('tue')}>
                     Tuesday
                 </FilterButton>
                 <FilterButton enabled={selectedDay === 'wed'}
-                        onClick={() => setDayFilter('wed')}>
+                    onClick={() => setDayFilter('wed')}>
                     Wednesday
                 </FilterButton>
                 <FilterButton enabled={selectedDay === 'thu'}
-                        onClick={() => setDayFilter('thu')}>
+                    onClick={() => setDayFilter('thu')}>
                     Thursday
                 </FilterButton>
             </div>
@@ -265,17 +265,17 @@ interface LanguageFilterProps {
     selectedLanguage?: string, setLanguageFilter: (Language: string) => void
 }
 function LanguageFilter(props: LanguageFilterProps) {
-    const {selectedLanguage, setLanguageFilter} = props;
+    const { selectedLanguage, setLanguageFilter } = props;
     return (
         <div>
             <FilterHeader>Language</FilterHeader>
             <div>
                 <FilterButton enabled={selectedLanguage === 'no'}
-                        onClick={() => setLanguageFilter('no')}>
+                    onClick={() => setLanguageFilter('no')}>
                     Norwegian
                 </FilterButton>
                 <FilterButton enabled={selectedLanguage === 'en'}
-                        onClick={() => setLanguageFilter('en')}>
+                    onClick={() => setLanguageFilter('en')}>
                     English
                 </FilterButton>
             </div>
@@ -289,29 +289,29 @@ interface FormatFilterProps {
 }
 
 function FormatFilter(props: FormatFilterProps) {
-    const {selectedFormat, setFormatFilter} = props;
+    const { selectedFormat, setFormatFilter } = props;
     return (
         <div>
             <FilterHeader>Format</FilterHeader>
             <div>
                 <FilterButton enabled={selectedFormat === 'all'}
-                        onClick={() => setFormatFilter('all')}>
+                    onClick={() => setFormatFilter('all')}>
                     All
                 </FilterButton>
                 <FilterButton enabled={selectedFormat === 'presentation'}
-                        onClick={() => setFormatFilter('presentation')}>
+                    onClick={() => setFormatFilter('presentation')}>
                     Presentations
                 </FilterButton>
                 <FilterButton enabled={selectedFormat === 'lightning-talk'}
-                        onClick={() => setFormatFilter('lightning-talk')}>
+                    onClick={() => setFormatFilter('lightning-talk')}>
                     Lightning Talks
                 </FilterButton>
                 <FilterButton enabled={selectedFormat === 'workshop'}
-                        onClick={() => setFormatFilter('workshop')}>
+                    onClick={() => setFormatFilter('workshop')}>
                     Workshops
                 </FilterButton>
                 <FilterButton enabled={selectedFormat === 'fav'}
-                        onClick={() => setFormatFilter('fav')}>
+                    onClick={() => setFormatFilter('fav')}>
                     My Favorites
                 </FilterButton>
             </div>
@@ -385,11 +385,11 @@ function Wednesday(props: DayProps) {
                             <TimeSlot>{timeSlot.substr(-5)}</TimeSlot>
                             {timeSlots[timeSlot]
                                 .map((session, idx) => {
-                                return <SessionItem favorites={props.favorites}
-                                                    toggleFav={props.addToFav}
-                                                    key={session.sessionId}
-                                                    session={session} />
-                            })}
+                                    return <SessionItem favorites={props.favorites}
+                                        toggleFav={props.addToFav}
+                                        key={session.sessionId}
+                                        session={session} />
+                                })}
                         </section>
                     })}
             </div> : null
@@ -507,7 +507,7 @@ interface SessionItemProps {
 }
 
 function SessionItem(props: SessionItemProps) {
-    const {session, favorites} = props;
+    const { session, favorites } = props;
     const isFavorite = favorites.indexOf(props.session.sessionId) !== -1;
     return (
         <SessionItemArticle isFavorite={isFavorite}>
@@ -534,9 +534,9 @@ function SessionItem(props: SessionItemProps) {
                 </ProgramSubInfo>
             </ProgramInfo>
             <ProgramFav>
-                    <button onClick={() => {props.toggleFav(props.session.sessionId)}}>
-                        {isFavorite ? <CheckCircle size={32} /> : <Circle size={32} />}
-                    </button>
+                <button onClick={() => { props.toggleFav(props.session.sessionId) }}>
+                    {isFavorite ? <CheckCircle size={32} /> : <Circle size={32} />}
+                </button>
             </ProgramFav>
         </SessionItemArticle>
     );
@@ -544,7 +544,7 @@ function SessionItem(props: SessionItemProps) {
 
 function generateSpeakersString(speakers: Speaker[]): string {
     let speakersCombined = '';
-    speakers.forEach((speaker, idx) => (idx < speakers.length-1) ? speakersCombined += `${speaker.name}, ` : speakersCombined += speaker.name);
+    speakers.forEach((speaker, idx) => (idx < speakers.length - 1) ? speakersCombined += `${speaker.name}, ` : speakersCombined += speaker.name);
     return speakersCombined;
 }
 
@@ -565,49 +565,49 @@ const mainStartTimes = [
     '09:00',
 ];
 
-function groupByTimeSlot(sessions: Session[]): {[a: string]: Session[]} {
-    const sorted = sessions.sort(function(a, b) {
+function groupByTimeSlot(sessions: Session[]): { [a: string]: Session[] } {
+    const sorted = sessions.sort(function (a, b) {
         const timeDiff = new Date(a.startTime).getTime() - new Date(b.startTime).getTime();
-        if(timeDiff === 0){
-            if (a.format === 'lightning-talk'){
+        if (timeDiff === 0) {
+            if (a.format === 'lightning-talk') {
                 return 1
-            } else if (b.format === 'lightning-talk'){
+            } else if (b.format === 'lightning-talk') {
                 return -1;
             }
             else return 0;
         }
         return timeDiff
     });
-    const grouped: {[a: string]: Session[]} = sorted.reduce(function(rv: {[a: string]: Session[]}, x: Session) {
+    const grouped: { [a: string]: Session[] } = sorted.reduce(function (rv: { [a: string]: Session[] }, x: Session) {
         (rv[x['startTime']] = rv[x['startTime']] || []).push(x);
         return rv;
     }, {});
 
     // group lightning talks in the main slots
-    const lightningTalkMovedGrouped: {[a: string]: Session[]} = {};
+    const lightningTalkMovedGrouped: { [a: string]: Session[] } = {};
 
     Object
         .keys(grouped)
         .forEach((timeStamp, idx) => {
             const timeSlot = timeStamp.substr(-5);
-            const day = timeStamp.substr(0,11);
+            const day = timeStamp.substr(0, 11);
 
-            if(grouped[timeStamp].length === 1 &&
+            if (grouped[timeStamp].length === 1 &&
                 !mainStartTimes.includes(timeSlot) &&
-                grouped[timeStamp][0].format === 'lightning-talk'){
+                grouped[timeStamp][0].format === 'lightning-talk') {
 
                 // we should move it to prev timeSlot
                 const mainSlot = mainStartTimes.find((val) => {
                     return val <= timeSlot
                 });
-                if (mainSlot === undefined){
+                if (mainSlot === undefined) {
                     throw Error("BUG: could not find slot for lightning-talk");
                 }
 
-                if(lightningTalkMovedGrouped[day+mainSlot]){
-                    lightningTalkMovedGrouped[day+mainSlot].push(grouped[timeStamp][0])
+                if (lightningTalkMovedGrouped[day + mainSlot]) {
+                    lightningTalkMovedGrouped[day + mainSlot].push(grouped[timeStamp][0])
                 } else {
-                    lightningTalkMovedGrouped[day+mainSlot] = grouped[timeStamp]
+                    lightningTalkMovedGrouped[day + mainSlot] = grouped[timeStamp]
                 }
 
             }
