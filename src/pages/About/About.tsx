@@ -49,7 +49,7 @@ export function AboutUsPage() {
                         Being the biggest community-driven conference would not have been easy without all the partners, event coordinators, and subcontractors, so we would like to thank them as well! Thank you, all!
                     </p>
                     <p>
-                        If you have any questions or comments, you can always reach the Core Team at <InlineLink url="mailto:javazone@java.no">javazone@java.no</InlineLink>.
+                        If you have any questions or comments, you can always reach the Core Team at <InlineLink external noBlankTarget url="mailto:javazone@java.no">javazone@java.no</InlineLink>.
                     </p>
                 </TextBlock>
             </Section>
