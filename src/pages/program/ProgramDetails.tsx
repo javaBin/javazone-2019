@@ -98,7 +98,7 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
                     <FilterHeader color={themeColor}>{this.transformFormat(format)} ({length} Min)</FilterHeader>
                 </FiltersBox>
                 <TextBlock color={themeColor} title="Abstract">
-                    <p>{abstract}</p>
+                    <MultiLinesParagraph>{abstract}</MultiLinesParagraph>
                 </TextBlock>
 
                 {speakers ? speakers.map(speaker => {
@@ -106,13 +106,13 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
                         return null;
                     }
                     return <TextBlock color={themeColor} key={speaker.name} title={speaker.name}>
-                        <p>
+                        <MultiLinesParagraph>
                             {speaker.bio}
-                        </p>
+                        </MultiLinesParagraph>
                     </TextBlock>
                 }) : null}
                 <TextBlock color={themeColor} title="Intended audience">
-                    <p>{intendedAudience}</p>
+                    <MultiLinesParagraph>{intendedAudience}</MultiLinesParagraph>
                 </TextBlock>
             </Section>
             </>
@@ -222,4 +222,8 @@ const FilterHeader = styled.h1`
     @media only screen and (max-width: 450px) {
         font-size: 2rem;
     }
+`;
+
+const MultiLinesParagraph = styled.p`
+    white-space: pre-line;  
 `;
