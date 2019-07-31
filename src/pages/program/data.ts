@@ -15,7 +15,8 @@ export class Session {
       readonly startTime: string,
       readonly startTimeZulu: string,
       readonly title: string,
-      readonly video: string
+      readonly video: string,
+      readonly registerLoc: string
     ){}
 }
 
@@ -48,7 +49,8 @@ function transformSession(s: any): Session {
         s.startTime,
         s.startTimeZulu,
         s.title,
-        s.video
+        s.video,
+        s.registerLoc
     );
 }
 
