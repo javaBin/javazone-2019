@@ -459,7 +459,7 @@ const ProgramTitle = styled.h1`
         text-decoration: none;
         color: black;
     };
-    &:hover {
+    a:hover {
         cursor: pointer;
         text-decoration: underline;
     };

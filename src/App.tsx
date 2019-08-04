@@ -20,10 +20,12 @@ import Index from './pages/Frontpage/Frontpage';
 import theme from './core/theme';
 import {ProgramPage} from "./pages/program/Program";
 import {ProgramDetailsPage} from "./pages/program/ProgramDetails";
+import {WorkshopsPage} from "./pages/Workshops/Workshops";
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info', show: true},
   {title: 'Program', url: '/program', show: true},
+  {title: 'Workshops', url: '/workshops', show: true},
   {title: 'Tickets', url: '/tickets', show: true},
   {title: 'Speakers', url: '/speakers', show: true},
   {title: 'Partners', url: '/partners', show: true},
@@ -58,6 +60,7 @@ function App() {
             <Route exact path="/" component={Index} />
             <Route exact path="/info" component={InfoPage} />
             <Route exact path="/program" component={ProgramPage} />
+            <Route exact path="/workshops" component={WorkshopsPage} />
             <Route path="/program/:sessionId" component={ProgramDetailsPage} />
             <Route exact path="/tickets" component={TicketsPage} />
             <Route exact path="/speakers" component={SpeakersPage} />
