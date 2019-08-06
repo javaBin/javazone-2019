@@ -68,7 +68,7 @@ export function KidsPage() {
                 </TextBlock>
             </Section>
             <Section>
-                <TextBlock color={themeColor} title="Vi sees på teknologihuset søndag 24. mars!">
+                <TextBlock color={themeColor} title="Vi sees på teknologihuset søndag 8. sep!">
                 </TextBlock>
             </Section>
         </>
