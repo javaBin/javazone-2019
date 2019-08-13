@@ -36,7 +36,7 @@ export function JourneyZonePage() {
                         All speakers of JavaZone are invited, but we have a limited number of spots available for the journey. Those who hold full presentations and workshops are prioritised, but presenters of lightning talks are of course also welcome to apply!
                     </p> 
                     <p>
-                        In order to attend, you must be in a physical condition that allows you to sail for three full days and sleep on a sail boat. If the weather is rough, we will be exposed to the ocean and you might get sea sick. No sailing experience is required and no extraordinary physical activity is required by participants.
+                        In order to attend, you must be in a physical condition that allows you to hike up a mountain for two full days and sleep in a tent. No extraordinary physical activity is required by participants.
                     </p> 
                 </TextBlock>
                 <TextBlock color={themeColor} title="Personal expenses">
