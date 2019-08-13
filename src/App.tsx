@@ -31,6 +31,7 @@ const routes: NavRoute[] = [
   {title: 'Workshops', url: '/workshops', show: true},
   {title: 'Tickets', url: '/tickets', show: true},
   {title: 'Speakers', url: '/speakers', show: true},
+  {title: 'JourneyZone', url: '/speakers/journeyzone', show: true},
   {title: 'Partners', url: '/partners', show: true},
   {title: 'Academy', url: '/academy', show: false},
   {title: 'Kids', url: '/kids', show: true},
@@ -39,7 +40,6 @@ const routes: NavRoute[] = [
   {title: 'Cookies', url: '/privacy-cookies', show: false},
   {title: 'Tips for Speakers', url: '/speakers/tips', show: false},
   {title: 'Monetary Policy', url: '/speakers/monetary-policy', show: false},
-  {title: 'JourneyZone', url: '/speakers/journeyzone', show: true},
 ];
 
 const ScrollToTop = () => {
