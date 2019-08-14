@@ -19,7 +19,7 @@ export function AcademyAutumnPage() {
                         Are you a student? Interested in IT? Come join us for JavaZone Academy. JavaZone Academy is a free event for students in Norway which takes place during the second day of the conference. We invite you to take part in the JavaZone experience in Oslo Spektrum for a full day.
                     </p>
                     <p>
-                        You will get a free ticket which gives you access to<InlineLink url="/info">the full conference experience</InlineLink>on Thursday, September 12th. You will be able to attend<InlineLink url="/program">all the talks</InlineLink>, mingle in the expo area, talk to our<InlineLink url="/partners">partners</InlineLink>, taste our great food, and all in all have a great time learning new stuff.
+                        You will get a free ticket which gives you access to<InlineLink url="/info">the full conference experience</InlineLink>on Thursday, September 12th. You will be able to attend<InlineLink url="/program">all the talks,</InlineLink> mingle in the expo area, talk to our<InlineLink url="/partners">partners,</InlineLink> taste our great food, and all in all have a great time learning new stuff.
                     </p>
                 </TextBlock>
             </Section>
