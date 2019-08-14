@@ -14,4 +14,4 @@ $ npm test
 ```
 
 ## Contributing
-Feel welcome to help in any way you can. Submit a issue if you have a question or have found a bug.
+Feel welcome to help in any way you can. Submit a issue if you have a question or found a bug.
