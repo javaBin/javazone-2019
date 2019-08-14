@@ -23,6 +23,7 @@ import {ProgramDetailsPage} from "./pages/program/ProgramDetails";
 import {WorkshopsPage} from "./pages/Workshops/Workshops";
 import {KidsPage} from "./pages/Kids/Kids";
 import {JourneyZonePage} from "./pages/JourneyZone/JourneyZone";
+import { AcademyAutumnPage } from './pages/AcademyAutumn/AcademyAutumn';
 
 
 const routes: NavRoute[] = [
@@ -33,7 +34,7 @@ const routes: NavRoute[] = [
   {title: 'Speakers', url: '/speakers', show: true},
   {title: 'JourneyZone', url: '/speakers/journeyzone', show: true},
   {title: 'Partners', url: '/partners', show: true},
-  {title: 'Academy', url: '/academy', show: false},
+  {title: 'Academy', url: '/academy', show: true},
   {title: 'Kids', url: '/kids', show: true},
   {title: 'Frivillige', url: '/frivillige', show: true},
   {title: 'About', url: '/about', show: true},
@@ -59,7 +60,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <>
           <Navigation routes={routes} />
-          <Route component={ScrollToTop}/>
+          <Route component={ScrollToTop} />
           <Switch>
             <Route exact path="/" component={Index} />
             <Route exact path="/info" component={InfoPage} />
@@ -70,7 +71,7 @@ function App() {
             <Route exact path="/speakers" component={SpeakersPage} />
             <Route exact path="/partners" component={PartnersPage} />
             <Route exact path="/frivillige" component={FrivilligePage} />
-            {/* <Route exact path="/academy" component={AcademyPage} /> */}
+            <Route exact path="/academy" component={AcademyAutumnPage} />
             <Route exact path="/kids" component={KidsPage} />
             <Route exact path="/about" component={AboutUsPage} />
             <Route exact path="/speakers/journeyzone" component={JourneyZonePage} />

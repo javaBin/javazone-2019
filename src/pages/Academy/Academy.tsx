@@ -1,6 +1,6 @@
 import React from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
-import {Section} from '../../components/Section/Section';
+import { Section } from '../../components/Section/Section';
 import { academies } from '../../core/data';
 import { TextBlock } from '../../components/Blocks/TextBlock';
 import styled from 'styled-components/macro';
@@ -15,12 +15,12 @@ export function AcademyPage() {
             <Section>
                 <TextBlock color={themeColor} title="Come join us in february">
                     <p>
-                        Are you a student? Interested in IT? Come join us for JavaZone Academy. 
-                        JavaZone Academy is a free event for students in Norway, where we invite 
+                        Are you a student? Interested in IT? Come join us for JavaZone Academy.
+                        JavaZone Academy is a free event for students in Norway, where we invite
                         you to take part in the JavaZone experience.
                     </p>
                     <p>
-                        We will bring great talks, free food, mingling, and great partners to <strong>Oslo</strong>, <strong>Bergen</strong>, and <strong>Tromsø</strong>. 
+                        We will bring great talks, free food, mingling, and great partners to <strong>Oslo</strong>, <strong>Bergen</strong>, and <strong>Tromsø</strong>.
                         Join us for a great evening!
                     </p>
                     <p>
@@ -29,8 +29,8 @@ export function AcademyPage() {
                 </TextBlock>
                 <TextBlock color={themeColor} title="How do i register?">
                     <p>
-                    Fill in the form by clicking the "Registration" link below for your preferred town. We’ll contact you as soon as possible with information about whether you got a spot. The events are usually quite popular, so make sure to register as soon as possible.
-                    </p> 
+                        Fill in the form by clicking the "Registration" link below for your preferred town. We’ll contact you as soon as possible with information about whether you got a spot. The events are usually quite popular, so make sure to register as soon as possible.
+                    </p>
                 </TextBlock>
             </Section>
             <Section>
@@ -132,6 +132,6 @@ function Session(props: SessionProps) {
             <div id="actions">
                 <Link color="pink" external url={props.registrationUrl}>Register</Link>
             </div>
-        </div>  
+        </div>
     )
 }
