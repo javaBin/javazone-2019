@@ -7,7 +7,7 @@ export const kidsProgram: KidsProgram[] = [
         recommendedAge: '8 år+',
         image: `${process.env.PUBLIC_URL}/floating-turtle.svg`,
         moreInfoLink: 'https://www.george.andante.no/',
-        registrationLink: 'https://moosehead.javazone.no/#/register/skilpaddentom',
+        registrationLink: 'https://moosehead.javazone.no/#/register/kidstom',
         speakers: 'Terje Dahl & Victor Duran',
         gear: 'Ta med din egen laptop'
     },
@@ -16,7 +16,7 @@ export const kidsProgram: KidsProgram[] = [
         desc: '<p>I dette kurset vil du bygge og programmere verdens tøffeste robot. Robot heter bit:bot og kan enkelt programmeres i et grafisk programmeringsspråk. Med roboten kan du finne på mye rart: du kan få den til å følge en linje eller tegne fine tegninger, den kan blinke og lyse og ikke minst, den ser supertøff ut! Dette blir supergøy!<p><strong>Hva lærer du:</strong><br>Grunnleggende programmering<br>Elektronikk<br>Følge en oppskrift for å bygge en robot.</p></p>',
         recommendedAge: '10 år+',
         image: `${process.env.PUBLIC_URL}/floating-robot.svg`,
-        registrationLink: 'https://moosehead.javazone.no/#/register/hjelprobot',
+        registrationLink: 'https://moosehead.javazone.no/#/register/kidsrobot',
         speakers: 'Tannaz N. Roshandel & Krister Borge',
         gear: 'Ta med din egen laptop, vi låner bort roboter under workshopen.'
     },
@@ -26,7 +26,7 @@ export const kidsProgram: KidsProgram[] = [
         recommendedAge: '12 år+',
         image: `${process.env.PUBLIC_URL}/floating-computer.svg`,
         moreInfoLink: 'https://sardtok.github.io/ProcessingIntro.html',
-        registrationLink: 'https://moosehead.javazone.no/#/register/processing',
+        registrationLink: 'https://moosehead.javazone.no/#/register/kidsprocessing',
         speakers: 'Rustam Mehmandarov & Sigmund Hansen',
         gear: 'Ta med din egen laptop'
     }

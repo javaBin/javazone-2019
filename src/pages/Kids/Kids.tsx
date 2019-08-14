@@ -18,7 +18,7 @@ export function KidsPage() {
                         <p>
                             JavaZone inviterer alle, og spesielt deltakere på JavaZone,
                              til å ta med seg sine barn på
-                            <strong><em> Teknologihuset – søndag 24. mars</em></strong>. <br />
+                            <strong><em> Teknologihuset – søndag 8. sep</em></strong>. <br />
                             For å gi dem en smakebit på voksenlivet.
                             Vi kjører 3 parallelle sesjoner,
                             slik at vi har noe for både de aller minste og de litt eldre barna.
@@ -32,11 +32,11 @@ export function KidsPage() {
                     <AlignedParagraph align="left">
                         <h1>Tid & Sted</h1>
                         <p>
-                            Arrangementet finner sted på Teknologihuset <strong><em>søndag 24. mars</em></strong> fra klokken 12.00 til 15.00. Vi serverer enkel mat underveis. Det er viktig at du som forelder også setter av tid til å være til stede hele perioden. Vi lager en egen "foreldresone" med kaffe.
+                            Arrangementet finner sted på Teknologihuset <strong><em>søndag 8. sep</em></strong> fra klokken 12.00 til 15.00. Vi serverer enkel mat underveis. Det er viktig at du som forelder også setter av tid til å være til stede hele perioden. Vi lager en egen "foreldresone" med kaffe.
                         </p>
                         <h1>Påmelding</h1>
                         <p>
-                            Vi har et begrenset antall plasser, derfor er det viktig at du melder dine barn på arrangementet. Påmelding er åpen fra <strong><em>fredag 1. mars - kl 12:00</em></strong>.
+                            Vi har et begrenset antall plasser, derfor er det viktig at du melder dine barn på arrangementet. Påmelding er åpen fra <strong><em>tirsdag 20. aug - kl 12:00</em></strong>.
                         </p>
                         <p>
                             Det er også viktig om du sier ifra eller melder deg av om du blir forhindret fra å delta, da det pleier å være ventelister på alle våre kurs.
@@ -53,7 +53,7 @@ export function KidsPage() {
                             Har du flere barn i forskjellige aldere som ønsker å være med på ulike sesjoner, så kan du melde deg på flere sesjoner – Sørg i så fall for å melde på riktig antall barn til hver sesjon.
                         </p>
                         <p>
-                            <strong><em>Påmeldingen åpner 1. mars kl. 12.00.</em></strong>
+                            <strong><em>Påmeldingen åpner 20. aug kl. 12.00.</em></strong>
                         </p>
                     </AlignedParagraph>
                 </TextBlock>
@@ -68,7 +68,7 @@ export function KidsPage() {
                 </TextBlock>
             </Section>
             <Section>
-                <TextBlock color={themeColor} title="Vi sees på teknologihuset søndag 24. mars!">
+                <TextBlock color={themeColor} title="Vi sees på teknologihuset søndag 8. sep!">
                 </TextBlock>
             </Section>
         </>
