@@ -22,6 +22,8 @@ import {ProgramPage} from "./pages/program/Program";
 import {ProgramDetailsPage} from "./pages/program/ProgramDetails";
 import {WorkshopsPage} from "./pages/Workshops/Workshops";
 import {KidsPage} from "./pages/Kids/Kids";
+import {JourneyZonePage} from "./pages/JourneyZone/JourneyZone";
+
 
 const routes: NavRoute[] = [
   {title: 'Info', url: '/info', show: true},
@@ -29,6 +31,7 @@ const routes: NavRoute[] = [
   {title: 'Workshops', url: '/workshops', show: true},
   {title: 'Tickets', url: '/tickets', show: true},
   {title: 'Speakers', url: '/speakers', show: true},
+  {title: 'JourneyZone', url: '/speakers/journeyzone', show: true},
   {title: 'Partners', url: '/partners', show: true},
   {title: 'Academy', url: '/academy', show: false},
   {title: 'Kids', url: '/kids', show: true},
@@ -70,6 +73,7 @@ function App() {
             {/* <Route exact path="/academy" component={AcademyPage} /> */}
             <Route exact path="/kids" component={KidsPage} />
             <Route exact path="/about" component={AboutUsPage} />
+            <Route exact path="/speakers/journeyzone" component={JourneyZonePage} />
             <Route exact path="/speakers/tips" component={SpeakerTipsPage} />
             <Route exact path="/speakers/monetary-policy" component={MonetaryPolicyPage} />
             <Route exact path="/privacy-cookies" component={CookieInfoPage} />
