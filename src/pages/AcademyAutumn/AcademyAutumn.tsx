@@ -26,7 +26,7 @@ export function AcademyAutumnPage() {
             <Section>
                 <TextBlock>
                     <div className="registration-container">
-                        <Link color="orange" external url="">Register for JavaZone Academy!</Link>
+                        <Link color="orange" external url="https://forms.gle/JDHsw4hj62uanHoD6">Register for JavaZone Academy!</Link>
                     </div >
                 </TextBlock>
             </Section>
