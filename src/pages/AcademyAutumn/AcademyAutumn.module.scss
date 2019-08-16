@@ -1,0 +1,72 @@
+@import '../../variables.scss';
+
+.header {
+  font-size: 3rem;
+}
+
+.academyAutumn {
+  &__frist {
+      font-size: .9rem;
+      margin-top: 0;
+  }
+
+  &__questions {
+      list-style: none;
+      margin: 5rem 0 0 0;
+      padding: 0;
+
+      @media (min-width: $screen-sm) {
+          display: flex;
+          flex-wrap: wrap;
+      }
+  }
+
+  &__question {
+      @media (min-width: $screen-sm) {
+          width: 45%;
+
+          &:nth-child(even) {
+              padding-left: 40px;
+          }
+      }
+  }
+
+  &__topHeader {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: $color-logo-orange; 
+    text-transform: uppercase;
+  }
+
+  &__header {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-weight: bold;
+      color: $color-logo-orange; 
+      text-transform: uppercase;
+  }
+
+  &__answer {
+      font-size: 1.5rem;
+      margin: 0 0 2rem 0;
+  }
+}
+
+.academyAutumn__questions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $screen-sm) {
+      display: flex;
+  }
+
+  &__format {
+      flex-grow: 1;
+
+      @media (min-width: $screen-sm) {
+          width: 100/3%;
+      }
+  }
+}

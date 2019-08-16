@@ -1,9 +1,7 @@
 import React from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
 import {Section} from '../../components/Section/Section';
-import { academies } from '../../core/data';
 import { TextBlock } from '../../components/Blocks/TextBlock';
-import styled from 'styled-components/macro';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { Link } from '../../components/Link/Link';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
