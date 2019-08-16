@@ -62,7 +62,7 @@ export function JourneyZonePage() {
                     </p>
                 </TextBlock>
             </Section>
-            <ImageSection imageName="journeyzone_campfire" />
+            <ImageSection imageName="journeyzone_tent" />
 
         </>
     )
