@@ -1,9 +1,7 @@
 import React from 'react';
 import PageBanner from '../../components/PageBanner/PageBanner';
 import {Section} from '../../components/Section/Section';
-import { academies } from '../../core/data';
 import { TextBlock } from '../../components/Blocks/TextBlock';
-import styled from 'styled-components/macro';
 import { InlineLink } from '../../components/InlineLink/InlineLink';
 import { Link } from '../../components/Link/Link';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
@@ -29,6 +27,11 @@ export function JourneyZonePage() {
                         To lazily quote Wikipedia: "Gaustatoppen is the highest mountain in the county Telemark in Norway which lies in the municipality Tinn and Hjartdal. The view from the summit is impressive, as one can see an area of approximately 60,000 km², one-sixth of Norway's mainland. ... The summit is accessible on foot in the summer, on a rocky pathway of medium difficulty, although the southern side of the mountain is very dangerous and inaccessible." <InlineLink external url="https://en.wikipedia.org/wiki/Gaustatoppen">--Wikipedia</InlineLink>
                     </p> 
                 </TextBlock>
+            </Section>
+
+            <ImageSection imageName="journeyzone_tinn_gaustatoppen" />
+
+            <Section>
                 <TextBlock color={themeColor} title="When? Where?">
                     <p>
                         We are leaving Oslo early in the morning Friday (the day after JavaZone) September 13th at 0800. We will be back in Oslo (Central station) on Sunday, September 15th at 14:00. The entire trip is planned, so all you need to do is meet up. You will need your outdoor equipment for hiking and sleeping outside in possible freezing temperatures. We will send a more detailed packing list closer to the event.
@@ -57,6 +60,8 @@ export function JourneyZonePage() {
                     </p>
                 </TextBlock>
             </Section>
+            <ImageSection imageName="journeyzone_tent" />
+
         </>
     )
 }
