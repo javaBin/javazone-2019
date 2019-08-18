@@ -1,6 +1,6 @@
-# Javazone 2019
+# JavaZone 2019
 
-This is the repository for https://2019javazone.no.
+This is the repository for https://2019.javazone.no.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

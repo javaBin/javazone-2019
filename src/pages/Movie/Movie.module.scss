@@ -1,0 +1,17 @@
+@import '../../variables.scss';
+
+#youtube {
+    height: 209px;
+    width: 280px;
+
+    @media (min-width: $screen-sm) {
+        height: 380px;
+        width: 678px;
+    }
+
+    @media (min-width: $screen-md){
+        height: 519px;
+        width: 924px;
+    }
+
+}
