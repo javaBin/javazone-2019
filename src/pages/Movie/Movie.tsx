@@ -22,7 +22,7 @@ export function MoviePage() {
 
     return (
         <>
-            <PageBanner header="The J-team" subHeader="Movie Time" color={themeColor} artPath={pageArt}/>
+            <PageBanner header="The J-Team" subHeader="Movie Time" color={themeColor} artPath={pageArt}/>
             <MovieContainer>
                 <iframe id={styles.youtube}
                         title="youtube movie"
