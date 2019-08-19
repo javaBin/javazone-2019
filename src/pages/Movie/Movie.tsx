@@ -18,7 +18,7 @@ export function MoviePage() {
     const themeColor = 'pink';
     const pageArt = `${process.env.PUBLIC_URL}/page-about.svg`;
 
-    const url = "https://www.youtube.com/embed/SKOPELOdvOw";
+    const url = "https://www.youtube.com/embed/mRQTIrmFOEA";
 
     return (
         <>
