@@ -28,7 +28,7 @@ export function MoviePage() {
                         title="youtube movie"
                         src={`${url}?origin=https://2019.javazone.no`}
                         frameBorder="0"
-                        allowfullscreen>
+                        allowFullScreen>
 
                 </iframe>
             </MovieContainer>
