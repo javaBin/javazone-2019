@@ -39,6 +39,9 @@ export function InfoPage() {
                     <p>
                         Two days full of talks from renowned Norwegian and international speakers, in varying formats and categories. You don´t want to miss our amazing lineup.
                     </p>
+                    <p>
+                        Our doors open at 8:00 on Wednesday. At 8:30, you can expect our unique opening show taking place in the expo. The talks will start at 9:00 both days.
+                    </p>
                 </TextBlock>
                 <TextBlock color={themeColor} title="An after party to remember">
                     <p>
@@ -82,11 +85,29 @@ export function InfoPage() {
             <ImageSection imageName="info_1" />
             <Section>
                 <TextBlock color={themeColor} title="AweZone: celebrating the community">
-                    <p>
+                <p>
                         AweZone is JavaZone's traditional party which takes place on Wednesday evening.
                     </p>
                     <p>
-                        The party offers a great chance to catch up with old friends, meet new ones, and also experience a great line-up of entertainment! More information about the party will be given in August.
+                        The party offers a great chance to catch up with old friends, meet new ones, and also experience a great line-up of entertainment!
+                    </p>
+                    <p>
+                        On Wednesday, we will be starting the pre-party at Oslo Spektrum at 19:20. At 20:00, we will be leaving Oslo Spektrum together and moving towards Youngstorget, and the best geeky super-party ever – AweZone! We will be spending the evening at <InlineLink external url="https://tukthuset.no">Tukthuset</InlineLink>, <InlineLink external url="https://himkok.squarespace.com/">Himkok</InlineLink>, and <InlineLink external url="https://kulturhusetioslo.no/">Kulturhuset</InlineLink>.
+                    </p>
+                    <p>
+                        At 20:00, you will be able to find DJ Finson performing at Tukthuset. At the same time, Organ Unit will start playing at Himkok.
+                    </p>
+                    <p>
+                        At Kulturhuset, we have the pleasure of presenting you Collision of Rhythm at 20:30. DJ & Drums will be taking over the stage on the 1st (a.k.a. ground) floor at 21:00.
+                    </p>
+                    <p>
+                        On the other floors, you will be able to enjoy the drinks, stay in the chill-out areas, participate in activities like Shuffleboard, Ping Pong, or Foosball, as well as mingle with the conference organizers, speakers, other participants, and our partners!
+                    </p>
+                    <p>
+                        Oh, and one more thing! We will be serving good food in the evening as well. Some drinks are on us, some will be on our partners! Bring yourself, your good mood, and don't forget your ID (due to age limits).
+                    </p>
+                    <p>
+                        Notice that the age limit at Kulturhuset and Tukthuset will be 18 years and up, while at Himkok will be 20 years and up.
                     </p>
                 </TextBlock>
             </Section>
