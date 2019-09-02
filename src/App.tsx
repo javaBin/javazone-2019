@@ -25,6 +25,7 @@ import {KidsPage} from "./pages/Kids/Kids";
 import {JourneyZonePage} from "./pages/JourneyZone/JourneyZone";
 import { AcademyAutumnPage } from './pages/AcademyAutumn/AcademyAutumn';
 import {MoviePage} from "./pages/Movie/Movie";
+import {MobileAppPage} from "./pages/MobileApp/MobileAppPage";
 
 
 const routes: NavRoute[] = [
@@ -38,6 +39,7 @@ const routes: NavRoute[] = [
   {title: 'Academy', url: '/academy', show: true},
   {title: 'Kids', url: '/kids', show: true},
   {title: 'Movie', url: '/movie', show: true},
+  {title: 'JavaZone Apps', url: '/app', show: true},
   {title: 'Frivillige', url: '/frivillige', show: true},
   {title: 'About', url: '/about', show: true},
   {title: 'Cookies', url: '/privacy-cookies', show: false},
@@ -75,6 +77,7 @@ function App() {
             <Route exact path="/frivillige" component={FrivilligePage} />
             <Route exact path="/academy" component={AcademyAutumnPage} />
             <Route exact path="/kids" component={KidsPage} />
+            <Route exact path="/app" component={MobileAppPage} />
             <Route exact path="/about" component={AboutUsPage} />
             <Route exact path="/movie" component={MoviePage} />
             <Route exact path="/speakers/journeyzone" component={JourneyZonePage} />
