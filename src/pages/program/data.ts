@@ -72,6 +72,7 @@ export function getSessions(): Promise<Session[]> {
 }
 
 const FAVORITES_KEY = 'favorites';
+const FILTER_KEY = 'filters';
 
 export function getFavorites(): Promise<string[]> {
     return new Promise<string[]>((resolve, reject) => {
@@ -82,4 +83,16 @@ export function getFavorites(): Promise<string[]> {
 
 export function setFavorites(favorites: string[]) {
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites))
+}
+
+
+export function getFilters(): Promise<any> {
+    return new Promise<string[]>((resolve, reject) => {
+        const filters = localStorage.getItem(FILTER_KEY);
+        filters ? resolve(JSON.parse(filters)) : resolve()
+    })
+}
+
+export function setFilters(filters: object) {
+    localStorage.setItem(FILTER_KEY, JSON.stringify(filters))
 }

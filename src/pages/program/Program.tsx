@@ -1,14 +1,16 @@
 import PageBanner from "../../components/PageBanner/PageBanner";
-import { Section } from "../../components/Section/Section";
+import {Section} from "../../components/Section/Section";
 import styled from 'styled-components/macro';
 import React from "react";
-import { getFavorites, getSessions, LoadingState, Session, setFavorites, Speaker } from "./data";
-import { CheckCircle } from "react-feather";
-import { Circle } from "react-feather";
-import { Link } from "react-router-dom";
+import {getFavorites, getFilters, getSessions, LoadingState, Session, setFavorites, setFilters, Speaker} from "./data";
+import {CheckCircle} from "react-feather";
+import {Circle} from "react-feather";
+import {Link} from "react-router-dom";
 
 
-interface ProgramProps { }
+interface ProgramProps {
+}
+
 interface ProgramState {
     filter: Filter
     loadingState: LoadingState,
@@ -20,14 +22,16 @@ class Filter {
     constructor(
         readonly day: 'tue' | 'wed' | 'thu' | 'all' = 'all',
         readonly language: 'en' | 'no' | 'both' = 'both',
-        readonly format: 'all' | 'presentation' | 'lightning-talk' | 'workshop' | 'fav' = 'all'
-    ) { }
+        readonly format: 'all' | 'presentation' | 'lightning-talk' | 'workshop' | 'fav' | 'X' = 'all'
+    ) {
+    }
 }
 
 
 const TuesdayPrefix = '2019-09-10';
 const WednesdayPrefix = '2019-09-11';
 const ThursdayPrefix = '2019-09-12';
+
 function getDayPrefix(day: 'tue' | 'wed' | 'thu' | 'all'): string {
     if (day === 'tue') {
         return TuesdayPrefix;
@@ -52,18 +56,19 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     }
 
     componentDidMount() {
-        Promise.all([getSessions(), getFavorites()])
-            .then(([sessions, favorites]) => {
+        Promise.all([getSessions(), getFavorites(), getFilters()])
+            .then(([sessions, favorites, filters]) => {
                 this.setState({
                     sessions,
                     favorites,
+                    filter: filters ? filters : new Filter(),
                     loadingState: LoadingState.LOADED
                 })
             }).catch(rejected => {
-                this.setState({
-                    loadingState: LoadingState.ERROR
-                })
+            this.setState({
+                loadingState: LoadingState.ERROR
             })
+        })
     }
 
     render() {
@@ -72,21 +77,23 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
 
         return (
             <>
-                <PageBanner header="JavaZone Program 2019" subHeader="Mark your schedule" color={themeColor} artPath={pageArt} />
+                <PageBanner header="JavaZone Program 2019" subHeader="Mark your schedule" color={themeColor}
+                            artPath={pageArt}/>
                 <Section>
                     <FiltersHeader>Filters</FiltersHeader>
                     <FiltersBox>
                         <TopFilterRow>
                             <DayFilter
                                 selectedDay={this.state.filter.day}
-                                setDayFilter={(day: string) => this.filterDay(day)} />
+                                setDayFilter={(day: string) => this.filterDay(day)}/>
                             <LanguageFilter
                                 selectedLanguage={this.state.filter.language}
-                                setLanguageFilter={(lang: string) => this.filterLanguage(lang)} />
+                                setLanguageFilter={(lang: string) => this.filterLanguage(lang)}/>
                         </TopFilterRow>
                         <FormatFilter
                             selectedFormat={this.state.filter.format}
-                            setFormatFilter={(format: string) => this.filterFormat(format)} />
+                            setFormatFilter={(format: string) => this.filterFormat(format)}
+                            clearFilters={() => this.clearFilter()}/>
                     </FiltersBox>
                     {this.getContent(this.state)}
                 </Section>
@@ -95,46 +102,47 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
     }
 
     private filterDay(day: string) {
-        this.setState(
-            {
-                filter: Object.assign({}, this.state.filter, { day })
-            }
-        )
+        const filter = Object.assign({}, this.state.filter, {day});
+        setFilters(filter);
+        this.setState({filter})
     }
 
     private filterLanguage(language: string) {
-        this.setState(
-            {
-                filter: Object.assign({}, this.state.filter, { language })
-            }
-        )
+        const filter  = Object.assign({}, this.state.filter, {language});
+        setFilters(filter);
+        this.setState({filter})
     }
+
     private filterFormat(format: string) {
-        this.setState(
-            {
-                filter: Object.assign({}, this.state.filter, { format })
-            }
-        )
+        const filter = Object.assign({}, this.state.filter, {format})
+        setFilters(filter);
+        this.setState({filter})
+    }
+
+    private clearFilter() {
+        const filter = new Filter();
+        setFilters(filter);
+        this.setState({filter})
     }
 
     private getContent(state: ProgramState) {
         const loadingState = state.loadingState;
         switch (loadingState) {
             case LoadingState.LOADING:
-                return <Loading />;
+                return <Loading/>;
             case LoadingState.ERROR:
-                return <Failure />;
+                return <Failure/>;
             case LoadingState.LOADED:
                 return <SessionList favorites={state.favorites}
-                    sessions={this.filterSessions(state.sessions, state.filter, state.favorites)}
-                    addToFav={(sessionId: string) => this.toggleFavorite(sessionId)} />;
+                                    sessions={this.filterSessions(state.sessions, state.filter, state.favorites)}
+                                    addToFav={(sessionId: string) => this.toggleFavorite(sessionId)}/>;
             default:
                 makeSwitchExaustive(loadingState);
         }
     }
 
     private filterSessions(sessions: Session[], filter: Filter, fav: string[]) {
-        const { day, language, format } = filter;
+        const {day, language, format} = filter;
         const dayPrefix = getDayPrefix(day);
 
         return sessions
@@ -147,13 +155,12 @@ export class ProgramPage extends React.Component<ProgramProps, ProgramState> {
         const isFavorite = this.state.favorites.indexOf(sessionId) !== -1;
         if (isFavorite) {
             const favorites = this.state.favorites.filter(id => id !== sessionId)
-            this.setState({ favorites: favorites });
+            this.setState({favorites: favorites});
             setFavorites(favorites);
         } else {
             const favorites = [sessionId].concat(this.state.favorites);
             this.setState(
-                { favorites: [sessionId].concat(this.state.favorites) }
-
+                {favorites: [sessionId].concat(this.state.favorites)}
             )
             setFavorites(favorites);
         }
@@ -235,24 +242,26 @@ const FilterButton = styled.button`
 
 
 interface DayFilterProps {
-    selectedDay?: string, setDayFilter: (day: string) => void
+    selectedDay?: string,
+    setDayFilter: (day: string) => void
 }
+
 function DayFilter(props: DayFilterProps) {
-    const { selectedDay, setDayFilter } = props;
+    const {selectedDay, setDayFilter} = props;
     return (
         <div>
             <FilterHeader>Day</FilterHeader>
             <div>
                 <FilterButton enabled={selectedDay === 'tue'}
-                    onClick={() => setDayFilter('tue')}>
+                              onClick={() => setDayFilter('tue')}>
                     Tuesday
                 </FilterButton>
                 <FilterButton enabled={selectedDay === 'wed'}
-                    onClick={() => setDayFilter('wed')}>
+                              onClick={() => setDayFilter('wed')}>
                     Wednesday
                 </FilterButton>
                 <FilterButton enabled={selectedDay === 'thu'}
-                    onClick={() => setDayFilter('thu')}>
+                              onClick={() => setDayFilter('thu')}>
                     Thursday
                 </FilterButton>
             </div>
@@ -262,20 +271,22 @@ function DayFilter(props: DayFilterProps) {
 
 
 interface LanguageFilterProps {
-    selectedLanguage?: string, setLanguageFilter: (Language: string) => void
+    selectedLanguage?: string,
+    setLanguageFilter: (Language: string) => void
 }
+
 function LanguageFilter(props: LanguageFilterProps) {
-    const { selectedLanguage, setLanguageFilter } = props;
+    const {selectedLanguage, setLanguageFilter} = props;
     return (
         <div>
             <FilterHeader>Language</FilterHeader>
             <div>
                 <FilterButton enabled={selectedLanguage === 'no'}
-                    onClick={() => setLanguageFilter('no')}>
+                              onClick={() => setLanguageFilter('no')}>
                     Norwegian
                 </FilterButton>
                 <FilterButton enabled={selectedLanguage === 'en'}
-                    onClick={() => setLanguageFilter('en')}>
+                              onClick={() => setLanguageFilter('en')}>
                     English
                 </FilterButton>
             </div>
@@ -286,33 +297,38 @@ function LanguageFilter(props: LanguageFilterProps) {
 interface FormatFilterProps {
     selectedFormat?: string,
     setFormatFilter: (Format: string) => void
+    clearFilters: () => void
 }
 
 function FormatFilter(props: FormatFilterProps) {
-    const { selectedFormat, setFormatFilter } = props;
+    const {selectedFormat, setFormatFilter, clearFilters} = props;
     return (
         <div>
             <FilterHeader>Format</FilterHeader>
             <div>
                 <FilterButton enabled={selectedFormat === 'all'}
-                    onClick={() => setFormatFilter('all')}>
+                              onClick={() => setFormatFilter('all')}>
                     All
                 </FilterButton>
                 <FilterButton enabled={selectedFormat === 'presentation'}
-                    onClick={() => setFormatFilter('presentation')}>
+                              onClick={() => setFormatFilter('presentation')}>
                     Presentations
                 </FilterButton>
                 <FilterButton enabled={selectedFormat === 'lightning-talk'}
-                    onClick={() => setFormatFilter('lightning-talk')}>
+                              onClick={() => setFormatFilter('lightning-talk')}>
                     Lightning Talks
                 </FilterButton>
                 <FilterButton enabled={selectedFormat === 'workshop'}
-                    onClick={() => setFormatFilter('workshop')}>
+                              onClick={() => setFormatFilter('workshop')}>
                     Workshops
                 </FilterButton>
                 <FilterButton enabled={selectedFormat === 'fav'}
-                    onClick={() => setFormatFilter('fav')}>
+                              onClick={() => setFormatFilter('fav')}>
                     My Favorites
+                </FilterButton>
+                <FilterButton enabled={false}
+                              onClick={clearFilters}>
+                    &nbsp;X&nbsp;
                 </FilterButton>
             </div>
         </div>
@@ -323,7 +339,8 @@ function Failure() {
     return (
         <div className='program__loading'>
             <h2 className='program__loading-header'>Woooops!</h2>
-            It seems something is seriously wrong here. We are most likely informed and working on it, so just try again in a while.
+            It seems something is seriously wrong here. We are most likely informed and working on it, so just try again
+            in a while.
         </div>
     )
 }
@@ -342,12 +359,13 @@ interface SessionListProps {
     favorites: string[];
     addToFav: (sessionId: string) => void;
 }
+
 function SessionList(props: SessionListProps) {
     return (
         <div className="program-list">
-            <Tuesday favorites={props.favorites} addToFav={props.addToFav} sessions={props.sessions} />
-            <Wednesday favorites={props.favorites} addToFav={props.addToFav} sessions={props.sessions} />
-            <Thursday favorites={props.favorites} addToFav={props.addToFav} sessions={props.sessions} />
+            <Tuesday favorites={props.favorites} addToFav={props.addToFav} sessions={props.sessions}/>
+            <Wednesday favorites={props.favorites} addToFav={props.addToFav} sessions={props.sessions}/>
+            <Thursday favorites={props.favorites} addToFav={props.addToFav} sessions={props.sessions}/>
         </div>
     );
 }
@@ -370,7 +388,6 @@ interface DayProps {
 }
 
 
-
 function Wednesday(props: DayProps) {
     const filteredList = props.sessions.filter(session => session.startTime.startsWith(WednesdayPrefix));
     const timeSlots = groupByTimeSlot(filteredList);
@@ -386,9 +403,9 @@ function Wednesday(props: DayProps) {
                             {timeSlots[timeSlot]
                                 .map((session, idx) => {
                                     return <SessionItem favorites={props.favorites}
-                                        toggleFav={props.addToFav}
-                                        key={session.sessionId}
-                                        session={session} />
+                                                        toggleFav={props.addToFav}
+                                                        key={session.sessionId}
+                                                        session={session}/>
                                 })}
                         </section>
                     })}
@@ -407,7 +424,8 @@ function Thursday(props: DayProps) {
                     return <section key={timeSlot + idx}>
                         <TimeSlot>{timeSlot.substr(-5)}</TimeSlot>
                         {timeSlots[timeSlot].map((session, idx) => {
-                            return <SessionItem favorites={props.favorites} toggleFav={props.addToFav} key={session.sessionId} session={session} />
+                            return <SessionItem favorites={props.favorites} toggleFav={props.addToFav}
+                                                key={session.sessionId} session={session}/>
                         })}
                     </section>
                 })}
@@ -426,7 +444,8 @@ function Tuesday(props: DayProps) {
                     return <section key={timeSlot + idx}>
                         <TimeSlot>{timeSlot.substr(-5)}</TimeSlot>
                         {timeSlots[timeSlot].map((session, idx) => {
-                            return <SessionItem favorites={props.favorites} toggleFav={props.addToFav} key={session.sessionId} session={session} />
+                            return <SessionItem favorites={props.favorites} toggleFav={props.addToFav}
+                                                key={session.sessionId} session={session}/>
                         })}
                     </section>
                 })}
@@ -507,7 +526,7 @@ interface SessionItemProps {
 }
 
 function SessionItem(props: SessionItemProps) {
-    const { session, favorites } = props;
+    const {session, favorites} = props;
     const isFavorite = favorites.indexOf(props.session.sessionId) !== -1;
     return (
         <SessionItemArticle isFavorite={isFavorite}>
@@ -534,8 +553,10 @@ function SessionItem(props: SessionItemProps) {
                 </ProgramSubInfo>
             </ProgramInfo>
             <ProgramFav>
-                <button onClick={() => { props.toggleFav(props.session.sessionId) }}>
-                    {isFavorite ? <CheckCircle size={32} /> : <Circle size={32} />}
+                <button onClick={() => {
+                    props.toggleFav(props.session.sessionId)
+                }}>
+                    {isFavorite ? <CheckCircle size={32}/> : <Circle size={32}/>}
                 </button>
             </ProgramFav>
         </SessionItemArticle>
@@ -573,8 +594,7 @@ function groupByTimeSlot(sessions: Session[]): { [a: string]: Session[] } {
                 return 1
             } else if (b.format === 'lightning-talk') {
                 return -1;
-            }
-            else return 0;
+            } else return 0;
         }
         return timeDiff
     });
@@ -610,8 +630,7 @@ function groupByTimeSlot(sessions: Session[]): { [a: string]: Session[] } {
                     lightningTalkMovedGrouped[day + mainSlot] = grouped[timeStamp]
                 }
 
-            }
-            else {
+            } else {
                 lightningTalkMovedGrouped[timeStamp] = grouped[timeStamp]
             }
 
