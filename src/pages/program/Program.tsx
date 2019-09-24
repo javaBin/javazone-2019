@@ -3,7 +3,7 @@ import {Section} from "../../components/Section/Section";
 import styled from 'styled-components/macro';
 import React from "react";
 import {getFavorites, getFilters, getSessions, LoadingState, Session, setFavorites, setFilters, Speaker} from "./data";
-import {CheckCircle} from "react-feather";
+import {CheckCircle, PlayCircle} from "react-feather";
 import {Circle} from "react-feather";
 import {Link} from "react-router-dom";
 
@@ -535,6 +535,7 @@ function SessionItem(props: SessionItemProps) {
                     <Link to={`/program/${session.sessionId}`}>{session.title}</Link>
                 </ProgramTitle>
                 <ProgramSubInfo>
+                    {session.video && <PlayCircle size={26} style={{"marginRight": "6px"}}/>}
                     <div>
                         <strong>{sessionFormat(props.session.format)}</strong>
                     </div>

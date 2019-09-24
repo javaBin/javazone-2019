@@ -315,8 +315,8 @@ function Index() {
             </BannerLogoLink>
             <BannerStuff>
               <BannerTitle>JavaZone</BannerTitle>
-              <BannerDate>September 11 - 12, 2019</BannerDate>
-              <BannerLocation>Oslo Spektrum, Norway</BannerLocation>
+              <BannerDate>Thank you for joining us in 2019</BannerDate>
+              <BannerLocation>See you next year!</BannerLocation>
               <BannerActions>
                 <Link color="pink" url="/movie">
                   Watch the <span role="img" aria-label="movie">🎬</span>

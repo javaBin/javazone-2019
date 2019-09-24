@@ -5,6 +5,7 @@ import {Section} from "../../components/Section/Section";
 import {TextBlock} from "../../components/Blocks/TextBlock";
 import PageBanner from "../../components/PageBanner/PageBanner";
 import styled from "styled-components/macro";
+import styles from "./ProgramDetails.module.scss";
 
 type TParams = { sessionId: string };
 
@@ -87,7 +88,7 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
     private getSessionContent(session: Session) {
 
         const {pageArt, themeColor} = this.state;
-        const {title, speakers, abstract, intendedAudience, room, startTime, language, format, length} = session;
+        const {title, speakers, abstract, intendedAudience, room, startTime, language, format, length, video} = session;
         return <>
             <PageBanner header={title} subHeader={this.generateSpeakerString(speakers)} color={themeColor}
                         artPath={pageArt}/>
@@ -97,6 +98,18 @@ export class ProgramDetailsPage extends React.Component<ProgramProps, ProgramSta
                     <FilterHeader color={themeColor}>{language === 'en' ? 'English' : 'Norwegian'}</FilterHeader>
                     <FilterHeader color={themeColor}>{this.transformFormat(format)} ({length} Min)</FilterHeader>
                 </FiltersBox>
+
+                {video &&
+                    <MovieContainer>
+                        <iframe id={styles.vimeo}
+                                title="program video"
+                                src={`https://player.vimeo.com/video/${video}`}
+                                frameBorder="0"
+                                allowFullScreen>
+                        </iframe>
+                    </MovieContainer>
+                }
+
                 <TextBlock color={themeColor} title="Abstract">
                     <MultiLinesParagraph>{abstract}</MultiLinesParagraph>
                 </TextBlock>
@@ -226,4 +239,14 @@ const FilterHeader = styled.h1`
 
 const MultiLinesParagraph = styled.p`
     white-space: pre-line;  
+`;
+
+const MovieContainer = styled.div`
+    margin-top: 6.5rem;
+    margin-bottom: 6.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 `;
