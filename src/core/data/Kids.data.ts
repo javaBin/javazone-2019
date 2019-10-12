@@ -17,7 +17,7 @@ export const kidsProgram: KidsProgram[] = [
         recommendedAge: '10 år+',
         image: `${process.env.PUBLIC_URL}/floating-robot.svg`,
         registrationLink: 'https://moosehead.javazone.no/#/register/kidsrobot',
-        speakers: 'Tannaz N. Roshandel & Krister Borge',
+        speakers: 'Tannaz N. Roshandel',
         gear: 'Ta med din egen laptop, vi låner bort roboter under workshopen.'
     },
     {
