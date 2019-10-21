@@ -316,10 +316,10 @@ function Index() {
             <BannerStuff>
               <BannerTitle>JavaZone</BannerTitle>
               <BannerDate>Thank you for joining us in 2019</BannerDate>
-              <BannerLocation>See you next year!</BannerLocation>
+              <BannerLocation>See you September 9 - 10, 2020!</BannerLocation>
               <BannerActions>
-                <Link color="pink" url="/movie">
-                  Watch the <span role="img" aria-label="movie">🎬</span>
+                <Link color="green" url="/program">
+                  Watch the JavaZone 2019 videos <span role="img" aria-label="rocket">🚀</span>
                 </Link>
               </BannerActions>
             </BannerStuff>
