@@ -6,7 +6,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v1
     - name: Setup Node
@@ -15,7 +15,13 @@ jobs:
         node-version: '10.x'
     - name: Install dependencies
       run: npm ci
-    - name: Tests
-      run: npm test
     - name: build
       run: npm run build
+    - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@master
+        if: github.ref == 'refs/heads/master'
+        env:
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_BRANCH: master # The branch the action should deploy from.
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: build # The folder the action should deploy.
