@@ -18,8 +18,8 @@ jobs:
     - name: build
       run: npm run build
     - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@master
         if: github.ref == 'refs/heads/master'
+        uses: JamesIves/github-pages-deploy-action@master
         env:
           ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_BRANCH: master # The branch the action should deploy from.
