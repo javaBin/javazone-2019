@@ -143,17 +143,6 @@ const BannerLocation = styled.h3`
   }
 `;
 
-const BannerActions = styled.div`
-  margin-top: 2rem;
-  pointer-events: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  @media (max-width: 500px) {
-    flex-direction: column;
-  }
-`;
 
 const BannerLogoLink = styled.div`
   margin-top: 0rem;

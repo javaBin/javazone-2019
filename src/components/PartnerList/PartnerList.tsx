@@ -30,7 +30,7 @@ const PartnerLogo = styled.img`
 
 function PartnerList(props: PartnerListProps) {
     const partners = useFetch<Partner>(
-        "https://d3o108dy577i1m.cloudfront.net/2019/partners/partners-2019.json"
+        "/partners-2019.json"
     );
     const shuffled = shuffle(partners);
     return !shuffled.length ? null :
