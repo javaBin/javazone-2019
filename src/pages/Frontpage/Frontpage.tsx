@@ -315,13 +315,8 @@ function Index() {
             </BannerLogoLink>
             <BannerStuff>
               <BannerTitle>JavaZone</BannerTitle>
-              <BannerDate>Thank you for joining us in 2019</BannerDate>
-              <BannerLocation>See you September 9 - 10, 2020!</BannerLocation>
-              <BannerActions>
-                <Link color="green" url="/program">
-                  Watch the JavaZone 2019 videos <span role="img" aria-label="rocket">🚀</span>
-                </Link>
-              </BannerActions>
+              <BannerDate>September 11 - 12, 2019</BannerDate>
+              <BannerLocation>Oslo Spektrum, Norway</BannerLocation>
             </BannerStuff>
           </BannerContent>
         </LandingBanner>
